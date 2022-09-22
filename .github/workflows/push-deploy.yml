@@ -1,0 +1,37 @@
+name: Create static pages and send them docs folder
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+
+    - name: checkout repo & submodules
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Build website with hugo
+      run: |
+        sudo dpkg -i hugo_extended_0.98.0_Linux-64bit.deb
+        hugo -t LoveIt
+      working-directory: site-build
+
+    - name: clean out and copy files
+      run: |
+        git config user.name "github-action"
+        git config user.email "github-action"
+        rm -rf docs/*
+        cp -r site-build/public/* docs
+        git add --all
+        git commit -m "deploy site" || echo "No changes to commit"
+        git push origin master
+
