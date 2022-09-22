@@ -1,6 +1,6 @@
 ---
-title: "‣ page01"
-subtitle: "page1 subtitle"
+title: "‣ Requirements"
+subtitle: "What you need, both in terms of coding experience, and your coding environment."
 
 date: 2022-09-11T00:00:00+01:00
 
@@ -21,8 +21,11 @@ comment:
   enable: true
 ---
 
-### Section title
-* bullet1
+### Your coding experience
+We feel people of all experience levels can gain something from these pages. If you are new to coding, we hope you will see things here that you can aim to work towards. However, to engage with the practical tasks, we recommend experience of Pandas, Numpy, the use of an Integrated Development Environment (IDE), and that you be comfortable with the command line. Streamlit's
+
+We will recap concepts like `import`ing, creating functions using `def`, and how to interact with a dataframe. Streamlit encourages a "linear" coding style, and uses the Pandas dataframe as a foundation.sdfio no
+
 * bullt2
 
 Normal text body.
