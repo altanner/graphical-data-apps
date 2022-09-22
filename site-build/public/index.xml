@@ -2,7 +2,6 @@
     <channel>
         <title>Data Visualisation with Streamlit</title>
         <link>https://alleetanner.github.io/data-vis-with-streamlit/</link>
-        <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/data-vis-with-streamlit/index.xml" rel="self" type="application/rss+xml" />
         <item>
