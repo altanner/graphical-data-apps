@@ -1,6 +1,6 @@
 ---
-title: "‣ page 0 title"
-subtitle: "page 0 subtitle"
+title: "‣ What is Streamlit?"
+subtitle: "Bringing your data science to the internet"
 
 date: 2022-09-10T00:00:00+01:00
 
@@ -21,9 +21,8 @@ comment:
   enable: true
 ---
 
-### Section title
-* bullet1
-* bullt2
+### What is Streamlit?
+Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
 
 Normal text body.
 
