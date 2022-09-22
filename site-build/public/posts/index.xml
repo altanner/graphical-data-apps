@@ -1,0 +1,44 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Data Visualisation with Streamlit</title>
+        <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/</link>
+        <description>All Posts | Data Visualisation with Streamlit</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/data-vis-with-streamlit/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>‣ page02</title>
+    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/02pagetwo/</link>
+    <pubDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/02pagetwo/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
+    <title>‣ page01</title>
+    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</link>
+    <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
+    <title>‣ page 0 title</title>
+    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</link>
+    <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg]]></description>
+</item>
+</channel>
+</rss>
