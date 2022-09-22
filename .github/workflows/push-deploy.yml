@@ -22,7 +22,7 @@ jobs:
     - name: Build website with hugo
       run: |
         sudo dpkg -i hugo_extended_0.98.0_Linux-64bit.deb
-        hugo -t LoveIt
+        hugo -t LoveIt_local
       working-directory: site-build
 
     - name: clean out and copy files
