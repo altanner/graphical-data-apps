@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/runner/work/data3/data3/site-build",
+	"sourceRoot": "/home/runner/work/data-vis-with-streamlit/data-vis-with-streamlit/site-build",
 	"sources": [
 		"themes/LoveIt/assets/css/style.scss",
 		"themes/LoveIt/assets/lib/normalize/normalize.css",
