@@ -35,10 +35,12 @@ theme = "LoveIt"
       # whether to use HTML tags directly in the document
       unsafe = true
 
-
 [params]
   # LoveIt theme version
   version = "0.2.X"
+  title = ""
+  # website description for RSS, SEO, Open Graph and Twitter Cards
+  description = ""
 
 [params.header]
     [params.header.title]
