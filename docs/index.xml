@@ -19,17 +19,13 @@ Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
 <item>
-    <title>‣ page01</title>
+    <title>‣ Requirements</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</link>
     <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
+    <description><![CDATA[Your coding experience We feel people of all experience levels can gain something from these pages. If you are new to coding, we hope you will see things here that you can aim to work towards. However, to engage with the practical tasks, we recommend experience of Pandas, Numpy, the use of an Integrated Development Environment (IDE), and that you be comfortable with the command line. Streamlit&rsquo;s
+We will recap concepts like importing, creating functions using def, and how to interact with a dataframe.]]></description>
 </item>
 <item>
     <title>‣ What is Streamlit?</title>
