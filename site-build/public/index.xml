@@ -32,12 +32,13 @@ Exercise Questions  a question box
  q1 q2     ]]></description>
 </item>
 <item>
-    <title>‣ page 0 title</title>
+    <title>‣ What is Streamlit?</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</link>
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Author</author>
     <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+    <description><![CDATA[What is Streamlit? Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
+Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
 code goes herer next setion blakfahuir wrafguighbarg]]></description>
