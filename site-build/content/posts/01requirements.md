@@ -22,11 +22,12 @@ comment:
 ---
 
 {{< admonition type="note" title="Glossary" open=false >}}
+The words **library**, **module** and **package** roughly mean the same thing; it is entirely natural to be confused by this!
 - **Library** : a collection of python files that expand the ability of python, using the `import` command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders. 
   - A library can be [standard](https://docs.python.org/3/library/index.html) (it comes built into python), for example `time` or `math`, or
   - 3rd party, so, not a core part of python itself and will need to be installed.
-- **Package** : often synonymous with "library", a package is a library that is available for delivery to a package manager, such as `pip` or `conda`. [PyPI](https://pypi.org/) is the main package storehouse for python.
-- **Module** : A single python file that is imported to a main running script. Libraries are made of modules.
+- **Package** : a "library", a package is a library that is available for delivery to a package manager, such as `pip` or `conda`. [PyPI](https://pypi.org/) is the main package storehouse for python.
+- **Module** : Anything that is imported to a main running script. Libraries and packages are made of modules.
 {{< /admonition >}}
 
 
