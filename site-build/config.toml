@@ -25,7 +25,6 @@ enableEmoji = true
     url = "posts"
     # title will be shown when you hover on this menu link
     title = ""
-    weight = 1
   [[menu.main]]
     identifier = "about"
     pre = ""
@@ -57,17 +56,17 @@ enableEmoji = true
       desktopMode = "fixed"
       # mobile header mode ["fixed", "normal", "auto"]
       mobileMode = "auto"
-      [params.header.title]
-        # URL of the LOGO
-        logo = ""
-        # title name
-        name = "Data Visualisation with Streamlit"
-        # you can add extra information before the name (HTML format is supported), such as icons
-        pre = "<i class=\"fa fa-dollar-sign\"></i><i class=\"fa fa-chevron-right\"></i>"
-        # you can add extra information after the name (HTML format is supported), such as icons
-        post = ""
-        # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
-        typeit = false
+  [params.header.title]
+    # URL of the LOGO  
+    logo = ""
+    # title name
+    name = "Data Visualisation with Streamlit"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = "<i class=\"fa fa-dollar-sign\"></i><i class=\"fa fa-chevron-right\"></i>"
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
+    typeit = false
   # Search config
   [params.search]
     enable = true
@@ -89,6 +88,7 @@ enableEmoji = true
       index = ""
       appID = ""
       searchKey = ""
+
 [params.page.mapbox]
   # access token of Mapbox GL JS
   accessToken = "pk.eyJ1IjoiZmVyZ3VzY29vcGVyIiwiYSI6ImNrbXRudWpyMDB0cnkydnBtbWU5NXRrY28ifQ.0plSQ66uhgbhkhmeCnlqoQ"
