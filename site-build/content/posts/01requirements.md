@@ -21,12 +21,18 @@ comment:
   enable: true
 ---
 
-### Your coding experience
-We feel people of all experience levels can gain something from these pages. If you are new to coding, we hope you will see things here that you can aim to work towards. However, to engage with the practical tasks, we recommend experience of Pandas, Numpy, the use of an Integrated Development Environment (IDE), and that you be comfortable with the command line. Streamlit's
+### Python experience
+This workshop aims to be as inclusive as possible, but to get the most out of it you should have some Python experience. To engage with the practical tasks and build your own platform with Streamlit you should 
+* have experience of the [Pandas](https://pandas.pydata.org/) library
+* be familiar with an Integrated Development Environment (IDE) (we recommend [VS Code](https://code.visualstudio.com/))
+* be comfortable using the [command line](https://alleetanner.github.io/intro-to-command-line/).
 
 We will recap concepts like `import`ing, creating functions using `def`, and how to interact with a dataframe. Streamlit encourages a "linear" coding style, and uses the Pandas dataframe as a foundation.sdfio no
 
-* bullt2
+### Installing required software
+You will need Python version 3.10 or higher installed on your machine. You can check what version you have installed with the command `python3 --version`. If you need to upgrade, search for a guide to follow on how to do that for your operating system. 
+
+We also need to install some packages
 
 Normal text body.
 
