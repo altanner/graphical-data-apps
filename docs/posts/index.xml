@@ -7,7 +7,7 @@
     <title>‣ page02</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/02pagetwo/</link>
     <pubDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Allee Tanner</author>
+    <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/02pagetwo/</guid>
     <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
@@ -20,7 +20,7 @@ Exercise Questions  a question box
     <title>‣ Requirements</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</link>
     <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Allee Tanner</author>
+    <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</guid>
     <description><![CDATA[Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
@@ -29,7 +29,7 @@ Exercise Questions  a question box
     <title>‣ What is Streamlit?</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</link>
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Allee Tanner</author>
+    <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</guid>
     <description><![CDATA[What is Streamlit? Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
 Normal text body.
