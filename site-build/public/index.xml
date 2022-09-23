@@ -20,10 +20,10 @@ Exercise Questions  a question box
 </item>
 <item>
     <title>‣ Requirements</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</link>
+    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</link>
     <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Allee Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01navigation/</guid>
+    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</guid>
     <description><![CDATA[Your coding experience We feel people of all experience levels can gain something from these pages. If you are new to coding, we hope you will see things here that you can aim to work towards. However, to engage with the practical tasks, we recommend experience of Pandas, Numpy, the use of an Integrated Development Environment (IDE), and that you be comfortable with the command line. Streamlit&rsquo;s
 We will recap concepts like importing, creating functions using def, and how to interact with a dataframe.]]></description>
 </item>
