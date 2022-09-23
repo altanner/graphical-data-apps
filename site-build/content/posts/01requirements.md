@@ -1,6 +1,6 @@
 ---
 title: "‣ Requirements"
-subtitle: "What you need, both in terms of coding experience, and your coding environment."
+subtitle: "What we recommend, both in terms of coding experience, and your coding environment."
 
 date: 2022-09-11T00:00:00+01:00
 
