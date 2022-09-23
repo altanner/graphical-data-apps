@@ -9,6 +9,9 @@ theme = "LoveIt"
 paginate = 20
 # whether to use emoji code
 enableEmoji = true
+# whether to use git commit log
+enableGitInfo = true
+
 
 [author]
   name = "Allee Tanner"
@@ -34,6 +37,22 @@ enableEmoji = true
     title = ""
     weight = 3
 
+[languages]
+  [languages.en]
+    weight = 1
+    languageCode = "en"
+    languageName = "English"
+    hasCJKLanguage = false
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        weight = 6
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
+        post = ""
+        name = ""
+        url = "https://github.com/alleetanner/data-vis-with-streamlit"
+        title = "GitHub"
+
 # Markup related configuration in Hugo
 [markup]
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
@@ -44,7 +63,7 @@ enableEmoji = true
     [markup.goldmark.renderer]
       # whether to use HTML tags directly in the document
       unsafe = true
-
+        
 [params]
   # LoveIt theme version
   version = "0.2.X"
