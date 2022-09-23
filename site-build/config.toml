@@ -97,24 +97,17 @@ enableGitInfo = true
   # Search config
   [params.search]
     enable = true
-    # type of search engine ["lunr", "algolia"]
-    type = "algolia"
-    # max index length of the chunked content
-    contentLength = 4000
-    # placeholder of the search bar
-    placeholder = ""
-    # max number of results length
-    maxResultLength = 10
-    # snippet length of the result
-    snippetLength = 30
-    # HTML tag name of the highlight part in results
-    highlightTag = "em"
-    # whether to use the absolute URL based on the baseURL in search index
-    absoluteURL = false
-    [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
+        type = "algolia"
+        contentLength = 4000
+        placeholder = ""
+        maxResultLength = 10
+        snippetLength = 30
+        highlightTag = "em"
+        absoluteURL = false
+        [params.search.algolia]
+          index = "index.en"
+          appID = "PASDMWALPK"
+          searchKey = "b42948e51daaa93df92381c8e2ac0f93"
 
 [params.page.mapbox]
   # access token of Mapbox GL JS
