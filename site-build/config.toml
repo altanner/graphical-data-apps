@@ -1,10 +1,21 @@
 baseURL = "https://alleetanner.github.io/data-vis-with-streamlit/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
+languageName = "English"
 title = "Data Visualisation with Streamlit"
 theme = "LoveIt"
 
+# default amount of posts in each pages
+paginate = 20
+# whether to use emoji code
+enableEmoji = true
+
+[author]
+  name = "Allee Tanner"
+
 [menu]
   [[menu.main]]
+    weight = 1
     identifier = "posts"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = ""
@@ -42,19 +53,42 @@ theme = "LoveIt"
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = ""
 
-[params.header]
-    [params.header.title]
-      # URL of the LOGO
-      logo = ""
-      # title name
-      name = "Data Visualisation with Streamlit"
-      # you can add extra information before the name (HTML format is supported), such as icons
-      pre = "<i class=\"fa fa-dollar-sign\"></i><i class=\"fa fa-chevron-right\"></i>"
-      # you can add extra information after the name (HTML format is supported), such as icons
-      post = ""
-      # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
-      typeit = false
-
+  [params.header]
+      desktopMode = "fixed"
+      # mobile header mode ["fixed", "normal", "auto"]
+      mobileMode = "auto"
+      [params.header.title]
+        # URL of the LOGO
+        logo = ""
+        # title name
+        name = "Data Visualisation with Streamlit"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = "<i class=\"fa fa-dollar-sign\"></i><i class=\"fa fa-chevron-right\"></i>"
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
+        typeit = false
+  # Search config
+  [params.search]
+    enable = true
+    # type of search engine ["lunr", "algolia"]
+    type = "algolia"
+    # max index length of the chunked content
+    contentLength = 4000
+    # placeholder of the search bar
+    placeholder = ""
+    # max number of results length
+    maxResultLength = 10
+    # snippet length of the result
+    snippetLength = 30
+    # HTML tag name of the highlight part in results
+    highlightTag = "em"
+    # whether to use the absolute URL based on the baseURL in search index
+    absoluteURL = false
+    [params.search.algolia]
+      index = ""
+      appID = ""
+      searchKey = ""
 [params.page.mapbox]
   # access token of Mapbox GL JS
   accessToken = "pk.eyJ1IjoiZmVyZ3VzY29vcGVyIiwiYSI6ImNrbXRudWpyMDB0cnkydnBtbWU5NXRrY28ifQ.0plSQ66uhgbhkhmeCnlqoQ"
