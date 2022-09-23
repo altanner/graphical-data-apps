@@ -44,22 +44,6 @@ enableGitInfo = true
     name = ""
     url = "https://github.com/alleetanner/data-vis-with-streamlit"
     title = "GitHub"
-        
-#[languages]
-##  [languages.en]
-#    weight = 1
-#    languageCode = "en"
-#    languageName = "English"
-#    hasCJKLanguage = false
-#    [languages.en.menu]
-#      [[languages.en.menu.main]]
-#        weight = 6
-#        identifier = "github"
-#        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
-#        post = ""
-#        name = ""
-#        url = "https://github.com/alleetanner/data-vis-with-streamlit"
-#        title = "GitHub"
 
 # Markup related configuration in Hugo
 [markup]
@@ -89,25 +73,12 @@ enableGitInfo = true
     # title name
     name = "Data Visualisation with Streamlit"
     # you can add extra information before the name (HTML format is supported), such as icons
-    pre = "<i class=\"fa fa-dollar-sign\"></i><i class=\"fa fa-chevron-right\"></i>"
+    pre = "<i class="fa-brands fa-python"></i>"
     # you can add extra information after the name (HTML format is supported), such as icons
     post = ""
     # LoveIt NEW | 0.2.5 whether to use typeit animation for title name
     typeit = false
   # Search config
-  [params.search]
-    enable = true
-        type = "algolia"
-        contentLength = 4000
-        placeholder = ""
-        maxResultLength = 10
-        snippetLength = 30
-        highlightTag = "em"
-        absoluteURL = false
-        [params.search.algolia]
-          index = "index.en"
-          appID = "PASDMWALPK"
-          searchKey = "b42948e51daaa93df92381c8e2ac0f93"
 
 [params.page.mapbox]
   # access token of Mapbox GL JS
