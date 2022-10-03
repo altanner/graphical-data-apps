@@ -1,8 +1,8 @@
 ---
-title: "‣ page02"
-subtitle: "page2 subtitle"
+title: "‣ Streamlit and data visualisations"
+subtitle: "Getting your numbers to say something"
 
-date: 2022-09-12T00:00:00+01:00
+date: 2022-09-14T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
