@@ -32,7 +32,7 @@ The words **library**, **module** and **package** roughly mean the same thing; i
 
 
 ### Python experience
-This workshop aims to be as inclusive as possible! But to get the most out of it you should have some experience with Python. To engage with the practical tasks and build your own platform with Streamlit you should
+To get the most out of this session, you should have some experience with Python. In particular, you should
 * have experience of the [`pandas`](https://pandas.pydata.org/) library (if you have attended our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), that is perfect!)
 * be familiar with an Integrated Development Environment (IDE) (we recommend [VS Code](https://code.visualstudio.com/)) - we also have [a course on that!](https://milliams.com/courses/ides_debugging/)
 * some experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is also expected.
