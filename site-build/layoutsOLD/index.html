@@ -32,8 +32,8 @@
             {{- else -}}
                 {{- $pages = .Paginate $pages -}}
             {{- end -}}
-            {{- range $pages.Pages.Reverse -}}
-                {{- .Render "summary" -}}
+            {{- range $pages.Pages -}}
+          
             {{- end -}}
             {{- partial "paginator.html" . -}}
         {{- end -}}
