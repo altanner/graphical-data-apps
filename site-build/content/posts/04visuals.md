@@ -21,32 +21,8 @@ comment:
   enable: true
 ---
 
-### Section title
-* bullet1
-* bullt2
 
-Normal text body.
-
-{{< admonition type="warning" open=true >}}
-- Warning1
-- Warning2
-{{< /admonition >}}
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
+{{< admonition type="warning" title="In production!" open=true >}}
+- Check back in 2023!
 {{< /admonition >}}
 
-### Another section
-blahfdajkfhu aefuibahj rwefyugr
-
-```
-code goes herer
-```
-next setion blakfahuir wrafguighbarg
-
-### Exercise
-{{< admonition type="question" title="Questions" open=true >}}
-a question box
-- q1
-- q2
-{{< /admonition >}}
