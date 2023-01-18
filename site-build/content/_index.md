@@ -6,9 +6,9 @@
 
 *Welcome to this workshop on data visualisation using Streamlit. These pages can be followed in your own time, but also guide our training workshop.*
 
-As researchers and learners, want often to work with data, interpret through visualisation, and communicate our findings with others. Data apps are an ideal medium: web pages with an accessible interface for otherwise-complex data processing and visualisation. Typically, creating such pages demands knowledge of JavaScript, HTML and CSS - languages that can be challenging, and are not widely-used in research and education. 
+Researchers and students often work with data, interpret through visualisation, and communicate findings with others. Data apps are an ideal medium for this: a data app is an open, publicly-accessible web page for data science, requiring no specialist skills from the user. Typically, creating such pages demands knowledge of JavaScript, HTML and CSS - languages that can be challenging, and are not widely-used in research and education. 
 
-[Streamlit](https://streamlit.io/) addresses these issues by providing a pure [Python](https://www.python.org/) approach to building data apps. Streamlit also interfaces with [cloud services](https://streamlit.io/cloud), bypassing complications usually associated with publishing web pages, such as managing hosts, servers, domains and traffic. As such, we can focus on making beautiful and meaningful data apps, while Streamlit handles the internet side of things!
+[Streamlit](https://streamlit.io/) addresses these issues by providing a pure [Python](https://www.python.org/) approach to building data apps. Streamlit also interfaces with [cloud services](https://streamlit.io/cloud), bypassing complications usually associated with publishing web pages, such as managing hosts, servers, domains and traffic. As such, we can focus on making beautiful and useful data apps, while Streamlit handles the internet side of things!
 
 {{< admonition type="example" title="Session goals" open=true >}}
 By the end of this workshop, you will
