@@ -50,7 +50,7 @@ Exercise Questions  a question box
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
 </item>
 <item>
-    <title>‣ What is Streamlit?</title>
+    <title>• What is Streamlit?</title>
     <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</link>
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
