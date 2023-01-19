@@ -1,5 +1,5 @@
 ---
-title: "‣ What is Streamlit?"
+title: "• What is Streamlit?"
 subtitle: "Bringing your data science to the internet"
 
 date: 2022-09-10T00:00:00+01:00
