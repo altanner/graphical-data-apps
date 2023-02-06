@@ -21,12 +21,6 @@ comment:
   enable: false
 ---
 
-{{< admonition type="note" title="Glossary" open=false >}}
-* **terminal** - a program which emulates (mimics, in software) a (now redundant) piece of hardware, which provides the command line.
-* **console** - effectively, the same thing as a terminal. Note that we also say "console" when referring to an interactive session of a programming language, for example Python.
-* **shell** is a program that sends our commands to the operating system (OS), and sends responses from the OS back to the user. Technically, we are using a shell language on the command line, but you don't need to worry about that!
-{{< /admonition >}}
-
 ### What are data apps?
 An **app** (short for "application") is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word "app" in general, refers to a program focussed on a particular task.
 
