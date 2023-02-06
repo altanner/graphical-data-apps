@@ -50,16 +50,12 @@ Exercise Questions  a question box
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
 </item>
 <item>
-    <title>• What is Streamlit?</title>
+    <title>• Why build data apps?</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</link>
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
-    <description><![CDATA[What is Streamlit? Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
-Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg]]></description>
+    <description><![CDATA[Warning1 Warning2     What are data apps? An app (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the results of those commands to be displayed back to the user. Of course, that essentially covers nearly all computer programs, but today the word &ldquo;app&rdquo; often refers to a program focussed on a particular task.]]></description>
 </item>
 </channel>
 </rss>
