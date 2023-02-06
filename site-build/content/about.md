@@ -1,6 +1,6 @@
 # About
 
-This is the website accompanying the course "Data Visualisation with Streamlit".
+This is the website accompanying the course "Graphical Data Apps in Python".
 
 The workshop is authored and run by [Allee Tanner](https://www.bristol.ac.uk/acrc/research-software-engineering/), a member of the [University of Bristol RSE group](https://twitter.com/bristolrse).
 
