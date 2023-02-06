@@ -55,7 +55,8 @@ Exercise Questions  a question box
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
-    <description><![CDATA[Glossary   terminal - a program which emulates (mimics, in software) a (now redundant) piece of hardware, which provides the command line. console - effectively, the same thing as a terminal. Note that we also say &ldquo;console&rdquo; when referring to an interactive session of a programming language, for example Python. shell is a program that sends our commands to the operating system (OS), and sends responses from the OS back to the user.]]></description>
+    <description><![CDATA[What are data apps? An app (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word &ldquo;app&rdquo; in general, refers to a program focussed on a particular task.
+A data app is a type of app that is designed to work with data, allowing exploration of a dataset without requiring specific technical skills, and in generating visualisations.]]></description>
 </item>
 </channel>
 </rss>
