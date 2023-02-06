@@ -4,7 +4,7 @@
 - Check back in spring 2023!
 {{< /admonition >}}
 
-*Welcome to this workshop on data visualisation using Streamlit. These pages can be followed in your own time, but also guide our training workshop.*
+*Welcome to this workshop on Graphical Data Apps in Python. These pages can be followed in your own time, but also guide our training workshop.*
 
 Researchers and students often work with data, interpret through visualisation, and communicate findings with others. Data apps are an ideal medium for this: a data app is an open, publicly-accessible web page for data science, requiring no specialist skills from the user. Typically, creating such pages demands knowledge of JavaScript, HTML and CSS - languages that can be challenging, and are not widely-used in research and education. 
 
@@ -15,6 +15,6 @@ By the end of this workshop, you will
 - Be familiar with the [`streamlit`](https://docs.streamlit.io/library/api-reference) library, and where to find development resources 
 - Know the basics of layout and visualisation
 - Have some practice with the [`pandas`](https://pandas.pydata.org/pandas-docs/stable/index.html) dataframe
-- Have and introduction to the plotting library [`matplotlib`](https://matplotlib.org/), and be aware of powerful alternatives
+- Have an introduction to the plotting library [`matplotlib`](https://matplotlib.org/)
 - Be able to deploy your Streamlit data-app to the internet
 {{< /admonition >}}
