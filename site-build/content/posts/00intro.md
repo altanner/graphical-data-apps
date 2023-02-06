@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 {{< admonition type="note" title="Glossary" open=false >}}
