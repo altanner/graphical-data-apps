@@ -21,6 +21,15 @@ comment:
   enable: false
 ---
 
+### Requirements and set up
+To get the most out of this course, learners should:
+- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports
+- have at least a basic knowledge of the [Pandas Dataframe](https://realpython.com/lessons/introduction-pandas-dataframe/)
+- have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so you can run a Jupyter Lab session in your browser
+- have experience of working in Jupyter Lab (or another IDE).
+
+We will need a couple of
+
 ### What are data apps?
 An **app** (short for "application") is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word "app" in general, refers to a program focussed on a particular task.
 
@@ -38,12 +47,5 @@ In this course, our goal is to create a data app using Streamlit to explore a da
 - how to bring data into a dataframe, the core data format for Streamlit
 - how to generate visualisations, aiding exploration of the data.
 
-### Requirements and set up
-To get the most out of this course, learners should:
-- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports
-- have at least a basic knowledge of the [Pandas Dataframe](https://realpython.com/lessons/introduction-pandas-dataframe/)
-- have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so you can run a Jupyter Lab session in your browser
-- have experience of working in Jupyter Lab (or another IDE).
 
-We will need a couple of
 
