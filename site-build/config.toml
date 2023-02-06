@@ -1,4 +1,4 @@
-baseURL = "https://alleetanner.github.io/data-vis-with-streamlit/"
+baseURL = "https://alleetanner.github.io/graphical-data-apps/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 languageName = "English"
@@ -53,7 +53,7 @@ enableGitInfo = true
     pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
     post = ""
     name = ""
-    url = "https://github.com/alleetanner/data-vis-with-streamlit"
+    url = "https://github.com/alleetanner/graphical-data-apps"
     title = "GitHub"
 
 # Markup related configuration in Hugo
@@ -82,7 +82,7 @@ enableGitInfo = true
     # URL of the LOGO  
     logo = ""
     # title name
-    name = "  Data Visualisation with Streamlit"
+    name = "  Graphical Data Apps in Python"
     # you can add extra information before the name (HTML format is supported), such as icons
     pre = "<i class=\"fa-solid fa-cube\"></i> </i><i class=\"fa-brands fa-python\"></i>"
     # you can add extra information after the name (HTML format is supported), such as icons
