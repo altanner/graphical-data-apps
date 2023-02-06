@@ -31,21 +31,19 @@ Until recently, building data apps has required good knowledge of the core web p
 
 In Python, a popular library for data app development is [Streamlit](https://streamlit.io/). This is a library which aims to make building data apps as streamlined as possible - and includes easy ways to deploy your app. Streamlit also integrates with some popular Python data visualisation libraries. Altogether, this means we can build good-looking, user-friendly dashboards, in pure Python!
 
+### Goals
+In this course, our goal is to create a data app using Streamlit to explore a dataset (in this case, of wine characteristics!). Along the way, we will learn
+- the basics of the Streamlit API
+- how to make "widgets", interactive parts of our app
+- how to bring data into a dataframe, the core data format for Streamlit
+- how to generate visualisations, aiding exploration of the data.
 
-Normal text body.
+### Requirements and set up
+To get the most out of this course, learners should:
+- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments, and how to run scripts
+- have at least a basic knowledge of the [Pandas Dataframe](https://realpython.com/lessons/introduction-pandas-dataframe/)
+- have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so we can run a Jupyter Lab session in your browser
+- have experience of working in Jupyter Lab (or another IDE).
 
-
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
-{{< /admonition >}}
-
-### Another section
-blahfdajkfhu aefuibahj rwefyugr
-
-```
-code goes herer
-```
-
-next setion blakfahuir wrafguighbarg
+We will need a couple of
 
