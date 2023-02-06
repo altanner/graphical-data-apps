@@ -1,16 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Data Visualisation with Streamlit</title>
-        <link>https://alleetanner.github.io/data-vis-with-streamlit/</link>
+        <link>https://alleetanner.github.io/graphical-data-apps/</link>
         <description>Data Visualisation with Streamlit</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 15 Sep 2022 00:00:00 &#43;0100</lastBuildDate>
-            <atom:link href="https://alleetanner.github.io/data-vis-with-streamlit/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>‣ Deploying</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/05deploying/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/05deploying/</link>
     <pubDate>Thu, 15 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/05deploying/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/05deploying/</guid>
     <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    
 Another section blahfdajkfhu aefuibahj rwefyugr
@@ -20,43 +20,43 @@ Exercise Questions  a question box
 </item>
 <item>
     <title>‣ Streamlit and data visualisations</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/04visuals/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/04visuals/</link>
     <pubDate>Wed, 14 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/04visuals/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/04visuals/</guid>
     <description><![CDATA[In production!   Check back in 2023!     ]]></description>
 </item>
 <item>
     <title>‣ The all-powerful Dataframe</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/03dataframes/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/03dataframes/</link>
     <pubDate>Tue, 13 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/03dataframes/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/03dataframes/</guid>
     <description><![CDATA[In production!   Check back in 2023!     ]]></description>
 </item>
 <item>
     <title>‣ First steps</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/02first_steps/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/02first_steps/</link>
     <pubDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/02first_steps/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/02first_steps/</guid>
     <description><![CDATA[In production!   Check back in 2023!     ]]></description>
 </item>
 <item>
     <title>‣ Requirements and Resources</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/01requirements/</link>
     <pubDate>Sun, 11 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/01requirements/</guid>
     <description><![CDATA[Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
 </item>
 <item>
     <title>• What is Streamlit?</title>
-    <link>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</link>
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
     <description><![CDATA[What is Streamlit? Streamlit is a library which allows you to turn your data science scripts into interactive web apps. It brings together powerful data analysis packages and graphical plotting libraries, blahblah
 Normal text body.
 Warning   Warning1 Warning2     Info   Info1 Info2    

@@ -2,14 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod><priority>1</priority></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/05deploying/</loc><lastmod>2022-10-03T11:52:53&#43;01:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/04visuals/</loc><lastmod>2022-12-07T21:21:19&#43;00:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/03dataframes/</loc><lastmod>2022-12-07T21:20:25&#43;00:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/02first_steps/</loc><lastmod>2022-12-07T21:19:48&#43;00:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/01requirements/</loc><lastmod>2022-10-03T12:18:05&#43;01:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/posts/00intro/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/about/</loc><priority>0</priority></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/categories/</loc></url><url>
-            <loc>https://alleetanner.github.io/data-vis-with-streamlit/tags/</loc></url></urlset>
+            <loc>https://alleetanner.github.io/graphical-data-apps/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod><priority>0.8</priority></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/05deploying/</loc><lastmod>2022-10-03T11:52:53&#43;01:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/04visuals/</loc><lastmod>2022-12-07T21:21:19&#43;00:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/03dataframes/</loc><lastmod>2022-12-07T21:20:25&#43;00:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/02first_steps/</loc><lastmod>2022-12-07T21:19:48&#43;00:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/01requirements/</loc><lastmod>2022-10-03T12:18:05&#43;01:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</loc><lastmod>2023-01-19T12:32:47&#43;00:00</lastmod></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/about/</loc><priority>0</priority></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/categories/</loc></url><url>
+            <loc>https://alleetanner.github.io/graphical-data-apps/tags/</loc></url></urlset>
