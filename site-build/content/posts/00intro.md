@@ -40,9 +40,9 @@ In this course, our goal is to create a data app using Streamlit to explore a da
 
 ### Requirements and set up
 To get the most out of this course, learners should:
-- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments, and how to run scripts
+- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports
 - have at least a basic knowledge of the [Pandas Dataframe](https://realpython.com/lessons/introduction-pandas-dataframe/)
-- have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so we can run a Jupyter Lab session in your browser
+- have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so you can run a Jupyter Lab session in your browser
 - have experience of working in Jupyter Lab (or another IDE).
 
 We will need a couple of
