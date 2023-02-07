@@ -57,8 +57,8 @@ Exercise Questions  a question box
     <pubDate>Sat, 10 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
-    <description><![CDATA[What are data apps? An app (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word &ldquo;app&rdquo; in general, refers to a program focussed on a particular task.
-A data app is a type of app that is designed to work with data, allowing exploration of a dataset without requiring specific technical skills, and in generating visualisations.]]></description>
+    <description><![CDATA[Requirements and set up To get the most out of this course, learners should:
+ be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).  We will need a couple of]]></description>
 </item>
 </channel>
 </rss>
