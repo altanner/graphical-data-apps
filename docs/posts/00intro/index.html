@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>• Why build data apps? - Data Visualisation with Streamlit</title><meta name="Description" content=""><meta property="og:title" content="• Why build data apps?" />
-<meta property="og:description" content="Requirements and set up To get the most out of this course, learners should:
- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).  We will need a couple of" />
+<meta property="og:description" content="Expected experience  To get the most out of this course, learners should:
+ be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).     Set up  Before we begin, we will need a couple of files:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/00intro/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-10T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-06T17:22:00+00:00" />
+<meta property="article:modified_time" content="2023-02-07T11:04:35+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Why build data apps?"/>
-<meta name="twitter:description" content="Requirements and set up To get the most out of this course, learners should:
- be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).  We will need a couple of"/>
+<meta name="twitter:description" content="Expected experience  To get the most out of this course, learners should:
+ be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).     Set up  Before we begin, we will need a couple of files:"/>
 <meta name="application-name" content="Data Visualisation with Streamlit">
 <meta name="apple-mobile-web-app-title" content="Data Visualisation with Streamlit"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00intro\/"
-        },"genre": "posts","wordcount":  415 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00intro\/","datePublished": "2022-09-10T00:00:00+01:00","dateModified": "2023-02-06T17:22:00+00:00","publisher": {
+        },"genre": "posts","wordcount":  621 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00intro\/","datePublished": "2022-09-10T00:00:00+01:00","dateModified": "2023-02-07T11:04:35+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -80,7 +80,6 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#requirements-and-set-up">Requirements and set up</a></li>
         <li><a href="#what-are-data-apps">What are data apps?</a></li>
         <li><a href="#data-apps-in-python">Data apps in Python</a></li>
         <li><a href="#goals">Goals</a></li>
@@ -88,8 +87,12 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="requirements-and-set-up">Requirements and set up</h3>
-<p>To get the most out of this course, learners should:</p>
+            </div><div class="content" id="content"><div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Expected experience<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>To get the most out of this course, learners should:</p>
 <ul>
 <li>be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports</li>
 <li>have at least a basic knowledge of the <a href="https://realpython.com/lessons/introduction-pandas-dataframe/" target="_blank" rel="noopener noreffer">Pandas Dataframe</a>
@@ -98,7 +101,27 @@
  installed, so you can run a Jupyter Lab session in your browser</li>
 <li>have experience of working in Jupyter Lab (or another IDE).</li>
 </ul>
-<p>We will need a couple of</p>
+</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Set up<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Before we begin, we will need a couple of files:</p>
+<ul>
+<li>the <a href="" rel="">environment.yml</a>
+ file; this will update Python running in Anaconda so that we have all the dependencies that we need</li>
+<li>the <a href="" rel="">dataset</a>
+ that we will be working with</li>
+</ul>
+<p>Start Anaconda Navigator. We are going to create a new &ldquo;environment&rdquo;. This of this as creating a new, custom version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your &ldquo;base&rdquo; install of Python becoming overly-burdened with libraries that you don&rsquo;t need.)</p>
+<p>In Anaconda Navigator&rsquo;s start screen, select &ldquo;Environments&rdquo; from the menu on the left. Now, at the bottom of the window, click &ldquo;Import&rdquo;, and select the <code>environment.yml</code> file that you downloaded. Name this new environment <code>data-apps</code>, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. This can take a few minutes, so please be patient!</p>
+<p>Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, which is your default Python install for Anaconda). Select <code>data-apps</code> (if it isn&rsquo;t already), and return to the &ldquo;Home&rdquo; tab. We are now ready to start!</p>
+</div>
+        </div>
+    </div>
 <h3 id="what-are-data-apps">What are data apps?</h3>
 <p>An <strong>app</strong> (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word &ldquo;app&rdquo; in general, refers to a program focussed on a particular task.</p>
 <p>A <strong>data app</strong> is a type of app that is designed to work with data, allowing exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a <strong>web app</strong>, if it is deployed to the internet so that others can use it, usually through a web browser.</p>
@@ -118,7 +141,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2023-02-06</span>
+                <span>Updated on 2023-02-07</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
