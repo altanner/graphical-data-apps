@@ -21,14 +21,25 @@ comment:
   enable: false
 ---
 
-### Requirements and set up
+{{< admonition type="info" title="Expected experience" open=false >}}
 To get the most out of this course, learners should:
 - be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports
 - have at least a basic knowledge of the [Pandas Dataframe](https://realpython.com/lessons/introduction-pandas-dataframe/)
 - have [Anaconda Navigator](https://www.anaconda.com/products/distribution) installed, so you can run a Jupyter Lab session in your browser
 - have experience of working in Jupyter Lab (or another IDE).
+{{< /admonition >}}
 
-We will need a couple of
+{{< admonition type="info" title="Set up" open=true >}}
+Before we begin, we will need a couple of files:
+- the [environment.yml]() file; this will update Python running in Anaconda so that we have all the dependencies that we need
+- the [dataset]() that we will be working with
+
+Start Anaconda Navigator. We are going to create a new "environment". This of this as creating a new, custom version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your "base" install of Python becoming overly-burdened with libraries that you don't need.)
+
+In Anaconda Navigator's start screen, select "Environments" from the menu on the left. Now, at the bottom of the window, click "Import", and select the `environment.yml` file that you downloaded. Name this new environment `data-apps`, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. This can take a few minutes, so please be patient!
+
+Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`, which is your default Python install for Anaconda). Select `data-apps` (if it isn't already), and return to the "Home" tab. We are now ready to start!
+{{< /admonition >}}
 
 ### What are data apps?
 An **app** (short for "application") is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word "app" in general, refers to a program focussed on a particular task.
