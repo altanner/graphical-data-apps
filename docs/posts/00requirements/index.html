@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>∙ Requirements and Set Up - Data Visualisation with Streamlit</title><meta name="Description" content=""><meta property="og:title" content="∙ Requirements and Set Up" />
+<meta property="og:description" content="Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
+ Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-10T00:00:00+01:00" />
+<meta property="article:modified_time" content="2023-02-12T13:07:53+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="∙ Requirements and Set Up"/>
+<meta name="twitter:description" content="Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
+ Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed."/>
+<meta name="application-name" content="Data Visualisation with Streamlit">
+<meta name="apple-mobile-web-app-title" content="Data Visualisation with Streamlit"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" /><link rel="prev" href="https://alleetanner.github.io/graphical-data-apps/posts/05deploying/" /><link rel="next" href="https://alleetanner.github.io/graphical-data-apps/posts/01intro/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/graphical-data-apps/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "∙ Requirements and Set Up",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00requirements\/"
+        },"genre": "posts","wordcount":  464 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00requirements\/","datePublished": "2023-02-10T00:00:00+01:00","dateModified": "2023-02-12T13:07:53+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alastair Tanner"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/graphical-data-apps/" title="Data Visualisation with Streamlit"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank"> All courses </a><a class="menu-item" href="/graphical-data-apps/posts"> Sections </a><a class="menu-item" href="/graphical-data-apps/about"> About </a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/graphical-data-apps/" title="Data Visualisation with Streamlit"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank">All courses</a><a class="menu-item" href="/graphical-data-apps/posts" title="">Sections</a><a class="menu-item" href="/graphical-data-apps/about" title="">About</a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">∙ Requirements and Set Up</h1><h2 class="single-subtitle">What you will need, and how to get your computer ready.</h2><div class="post-meta">
+            <div class="post-meta-line"></div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#expected-experience">Expected experience</a></li>
+        <li><a href="#getting-set-up">Getting set up</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition note">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Glossary<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>The words <strong>library</strong>, <strong>module</strong> and <strong>package</strong> roughly mean the same thing; it is entirely natural to be confused by this!</p>
+<ul>
+<li><strong>Library</strong> : a collection of python files that expand the ability of python, using the <code>import</code> command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.
+<ul>
+<li>A library can be <a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener noreffer">standard</a>
+ (it comes built into python), for example <code>time</code> or <code>math</code>, or</li>
+<li>3rd party, so, not a core part of python itself and will need to be installed.</li>
+</ul>
+</li>
+<li><strong>Package</strong> : a library that is available for delivery to a package manager, such as <code>pip</code> or <code>conda</code>. <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
+ is the main package storehouse for python.</li>
+<li><strong>Module</strong> : anything that is imported to a main running script. Libraries and packages are made of modules.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="expected-experience">Expected experience</h3>
+<p>We try to be as inclusive as possible, but to get the most out of this course, you should have:</p>
+<ul>
+<li>experience of Python to an intermediate level; for example, you should understand <strong>functions, conditionals, modules and loops</strong>. If you have attended any of our <a href="https://milliams.com/courses/data_analysis_python/" target="_blank" rel="noopener noreffer">courses</a>
+ on <a href="https://milliams.com/courses/applied_data_analysis/" target="_blank" rel="noopener noreffer">data analysis</a>
+, you will be ready to approach this course.</li>
+<li>at least some experience of the <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreffer"><code>pandas</code></a>
+ library.</li>
+<li><a href="https://www.anaconda.com/products/distribution" target="_blank" rel="noopener noreffer"><strong>Anaconda Navigator</strong></a>
+ installed. Alternatively, if you feel comfortable working in another IDE (for example <a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreffer"><strong>VS Code</strong></a>
+ or <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreffer"><strong>PyCharm</strong></a>
+, you are welcome to use those.</li>
+<li>a little experience of using the <a href="https://alleetanner.github.io/intro-to-command-line/" target="_blank" rel="noopener noreffer">command line</a>
+ is very useful, but not essential.</li>
+</ul>
+<h3 id="getting-set-up">Getting set up</h3>
+<p>Before we begin, we will need a couple of files:</p>
+<ul>
+<li>the environment.yml file; this will update Python running in Anaconda so that we have all the dependencies that we need</li>
+<li>the dataset that we will be working with</li>
+</ul>
+<p>Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new “environment”. Think of this as creating a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.)</p>
+<p>In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the environment.yml file that you downloaded. Name this new environment data-apps, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. This can take a few minutes, so please be patient!</p>
+<p>Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, which is your default Python install for Anaconda). Select <code>data-apps</code>, and return to the “Home” tab. We are now ready to start!</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" data-title="∙ Requirements and Set Up"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" data-title="∙ Requirements and Set Up"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" data-title="∙ Requirements and Set Up"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@6.20.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" data-title="∙ Requirements and Set Up"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/graphical-data-apps/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/graphical-data-apps/posts/05deploying/" class="prev" rel="prev" title="‣ Deploying"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>‣ Deploying</a>
+            <a href="/graphical-data-apps/posts/01intro/" class="next" rel="next" title="• Why build data apps?">• Why build data apps?<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.98.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/graphical-data-apps/" target="_blank">Alastair Tanner</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/graphical-data-apps/js/theme.min.js"></script></body>
+</html>
