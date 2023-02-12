@@ -1,8 +1,8 @@
 ---
-title: "‣ First steps"
-subtitle: "Build a website with two lines of Python code!"
+title: "• Using Python to create an interface"
+subtitle: "Build a website with two lines of code!"
 
-date: 2022-09-12T00:00:00+01:00
+date: 2023-02-12T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -16,13 +16,13 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 {{< admonition type="warning" title="In production!" open=true >}}
 - Check back in 2023!
 {{< /admonition >}}
 
-
+blahblah
