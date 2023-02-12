@@ -20,9 +20,64 @@ share:
 comment:
   enable: false
 ---
-
-{{< admonition type="warning" title="In production!" open=true >}}
+{{< admonition type="note"  open=true >}}
 - Check back in 2023!
 {{< /admonition >}}
+
+
+{{< admonition type="abstract"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="info"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="tip"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="success"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="question"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="warning" open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="failure"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="danger"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="bug"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="example"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
+
+{{< admonition type="quote"  open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
+
 
 blahblah
