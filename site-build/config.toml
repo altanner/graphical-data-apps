@@ -2,7 +2,7 @@ baseURL = "https://alleetanner.github.io/graphical-data-apps/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 languageName = "English"
-title = "Data Visualisation with Streamlit"
+title = "Graphical Data Apps"
 theme = "LoveIt"
 
 # default amount of posts in each pages
