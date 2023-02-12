@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 {{< admonition type="note" title="Glossary" open=false >}}
@@ -28,6 +28,7 @@ The words **library**, **module** and **package** roughly mean the same thing; i
   - 3rd party, so, not a core part of python itself and will need to be installed.
 - **Package** : a library that is available for delivery to a package manager, such as `pip` or `conda`. [PyPI](https://pypi.org/) is the main package storehouse for python.
 - **Module** : anything that is imported to a main running script. Libraries and packages are made of modules.
+- **Environment** : this has two related meanings. A "Python Environment" is a specific installation of Python, available on your computer. Typically, users have a default install, called `base`, but we can have more. Think of each environment as a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.) The other meaning for "environment" is *the interface that you are using to develop code* - for example VS Code, PyCharm, Jupyter Lab, even the command line itself are interfaces, also known as environments. Confusing, I know!
 {{< /admonition >}}
 
 ### Expected experience
@@ -43,8 +44,8 @@ Before we begin, we will need a couple of files (please download by clicking the
 * [this `environment.yml`]() file; this will update Python running in Anaconda so that we have all the dependencies that we need.
 * [the dataset]() that we will be working with.
 
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="300" style="border-radius: 2%; margin-right: 15px;" /> Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new “environment”. Think of this as creating a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.)
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="300" style="border-radius: 2%; margin-right: 15px;" /> Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments). 
 
-In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded. Name this new environment `data-apps`, then click to continue. Anaconda will now check that everything is in place, and install the dependencies we need for this course. **This can take a few minutes, and you might be asked to confirm, so please be patient!**
+In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded (you might have to find it, in your default download folder). Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need for this course. **This can take a few minutes, and you might be asked to confirm, so please be patient!**
 
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="150" style="border-radius: 2%; margin-right: 15px;" /> Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`, your default Python install for Anaconda). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser of a Jupyter Lab session. We are now ready to start!
