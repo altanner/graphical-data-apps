@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Data Visualisation with Streamlit</title>
+        <title>Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/</link>
-        <description>Data Visualisation with Streamlit</description>
+        <description>Graphical Data Apps</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>

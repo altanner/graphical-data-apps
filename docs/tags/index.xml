@@ -1,7 +1,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - Data Visualisation with Streamlit</title>
+        <title>Tags - Tag - Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/tags/</link>
-        <description>Tags - Tag - Data Visualisation with Streamlit</description>
+        <description>Tags - Tag - Graphical Data Apps</description>
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://alleetanner.github.io/graphical-data-apps/tags/" rel="self" type="application/rss+xml" /></channel>
 </rss>
