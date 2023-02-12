@@ -1,9 +1,5 @@
 ### University of Bristol ∙ Research Computing Training
 
-{{< admonition type="warning" title="In production!" open=true >}}
-- Check back in spring 2023!
-{{< /admonition >}}
-
 *Welcome to this workshop on Graphical Data Apps in Python. These pages can be followed in your own time, but also guide our training workshop.*
 
 Researchers and students often work with data, interpret through visualisation, and communicate findings with others. **Data apps** are an ideal medium for this: a data app can be shared so others can work on data in a browser-hosted interface. Or, if you are ready for the wider world, you can deploy your app as an open, publicly-accessible web page, no specialist skills required! Typically, creating such pages demands knowledge of JavaScript, HTML and CSS - languages that can be challenging, and are not widely-used in research and education. 
