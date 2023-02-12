@@ -101,9 +101,6 @@ other = "Share on"
 [contents]
 other = "Contents"
 
-[publishedOnDate]
-other = "published on {{ .Date }}"
-
 [includedInCategories]
 other = "included in {{ .Categories }}"
 
@@ -120,9 +117,6 @@ other = "views"
 
 [author]
 other = "Author"
-
-[updatedOnDate]
-other = "Updated on {{ .Date }}"
 
 [readMarkdown]
 other = "Read Markdown"
