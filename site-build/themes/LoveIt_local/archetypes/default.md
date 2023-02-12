@@ -1,4 +1,3 @@
----
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 subtitle: ""
 draft: true
