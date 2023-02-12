@@ -33,18 +33,18 @@ The words **library**, **module** and **package** roughly mean the same thing; i
 ### Expected experience
 We try to be as inclusive as possible, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should understand **functions, conditionals, modules and loops**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you will be ready to approach this course.
-* at least some experience of the [`pandas`](https://pandas.pydata.org/) library.
+* at least a little experience of the [`pandas`](https://pandas.pydata.org/) library.
 * [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those.
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is very useful, but not essential.
 
 ### Getting set up
-Before we begin, we will need a couple of files:
+Before we begin, we will need a couple of files (please download by clicking the links provided here):
 
-* the environment.yml file; this will update Python running in Anaconda so that we have all the dependencies that we need
-* the dataset that we will be working with
+* [this `environment.yml`]() file; this will update Python running in Anaconda so that we have all the dependencies that we need.
+* [the dataset]() that we will be working with.
 
-Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new “environment”. Think of this as creating a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.)
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="200" style="border-radius: 2%; margin-right: 15px;" /> Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new “environment”. Think of this as creating a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.)
 
-In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the environment.yml file that you downloaded. Name this new environment data-apps, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. This can take a few minutes, so please be patient!
+In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the environment.yml file that you downloaded. Name this new environment `data-apps`, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. **This can take a few minutes, and you might be asked to confirm, so please be patient!**
 
-Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`, which is your default Python install for Anaconda). Select `data-apps`, and return to the “Home” tab. We are now ready to start!
+Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`, your default Python install for Anaconda). Select `data-apps`, and return to the “Home” tab. We are now ready to start!
