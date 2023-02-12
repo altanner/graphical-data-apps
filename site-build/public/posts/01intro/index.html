@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>• Why build data apps? - Data Visualisation with Streamlit</title><meta name="Description" content=""><meta property="og:title" content="• Why build data apps?" />
+<meta property="og:description" content="Expected experience  To get the most out of this course, learners should:
+ be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).     Set up  Before we begin, we will need a couple of files:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01intro/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
+<meta property="article:modified_time" content="2023-02-12T12:52:19+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="• Why build data apps?"/>
+<meta name="twitter:description" content="Expected experience  To get the most out of this course, learners should:
+ be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports have at least a basic knowledge of the Pandas Dataframe  have Anaconda Navigator installed, so you can run a Jupyter Lab session in your browser have experience of working in Jupyter Lab (or another IDE).     Set up  Before we begin, we will need a couple of files:"/>
+<meta name="application-name" content="Data Visualisation with Streamlit">
+<meta name="apple-mobile-web-app-title" content="Data Visualisation with Streamlit"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/graphical-data-apps/posts/01intro/" /><link rel="prev" href="https://alleetanner.github.io/graphical-data-apps/posts/05deploying/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/graphical-data-apps/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "• Why build data apps?",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01intro\/"
+        },"genre": "posts","wordcount":  621 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01intro\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-02-12T12:52:19+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alastair Tanner"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/graphical-data-apps/" title="Data Visualisation with Streamlit"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank"> All courses </a><a class="menu-item" href="/graphical-data-apps/posts"> Sections </a><a class="menu-item" href="/graphical-data-apps/about"> About </a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/graphical-data-apps/" title="Data Visualisation with Streamlit"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank">All courses</a><a class="menu-item" href="/graphical-data-apps/posts" title="">Sections</a><a class="menu-item" href="/graphical-data-apps/about" title="">About</a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">• Why build data apps?</h1><h2 class="single-subtitle">Visualise, organise, share and collaborate.</h2><div class="post-meta">
+            <div class="post-meta-line"></div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-are-data-apps">What are data apps?</a></li>
+        <li><a href="#data-apps-in-python">Data apps in Python</a></li>
+        <li><a href="#goals">Goals</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Expected experience<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>To get the most out of this course, learners should:</p>
+<ul>
+<li>be comfortable with writing Python at an intermediate level, for example with an understanding of functions, arguments and imports</li>
+<li>have at least a basic knowledge of the <a href="https://realpython.com/lessons/introduction-pandas-dataframe/" target="_blank" rel="noopener noreffer">Pandas Dataframe</a>
+</li>
+<li>have <a href="https://www.anaconda.com/products/distribution" target="_blank" rel="noopener noreffer">Anaconda Navigator</a>
+ installed, so you can run a Jupyter Lab session in your browser</li>
+<li>have experience of working in Jupyter Lab (or another IDE).</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Set up<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Before we begin, we will need a couple of files:</p>
+<ul>
+<li>the <a href="" rel="">environment.yml</a>
+ file; this will update Python running in Anaconda so that we have all the dependencies that we need</li>
+<li>the <a href="" rel="">dataset</a>
+ that we will be working with</li>
+</ul>
+<p>Start Anaconda Navigator. We are going to create a new &ldquo;environment&rdquo;. This of this as creating a new, custom version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your &ldquo;base&rdquo; install of Python becoming overly-burdened with libraries that you don&rsquo;t need.)</p>
+<p>In Anaconda Navigator&rsquo;s start screen, select &ldquo;Environments&rdquo; from the menu on the left. Now, at the bottom of the window, click &ldquo;Import&rdquo;, and select the <code>environment.yml</code> file that you downloaded. Name this new environment <code>data-apps</code>, then click to continue. Anaconda will now check that everything is in place, and install the dependencies. This can take a few minutes, so please be patient!</p>
+<p>Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, which is your default Python install for Anaconda). Select <code>data-apps</code> (if it isn&rsquo;t already), and return to the &ldquo;Home&rdquo; tab. We are now ready to start!</p>
+</div>
+        </div>
+    </div>
+<h3 id="what-are-data-apps">What are data apps?</h3>
+<p>An <strong>app</strong> (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word &ldquo;app&rdquo; in general, refers to a program focussed on a particular task.</p>
+<p>A <strong>data app</strong> is a type of app that is designed to work with data, allowing exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a <strong>web app</strong>, if it is deployed to the internet so that others can use it, usually through a web browser.</p>
+<h3 id="data-apps-in-python">Data apps in Python</h3>
+<p>Until recently, building data apps has required good knowledge of the core web programming languages - HTML, CSS and JavaScript. These languages are not commonly used in research or education, because they are not designed for computation or data-processing. As such, a gap has existed between those with general-purpose code skills (for example in Python, R, C++ etc) and those with web skills. To address this, libraries have been developed to bridge this gap between the &ldquo;back end&rdquo; (code that handles data management and computation) and the &ldquo;front end&rdquo; (code that generates the user interface, to be used without requiring technical skills).</p>
+<p>In Python, a popular library for data app development is <a href="https://streamlit.io/" target="_blank" rel="noopener noreffer">Streamlit</a>
+. This is a library which aims to make building data apps as streamlined as possible - and includes easy ways to deploy your app. Streamlit also integrates with some popular Python data visualisation libraries. Altogether, this means we can build good-looking, user-friendly dashboards, in pure Python!</p>
+<h3 id="goals">Goals</h3>
+<p>In this course, our goal is to create a data app using Streamlit to explore a dataset (in this case, of wine characteristics!). Along the way, we will learn</p>
+<ul>
+<li>the basics of the Streamlit API</li>
+<li>how to make &ldquo;widgets&rdquo;, interactive parts of our app</li>
+<li>how to bring data into a dataframe, the core data format for Streamlit</li>
+<li>how to generate visualisations, aiding exploration of the data.</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/graphical-data-apps/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/graphical-data-apps/posts/05deploying/" class="prev" rel="prev" title="‣ Deploying"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>‣ Deploying</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.98.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/graphical-data-apps/" target="_blank">Alastair Tanner</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/graphical-data-apps/js/theme.min.js"></script></body>
+</html>
