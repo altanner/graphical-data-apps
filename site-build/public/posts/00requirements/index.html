@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/00requirements/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-10T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-12T14:24:45+00:00" />
+<meta property="article:modified_time" content="2023-02-12T14:29:25+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="∙ Requirements and Set Up"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00requirements\/"
-        },"genre": "posts","wordcount":  693 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00requirements\/","datePublished": "2023-02-10T00:00:00+01:00","dateModified": "2023-02-12T14:24:45+00:00","publisher": {
+        },"genre": "posts","wordcount":  696 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/00requirements\/","datePublished": "2023-02-10T00:00:00+01:00","dateModified": "2023-02-12T14:29:25+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -132,18 +132,24 @@
 <li><a href="" rel="">the dataset</a>
  that we will be working with.</li>
 </ul>
-<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px;" /> Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments).</p>
+<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen as in the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments).</p>
 <p>In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the <code>environment.yml</code> file that you downloaded (you might have to find it, in your default download folder). Name this new environment <code>data-apps</code>, then click to continue. Anaconda will now install the dependencies we need for this course. <strong>This can take a few minutes, and you might be asked to confirm, so please be patient!</strong></p>
-<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px;" /> Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, your default Python install for Anaconda). Select <code>data-apps</code>, and return to the “Home” tab. From there, click the <strong>Jupyter Lab</strong> icon and a new tab will open in your browser of a Jupyter Lab session. We are now ready to start!</p>
+<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, your default Python install for Anaconda). Select <code>data-apps</code>, and return to the “Home” tab. From there, click the <strong>Jupyter Lab</strong> icon and a new tab will open in your browser of a Jupyter Lab session. We are now ready to start!</p>
 <h3 id="if-you-are-using-an-alternative-ide">If you are using an alternative IDE</h3>
 <p>Please skip this section if you are using Jupyter Lab.</p>
 <p>If you prefer to use another interface, please be confident with installing new packages into your Python environment. If you use the package manager <code>pip</code>, we have provided a <a href="" rel=""><code>requirements.txt</code> file here</a>
 , which will install the required packages. Create a suitable new folder to work in, and move the <code>requirements.txt</code> file into that folder. A typical series of commands would be:</p>
-<p>Create a new environment:</p>
+<ul>
+<li>Create a new environment here, called <code>venv</code>:</li>
+</ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">python -m venv ./venv
-</span></span></code></pre></div><p>Activate this new environment:</p>
+</span></span></code></pre></div><ul>
+<li>Activate this new environment:</li>
+</ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl"><span class="nb">source</span> ./venv/bin/activate
-</span></span></code></pre></div><p>Use <code>pip</code> to acquire and install our dependencies:</p>
+</span></span></code></pre></div><ul>
+<li>Use <code>pip</code> to acquire and install our dependencies:</li>
+</ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">pip install -r requirements.txt
 </span></span></code></pre></div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
