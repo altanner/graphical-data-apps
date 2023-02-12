@@ -3,9 +3,17 @@
         <title>Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/</link>
         <description>Graphical Data Apps</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>• Using Python to create an interface</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</link>
+    <pubDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</guid>
+    <description><![CDATA[In production!   Check back in 2023!     blahblah]]></description>
+</item>
+<item>
     <title>• Why build data apps?</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/01intro/</link>
     <pubDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</pubDate>
@@ -50,14 +58,6 @@ Exercise Questions  a question box
     <pubDate>Tue, 13 Sep 2022 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/03dataframes/</guid>
-    <description><![CDATA[In production!   Check back in 2023!     ]]></description>
-</item>
-<item>
-    <title>‣ First steps</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/02first_steps/</link>
-    <pubDate>Mon, 12 Sep 2022 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/02first_steps/</guid>
     <description><![CDATA[In production!   Check back in 2023!     ]]></description>
 </item>
 </channel>
