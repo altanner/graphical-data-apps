@@ -29,16 +29,6 @@ A **data app** is a type of app that is designed to work with data, allowing exp
 As such, data apps provide an interface for exploration, prototyping, developing hypotheses, and creating visualisations. They also provide a means of sharing data with others. A data app can be simple (perhaps just visualising the contents of a data set) or sophisticated (including user log-ins and profiles, connections to databases, multi-page analyses, and interactive visualisations).
 
 ### Data apps in Python
-Until recently, building data apps has required good knowledge of the core web programming languages - HTML, CSS and JavaScript. These languages are uncommon in research or education, because they are not designed for computation or data-processing. As such, a gap has existed between those with general-purpose code skills (for example in Python, R, C++ etc) and those with web skills. To address this, libraries have been developed to bridge this gap between the "back end" (code that handles data management and computation) and the "front end" (code that generates the user interface, to be used without requiring technical skills (sometimes "front end" refers to the interface itself, rather than the code that generates it)).
+Until recently, building data apps has required good knowledge of the core web programming languages - HTML, CSS and JavaScript. These languages are uncommon in research or education, because they are not designed for computation or data-processing. As such, a gap has existed between those with general-purpose code skills (for example in Python, R, C++ etc) and those with web skills. To address this, libraries have been developed to bridge this gap between the "back end" (code that handles data management and computation) and the "front end" (the graphical interface (or the code that generates an interface)).
 
-In Python, a popular library for data app development is [Streamlit](https://streamlit.io/). This library aims to make building data apps as streamlined as possible - and includes easy ways to deploy your app. Streamlit also integrates with some popular Python data visualisation libraries. Altogether, this means we can build good-looking, user-friendly dashboards, in pure Python!
-
-### Goals
-In this course, our goal is to create a data app using Streamlit to explore a dataset (in this case, of wine characteristics!). Along the way, we will learn
-- the basics of the Streamlit API
-- how to make "widgets", interactive parts of our app
-- how to bring data into a dataframe, the core data format for Streamlit
-- how to generate visualisations, aiding exploration of the data.
-
-
-
+In Python, a popular library for making data apps is [Streamlit](https://streamlit.io/). This library aims to make building data apps as streamlined as possible - and includes easy ways to deploy your app. Streamlit also integrates with some popular Python data visualisation libraries. Altogether, this means we can build **good-looking, user-friendly dashboards, in pure Python!**
