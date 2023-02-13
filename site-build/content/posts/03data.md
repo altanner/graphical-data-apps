@@ -2,7 +2,7 @@
 title: "• Working with data"
 subtitle: "Data frames and data apps are made for each other."
 
-date: 2023-02-03T00:00:00+01:00
+date: 2023-02-13T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
