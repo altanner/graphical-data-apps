@@ -3,9 +3,22 @@
         <title>Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/</link>
         <description>Graphical Data Apps</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>• Working with data</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/03data/</link>
+    <pubDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/03data/</guid>
+    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
+Warning   Warning1 Warning2     Info   Info1 Info2    
+Another section blahfdajkfhu aefuibahj rwefyugr
+code goes herer next setion blakfahuir wrafguighbarg
+Exercise Questions  a question box
+ q1 q2     ]]></description>
+</item>
+<item>
     <title>• First steps</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</link>
     <pubDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</pubDate>
@@ -30,19 +43,6 @@
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
     <description><![CDATA[What are data apps? An app (short for &ldquo;application&rdquo;) is a computer program that provides an interface that allows users to input commands, and for the program to respond. Of course, that definition covers nearly all computer programs! But today the word &ldquo;app&rdquo; in general, refers to a program focussed on a particular task.
 A data app is a type of app that is designed to work with data, allowing exploration of a dataset without requiring specific technical skills, and in generating visualisations.]]></description>
-</item>
-<item>
-    <title>• Working with data</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/03data/</link>
-    <pubDate>Fri, 03 Feb 2023 00:00:00 &#43;0100</pubDate>
-    <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/03data/</guid>
-    <description><![CDATA[Section title  bullet1 bullt2  Normal text body.
-Warning   Warning1 Warning2     Info   Info1 Info2    
-Another section blahfdajkfhu aefuibahj rwefyugr
-code goes herer next setion blakfahuir wrafguighbarg
-Exercise Questions  a question box
- q1 q2     ]]></description>
 </item>
 </channel>
 </rss>
