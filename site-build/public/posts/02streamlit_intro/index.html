@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>• Using Python to create an interface - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="• Using Python to create an interface" />
-<meta property="og:description" content="Creating a page If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. We are going to have two panes open in this window: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab, not the browser menu!), going File → New → Python File and / or Terminal." />
+        <title>• First steps - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="• First steps" />
+<meta property="og:description" content="Arranging the Jupyter Lab tab If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. In the Jupyter Lab file navigator to the left, create a new folder to work in, and move into it. We are going to have two panes open: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab menu, not the browser menu!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-12T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-13T11:38:02+00:00" />
+<meta property="article:modified_time" content="2023-02-13T13:39:23+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="• Using Python to create an interface"/>
-<meta name="twitter:description" content="Creating a page If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. We are going to have two panes open in this window: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab, not the browser menu!), going File → New → Python File and / or Terminal."/>
+<meta name="twitter:title" content="• First steps"/>
+<meta name="twitter:description" content="Arranging the Jupyter Lab tab If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. In the Jupyter Lab file navigator to the left, create a new folder to work in, and move into it. We are going to have two panes open: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab menu, not the browser menu!"/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -21,13 +21,13 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "• Using Python to create an interface",
+        "headline": "• First steps",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/"
-        },"genre": "posts","wordcount":  143 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-13T11:38:02+00:00","publisher": {
+        },"genre": "posts","wordcount":  562 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-13T13:39:23+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -67,7 +67,7 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">• Using Python to create an interface</h1><h2 class="single-subtitle">Build a website with two lines of code!</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">• First steps</h1><h2 class="single-subtitle">Build a website with two lines of code!</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -78,13 +78,42 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#creating-a-page">Creating a page</a></li>
+        <li><a href="#arranging-the-jupyter-lab-tab">Arranging the Jupyter Lab tab</a></li>
+        <li><a href="#creating-your-first-page">Creating your first page</a></li>
+        <li><a href="#adding-your-first-interface-components">Adding your first interface components</a></li>
+        <li><a href="#the-streamlit-api">The Streamlit API</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="creating-a-page">Creating a page</h3>
-<p>If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. We are going to have two panes open in this window: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (<em>in</em> the Jupyter Lab tab, not the browser menu!), going <em>File</em> → <em>New</em> → <em>Python File</em> and / or <em>Terminal</em>. For our teaching, we have the</p>
+            </div><div class="content" id="content"><h3 id="arranging-the-jupyter-lab-tab">Arranging the Jupyter Lab tab</h3>
+<p>If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. In the Jupyter Lab file navigator to the left, create a new folder to work in, and move into it. We are going to have two panes open: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (<em>in</em> the Jupyter Lab tab menu, not the browser menu!), going <em>File</em> → <em>New</em> → <em>Python File</em> and <em>File</em> → <em>New</em> → <em>Terminal</em>. Name the Python file <code>data_app.py</code> (you might need to right-click on the file and select <em>Rename</em>).</p>
+<p>For this session, we find the most useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and reporting any errors), so we don&rsquo;t need it to take up too much space.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Some reminders on editors, terminals and consoles.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>There are three panes in Jupyter Lab that we commonly use in our teaching:</p>
+<ul>
+<li><strong>Text editor</strong> : this is a basic word-processor designed for code, that is opened when you create a new Python or plain text file.</li>
+<li><strong>Terminal</strong> : this is a command-line (text based) version of your file manager (ie, Finder in MacOS, File Explorer in Windows). This is used to navigate the folders on your computer, and run commands.</li>
+<li><strong>Console</strong> : in the context of Jupyter lab, the console runs Python <em>interactively</em>. This means you enter Python code line by line, which are immediately run - but it is not creating a script file. This is useful for understanding how code works, and prototyping a script.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="creating-your-first-page">Creating your first page</h3>
+<p>In our text editor (of the Python file <code>data_app.py</code>), the first thing we need is to bring the <code>streamlit</code> library into our script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+</span></span></code></pre></div><p>Here, we are <code>import</code>ing the Streamlit library, and giving it the name <code>st</code> - this is the accepted standard alias for Streamlit (an alias doesn&rsquo;t do anything other than save us typing the whole word every time!)</p>
+<p>Below this, let&rsquo;s enter our first Streamlit command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Let&#39;s build a data app.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications), and then move to your Terminal pane. If you aren&rsquo;t already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">streamlit run data_app.py
+</span></span></code></pre></div><p>You will now be able to view the Streamlit-built page in your browser, where it will have opened a new tab for you! For this course, it is useful to be able to arrange your windows so that both the Jupyter Lab and the Streamlit tabs are visible at the same time (you can drag the tab out of the browser to make a new window).</p>
+<h3 id="adding-your-first-interface-components">Adding your first interface components</h3>
+<h3 id="the-streamlit-api">The Streamlit API</h3>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>

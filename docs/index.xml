@@ -6,12 +6,12 @@
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>• Using Python to create an interface</title>
+    <title>• First steps</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</link>
     <pubDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</guid>
-    <description><![CDATA[Creating a page If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. We are going to have two panes open in this window: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab, not the browser menu!), going File → New → Python File and / or Terminal.]]></description>
+    <description><![CDATA[Arranging the Jupyter Lab tab If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. In the Jupyter Lab file navigator to the left, create a new folder to work in, and move into it. We are going to have two panes open: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (in the Jupyter Lab tab menu, not the browser menu!]]></description>
 </item>
 <item>
     <title>∙ Requirements and set up</title>
