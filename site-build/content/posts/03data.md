@@ -1,8 +1,8 @@
 ---
-title: "‣ Deploying"
-subtitle: "Let the world see and interact with your app!"
+title: "• Working with data"
+subtitle: "Data frames and data apps are made for each other."
 
-date: 2022-09-15T00:00:00+01:00
+date: 2023-02-03T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
@@ -16,9 +16,9 @@ code:
 math:
   enable: true
 share:
-  enable: true
+  enable: false
 comment:
-  enable: true
+  enable: false
 ---
 
 ### Section title
