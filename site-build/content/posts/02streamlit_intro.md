@@ -45,7 +45,7 @@ Here, we are `import`ing the Streamlit library, and giving it the name `st` - th
 Below this, let's enter our first Streamlit command:
 
 ```Python
-st.write("Let's build a data app.")
+st.write("Hello - let's build a data app!")
 ```
 
 Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications), and then move to your Terminal pane. If you aren't already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:
@@ -54,13 +54,28 @@ Save the file (remember that Jupyter Lab will show a circle next to files that h
 streamlit run data_app.py
 ```
 
-You will now be able to view the Streamlit-built page in your browser, where it will have opened a new tab for you! For this course, it is useful to be able to arrange your windows so that both the Jupyter Lab and the Streamlit tabs are visible at the same time (you can drag the tab out of the browser to make a new window).
+The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you!
 
-### Adding your first interface components
+### Adding your first layout component
+Hopefully, you now have a tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab.
 
-### The Streamlit API
+Add this to your script:
 
+```Python
+st.sidebar.write("This text is in our sidebar.")
+```
 
+Save the file, and notice that the Streamlit tab will say **Source file changed**
+and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
+
+### [The Streamlit API](https://docs.streamlit.io/library/api-reference)
+Before building more of the page, let's find out where to get information on how to use Streamlit. Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with examples of their code running embedded in the docs. Let's have a look through what some of the main sections are - we won't be using all of these, but just knowing they are there is useful. 
+
+{{< admonition type="tip" title="What is an API?"  open=False >}}
+An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to do something, using syntax that is consistent with Python.
+{{< /admonition >}}
+
+So far, we have used `st.write()` and `st.sidebar()`. `st.write()` is a basic 
 
 {{< admonition type="note"  open=true >}}
 - Check back in 2023!
