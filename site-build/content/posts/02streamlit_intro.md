@@ -82,7 +82,6 @@ st.text("Plain text can be inserted like this.")
 st.write("sadfklj.")
 ```
 
-
 {{< admonition type="tip" title="Customisations." open=False >}}
 By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, just use a search engine!
 {{< /admonition >}}
@@ -90,6 +89,18 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 #### [Layout and containers](https://docs.streamlit.io/library/api-reference/layout)
 
 So far, we have used `st.write()` and `st.sidebar()`. `st.write()` is a basic 
+
+
+
+{{< admonition type="Exercise" title="Exercise: build your app's layout." open=true >}}
+Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.
+- Add a descriptive subtitle.
+
+- Add a file uploader box to the sidebar (look in the "Input Widgets" section).
+{{< /admonition >}}
+
+
+
 
 {{< admonition type="note"  open=true >}}
 - Check back in 2023!
