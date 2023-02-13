@@ -20,6 +20,12 @@ share:
 comment:
   enable: false
 ---
+
+### Creating a page
+If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. We are going to have two panes open in this window: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab, not the browser menu!), going *File* → *New* → *Python File* and / or *Terminal*. For our teaching, we have the 
+
+
+
 {{< admonition type="note"  open=true >}}
 - Check back in 2023!
 {{< /admonition >}}
