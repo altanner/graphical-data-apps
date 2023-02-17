@@ -39,18 +39,20 @@ st.sidebar.radio(
 if st.session_state.data_preview == True:
     st.dataframe(titanic_dataframe)
 
-chart = px.violin(
+#chart = px.violin(
+#    titanic_dataframe,
+#    x=st.session_state.x_data,
+#    y=st.session_state.y_data,
+#    color="survived")
+
+chart = px.scatter_matrix(
     titanic_dataframe,
-    x=st.session_state.x_data,
-    y=st.session_state.y_data,
+    dimensions=column_names,
     color="survived")
 
 st.plotly_chart(chart, use_container_width=True)
 
-#chart = px.scatter_matrix(
-#    titanic_dataframe,
-#    dimensions=column_names,
-#    color="survived")
+
 
 #chart = px.parallel_coordinates(
 #    wine_dataframe,
