@@ -1,6 +1,6 @@
 ---
 title: "• First steps"
-subtitle: "Build a data app with two lines of code!"
+subtitle: "Writing and running our first script."
 
 date: 2023-02-12T00:00:00+01:00
 
