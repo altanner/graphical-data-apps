@@ -22,8 +22,8 @@ Exercise Questions  a question box
     <pubDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</guid>
-    <description><![CDATA[Creating your first page In our text editor (of the Python file data_app.py), the first thing we need is to bring the streamlit library into our script:
-import streamlit as st Here, we are importing the Streamlit library, and giving it the name st - this is the conventional alias for Streamlit, a little like we shorten numpy to np and pandas to pd (an alias doesn&rsquo;t do anything other than save us typing the whole word every time!]]></description>
+    <description><![CDATA[Typing is better than copy-pasting  We provide code blocks through this course, which you can copy and paste to build your scripts. However, we strongly recommend that learners type out code manually. This might seem a minor point, but the benefits are:
+ you get a feel for code syntax: spaces, quotes, indentation, colons, under_scores, etc (watch an experienced coder, and you might notice they adopt a different, deliberate cadence to their typing when writing code!]]></description>
 </item>
 <item>
     <title>∙ Requirements and set up</title>
