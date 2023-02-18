@@ -58,10 +58,22 @@ Once you have the [the `environment.yml`](https://github.com/alleetanner/graphic
 
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session. We are now ready to start!
 
+### Arranging the Jupyter Lab tab
+In the Jupyter Lab **file navigator** in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**. Name the Python file `data_app.py` (you might need to right-click on the file and select "*Rename*").
+
+For this session, the most useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and occasionally reporting what is happening, and any errors), so we don't need it to take up too much space.
+
+{{< admonition type="tip" title="Some reminders on editors, terminals and consoles."  open=False >}}
+There are three panes in Jupyter Lab that we commonly use in our teaching:
+- **Text editor** : this is a basic word-processor designed for code, that is opened when you create a new Python or plain text file.
+- **Terminal** : this is a command-line (text based) version of your file manager (ie, Finder in MacOS, File Explorer in Windows). This is used to navigate the folders on your computer, and run commands.
+- **Console** : in the context of Jupyter lab, the console runs Python *interactively*. This means you enter Python code line by line, which are immediately run - but it is not creating a script file. This is useful for understanding how code works, and prototyping a script.
+{{< /admonition >}}
+
 ### If you are using an alternative IDE
 Please skip this section if you are using Jupyter Lab / Anaconda.
 
-If you prefer to use another interface, please be confident with installing new packages into your Python environment. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
+If you prefer to use another interface, please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
 
 Create a new environment here, called `venv`:
 ```Shell
