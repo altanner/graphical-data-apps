@@ -41,7 +41,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ### Getting set up
-Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using this pre-made [`environment.yml`]() file (it contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager). If you are interested, or you need to do things manually, the libraries this installs are:
+Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this pre-made `environment.yml`](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/environment.yml) file (it contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager). If you are interested, or you need to do things manually, the libraries this installs are:
 
 - `numpy` - provides [numerical and mathematics tools](https://numpy.org/),
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe,
@@ -54,26 +54,26 @@ We will be working with a demonstration dataset built into the `plotly` library,
 ### Anaconda Navigator
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments). 
 
-Once you have the [the `environment.yml`](), we can use it to build a new Python environment. In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded (you might have to find it, in your default download folder). Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need for this course. **This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
+Once you have the [the `environment.yml`](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/environment.yml), we can use it to build a new Python environment. In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded (you might have to find it, in your default download folder). Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need for this course. **This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
 
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session. We are now ready to start!
 
 ### If you are using an alternative IDE
 Please skip this section if you are using Jupyter Lab / Anaconda.
 
-If you prefer to use another interface, please be confident with installing new packages into your Python environment. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](), which will install the required packages. Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
+If you prefer to use another interface, please be confident with installing new packages into your Python environment. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
 
-* Create a new environment here, called `venv`:
+Create a new environment here, called `venv`:
 ```Shell
 python -m venv ./venv
 ```
 
-* Activate this new environment:
+Activate this new environment:
 ```Shell
 source ./venv/bin/activate
 ```
 
-* Use `pip` to acquire and install our dependencies:
+Use `pip` to acquire and install our dependencies:
 ```Shell
 pip install -r requirements.txt
 ```
