@@ -21,6 +21,13 @@ comment:
   enable: false
 ---
 
+{{< admonition type="tip" title="Typing is better than copy-pasting" open=false >}}
+We provide `code` blocks through this course, which you can copy and paste to build your scripts. However, we **strongly recommend** that learners type out code manually. This might seem a minor point, but the benefits are:
+- you get a feel for code syntax: spaces, quotes, indentation, colons, `under_scores`, etc (watch an experienced coder, and you might notice they adopt a different, deliberate cadence to their typing when writing code!)
+- you gain a better understanding of what `(the) [different] {brackets}` do,
+-  **most important of all**, ***you will make mistakes!*** You can't learn without making mistakes, understanding what went wrong, and addressing the issue.
+{{< /admonition >}}
+
 ### Creating your first page
 In our text editor (of the Python file `data_app.py`), the first thing we need is to bring the `streamlit` library into our script:
 
