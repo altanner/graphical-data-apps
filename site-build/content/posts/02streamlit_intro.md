@@ -21,18 +21,6 @@ comment:
   enable: false
 ---
 
-### Arranging the Jupyter Lab tab
-If you followed the previous page, you should have a Jupyter Lab session open in a tab in your browser. In the Jupyter Lab file navigator to the left, create a new folder to work in, and move into it. We are going to have two panes open: one Python file, and one Terminal. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going *File* → *New* → *Python File* and *File* → *New* → *Terminal*. Name the Python file `data_app.py` (you might need to right-click on the file and select *Rename*).
-
-For this session, we find the most useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and reporting any errors), so we don't need it to take up too much space.
-
-{{< admonition type="tip" title="Some reminders on editors, terminals and consoles."  open=False >}}
-There are three panes in Jupyter Lab that we commonly use in our teaching:
-- **Text editor** : this is a basic word-processor designed for code, that is opened when you create a new Python or plain text file.
-- **Terminal** : this is a command-line (text based) version of your file manager (ie, Finder in MacOS, File Explorer in Windows). This is used to navigate the folders on your computer, and run commands.
-- **Console** : in the context of Jupyter lab, the console runs Python *interactively*. This means you enter Python code line by line, which are immediately run - but it is not creating a script file. This is useful for understanding how code works, and prototyping a script.
-{{< /admonition >}}
-
 ### Creating your first page
 In our text editor (of the Python file `data_app.py`), the first thing we need is to bring the `streamlit` library into our script:
 
@@ -40,7 +28,7 @@ In our text editor (of the Python file `data_app.py`), the first thing we need i
 import streamlit as st
 ```
 
-Here, we are `import`ing the Streamlit library, and giving it the name `st` - this is the accepted convention alias for Streamlit, a little like we shorten `numpy` to `np` and `pandas` to `pd` (an alias doesn't do anything other than save us typing the whole word every time!)
+Here, we are `import`ing the Streamlit library, and giving it the name `st` - this is the conventional alias for Streamlit, a little like we shorten `numpy` to `np` and `pandas` to `pd` (an alias doesn't do anything other than save us typing the whole word every time!)
 
 Below this, let's enter our first Streamlit command:
 
@@ -54,7 +42,7 @@ Save the file (remember that Jupyter Lab will show a circle next to files that h
 streamlit run data_app.py
 ```
 
-The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you! A webpage made with two lines of code!
+The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code!
 
 ### Adding your first layout component
 Hopefully, you now have a tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab.
@@ -68,7 +56,7 @@ st.sidebar.write("This text is in our sidebar.")
 Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
 ### [The Streamlit API](https://docs.streamlit.io/library/api-reference)
-Before building more of the page, let's find out where to get information on how to use Streamlit. Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with examples of their code running embedded in the docs. Let's have a look through some of the main sections.
+Before building more of the page, let's find out where to get information on how to use Streamlit. Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. Let's have a look through some of the main sections.
 
 {{< admonition type="tip" title="What is an API?"  open=False >}}
 An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to do something, using syntax that is consistent with Python.
