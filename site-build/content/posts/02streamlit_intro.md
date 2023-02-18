@@ -51,6 +51,13 @@ streamlit run data_app.py
 
 The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code!
 
+{{< admonition type="tip" title="Python scripts for Streamlit are unusual" open=false >}}
+In the script we just created, notice that common features of Python are absent. There are currently no functions, and nothing appears to be calling anything. We don't have any familiar `print` or `return` values, and no `main()` function - so how is it doing anything?
+
+In the terminal, we ran `streamlit run data_app.py`, not `python data_app.py`. So, we are asking `streamlit` itself to interpret the Python file, when typically we ask the Python interpreter (a program) to interpret our Python script (a file). As such, `streamlit` will read our file, understand that `st` lines are directly calling the Streamlit API, and update the interface (the Streamlit browser tab) accordingly.
+{{< /admonition >}}
+
+
 ### Adding your first layout component
 Hopefully, you now have a tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab.
 
