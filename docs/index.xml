@@ -42,7 +42,7 @@ Exercise Questions  a question box
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
     <description><![CDATA[What are data apps? A data app is a type of app that allows exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data is is to:
- bridge technical aspects of working with data, making analysis more accessible, enable visualisations, which can provide insights which might remain hidden in the data, promote exploration, prototyping, and hypothesis development, facilitate collaboration, and the sharing of visualisations and datasets, educate users on what methods are being applied.]]></description>
+ bridge technical aspects of working with data, making analysis more accessible, create visualisations, which can provide insights which might remain hidden in the data, promote exploration, prototyping, and hypothesis development, facilitate collaboration, and the sharing of visualisations and datasets, educate users on what methods are being applied.]]></description>
 </item>
 </channel>
 </rss>
