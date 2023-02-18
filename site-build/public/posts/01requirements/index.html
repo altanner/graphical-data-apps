@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>∙ Requirements and set up - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="∙ Requirements and set up" />
-<meta property="og:description" content="Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
- Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed." />
+<meta property="og:description" content="Glossary  The words library, module and package are often used interchangeably, and they mean very similar things; it is entirely natural to be confused by this!
+ Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01requirements/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-13T11:12:08+00:00" />
+<meta property="article:modified_time" content="2023-02-18T11:34:18+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="∙ Requirements and set up"/>
-<meta name="twitter:description" content="Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
- Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed."/>
+<meta name="twitter:description" content="Glossary  The words library, module and package are often used interchangeably, and they mean very similar things; it is entirely natural to be confused by this!
+ Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/"
-        },"genre": "posts","wordcount":  700 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-02-13T11:12:08+00:00","publisher": {
+        },"genre": "posts","wordcount":  824 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-02-18T11:34:18+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -80,7 +80,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#expected-experience">Expected experience</a></li>
+        <li><a href="#your-experience">Your experience</a></li>
         <li><a href="#getting-set-up">Getting set up</a></li>
         <li><a href="#if-you-are-using-an-alternative-ide">If you are using an alternative IDE</a></li>
       </ul>
@@ -92,24 +92,29 @@
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Glossary<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>The words <strong>library</strong>, <strong>module</strong> and <strong>package</strong> roughly mean the same thing; it is entirely natural to be confused by this!</p>
+            <div class="admonition-content"><p>The words <strong>library</strong>, <strong>module</strong> and <strong>package</strong> are often used interchangeably, and they mean very similar things; it is entirely natural to be confused by this!</p>
 <ul>
 <li><strong>Library</strong> : a collection of python files that expand the ability of python, using the <code>import</code> command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.
 <ul>
 <li>A library can be <a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener noreffer">standard</a>
  (it comes built into python), for example <code>time</code> or <code>math</code>, or</li>
-<li>3rd party, so, not a core part of python itself and will need to be installed.</li>
+<li>3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager. <code>numpy</code> and <code>pandas</code> are 3rd party libraries with millions of users.</li>
 </ul>
 </li>
-<li><strong>Package</strong> : a library that is available for delivery to a package manager, such as <code>pip</code> or <code>conda</code>. <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
- is the main package storehouse for python.</li>
-<li><strong>Module</strong> : anything that is imported to a main running script. Libraries and packages are made of modules.</li>
-<li><strong>Environment</strong> : this has two related meanings. A &ldquo;Python Environment&rdquo; is a specific installation of Python, available on your computer. Typically, users have a default install, called <code>base</code>, but we can have more. Think of each environment as a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (We recommend creating a new environment for every project, as this lessens chances of conflicts, and prevents your “base” install of Python becoming overly-burdened with libraries that you don’t need.) The other meaning for &ldquo;environment&rdquo; is <em>the interface that you are using to develop code</em> - for example VS Code, PyCharm, Jupyter Lab, even the command line itself are interfaces, also known as environments. Confusing, I know!</li>
+<li><strong>Package</strong> : a library that is available for delivery to a <strong>package manager</strong>, such as <code>pip</code> or <code>conda</code>. <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
+ (&ldquo;Python Package Index&rdquo;) is the main package repository for Python.</li>
+<li><strong>Module</strong> : anything that is imported to a running script. Libraries and packages are made of modules.</li>
+<li><strong>Environment</strong> : this has two meanings.
+<ul>
+<li>A &ldquo;Python Environment&rdquo; is a specific installation of Python, available on your computer. Typically, users have a default install, called <code>base</code>, but we can have more. Think of each environment as a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (It is good software engineering practice to create a new environment for every project. This lessens chances of conflicts, and prevents your <code>base</code> install of Python becoming overly-burdened with libraries that you don’t need.)</li>
+<li>The other meaning for &ldquo;environment&rdquo; is <em>the interface that you are using to develop code</em> - for example <strong>VS Code</strong>, <strong>PyCharm</strong>, <strong>Jupyter Lab</strong>, even the command line itself are interfaces, also known as environments. Confusing, I know!</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
     </div>
-<h3 id="expected-experience">Expected experience</h3>
+<h3 id="your-experience">Your experience</h3>
 <p>We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:</p>
 <ul>
 <li>experience of Python to an intermediate level; for example, you should understand <strong>functions, conditionals, modules and loops</strong>. If you have attended any of our <a href="https://milliams.com/courses/data_analysis_python/" target="_blank" rel="noopener noreffer">courses</a>
@@ -122,19 +127,28 @@
  or <a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreffer"><strong>PyCharm</strong></a>
 , you are welcome to use those).</li>
 <li>a little experience of using the <a href="https://alleetanner.github.io/intro-to-command-line/" target="_blank" rel="noopener noreffer">command line</a>
- is very useful, but not essential.</li>
+ is useful, but not essential.</li>
 </ul>
 <h3 id="getting-set-up">Getting set up</h3>
-<p>Before we begin, we will need a couple of files (please download by clicking the links provided here):</p>
+<p>Before we begin, we will need to create a new environment. To make this easy, download <a href="" rel="">this <code>environment.yml</code></a>
+ file (just a list of the dependencies, in a format understood by <code>conda</code>, Anaconda&rsquo;s package manager. If you are interested, or you need to do things manually, the libraries this installs are:</p>
 <ul>
-<li><a href="" rel="">this <code>environment.yml</code></a>
- file; this will update Python running in Anaconda so that we have all the dependencies that we need.</li>
-<li><a href="" rel="">the dataset</a>
- that we will be working with.</li>
+<li><code>numpy</code> - provides <a href="https://numpy.org/" target="_blank" rel="noopener noreffer">numerical and mathematics tools</a>
+,</li>
+<li><code>pandas</code> - allows us to <a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreffer">organise data into powerful formats</a>
+, most notably the dataframe,</li>
+<li><code>plotly</code> - an open-source graphing, charting and <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">data vis library</a>
+,</li>
+<li><code>plotly-express</code> - plotly on <a href="https://plotly.com/python/plotly-express/" target="_blank" rel="noopener noreffer">easy mode</a>
+, perfect for beginners,</li>
+<li><code>streamlit</code> - our <a href="https://streamlit.io/" target="_blank" rel="noopener noreffer">data app interface builder</a>
+.</li>
 </ul>
+<p>We will be working with a demonstration dataset built into the <code>plotly</code> library, so for this course we only need our environment file.</p>
 <p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments).</p>
-<p>In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the <code>environment.yml</code> file that you downloaded (you might have to find it, in your default download folder). Name this new environment <code>data-apps</code>, then click to continue. Anaconda will now install the dependencies we need for this course. <strong>This can take a few minutes, and you might be asked to confirm, so please be patient!</strong></p>
-<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>, your default Python install for Anaconda). Select <code>data-apps</code>, and return to the “Home” tab. From there, click the <strong>Jupyter Lab</strong> icon and a new tab will open in your browser of a Jupyter Lab session. We are now ready to start!</p>
+<p>Once you have the <a href="" rel="">the <code>environment.yml</code></a>
+, we can use it to build a new Python environment. In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the <code>environment.yml</code> file that you downloaded (you might have to find it, in your default download folder). Name this new environment <code>data-apps</code>, then click to continue. Anaconda will now install the dependencies we need for this course. <strong>This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!</strong></p>
+<p><img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that <code>data-apps</code> now exists (probably below <code>base (root)</code>). Select <code>data-apps</code>, and return to the “Home” tab. From there, click the <strong>Jupyter Lab</strong> icon and a new tab will open in your browser containing a Jupyter Lab session. We are now ready to start!</p>
 <h3 id="if-you-are-using-an-alternative-ide">If you are using an alternative IDE</h3>
 <p>Please skip this section if you are using Jupyter Lab.</p>
 <p>If you prefer to use another interface, please be confident with installing new packages into your Python environment. If you use the package manager <code>pip</code>, we have provided a <a href="" rel=""><code>requirements.txt</code> file here</a>

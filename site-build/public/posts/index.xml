@@ -30,8 +30,8 @@ Exercise Questions  a question box
     <pubDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/01requirements/</guid>
-    <description><![CDATA[Glossary  The words library, module and package roughly mean the same thing; it is entirely natural to be confused by this!
- Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, not a core part of python itself and will need to be installed.]]></description>
+    <description><![CDATA[Glossary  The words library, module and package are often used interchangeably, and they mean very similar things; it is entirely natural to be confused by this!
+ Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager.]]></description>
 </item>
 <item>
     <title>• Why build data apps?</title>
