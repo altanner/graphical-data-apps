@@ -33,14 +33,14 @@ The words **library**, **module** and **package** are often used interchangeably
   - The other meaning for "environment" is *the interface that you are using to develop code* - for example **VS Code**, **PyCharm**, **Jupyter Lab**, even the command line itself are interfaces, also known as environments. Confusing, I know!
 {{< /admonition >}}
 
-## Your experience
+# Your experience
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should understand **functions, conditionals, loops and modules**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you will be ready to approach this course.
 * at least a little experience of the [`pandas`](https://pandas.pydata.org/) library.
 * [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those).
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
-## Getting set up
+# Getting set up
 Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml) file (right-click and choose "save link as"). The file contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager. If you are interested, or you need to do things manually, the libraries this installs are:
 
 - `numpy` - provides [numerical and mathematics tools](https://numpy.org/),
@@ -51,7 +51,7 @@ Before we begin, we will need to create a new **environment** (see the glossary 
 
 We will be working with a demonstration dataset built into the `plotly` library, so for this course we only need our environment file.
 
-## Anaconda Navigator
+# Anaconda Navigator
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments). 
 
 Once you have the [the `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml), we can use it to build a new Python environment. In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded (you might have to find it, in your default download folder). Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need for this course. **This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
