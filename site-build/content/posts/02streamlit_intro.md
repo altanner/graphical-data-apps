@@ -40,33 +40,22 @@ Here, we are `import`ing the Streamlit library, and giving it the name `st` - th
 Below this, let's enter our first Streamlit command:
 
 ```Python
-st.title("Hi - let's build a data app!")
+st.title("A graphical data app")
 ```
 
-Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications), and then move to your Terminal pane. If you aren't already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:
+Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren't already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:
 
 ```Shell
 streamlit run data_app.py
 ```
 
-The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code!
+The terminal should report something along the lines of `You can now view your Streamlit app in your browser` - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it. You can stop the Terminal using `ctrl-c`.
 
 {{< admonition type="tip" title="Python scripts for Streamlit are unusual" open=false >}}
 In the script we just created, notice that common features of Python are absent. There are currently no variables or functions, no familiar `print` or `return` values - so how is it doing anything?
 
 In the terminal, we ran `streamlit run data_app.py`, not `python data_app.py`. So, we are asking `streamlit` itself to interpret the Python file, when typically we ask the Python interpreter (a program) to interpret our Python script (a file). As such, `streamlit` will read our file, understand that `st` lines are directly calling the Streamlit API, and create / update the interface (the Streamlit browser tab) accordingly.
 {{< /admonition >}}
-
-### Adding your first layout component
-Hopefully, you now have a tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab.
-
-Add this to your script:
-
-```Python
-st.sidebar.write("This text is in our sidebar.")
-```
-
-Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
 ### [The Streamlit API](https://docs.streamlit.io/library/api-reference)
 Before building more of the page, let's find out where to get information on how to use Streamlit. Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. Let's have a look through some of the main sections.
@@ -76,22 +65,33 @@ An API is an Application Programming Interface. It can be a confusing term, not 
 {{< /admonition >}}
 
 #### [Text elements](https://docs.streamlit.io/library/api-reference/text)
-We can format our text using the [text elements](https://docs.streamlit.io/library/api-reference/text) section of the API. Add the lines below the line  script:
+We can format our text using the [text elements](https://docs.streamlit.io/library/api-reference/text) section of the API. Here we can demonstrate this by adding some text. Try adding this **below your `st.title()` line**
 
 ```Python
-st.text("Plain text can be inserted like this.")
-st.write("sadfklj.")
+st.write("Here is some text which is placed below the title for our app!")
 ```
 
+The documentation has other text element examples - we will return to these in the Exercise in a moment.
+
+Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
+
+#### [Layout and containers](https://docs.streamlit.io/library/api-reference/layout)
+You now have a browser tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab.
+
+Add this to the bottom of your script:
+
+```Python
+st.sidebar.write("This text is in our sidebar.")
+```
+
+
 {{< admonition type="tip" title="Customisations." open=False >}}
-By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, just use a search engine!
+By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
 #### [Layout and containers](https://docs.streamlit.io/library/api-reference/layout)
 
-So far, we have used `st.write()` and `st.sidebar()`. `st.write()` is a basic 
-
-
+So far, we have used `st.title()`, `st.write()` and `st.sidebar()`. `title` and `write` are both involved in text presentation.
 
 {{< admonition type="Exercise" title="Exercise: build your app's layout." open=true >}}
 Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.
@@ -101,6 +101,9 @@ Your goal in this exercise is to refer to the Streamlit API docs, and add some s
 {{< /admonition >}}
 
 
+{{< admonition type="question" title="Exercise" open=true >}}
+- Check back in 2023!
+{{< /admonition >}}
 
 
 {{< admonition type="note"  open=true >}}
