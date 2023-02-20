@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-12T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-20T10:52:03+00:00" />
+<meta property="article:modified_time" content="2023-02-20T11:28:15+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• First steps"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/"
-        },"genre": "posts","wordcount":  892 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-20T10:52:03+00:00","publisher": {
+        },"genre": "posts","wordcount":  964 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-20T11:28:15+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,10 +78,12 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#creating-your-first-page">Creating your first page</a></li>
+    <li><a href="#the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference">The Streamlit API</a></a>
       <ul>
-        <li><a href="#creating-your-first-page">Creating your first page</a></li>
-        <li><a href="#the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference">The Streamlit API</a></a></li>
+        <li><a href="#text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text">Text elements</a></a></li>
+        <li><a href="#layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Layout and containers</a></a></li>
+        <li><a href="#layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout-1"><a href="https://docs.streamlit.io/library/api-reference/layout">Layout and containers</a></a></li>
       </ul>
     </li>
   </ul>
@@ -100,7 +102,7 @@
 </div>
         </div>
     </div>
-<h3 id="creating-your-first-page">Creating your first page</h3>
+<h2 id="creating-your-first-page">Creating your first page</h2>
 <p>In our text editor (of the Python file <code>data_app.py</code>), the first thing we need is to bring the <code>streamlit</code> library into our script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 </span></span></code></pre></div><p>Here, we are <code>import</code>ing the Streamlit library, and giving it the name <code>st</code> - this is the conventional alias for Streamlit, a little like we shorten <code>numpy</code> to <code>np</code> and <code>pandas</code> to <code>pd</code> (an alias doesn&rsquo;t do anything other than save us typing the whole word every time!)</p>
@@ -108,7 +110,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;A graphical data app&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren&rsquo;t already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">streamlit run data_app.py
-</span></span></code></pre></div><p>The terminal should report something along the lines of <code>You can now view your Streamlit app in your browser</code> - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it. You can stop the Terminal using <code>ctrl-c</code>.</p>
+</span></span></code></pre></div><p>The terminal should report something along the lines of <em>&ldquo;You can now view your Streamlit app in your browser&rdquo;</em> - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it. You can stop the Terminal using <code>ctrl-c</code>.</p>
 <div class="details admonition tip">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Python scripts for Streamlit are unusual<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -119,8 +121,8 @@
 </div>
         </div>
     </div>
-<h3 id="the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">The Streamlit API</a>
-</h3>
+<h2 id="the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">The Streamlit API</a>
+</h2>
 <p>Before building more of the page, let&rsquo;s find out where to get information on how to use Streamlit. Streamlit has <a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">clear documentation</a>
 , complete with embedded examples. Let&rsquo;s have a look through some of the main sections.</p>
 <div class="details admonition tip open">
@@ -131,17 +133,23 @@
             <div class="admonition-content">An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the &ldquo;control panel&rdquo; to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with <code>st.&lt;something&gt;()</code>, we are asking the Streamlit API to do something, using syntax that is consistent with Python.</div>
         </div>
     </div>
-<h4 id="text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">Text elements</a>
-</h4>
-<p>We can format our text using the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements</a>
- section of the API. Here we can demonstrate this by adding some text. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
+<h3 id="text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">Text elements</a>
+</h3>
+<p>You now have a browser tab with your Streamlit app running. Let&rsquo;s add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements</a>
+ section of the API. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some text which is placed below the title for our app!&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>The documentation has other text element examples - we will return to these in the Exercise in a moment.</p>
 <p>Save the file, and notice that the Streamlit tab will say <strong>Source file changed</strong> and offers you <strong>Rerun</strong> and <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - now, every time we save the file, Streamlit will automatically rebuild the page for us.</p>
-<h4 id="layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Layout and containers</a>
-</h4>
-<p>You now have a browser tab with your Streamlit app running. Let&rsquo;s add a couple of extra things, so you can see how the output of your script affects the app tab.</p>
-<p>Add this to the bottom of your script:</p>
+<h3 id="layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Layout and containers</a>
+</h3>
+<p>Another important skill in learning to create your data app is being able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:</p>
+<ul>
+<li>containers (think of these as horizontally-arranged blocks)</li>
+<li>columns (vertical blocks)</li>
+<li>expanders (vertical blocks that can be minimised)</li>
+<li>sidebars.</li>
+</ul>
+<p>Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is in our sidebar.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><div class="details admonition tip open">
         <div class="details-summary admonition-title">
@@ -151,8 +159,8 @@
             <div class="admonition-content">By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don&rsquo;t teach these in this course, but if you would like to learn more, search the documentation or for tutorials.</div>
         </div>
     </div>
-<h4 id="layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout-1"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Layout and containers</a>
-</h4>
+<h3 id="layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout-1"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Layout and containers</a>
+</h3>
 <p>So far, we have used <code>st.title()</code>, <code>st.write()</code> and <code>st.sidebar()</code>. <code>title</code> and <code>write</code> are both involved in text presentation.</p>
 <div class="details admonition Exercise open">
         <div class="details-summary admonition-title">
