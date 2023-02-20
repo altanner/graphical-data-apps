@@ -41,7 +41,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ### Getting set up
-Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this pre-made `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml) file (it contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager). If you are interested, or you need to do things manually, the libraries this installs are:
+Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml/) file (right-click and choose "save link as"). The file contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager. If you are interested, or you need to do things manually, the libraries this installs are:
 
 - `numpy` - provides [numerical and mathematics tools](https://numpy.org/),
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe,
