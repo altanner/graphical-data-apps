@@ -1,0 +1,11 @@
+name: data-apps
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - pandas
+  - plotly
+  - plotly_express
+  - jupyterlab
+  - jupyterlab_widgets
