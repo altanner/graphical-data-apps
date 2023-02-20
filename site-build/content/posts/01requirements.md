@@ -41,7 +41,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ### Getting set up
-Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this pre-made `environment.yml`](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/environment.yml) file (it contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager). If you are interested, or you need to do things manually, the libraries this installs are:
+Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this pre-made `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml) file (it contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager). If you are interested, or you need to do things manually, the libraries this installs are:
 
 - `numpy` - provides [numerical and mathematics tools](https://numpy.org/),
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe,
@@ -73,7 +73,7 @@ There are three panes in Jupyter Lab that we commonly use in our teaching:
 ### If you are using an alternative IDE
 Please skip this section if you are using Jupyter Lab / Anaconda.
 
-If you prefer to use another interface, please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://github.com/alleetanner/graphical-data-apps/blob/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
+If you prefer to use another interface, please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
 
 Create a new environment here, called `venv`:
 ```Shell
