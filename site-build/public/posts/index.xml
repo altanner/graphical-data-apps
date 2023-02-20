@@ -3,7 +3,43 @@
         <title>All Posts - Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/posts/</link>
         <description>All Posts | Graphical Data Apps</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/graphical-data-apps/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Feb 2023 00:00:00 &#43;0100</lastBuildDate><atom:link href="https://alleetanner.github.io/graphical-data-apps/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>• Sharing, deploying</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/07advanced/</link>
+    <pubDate>Fri, 17 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/07advanced/</guid>
+    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
+import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+</item>
+<item>
+    <title>• Interactivity</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/06interactivity/</link>
+    <pubDate>Thu, 16 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/06interactivity/</guid>
+    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
+import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+</item>
+<item>
+    <title>• Widgets</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</link>
+    <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</guid>
+    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
+import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+</item>
+<item>
+    <title>• Creating a data visualisation</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</link>
+    <pubDate>Tue, 14 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <author>Alastair Tanner</author>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</guid>
+    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
+import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+</item>
+<item>
     <title>• Creating a rich data visualisation</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/03data/</link>
     <pubDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</pubDate>
