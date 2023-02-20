@@ -49,6 +49,7 @@ if st.session_state.data_preview == True:
 #    y=st.session_state.y_data,
 #    color="continent")
 
+
 chart = px.scatter(
     demographics_df,
     x=st.session_state.x_data,
@@ -62,6 +63,17 @@ chart = px.scatter(
     size_max=55,
     range_x=[100,100000],
     range_y=[25,90])
+
+
+#chart = px.scatter(
+#    demographics_df,
+#    x=st.session_state.x_data,
+#    y=st.session_state.y_data,
+#    color="continent",
+#    marginal_y="violin",
+#    marginal_x="box",
+#    trendline="ols",
+#    template="simple_white")
 
 
 #chart = px.scatter_matrix(
