@@ -49,7 +49,7 @@ Save the file (remember that Jupyter Lab will show a circle next to files that h
 streamlit run data_app.py
 ```
 
-The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you! A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it. You can stop the Terminal using `ctrl-c`.
+The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal using `ctrl-c`.
 
 {{< admonition type="tip" title="Python scripts for Streamlit are unusual" open=false >}}
 In the script we just created, notice that common features of Python are absent. There are currently no variables or functions, no familiar `print` or `return` values - so how is it doing anything?
@@ -89,19 +89,16 @@ Sidebars are a typical component of a data app, providing a tidy place to store 
 with st.sidebar:
     st.write("This text is in our sidebar.")
 ```
-
-{{< admonition type="tip" title="`with` blocks" open=false >}}
 Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. A common use of `with` is when working with files:
 
 ```Python
-# starting our with block
+# starting our <with> block
 with open("filename") as file:
    file.write("some text to put in the file")
-# once we de-indent we leave the with block, and the "open" command is undone.
+# once we de-indent we leave the <with> block, and the "open" command is undone.
+print("This line of code it outside the with block - in this case, the file is closed")
 ```
-
 Given the file writing operation is enclosed in a `with` block, the file is implicitly closed, along with the block. In the same way, we use `with` blocks in Streamlit, and our indentation expresses what is and isn't associated with the `with`!
-{{< /admonition >}}
 
 
 {{< admonition type="tip" title="Customisations." open=False >}}
@@ -109,9 +106,11 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 {{< /admonition >}}
 
 ## Exercise
-{{< admonition type="Exercise" title="Exercise: build your app's layout." open=true >}}
+{{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
 Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.
-- Add a descriptive subtitle.
+- Add a descriptive subtitle, below your main title.
+- Add an information box
+- Add an image to the top of the sidebar, using 
 
 - Add a file uploader box to the sidebar (look in the "Input Widgets" section).
 {{< /admonition >}}
