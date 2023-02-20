@@ -10,7 +10,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03data/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-20T15:21:54+00:00" />
+<meta property="article:modified_time" content="2023-02-20T16:46:50+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• Creating a rich data visualisation"/>
@@ -28,8 +28,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03data\/"
-        },"genre": "posts","wordcount":  309 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03data\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-20T15:21:54+00:00","publisher": {
+        },"genre": "posts","wordcount":  296 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03data\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-20T16:46:50+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -110,8 +110,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 </span></span></span><span class="line"><span class="cl"><span class="s2">    - Please use the options in the sidebar to explore the dataset.
 </span></span></span><span class="line"><span class="cl"><span class="s2">    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the &#34;autoscale&#34; button.&#34;&#34;&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="plotly-express">Plotly Express</h2>
-<p>We are going to use the graphics library <code>plotly</code> to create our data visualisations. There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. <code>plotly</code> comes with a simplified interface called <code>plotly.express</code>, which we will use.</p>
-<p>To bring <code>plotly</code> functionality into our script we need to import it. While we are writing some imports, we also need <code>pandas</code> ready for action, so let&rsquo;s bring that into our script. So, we will now have three imports at the top of our script:</p>
+<p>There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. <code>plotly</code> comes with a simplified interface called <code>plotly.express</code>, which we will use.</p>
+<p>To bring <code>plotly</code> functionality into our script we need to import it. While we are writing some imports, we also need <code>pandas</code> ready for action, so let&rsquo;s bring that into our script too. So, we will now have three imports at the top of our script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
