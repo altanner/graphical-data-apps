@@ -73,6 +73,8 @@ enableGitInfo = true
   title = ""
   # website description for RSS, SEO, Open Graph and Twitter Cards
   description = ""
+  # trying to make post count longer
+  paginate = 30
 
   [params.header]
       desktopMode = "fixed"
