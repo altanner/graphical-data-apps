@@ -75,10 +75,10 @@ The documentation has other text element examples - we will return to these in t
 
 Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
-### [Layout and containers](https://docs.streamlit.io/library/api-reference/layout)
-Another important skill in learning to create your data app is being able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:
+### [Page layout](https://docs.streamlit.io/library/api-reference/layout)
+We want to be able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:
 
-- containers (think of these as horizontally-arranged blocks)
+- containers (think of these as horizontally-arranged blocks, or rows)
 - columns (vertical blocks)
 - expanders (vertical blocks that can be minimised)
 - sidebars.
@@ -89,19 +89,15 @@ Sidebars are a typical component of a data app, providing a tidy place to store 
 with st.sidebar:
     st.write("This text is in our sidebar.")
 ```
-Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. A common use of `with` is when working with files:
+Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example `expander`, `tabs` and `columns`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
 
-```Python
-# starting our <with> block
-with open("filename") as file:
-   file.write("some text to put in the file")
-# once we de-indent we leave the <with> block, and the "open" command is undone.
-print("This line of code it outside the with block - in this case, the file is closed")
-```
-Given the file writing operation is enclosed in a `with` block, the file is implicitly closed, along with the block. In the same way, we use `with` blocks in Streamlit, and our indentation expresses what is and isn't associated with the `with`!
+### Other useful layout tools
+While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:
+- [images and other media elements](https://docs.streamlit.io/library/api-reference/media) (including video and audio)
+- [info and progress boxes](https://docs.streamlit.io/library/api-reference/status) (useful for highlighting instructions, results and outputs)
+- [interactive tables](https://docs.streamlit.io/library/api-reference/data)
 
-
-{{< admonition type="tip" title="Customisations." open=False >}}
+{{< admonition type="tip" title="Customisations." open=false >}}
 By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
@@ -109,10 +105,8 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 {{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
 Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.
 - Add a descriptive subtitle, below your main title.
-- Add an information box
-- Add an image to the top of the sidebar, using 
-
-- Add a file uploader box to the sidebar (look in the "Input Widgets" section).
+- Add an information box, using `st.info`, to the top of your sidebar.
+- Create two 
 {{< /admonition >}}
 
 
