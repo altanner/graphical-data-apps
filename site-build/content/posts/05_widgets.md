@@ -1,8 +1,8 @@
 ---
-title: "• Creating a data visualisation"
-subtitle: "How to control your graphing library."
+title: "5 • Widgets and charts"
+subtitle: "Linking up your interface with your charts."
 
-date: 2023-02-14T00:00:00+01:00
+date: 2023-02-15T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
