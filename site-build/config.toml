@@ -6,7 +6,7 @@ title = "Graphical Data Apps"
 theme = "LoveIt"
 
 # default amount of posts in each pages
-paginate = 20
+paginate = 50
 # whether to use emoji code
 enableEmoji = true
 # whether to use git commit log
