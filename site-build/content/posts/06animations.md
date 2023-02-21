@@ -1,8 +1,8 @@
 ---
-title: "• Widgets"
-subtitle: "Building the control panel for your app."
+title: "6 • Interactivity and animations"
+subtitle: "Animations add an extra dimension!"
 
-date: 2023-02-15T00:00:00+01:00
+date: 2023-02-16T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
