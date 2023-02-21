@@ -52,10 +52,10 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 </item>
 <item>
     <title>3 • Getting started with layout</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/03layout/</link>
     <pubDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/03layout/</guid>
     <description><![CDATA[Typing is better than copy-pasting  We provide code blocks through this course, which you can copy and paste to build your scripts. However, we strongly recommend that learners type out code manually. This might seem a minor point, but the benefits are:
  you get a feel for code syntax: spaces, quotes, indentation, colons, under_scores, etc, you gain a better understanding of what (the) [different] {brackets} do, most important of all, you will make mistakes!]]></description>
 </item>

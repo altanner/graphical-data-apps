@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>3 • Getting started with layout - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="3 • Getting started with layout" />
+<meta property="og:description" content="Typing is better than copy-pasting  We provide code blocks through this course, which you can copy and paste to build your scripts. However, we strongly recommend that learners type out code manually. This might seem a minor point, but the benefits are:
+ you get a feel for code syntax: spaces, quotes, indentation, colons, under_scores, etc, you gain a better understanding of what (the) [different] {brackets} do, most important of all, you will make mistakes!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
+<meta property="article:modified_time" content="2023-02-21T18:13:01+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="3 • Getting started with layout"/>
+<meta name="twitter:description" content="Typing is better than copy-pasting  We provide code blocks through this course, which you can copy and paste to build your scripts. However, we strongly recommend that learners type out code manually. This might seem a minor point, but the benefits are:
+ you get a feel for code syntax: spaces, quotes, indentation, colons, under_scores, etc, you gain a better understanding of what (the) [different] {brackets} do, most important of all, you will make mistakes!"/>
+<meta name="application-name" content="Graphical Data Apps">
+<meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><link rel="prev" href="https://alleetanner.github.io/graphical-data-apps/posts/02requirements/" /><link rel="next" href="https://alleetanner.github.io/graphical-data-apps/posts/03data/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/graphical-data-apps/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "3 • Getting started with layout",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
+        },"genre": "posts","wordcount":  1251 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-21T18:13:01+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alastair Tanner"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/graphical-data-apps/" title="Graphical Data Apps"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank"> All courses </a><a class="menu-item" href="/graphical-data-apps/posts"> Sections </a><a class="menu-item" href="/graphical-data-apps/about"> About </a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/graphical-data-apps/" title="Graphical Data Apps"><span class="header-title-pre"><i class="fa-solid fa-cube"></i> </i><i class="fa-brands fa-python"></i></span>  Graphical Data Apps in Python</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://alleetanner.github.io/code-teaching/" title="Courses" rel="noopener noreffer" target="_blank">All courses</a><a class="menu-item" href="/graphical-data-apps/posts" title="">Sections</a><a class="menu-item" href="/graphical-data-apps/about" title="">About</a><a class="menu-item" href="https://github.com/alleetanner/graphical-data-apps" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">3 • Getting started with layout</h1><h2 class="single-subtitle">Writing and running our first script.</h2><div class="post-meta">
+            <div class="post-meta-line"></div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-your-first-page">Creating your first page</a></li>
+    <li><a href="#the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference">The Streamlit API</a></a>
+      <ul>
+        <li><a href="#text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text">Text elements</a></a></li>
+        <li><a href="#page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Page layout</a></a></li>
+        <li><a href="#other-useful-layout-tools">Other useful layout tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#building-a-world-demographics-data-visualisation">Building a World Demographics Data Visualisation</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Typing is better than copy-pasting<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>We provide <code>code</code> blocks through this course, which you can copy and paste to build your scripts. However, we <strong>strongly recommend</strong> that learners type out code manually. This might seem a minor point, but the benefits are:</p>
+<ul>
+<li>you get a feel for code syntax: spaces, quotes, indentation, colons, <code>under_scores</code>, etc,</li>
+<li>you gain a better understanding of what <code>(the) [different] {brackets}</code> do,</li>
+<li><strong>most important of all</strong>, <em><strong>you will make mistakes!</strong></em> You can&rsquo;t learn without making mistakes, understanding what went wrong, and addressing the issue.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="creating-your-first-page">Creating your first page</h2>
+<p>In our text editor (of the Python file <code>data_app.py</code>), the first thing we need is to bring the <code>streamlit</code> library into our script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+</span></span></code></pre></div><p>Here, we are <code>import</code>ing the Streamlit library, and giving it the name <code>st</code> - this is the conventional alias for Streamlit, a little like we shorten <code>numpy</code> to <code>np</code> and <code>pandas</code> to <code>pd</code> (an alias doesn&rsquo;t do anything other than save us typing the whole word every time!)</p>
+<p>Below this, let&rsquo;s enter our first Streamlit command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;A graphical data app&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren&rsquo;t already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">streamlit run data_app.py
+</span></span></code></pre></div><p>The terminal should report something along the lines of <em>&ldquo;You can now view your Streamlit app in your browser&rdquo;</em> - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a <code>print()</code> call. You can stop the Terminal using <code>ctrl-c</code>.</p>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Python scripts for Streamlit are unusual<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>In the script we just created, notice that common features of Python are absent. There are currently no variables or functions, no familiar <code>print</code> or <code>return</code> values - so how is it doing anything?</p>
+<p>In the terminal, we ran <code>streamlit run data_app.py</code>, not <code>python data_app.py</code>. So, we are asking <code>streamlit</code> itself to interpret the Python file, when typically we ask the Python interpreter (a program) to interpret our Python script (a file). As such, <code>streamlit</code> will read our file, understand that <code>st</code> lines are directly calling the Streamlit API, and create / update the interface (the Streamlit browser tab) accordingly.</p>
+</div>
+        </div>
+    </div>
+<h2 id="the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">The Streamlit API</a>
+</h2>
+<p>Before building more of the page, let&rsquo;s find out where to get information on how to use Streamlit. Streamlit has <a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">clear documentation</a>
+, complete with embedded examples. Let&rsquo;s have a look through some of the main sections.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>What is an API?<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the &ldquo;control panel&rdquo; to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with <code>st.&lt;something&gt;()</code>, we are asking the Streamlit API to do something, using syntax that is consistent with Python.</div>
+        </div>
+    </div>
+<h3 id="text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">Text elements</a>
+</h3>
+<p>You now have a browser tab with your Streamlit app running. Let&rsquo;s add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements</a>
+ section of the API. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some text which is placed below the title for our app!&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>The documentation has other text element examples - we will return to these in the Exercise in a moment.</p>
+<p>Save the file, and notice that the Streamlit tab will say <strong>Source file changed</strong> and offers you <strong>Rerun</strong> and <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - now, every time we save the file, Streamlit will automatically rebuild the page for us.</p>
+<h3 id="page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Page layout</a>
+</h3>
+<p>We want to be able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:</p>
+<ul>
+<li>containers (think of these as horizontally-arranged blocks, or rows)</li>
+<li>columns (vertical blocks)</li>
+<li>expanders (vertical blocks that can be minimised)</li>
+<li>sidebars.</li>
+</ul>
+<p>Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is in our sidebar.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Here we are using <code>with</code> notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use <code>with</code> blocks for many layout instructions, for example <code>expander</code>, <code>tabs</code> and <code>columns</code>. See <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">the API docs</a>
+ for more details.</p>
+<h3 id="other-useful-layout-tools">Other useful layout tools</h3>
+<p>While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:</p>
+<ul>
+<li><a href="https://docs.streamlit.io/library/api-reference/media" target="_blank" rel="noopener noreffer">images and other media elements</a>
+ (including video and audio)</li>
+<li><a href="https://docs.streamlit.io/library/api-reference/status" target="_blank" rel="noopener noreffer">info and progress boxes</a>
+ (useful for highlighting instructions, results and outputs)</li>
+<li><a href="https://docs.streamlit.io/library/api-reference/data" target="_blank" rel="noopener noreffer">interactive tables</a>
+</li>
+</ul>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Customisations.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don&rsquo;t teach these in this course, but if you would like to learn more, search the documentation or for tutorials.</div>
+        </div>
+    </div>
+<h2 id="building-a-world-demographics-data-visualisation">Building a World Demographics Data Visualisation</h2>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise: build your app&#39;s layout.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Through the rest of this course we will be making a demographics data app. This uses a publicly accessible dataset with statistics on countries of the world, and how they have changed in the past few decades.
+Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
+Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app. To keep things neat, we are going to put most interface items into the sidebar, so the main body has plenty of space for our visualisation (we&rsquo;ll start to make that in the next section).</p>
+<ol>
+<li>Change the title of the page to &ldquo;World Demographics&rdquo;. Put it in the sidebar.</li>
+<li>Add an image to the sidebar, below the title, using <code>st.image()</code> - the name of the image is <code>globe.png</code>, we downloaded it earlier (or click it here if you need it again). The file <code>globe.png</code> needs to be in the same folder as your Python script.</li>
+<li>Add an information box, using <code>st.info()</code>, to the top of your sidebar. This will contain the text &ldquo;Welcome to the global demographic data explorer app!&rdquo;</li>
+</ol>
+</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Abstract<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Success<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>Failure<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw" aria-hidden="true"></i>Danger<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw" aria-hidden="true"></i>Bug<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>Example<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Check back in 2023!</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p>blahblah</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span></span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/graphical-data-apps/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/graphical-data-apps/posts/02requirements/" class="prev" rel="prev" title="2 ∙ Requirements and set up"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>2 ∙ Requirements and set up</a>
+            <a href="/graphical-data-apps/posts/03data/" class="next" rel="next" title="• Creating a rich data visualisation">• Creating a rich data visualisation<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.98.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/graphical-data-apps/" target="_blank">Alastair Tanner</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/graphical-data-apps/js/theme.min.js"></script></body>
+</html>
