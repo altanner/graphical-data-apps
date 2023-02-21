@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-12T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-20T14:45:25+00:00" />
+<meta property="article:modified_time" content="2023-02-21T12:45:19+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="• First steps"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/"
-        },"genre": "posts","wordcount":  1110 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-20T14:45:25+00:00","publisher": {
+        },"genre": "posts","wordcount":  1082 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/02streamlit_intro\/","datePublished": "2023-02-12T00:00:00+01:00","dateModified": "2023-02-21T12:45:19+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -82,7 +82,8 @@
     <li><a href="#the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference">The Streamlit API</a></a>
       <ul>
         <li><a href="#text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text">Text elements</a></a></li>
-        <li><a href="#layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Layout and containers</a></a></li>
+        <li><a href="#page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Page layout</a></a></li>
+        <li><a href="#other-useful-layout-tools">Other useful layout tools</a></li>
       </ul>
     </li>
     <li><a href="#exercise">Exercise</a></li>
@@ -140,11 +141,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some text which is placed below the title for our app!&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>The documentation has other text element examples - we will return to these in the Exercise in a moment.</p>
 <p>Save the file, and notice that the Streamlit tab will say <strong>Source file changed</strong> and offers you <strong>Rerun</strong> and <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - now, every time we save the file, Streamlit will automatically rebuild the page for us.</p>
-<h3 id="layout-and-containershttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Layout and containers</a>
+<h3 id="page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Page layout</a>
 </h3>
-<p>Another important skill in learning to create your data app is being able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:</p>
+<p>We want to be able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:</p>
 <ul>
-<li>containers (think of these as horizontally-arranged blocks)</li>
+<li>containers (think of these as horizontally-arranged blocks, or rows)</li>
 <li>columns (vertical blocks)</li>
 <li>expanders (vertical blocks that can be minimised)</li>
 <li>sidebars.</li>
@@ -152,14 +153,19 @@
 <p>Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is in our sidebar.&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Here we are using <code>with</code> notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. A common use of <code>with</code> is when working with files:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="c1"># starting our &lt;with&gt; block</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;filename&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">   <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;some text to put in the file&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># once we de-indent we leave the &lt;with&gt; block, and the &#34;open&#34; command is undone.</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;This line of code it outside the with block - in this case, the file is closed&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Given the file writing operation is enclosed in a <code>with</code> block, the file is implicitly closed, along with the block. In the same way, we use <code>with</code> blocks in Streamlit, and our indentation expresses what is and isn&rsquo;t associated with the <code>with</code>!</p>
-<div class="details admonition tip open">
+</span></span></code></pre></div><p>Here we are using <code>with</code> notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use <code>with</code> blocks for many layout instructions, for example <code>expander</code>, <code>tabs</code> and <code>columns</code>. See <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">the API docs</a>
+ for more details.</p>
+<h3 id="other-useful-layout-tools">Other useful layout tools</h3>
+<p>While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:</p>
+<ul>
+<li><a href="https://docs.streamlit.io/library/api-reference/media" target="_blank" rel="noopener noreffer">images and other media elements</a>
+ (including video and audio)</li>
+<li><a href="https://docs.streamlit.io/library/api-reference/status" target="_blank" rel="noopener noreffer">info and progress boxes</a>
+ (useful for highlighting instructions, results and outputs)</li>
+<li><a href="https://docs.streamlit.io/library/api-reference/data" target="_blank" rel="noopener noreffer">interactive tables</a>
+</li>
+</ul>
+<div class="details admonition tip">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Customisations.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
@@ -175,18 +181,9 @@
         <div class="details-content">
             <div class="admonition-content"><p>Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.</p>
 <ul>
-<li>
-<p>Add a descriptive subtitle, below your main title.</p>
-</li>
-<li>
-<p>Add an information box</p>
-</li>
-<li>
-<p>Add an image to the top of the sidebar, using</p>
-</li>
-<li>
-<p>Add a file uploader box to the sidebar (look in the &ldquo;Input Widgets&rdquo; section).</p>
-</li>
+<li>Add a descriptive subtitle, below your main title.</li>
+<li>Add an information box, using <code>st.info</code>, to the top of your sidebar.</li>
+<li>Create two</li>
 </ul>
 </div>
         </div>
