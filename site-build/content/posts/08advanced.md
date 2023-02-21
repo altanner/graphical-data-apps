@@ -1,8 +1,8 @@
 ---
-title: "• Sharing, deploying"
-subtitle: "Some further topics, and how to make your work public."
+title: "8 • Advanced aspects of data apps"
+subtitle: "Powerful things that are worth pointing out."
 
-date: 2023-02-17T00:00:00+01:00
+date: 2023-02-18T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
