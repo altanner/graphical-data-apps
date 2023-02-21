@@ -1,8 +1,8 @@
 ---
-title: "• First steps"
+title: "3 • Getting started with layout"
 subtitle: "Writing and running our first script."
 
-date: 2023-02-12T00:00:00+01:00
+date: 2023-02-13T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
