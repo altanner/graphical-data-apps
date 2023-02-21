@@ -101,12 +101,14 @@ While you can explore the docs more fully in your own time, and as you need for 
 By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
-## Exercise
+## Building a World Demographics Data Visualisation
 {{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
-Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app.
-- Add a descriptive subtitle, below your main title.
-- Add an information box, using `st.info`, to the top of your sidebar.
-- Create two 
+Through the rest of this course we will be making a demographics data app. This uses a publicly accessible dataset with statistics on countries of the world, and how they have changed in the past few decades.
+Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
+Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app. To keep things neat, we are going to put most interface items into the sidebar, so the main body has plenty of space for our visualisation (we'll start to make that in the next section).
+1. Change the title of the page to "World Demographics". Put it in the sidebar.
+2. Add an image to the sidebar, below the title, using `st.image()` - the name of the image is `globe.png`, we downloaded it earlier (or click it here if you need it again). The file `globe.png` needs to be in the same folder as your Python script.
+3. Add an information box, using `st.info()`, to the top of your sidebar. This will contain the text "Welcome to the global demographic data explorer app!"
 {{< /admonition >}}
 
 
