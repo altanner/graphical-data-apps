@@ -51,9 +51,9 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
 </item>
 <item>
-    <title>• First steps</title>
+    <title>3 • Getting started with layout</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</link>
-    <pubDate>Sun, 12 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <pubDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/02streamlit_intro/</guid>
     <description><![CDATA[Typing is better than copy-pasting  We provide code blocks through this course, which you can copy and paste to build your scripts. However, we strongly recommend that learners type out code manually. This might seem a minor point, but the benefits are:
