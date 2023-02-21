@@ -36,27 +36,27 @@ The words **library**, **module** and **package** are often used interchangeably
 ## Your experience
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should understand **functions, conditionals, loops and modules**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you will be ready to approach this course.
-* at least a little experience of the [`pandas`](https://pandas.pydata.org/) library.
 * [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those).
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ## Getting set up
-Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using [this `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml) file (right-click and choose "save link as"). The file contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager. If you are interested, or you need to do things manually, the libraries this installs are:
+We provide [some files](https://github.com/alleetanner/graphical-data-apps/raw/main/data-app-files.zip) we need for this course. Download this and unzip it. We also need an empty folder to work in. So, create an appropriate new folder, and copy the files into it.
 
-- `numpy` - provides [numerical and mathematics tools](https://numpy.org/),
-- `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe,
-- `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/),
-- `plotly-express` - plotly on [easy mode](https://plotly.com/python/plotly-express/), perfect for beginners,
-- `streamlit` - our [data app interface builder](https://streamlit.io/).
+Before we begin, we will need to create a new **environment** (see the glossary above for a definition!). We can do this using the `environment.yml` provided. An `environment.yml` file contains a list of the libraries (also known as dependencies) we need, in a format understood by `conda`, Anaconda's package manager. If you are interested, or if you need to do things manually, the libraries this installs are:
 
-We will be working with a demonstration dataset built into the `plotly` library, so for this course we only need our environment file.
+- `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe
+- `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/)
+- `plotly-express` - plotly on [easy mode](https://plotly.com/python/plotly-express/)
+- `streamlit` - our [data app interface builder](https://streamlit.io/)
 
 ### Anaconda Navigator
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python “environment” (see the glossary above for more detail on environments). 
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python environment. 
 
-Once you have the [the `environment.yml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/environment.yml), we can use it to build a new Python environment. In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded (you might have to find it, in your default download folder). Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need for this course. **This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
+In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded. Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need. 
 
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once it is complete, you will see in the the Environments menu that `data-apps` now exists (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session. We are now ready to start!
+**This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
+
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="250" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once Anaconda has finished getting and installing our libraries, you will see in the the Environments menu that a new environment called `data-apps` now exists (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session. We are now ready to start!
 
 ### Arranging the Jupyter Lab tab
 In the Jupyter Lab **file navigator** in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**. Name the Python file `data_app.py` (you might need to right-click on the file and select "*Rename*").
