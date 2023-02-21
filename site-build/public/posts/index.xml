@@ -67,9 +67,9 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
  Library : a collection of python files that expand the ability of python, using the import command. These are like accessories or modifications, typically giving you access to powerful, professional functions and classes written by collaborations of expert coders.  A library can be standard (it comes built into python), for example time or math, or 3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager.]]></description>
 </item>
 <item>
-    <title>• Why build data apps?</title>
+    <title>1 • Why build data apps?</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</link>
-    <pubDate>Fri, 10 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <pubDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/00intro/</guid>
     <description><![CDATA[What are data apps? A data app is a type of app that allows exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data is is to:
