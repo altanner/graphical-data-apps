@@ -1,8 +1,8 @@
 ---
-title: "• Creating a rich data visualisation"
+title: "4 • Getting started with charts"
 subtitle: "How to control your graphing library."
 
-date: 2023-02-13T00:00:00+01:00
+date: 2023-02-14T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
