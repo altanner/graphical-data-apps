@@ -1,8 +1,8 @@
 ---
-title: "∙ Requirements and set up"
+title: "2 ∙ Requirements and set up"
 subtitle: "What you will need, and how to get your computer ready."
 
-date: 2023-02-11T00:00:00+01:00
+date: 2023-02-12T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
