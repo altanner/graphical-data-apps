@@ -9,7 +9,7 @@ st.set_page_config(
 # use pandas to read CSV file into a dataframe
 demographics_df = pd.read_csv("demo_dataset.csv")
 
-# for my csv
+# the names of columns in the csv file
 column_names = ["Life expectancy", "HDI index", "CO2 per capita", "GDP per capita"]
 
 ### build the sidebar

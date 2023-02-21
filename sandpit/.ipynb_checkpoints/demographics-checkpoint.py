@@ -9,10 +9,10 @@ st.set_page_config(
 # use pandas to read CSV file into a dataframe
 demographics_df = pd.read_csv("demo_dataset.csv")
 
-# for my csv
+# the names of columns in the csv file
 column_names = ["Life expectancy", "HDI index", "CO2 per capita", "GDP per capita"]
 
-# build the sidebar
+### build the sidebar
 with st.sidebar:
     
     # put a title in the main page body
@@ -53,7 +53,7 @@ with st.sidebar:
         max_value=90,
         value=30)
 
-# end of sidebar!
+### end of sidebar!
 
 # check if user wants an animation or static visual
 if animate_vis == False:
