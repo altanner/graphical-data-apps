@@ -33,11 +33,11 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
 </item>
 <item>
-    <title>• Creating a data visualisation</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</link>
-    <pubDate>Tue, 14 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <title>5 • Widgets and charts</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/05_widgets/</link>
+    <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/05_widgets/</guid>
     <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
 import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
 </item>
