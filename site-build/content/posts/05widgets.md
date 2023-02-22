@@ -20,7 +20,9 @@ share:
 comment:
   enable: false
 ---
-
+1. year slider
+2. radio buttons
+3. 
 At the end of the last section, you should have your Python script looking a little like this:
 ```Python
 import streamlit as st
