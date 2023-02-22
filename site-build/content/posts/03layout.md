@@ -83,6 +83,7 @@ We want to be able to control where things appear on the page. Streamlit provide
 - expanders (vertical blocks that can be minimised)
 - sidebars.
 
+### [Sidebars](https://docs.streamlit.io/library/api-reference/layout/st.sidebar)
 Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to the bottom of your script:
 
 ```Python
@@ -90,6 +91,25 @@ with st.sidebar:
     st.write("This text is in our sidebar.")
 ```
 Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example `expander`, `tabs` and `columns`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
+
+### [Columns](https://docs.streamlit.io/library/api-reference/layout/st.columns)
+Columns allow us to vertically partition the app. Creating them requires setting _how many_ there are, then using them with `with`, as in the sidebar example. Here we are creating two columns:
+
+```Python
+column1, column2 = st.columns(2)
+
+with column1:
+    st.write("Here is column 1")
+    
+with column2:
+    st.write("This is column 2")
+```
+We can create any number of columns we like, for example `column1, column2, column3 = st.columns(3)` would create three columns. We can also control the widths by passing a list of the *ratios* of the columns:
+
+```Python
+column1, column2 = st.columns([1, 4])
+```
+This will create two columns, with the right hand one being four times wider than the left hand one.
 
 ### Other useful layout tools
 While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:
