@@ -26,6 +26,7 @@ At the end of the last section, our running Python file creates a page, lays out
 ## Bringing our data into the script
 We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that `streamlit` is very much built with `pandas` in mind. Most of Streamlit data workflows and visualisations will expect to be working with dataframes, and this is the case now too.
 
+### Loading up `pandas`
 Firstly, we need to update our `import`s to include everything we need for the rest of this course. We will add both `pandas` and `plotly.express`, so we will have three `import`s in total, at the top of our script, with their conventional aliases, `st`, `pd` and `px` respectively:
 ```Python
 import streamlit as st
@@ -36,27 +37,29 @@ Now that we have `pandas` ready for use, we can read our dataset into a datafram
 ```Python
 demo_df = pd.read_csv("demo_dataset.csv")
 ```
+### Viewing our data
 Before we go any further, let's examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the **end** of the script, add this to the end:
 ```Python
-
+st.dataframe(demo_df)
 ```
 Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.
 
-We cover [widgets](ZXXXX) in the next section, but right now we want to quickly add a toggle for visibility of this dataframe. Go to your code block starting `with st.sidebar:`, and inside this block (ie, indented) add
+We don't want to see this all the time, so we are going to add a checkbox to control this. (We cover [widgets](ZXXXX) in more depth in the next section, but right now we want to add a toggle.) Go to your code block starting `with st.sidebar:`, and inside this block (ie, indented) add
 ```Python
 df_view = st.checkbox(label="View dataframe")
 ```
-Here we are assigning the state of the checkbox to the variable called `df_view`. A checkbox is a boolean, so it can only be `True` or `False`. We will use this value to trigger if Streamlit shows us the dataframe, by putting our `st.dataframe(demo_df)` into a conditional block:
+Here we are assigning the state of the checkbox to a variable called `df_view`. In Streamlit, a checkbox is a boolean, so it can only be `True` or `False`. We will use this value to trigger if Streamlit shows us the dataframe, by putting our `st.dataframe(demo_df)` into a conditional block. Find your line `st.dataframe(demo_df)`, and pop it into a conditional block:
 ```Python
 if df_view == True:
     st.dataframe(demo_df)
 ```
+Save this, and give it a test in the browser window.
 
-## Plotly Express
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive. powerful.
+## Creating a chart
+There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive.
 
-### Creating a basic scatter plot
-Plotly 
+### A basic scatter plot
+Plotly works on dataframes, which we have ready for it. There are two steps to this process
 
 
 ### Section title
