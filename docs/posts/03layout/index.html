@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T14:33:09+00:00" />
+<meta property="article:modified_time" content="2023-02-22T14:47:30+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Getting started with layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1358 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-22T14:33:09+00:00","publisher": {
+        },"genre": "posts","wordcount":  1377 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-22T14:47:30+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -79,16 +79,16 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#creating-your-first-page">Creating your first page</a></li>
-    <li><a href="#the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference">The Streamlit API</a></a>
+    <li><a href="#the-streamlit-api">The Streamlit API</a>
       <ul>
-        <li><a href="#text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text">Text elements</a></a></li>
-        <li><a href="#page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Page layout</a></a></li>
-        <li><a href="#sidebarshttpsdocsstreamlitiolibraryapi-referencelayoutstsidebar"><a href="https://docs.streamlit.io/library/api-reference/layout/st.sidebar">Sidebars</a></a></li>
-        <li><a href="#columnshttpsdocsstreamlitiolibraryapi-referencelayoutstcolumns"><a href="https://docs.streamlit.io/library/api-reference/layout/st.columns">Columns</a></a></li>
+        <li><a href="#text-elements">Text elements</a></li>
+        <li><a href="#page-layout">Page layout</a></li>
+        <li><a href="#sidebars">Sidebars</a></li>
+        <li><a href="#columns">Columns</a></li>
         <li><a href="#other-useful-layout-tools">Other useful layout tools</a></li>
       </ul>
     </li>
-    <li><a href="#building-a-world-demographics-data-visualisation">Building a World Demographics Data Visualisation</a></li>
+    <li><a href="#creating-a-meaningful-layout">Creating a meaningful layout</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition tip">
@@ -124,49 +124,48 @@
 </div>
         </div>
     </div>
-<h2 id="the-streamlit-apihttpsdocsstreamlitiolibraryapi-reference"><a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">The Streamlit API</a>
-</h2>
-<p>Before building more of the page, let&rsquo;s find out where to get information on how to use Streamlit. Streamlit has <a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">clear documentation</a>
+<h2 id="the-streamlit-api">The Streamlit API</h2>
+<p>Before building more of the page, let&rsquo;s find out where to get information on <a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">how to use Streamlit</a>
+. Streamlit has <a href="https://docs.streamlit.io/library/api-reference" target="_blank" rel="noopener noreffer">clear documentation</a>
 , complete with embedded examples. Let&rsquo;s have a look through some of the main sections.</p>
-<div class="details admonition tip open">
+<div class="details admonition tip">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>What is an API?<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the &ldquo;control panel&rdquo; to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with <code>st.&lt;something&gt;()</code>, we are asking the Streamlit API to do something, using syntax that is consistent with Python.</div>
+            <div class="admonition-content">An API is an <strong>Application Programming Interface</strong>. It can be a confusing term, not least because all three words in it have vague definitions. The essential word in the acronym is &ldquo;interface&rdquo;: think of the API as the &ldquo;control panel&rdquo; to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with <code>st.&lt;something&gt;()</code>, we are asking the Streamlit API to act, using syntax that is consistent with Python.</div>
         </div>
     </div>
-<h3 id="text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">Text elements</a>
-</h3>
-<p>You now have a browser tab with your Streamlit app running. Let&rsquo;s add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements</a>
- section of the API. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
+<h3 id="text-elements">Text elements</h3>
+<p>You now have a browser tab with your Streamlit app running. Let&rsquo;s add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements section of the API</a>
+. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some text which is placed below the title for our app!&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>The documentation has other text element examples - we will return to these in the Exercise in a moment.</p>
 <p>Save the file, and notice that the Streamlit tab will say <strong>Source file changed</strong> and offers you <strong>Rerun</strong> and <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - now, every time we save the file, Streamlit will automatically rebuild the page for us.</p>
-<h3 id="page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Page layout</a>
-</h3>
+<h3 id="page-layout">Page layout</h3>
 <p>The first thing we are going to change is the name it is given in a browser tab, and how it is presented on both desktop and mobile browsers. Below your <code>import</code> command, but above everything else, add this line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;My data app&#34;</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Now that is done, we want to know how to control where things appear on the page. Streamlit provides several ways to control page layout, for example:</p>
+</span></span></code></pre></div><p>Now that is done, we want to know how to <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">control where things appear on the page</a>
+. Streamlit provides several ways to control page layout, for example:</p>
 <ul>
 <li>containers (think of these as horizontally-arranged blocks, or rows)</li>
 <li>columns (vertical blocks)</li>
-<li>expanders (vertical blocks that can be minimised)</li>
+<li>expanders (vertical blocks, that can be minimised)</li>
 <li>sidebars.</li>
 </ul>
-<h3 id="sidebarshttpsdocsstreamlitiolibraryapi-referencelayoutstsidebar"><a href="https://docs.streamlit.io/library/api-reference/layout/st.sidebar" target="_blank" rel="noopener noreffer">Sidebars</a>
-</h3>
-<p>Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
+<h3 id="sidebars">Sidebars</h3>
+<p><a href="https://docs.streamlit.io/library/api-reference/layout/st.sidebar" target="_blank" rel="noopener noreffer">Sidebars</a>
+ are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is in our sidebar.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Here we are using <code>with</code> notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use <code>with</code> blocks for many layout instructions, for example <code>expander</code>, <code>tabs</code> and <code>columns</code>. See <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">the API docs</a>
  for more details.</p>
-<h3 id="columnshttpsdocsstreamlitiolibraryapi-referencelayoutstcolumns"><a href="https://docs.streamlit.io/library/api-reference/layout/st.columns" target="_blank" rel="noopener noreffer">Columns</a>
-</h3>
-<p>Columns allow us to vertically partition the app. Creating them requires setting <em>how many</em> there are, then placing code inside <code>with</code> blocks as appropriate, as in the sidebar example. Here we are creating two columns:</p>
+<h3 id="columns">Columns</h3>
+<p><a href="https://docs.streamlit.io/library/api-reference/layout/st.columns" target="_blank" rel="noopener noreffer">Columns</a>
+ allow us to vertically partition the app. Creating them requires setting <em>how many</em> there are, then placing code inside <code>with</code> blocks as appropriate, just as in the sidebar example. Here we are creating two columns:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
+</span></span></code></pre></div><p>and then we can place items into those columns, for example&quot;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is column 1&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
@@ -189,17 +188,18 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Customisations.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don&rsquo;t teach these in this course, but if you would like to learn more, search the documentation or for tutorials.</div>
+            <div class="admonition-content">By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. If you would like to learn more, search the documentation or for tutorials.</div>
         </div>
     </div>
-<h2 id="building-a-world-demographics-data-visualisation">Building a World Demographics Data Visualisation</h2>
+<h2 id="creating-a-meaningful-layout">Creating a meaningful layout</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise: build your app&#39;s layout.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>Through the rest of this course we will be building a visualiser for World Demographics data app. Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.</p>
+            <div class="admonition-content"><p>Through the rest of this course we will be building a <strong>visualiser for World Demographics Data</strong>. Our first exercise is to prepare our layout for this. We will edit some of the things we have already made, and create some new items as well. Each time you save the file, Streamlit will automatically update XXXXXXXX</p>
 <ol>
+<li>Remove the <code>st.write()</code> line that we added earlier.</li>
 <li>Change the <strong>title</strong> in the page to &ldquo;World Demographics&rdquo;. Put it in the sidebar.</li>
 <li>Change the <strong>tab title of the page</strong> to &ldquo;Demo App&rdquo; (modify the contents of <code>st.set_page_config()</code>).</li>
 <li>Create <strong>two</strong> columns in the main app space, with the left column being five times wider than the right one.</li>
