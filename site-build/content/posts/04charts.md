@@ -21,41 +21,27 @@ comment:
   enable: false
 ---
 
-At the end of the last section, you should have your Python script looking a little like this:
+At the end of the last section, our running Python file creates a page, lays out a couple of components. In this section, we will be bringing data into the app, and creating our first visualisation.
+
+## Bringing our data into the script
+We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that `streamlit` is very much built with `pandas` in mind. Most of Streamlit data workflows and visualisations will expect to be working with dataframes, and this is the case now too.
+
+Firstly, we need to update our `import`s to include everything we need for the rest of this course. We will add both `pandas` and `plotly.express`, so we will have three `import`s in total, at the top of our script, with their conventional aliases, `st`, `pd` and `px` respectively:
 ```Python
 import streamlit as st
-
-st.set_page_config(
-    page_title="A Demographics Data App",
-    layout="wide")
-
-# use pandas to read csv file into a dataframe
-demographics_df = pd.read_csv("demo_dataset.csv")
-
-# create the sidebar
-with st.sidebar:
-    st.image("globe.png")
-    st.header("Demographic Data")
-    st.info("Welcome to the global demographic explorer data app.")
-
-# create the information box at the top of the page
-with st.expander(label="World Demographics Data Explorer: click for instructions"):
-    st.info("""World Demographics Data Explorer
-    - This app explores information about social, economic and environmental development at local, national and global levels.
-    - Please use the options in the sidebar to explore the dataset.
-    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the "autoscale" button.""")
+import pandas as pd
+import plotly.express as px
+```
+Now that we have `pandas` ready for use, we can read our dataset into a dataframe. We are using the dataset provided in the course materials, `demo_dataset.csv`, which will need to be in your working folder.
+```Python
+demo_df = pd.read_csv("demo_dataset.csv")
 ```
 
 ## Plotly Express
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. `plotly` comes with a simplified interface called `plotly.express`, which we will use.
+There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive. powerful.
 
-To bring `plotly` functionality into our script we need to import it. While we are writing some imports, we also need `pandas` ready for action, so let's bring that into our script too. So, we will now have three imports at the top of our script:
-```Python
-import streamlit as st
-import plotly.express as px
-import pandas as pd
-```
-`px` is the conventional alias for `plotly.express`, and `pd` is the shortened name of `pandas`.
+### Creating a basic scatter plot
+
 
 
 ### Section title
