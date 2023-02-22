@@ -57,15 +57,15 @@ In the script we just created, notice that common features of Python are absent.
 In the terminal, we ran `streamlit run data_app.py`, not `python data_app.py`. So, we are asking `streamlit` itself to interpret the Python file, when typically we ask the Python interpreter (a program) to interpret our Python script (a file). As such, `streamlit` will read our file, understand that `st` lines are directly calling the Streamlit API, and create / update the interface (the Streamlit browser tab) accordingly.
 {{< /admonition >}}
 
-## [The Streamlit API](https://docs.streamlit.io/library/api-reference)
-Before building more of the page, let's find out where to get information on how to use Streamlit. Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. Let's have a look through some of the main sections.
+## The Streamlit API
+Before building more of the page, let's find out where to get information on [how to use Streamlit](https://docs.streamlit.io/library/api-reference). Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. Let's have a look through some of the main sections.
 
-{{< admonition type="tip" title="What is an API?"  open=False >}}
-An API is an Application Programming Interface. It can be a confusing term, not least because all three words in it have vague definitions. Here though, we are using Streamlit, interfacing via Python - think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to do something, using syntax that is consistent with Python.
+{{< admonition type="tip" title="What is an API?"  open=false >}}
+An API is an **Application Programming Interface**. It can be a confusing term, not least because all three words in it have vague definitions. The essential word in the acronym is "interface": think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to act, using syntax that is consistent with Python.
 {{< /admonition >}}
 
-### [Text elements](https://docs.streamlit.io/library/api-reference/text)
-You now have a browser tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the [text elements](https://docs.streamlit.io/library/api-reference/text) section of the API. Try adding this **below your `st.title()` line**
+### Text elements
+You now have a browser tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the [text elements section of the API](https://docs.streamlit.io/library/api-reference/text). Try adding this **below your `st.title()` line**
 
 ```Python
 st.write("Here is some text which is placed below the title for our app!")
@@ -75,35 +75,38 @@ The documentation has other text element examples - we will return to these in t
 
 Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
-### [Page layout](https://docs.streamlit.io/library/api-reference/layout)
+### Page layout
 The first thing we are going to change is the name it is given in a browser tab, and how it is presented on both desktop and mobile browsers. Below your `import` command, but above everything else, add this line:
 
 ```Python
 st.set_page_config(page_title="My data app", layout="wide")
 ```
 
-Now that is done, we want to know how to control where things appear on the page. Streamlit provides several ways to control page layout, for example:
+Now that is done, we want to know how to [control where things appear on the page](https://docs.streamlit.io/library/api-reference/layout). Streamlit provides several ways to control page layout, for example:
 
 - containers (think of these as horizontally-arranged blocks, or rows)
 - columns (vertical blocks)
-- expanders (vertical blocks that can be minimised)
+- expanders (vertical blocks, that can be minimised)
 - sidebars.
 
-### [Sidebars](https://docs.streamlit.io/library/api-reference/layout/st.sidebar)
-Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to the bottom of your script:
+### Sidebars
+[Sidebars](https://docs.streamlit.io/library/api-reference/layout/st.sidebar) are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to the bottom of your script:
 
 ```Python
 with st.sidebar:
     st.write("This text is in our sidebar.")
 ```
+
 Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example `expander`, `tabs` and `columns`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
 
-### [Columns](https://docs.streamlit.io/library/api-reference/layout/st.columns)
-Columns allow us to vertically partition the app. Creating them requires setting _how many_ there are, then placing code inside `with` blocks as appropriate, as in the sidebar example. Here we are creating two columns:
+### Columns
+[Columns](https://docs.streamlit.io/library/api-reference/layout/st.columns) allow us to vertically partition the app. Creating them requires setting _how many_ there are, then placing code inside `with` blocks as appropriate, just as in the sidebar example. Here we are creating two columns:
 
 ```Python
 column1, column2 = st.columns(2)
-
+```
+and then we can place items into those columns, for example"
+```Python
 with column1:
     st.write("Here is column 1")
     
@@ -124,17 +127,18 @@ While you can explore the docs more fully in your own time, and as you need for 
 - [interactive tables](https://docs.streamlit.io/library/api-reference/data)
 
 {{< admonition type="tip" title="Customisations." open=false >}}
-By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. We don't teach these in this course, but if you would like to learn more, search the documentation or for tutorials.
+By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. If you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
-## Building a World Demographics Data Visualisation
+## Creating a meaningful layout
 {{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
-Through the rest of this course we will be building a visualiser for World Demographics data app. Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
-1. Change the **title** in the page to "World Demographics". Put it in the sidebar.
-2. Change the **tab title of the page** to "Demo App" (modify the contents of `st.set_page_config()`).
-3. Create **two** columns in the main app space, with the left column being five times wider than the right one.
-4. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!"
-5. Add an image to the **right hand column**, using `st.image()`. We will use the image `globe.png`, included with the [course resources download](XXXX) we got earlier
+Through the rest of this course we will be building a **visualiser for World Demographics Data**. Our first exercise is to prepare our layout for this. We will edit some of the things we have already made, and create some new items as well. Each time you save the file, Streamlit will automatically update XXXXXXXX
+1. Remove the `st.write()` line that we added earlier.
+2. Change the **title** in the page to "World Demographics". Put it in the sidebar.
+3. Change the **tab title of the page** to "Demo App" (modify the contents of `st.set_page_config()`).
+4. Create **two** columns in the main app space, with the left column being five times wider than the right one.
+5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!"
+6. Add an image to the **right hand column**, using `st.image()`. We will use the image `globe.png`, included with the [course resources download](XXXX) we got earlier
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Solution: layout exercise" open=false >}}
