@@ -10,7 +10,7 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T17:44:51+00:00" />
+<meta property="article:modified_time" content="2023-02-22T17:49:17+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Getting started with charts"/>
@@ -28,8 +28,8 @@ Bringing our data into the script We will be using pandas to read our CSV file i
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1189 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T17:44:51+00:00","publisher": {
+        },"genre": "posts","wordcount":  1212 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T17:49:17+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -168,6 +168,7 @@ We create our chart object like this:</p>
 <li>We can control the size of points. Add a parameter called <code>size</code>, and assign the column <code>&quot;CO2 per capita&quot;</code> to it (note that any dataframe column name is a string).</li>
 <li>Our mouse-over is not very useful right now. Add a parameter called <code>hover_name</code>, and assign the column <code>&quot;Country&quot;</code> to it.</li>
 <li>The chart can use the vertical space a bit better. Add a parameter called <code>height</code>, and give an integer value to this in pixels (choose a height suitable for your screen; for me, <code>height=650</code> fits best, but for you it might be different.</li>
+<li>Finally, let&rsquo;s add trendlines for each continent. Add the parameter <code>trendline</code>, and assign <code>&quot;lowess&quot;</code> (Locally Weighted Scatterplot Smoothing) as the line-building method.</li>
 </ol>
 </div>
         </div>
@@ -218,6 +219,7 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">trendline</span><span class="o">=</span><span class="s2">&#34;lowess&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># display the chart in the main app area</span>
