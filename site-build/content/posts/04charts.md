@@ -86,10 +86,30 @@ OK, so we have built the `chart` object - now we ask Streamlit to show it to us 
 ```Python
 st.plotly_chart(chart)
 ```
-Save your file, and explore the visual! Investigate what the icons at the top right of your chart do.
-### Section title
-* bullet1
-* bullt2
+Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost.
+
+Before we move on, let's make better use of the space we have, by adding an argument to `st.plotly_chart(chart)`:
+```Python
+st.plotly_chart(chart, use_container_width=True)
+```
+This is a useful argument to use, especially if you have a more complex layout with columns and containers.
+
+### Beginning customising our chart
+This is a nice start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let's colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:
+```Python
+chart = px.scatter(
+    data_frame=demo_df,
+    x="Life expectancy",
+    y="GDP per capita",
+    color="Continent")
+```
+(Note that the `color` argument is spelled in International English!) Save, and notice the changes.
+
+## Exercise: building a prettier visualisation
+{{< admonition type="question" title="Exercise 2: Prettier visuals open=true >}}
+So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data
+1. 
+{{< /admonition >}}
 
 Normal text body.
 
@@ -97,10 +117,7 @@ Normal text body.
 - Warning1
 - Warning2
 {{< /admonition >}}
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
-{{< /admonition >}}
+
 
 ### Another section
 blahfdajkfhu aefuibahj rwefyugr
