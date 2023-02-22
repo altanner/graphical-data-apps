@@ -56,12 +56,37 @@ if df_view == True:
 Save this, and give it a test in the browser window.
 
 ## Creating a chart
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive.
+Now that we have our data available, we can begin work on visualising it. As mentioned, we are using [Plotly](https://plotly.com/python/), for a number of reasons:
+- it has an intermediate learning curve
+- the [documentation](https://plotly.com/python-api-reference/) is good
+- the syntax is easy to use, without being over-simplified
+- the graphs it creates are good-looking, customisable and interactive.
+
+There are two steps to getting our data from the dataframe to into a graphic:
+1. Creating a chart object
+2. Asking Streamlit to present this chart object
 
 ### A basic scatter plot
-Plotly works on dataframes, which we have ready for it. There are two steps to this process
+Plotly works on dataframes, which we have ready for it. We will build up to a more sophisticated visualisation later, but as an absolute minimum, a Plotly scatter chart needs three things: 
+1. The datafame Plotly is working with
+2. The data to plot on the `x` axis (ie, one of the dataframe columns)
+3. The data to plot on the `y` axis (another dataframe column)
 
+For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let's choose the columns `Life expectancy` as our `x`, and `GDP per capita` as our `y`.
+We create our chart object like this:
+```Python
+chart = px.scatter(
+    data_frame=demo_df,
+    x="Life expectancy",
+    y="GDP per capita")
+```
+Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy!
 
+OK, so we have built the `chart` object - now we ask Streamlit to show it to us by handing it to `st.plotly_chart()`. Add this at the bottom of your script:
+```Python
+st.plotly_chart(chart)
+```
+Save your file, and explore the visual! Investigate what the icons at the top right of your chart do.
 ### Section title
 * bullet1
 * bullt2
