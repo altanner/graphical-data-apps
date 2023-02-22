@@ -47,8 +47,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <pubDate>Tue, 14 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</guid>
-    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+    <description><![CDATA[At the end of the last section, our running Python file creates a page, lays out a couple of components. In this section, we will be bringing data into the app, and creating our first visualisation.
+Bringing our data into the script We will be using pandas to read our CSV file in. While we do not use pandas any further in this course, keep in mind that streamlit is very much built with pandas in mind.]]></description>
 </item>
 <item>
     <title>3 • Getting started with layout</title>
