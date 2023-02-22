@@ -38,8 +38,10 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</guid>
-    <description><![CDATA[At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st.]]></description>
+    <description><![CDATA[year slider radio buttons   st.set_page_config( page_title=&ldquo;A Demographics Data App&rdquo;, layout=&ldquo;wide&rdquo;)
+use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&ldquo;demo_dataset.csv&rdquo;)
+create the sidebar with st.sidebar: st.image(&ldquo;globe.png&rdquo;) st.header(&ldquo;Demographic Data&rdquo;) st.info(&ldquo;Welcome to the global demographic explorer data app.&rdquo;)
+create the information box at the top of the page with st.expander(label=&ldquo;World Demographics Data Explorer: click for instructions&rdquo;): st.info(&ldquo;&ldquo;&ldquo;World Demographics Data Explorer - This app explores information about social, economic and environmental development at local, national and global levels.]]></description>
 </item>
 <item>
     <title>4 • Getting started with charts</title>
