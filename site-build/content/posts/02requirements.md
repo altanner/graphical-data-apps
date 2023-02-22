@@ -41,9 +41,9 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ## Getting set up
-We provide [some files](https://github.com/alleetanner/graphical-data-apps/raw/main/data-app-files.zip) we need for this course. Download and unzip this. We also need an empty folder to work in. So, create an appropriate new folder, and copy the files into it.
+We provide [some files](https://github.com/alleetanner/graphical-data-apps/raw/main/data-apps.zip) we need for this course. Download and unzip this. We also need an empty folder to work in. So, create an appropriate new folder, and copy the files into it.
 
-We will be working in **Jupyter Lab**, a browser-based Python IDE provided by **Anaconda**. Before we begin, Anaconda will need to create a new **environment** (see the glossary above for a definition!). We can do this using the `environment.yml` file provided. An `environment.yml` contains a list of the libraries we need, in a format understood by `conda`, Anaconda's package manager. If you are interested, or if you need to do things manually, the libraries this installs are:
+We will be working in **Jupyter Lab**, a browser-based Python IDE provided by **Anaconda**. Before we begin, Anaconda will need to create a new **environment** (see the glossary above for a definition!). We can do this using the `data-apps.yml` file provided. This contains a list of the libraries we need (and their own dependencies), in a format understood by `conda`, Anaconda's package manager. If you are interested, or if you need to do things manually, the libraries this installs are:
 
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe
 - `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/)
@@ -51,9 +51,9 @@ We will be working in **Jupyter Lab**, a browser-based Python IDE provided by **
 - `streamlit` - the [data app interface builder](https://streamlit.io/) we are using
 
 ### Anaconda Navigator
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). We are going to create a new Python environment. 
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). Let's use Anaconda to build a new Environment. 
 
-In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `environment.yml` file that you downloaded. Name this new environment `data-apps`, then click to continue. Anaconda will now install the dependencies we need. 
+In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `data-apps.yml` file that you downloaded. Start the process by clicking "Import", and Anaconda will now install the dependencies we need. 
 
 **This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
 
