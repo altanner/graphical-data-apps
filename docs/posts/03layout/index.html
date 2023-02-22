@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-21T18:13:01+00:00" />
+<meta property="article:modified_time" content="2023-02-22T13:11:29+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Getting started with layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1251 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-21T18:13:01+00:00","publisher": {
+        },"genre": "posts","wordcount":  1361 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-22T13:11:29+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -83,6 +83,8 @@
       <ul>
         <li><a href="#text-elementshttpsdocsstreamlitiolibraryapi-referencetext"><a href="https://docs.streamlit.io/library/api-reference/text">Text elements</a></a></li>
         <li><a href="#page-layouthttpsdocsstreamlitiolibraryapi-referencelayout"><a href="https://docs.streamlit.io/library/api-reference/layout">Page layout</a></a></li>
+        <li><a href="#sidebarshttpsdocsstreamlitiolibraryapi-referencelayoutstsidebar"><a href="https://docs.streamlit.io/library/api-reference/layout/st.sidebar">Sidebars</a></a></li>
+        <li><a href="#columnshttpsdocsstreamlitiolibraryapi-referencelayoutstcolumns"><a href="https://docs.streamlit.io/library/api-reference/layout/st.columns">Columns</a></a></li>
         <li><a href="#other-useful-layout-tools">Other useful layout tools</a></li>
       </ul>
     </li>
@@ -150,11 +152,26 @@
 <li>expanders (vertical blocks that can be minimised)</li>
 <li>sidebars.</li>
 </ul>
+<h3 id="sidebarshttpsdocsstreamlitiolibraryapi-referencelayoutstsidebar"><a href="https://docs.streamlit.io/library/api-reference/layout/st.sidebar" target="_blank" rel="noopener noreffer">Sidebars</a>
+</h3>
 <p>Sidebars are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We&rsquo;ll create a sidebar, by adding this to the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is in our sidebar.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Here we are using <code>with</code> notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use <code>with</code> blocks for many layout instructions, for example <code>expander</code>, <code>tabs</code> and <code>columns</code>. See <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">the API docs</a>
  for more details.</p>
+<h3 id="columnshttpsdocsstreamlitiolibraryapi-referencelayoutstcolumns"><a href="https://docs.streamlit.io/library/api-reference/layout/st.columns" target="_blank" rel="noopener noreffer">Columns</a>
+</h3>
+<p>Columns allow us to vertically partition the app. Creating them requires setting <em>how many</em> there are, then using them with <code>with</code>, as in the sidebar example. Here we are creating two columns:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is column 1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This is column 2&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>We can create any number of columns we like, for example <code>column1, column2, column3 = st.columns(3)</code> would create three columns. We can also control the widths by passing a list of the <em>ratios</em> of the columns:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span></span></code></pre></div><p>This will create two columns, with the right hand one being four times wider than the left hand one.</p>
 <h3 id="other-useful-layout-tools">Other useful layout tools</h3>
 <p>While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:</p>
 <ul>
