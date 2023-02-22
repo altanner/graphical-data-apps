@@ -32,16 +32,21 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 ```
-Now that we have `pandas` ready for use, we can read our dataset into a dataframe. We are using the dataset provided in the course materials, `demo_dataset.csv`, which will need to be in your working folder.
+Now that we have `pandas` ready for use, we can read our dataset into a dataframe. We are using the dataset provided in the course materials, `demo_dataset.csv`, which will need to be in your working folder. Add this line **at the top of your script, below your `import`s**. The reason we put it near the top is because this code is not related to building the interface, so it is logical to place it before the page-build code.
 ```Python
 demo_df = pd.read_csv("demo_dataset.csv")
 ```
+Before we go any further, let's examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the **end** of the script, add this to the end:
+```Python
+st.dataframe(demo_df)
+```
+Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.
 
 ## Plotly Express
 There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive. powerful.
 
 ### Creating a basic scatter plot
-
+Plotly 
 
 
 ### Section title
