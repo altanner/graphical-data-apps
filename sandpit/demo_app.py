@@ -7,10 +7,10 @@ st.set_page_config(
     layout="wide")
 
 # use pandas to read CSV file into a dataframe
-demographics_df = pd.read_csv("demo_dataset.csv")
+demo_df = pd.read_csv("demo_dataset.csv")
 
 # names of columns in the csv file
-column_names = [
+csv_column_names = [
     "Life expectancy",
     "HDI index",
     "CO2 per capita",
@@ -19,7 +19,7 @@ column_names = [
 ### build the sidebar
 with st.sidebar:
     
-    # put a title in the main page body
+    # put a title in the sidebar
     st.title("World Demographics")
     # add an image
     st.image("globe.png")
@@ -41,10 +41,10 @@ with st.sidebar:
     # x and y selector widgets
     x_data = st.radio(
         label="X-axis data",
-        options=column_names)
+        options=csv_column_names)
     y_data = st.radio(
         label="Y-axis data",
-        options=column_names,
+        options=csv_column_names,
         index=1)
     
     # balloon size widgets
@@ -59,16 +59,24 @@ with st.sidebar:
 
 ### end of sidebar!
 
-column1, column2 = st.columns[1,2]
+
+column1, column2 = st.columns([1, 5])
+
 
 with column1:
-    st.write("gg")
+    st.write("This is column 1")
+    
+with column2:
+    st.write("This is column 2")
+
+st.write("outside of the column blocks, we get the main body")
+
 
 # check if user wants an animation or static visual
 if animate_vis == False:
     # use plotly.express to create static chart object
     chart = px.scatter(
-        demographics_df.query(f"Year=={year}"),
+        demo_df.query(f"Year=={year}"),
         y="GDP per capita",
         x="Life expectancy",
         color="Continent",
@@ -79,7 +87,7 @@ if animate_vis == False:
 else:
     # use plotly.express to create our animated chart object
     chart = px.scatter(
-        demographics_df,
+        demo_df,
         x=x_data,
         y=y_data,
         color="Continent",
@@ -90,7 +98,7 @@ else:
         animation_group="Country",
         height=650)
 
-# ask streamlit to display animated_chart
+# ask streamlit to display chart
 st.plotly_chart(chart, use_container_width=True)
 
 

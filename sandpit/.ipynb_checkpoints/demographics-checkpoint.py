@@ -59,6 +59,11 @@ with st.sidebar:
 
 ### end of sidebar!
 
+column1, column2 = st.columns[1,2]
+
+with column1:
+    st.write("gg")
+
 # check if user wants an animation or static visual
 if animate_vis == False:
     # use plotly.express to create static chart object
