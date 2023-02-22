@@ -9,8 +9,12 @@ st.set_page_config(
 # use pandas to read CSV file into a dataframe
 demographics_df = pd.read_csv("demo_dataset.csv")
 
-# the names of columns in the csv file
-column_names = ["Life expectancy", "HDI index", "CO2 per capita", "GDP per capita"]
+# names of columns in the csv file
+column_names = [
+    "Life expectancy",
+    "HDI index",
+    "CO2 per capita",
+    "GDP per capita"]
 
 ### build the sidebar
 with st.sidebar:
@@ -50,7 +54,7 @@ with st.sidebar:
     balloon_size_scale = st.slider(
         label="Size scale",
         min_value=10,
-        max_value=90,
+        max_value=50,
         value=30)
 
 ### end of sidebar!
