@@ -129,78 +129,36 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 
 ## Building a World Demographics Data Visualisation
 {{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
-Through the rest of this course we will be making a demographics data app. This uses a publicly accessible dataset with statistics on countries of the world, and how they have changed in the past few decades.
-Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
-Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app. To keep things neat, we are going to put most interface items into the sidebar, so the main body has plenty of space for our visualisation (we'll start to make that in the next section).
-1. Change the title of the page to "World Demographics". Put it in the sidebar.
-2. Add an image to the sidebar, below the title, using `st.image()` - the name of the image is `globe.png`, we downloaded it earlier (or click it here if you need it again). The file `globe.png` needs to be in the same folder as your Python script.
-3. Add an information box, using `st.info()`, to the top of your sidebar. This will contain the text "Welcome to the global demographic data explorer app!"
+Through the rest of this course we will be building a visualiser for World Demographics data app. Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
+1. Change the **title** in the page to "World Demographics". Put it in the sidebar.
+2. Change the **tab title of the page** to "Demo App" (modify the contents of `st.set_page_config()`).
+3. Create **two** columns in the main app space, with the left column being five times wider than the right one.
+4. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!"
+5. Add an image to the **right hand column**, using `st.image()`. We will use the image `globe.png`, included with the [course resources download](XXXX) we got earlier
 {{< /admonition >}}
 
+{{< admonition type="warning" title="Solution: layout exercise" open=false >}}
+The whole script should look something similar to this:
+```Python
+import streamlit as st
 
-{{< admonition type="question" title="Exercise" open=true >}}
-- Check back in 2023!
+# set the tab title and page width
+st.set_page_config(page_title="Demo App", layout="wide")
+
+# build the sidebar
+with st.sidebar:
+    # put a title in the sidebar
+    st.title("World Demographics")
+
+# create two columns, of ratio 5:1
+column1, column2 = st.columns([5,1])
+
+# place info box in first column
+with column1:
+    st.info("Welcome to the global demographic data explorer app!")
+
+# place image into second column
+with column2:
+    st.image("globe.png")
+```
 {{< /admonition >}}
-
-
-{{< admonition type="note"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="abstract"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="info"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="tip"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="success"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="question"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="warning" open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="failure"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="danger"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="bug"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="example"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-{{< admonition type="quote"  open=true >}}
-- Check back in 2023!
-{{< /admonition >}}
-
-
-blahblah
