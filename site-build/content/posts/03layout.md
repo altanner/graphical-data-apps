@@ -76,7 +76,13 @@ The documentation has other text element examples - we will return to these in t
 Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
 ### [Page layout](https://docs.streamlit.io/library/api-reference/layout)
-We want to be able to control where things appear on the page. Streamlit provides several ways to control page-layout, for example:
+The first thing we are going to change is the name it is given in a browser tab, and how it is presented on both desktop and mobile browsers. Below your `import` command, but above everything else, add this line:
+
+```Python
+st.set_page_config(page_title="My data app", layout="wide")
+```
+
+Now that is done, we want to know how to control where things appear on the page. Streamlit provides several ways to control page layout, for example:
 
 - containers (think of these as horizontally-arranged blocks, or rows)
 - columns (vertical blocks)
@@ -93,7 +99,7 @@ with st.sidebar:
 Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example `expander`, `tabs` and `columns`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
 
 ### [Columns](https://docs.streamlit.io/library/api-reference/layout/st.columns)
-Columns allow us to vertically partition the app. Creating them requires setting _how many_ there are, then using them with `with`, as in the sidebar example. Here we are creating two columns:
+Columns allow us to vertically partition the app. Creating them requires setting _how many_ there are, then placing code inside `with` blocks as appropriate, as in the sidebar example. Here we are creating two columns:
 
 ```Python
 column1, column2 = st.columns(2)
