@@ -94,8 +94,8 @@ st.plotly_chart(chart, use_container_width=True)
 ```
 This is a useful argument to use, especially if you have a more complex layout with columns and containers.
 
-### Beginning customising our chart
-This is a nice start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let's colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:
+### Customising our chart
+This is a good start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let's colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:
 ```Python
 chart = px.scatter(
     data_frame=demo_df,
@@ -106,30 +106,59 @@ chart = px.scatter(
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
 ## Exercise: building a prettier visualisation
-{{< admonition type="question" title="Exercise 2: Prettier visuals open=true >}}
+{{< admonition type="question" title="Exercise 2: Prettier visuals" open=true >}}
 So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data
-1. 
+1. We can control the size of points. Add a parameter called `size`, and assign the column `"CO2 per capita"` to it (note that any dataframe column name is a string).
+2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign the column `"Country"` to it.
+3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different.
 {{< /admonition >}}
 
-Normal text body.
+{{< admonition type="warning" title="Solution to Exercise 2" open=false >}}
+Your Streamlit script should look similar to this:
+```Python
+import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-{{< admonition type="warning" open=true >}}
-- Warning1
-- Warning2
-{{< /admonition >}}
+# use pandas to read CSV file into a dataframe
+demo_df = pd.read_csv("demo_dataset.csv")
 
+# set the tab title and page width
+st.set_page_config(page_title="Demo App", layout="wide")
 
-### Another section
-blahfdajkfhu aefuibahj rwefyugr
+# build the sidebar
+with st.sidebar:
+    # put a title in the sidebar
+    st.title("World Demographics")
+    # dataframe visibility toggle
+    df_view = st.checkbox(label="View dataframe")
 
+# create two columns, of ratio 5:1
+column1, column2 = st.columns([5,1])
+
+# place info box in first column
+with column1:
+    st.info("Welcome to the global demographic data explorer app!")
+
+# place image into second column
+with column2:
+    st.image("globe.png")
+
+# show us the data if the sidebar toggle is switched
+if df_view == True:
+    st.dataframe(demo_df)
+
+# build px chart object
+chart = px.scatter(
+    data_frame=demo_df,
+    x="Life expectancy",
+    y="GDP per capita",
+    color="Continent",
+    size="CO2 per capita",
+    hover_name="Country",
+    height=650)
+
+# display the chart in the main app area
+st.plotly_chart(chart, use_container_width=True)
 ```
-code goes herer
-```
-next setion blakfahuir wrafguighbarg
-
-### Exercise
-{{< admonition type="question" title="Questions" open=true >}}
-a question box
-- q1
-- q2
 {{< /admonition >}}
