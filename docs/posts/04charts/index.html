@@ -10,7 +10,7 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T16:01:35+00:00" />
+<meta property="article:modified_time" content="2023-02-22T16:11:03+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Getting started with charts"/>
@@ -28,8 +28,8 @@ Bringing our data into the script We will be using pandas to read our CSV file i
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  409 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T16:01:35+00:00","publisher": {
+        },"genre": "posts","wordcount":  502 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T16:11:03+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -99,9 +99,14 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 </span></span></code></pre></div><p>Now that we have <code>pandas</code> ready for use, we can read our dataset into a dataframe. We are using the dataset provided in the course materials, <code>demo_dataset.csv</code>, which will need to be in your working folder. Add this line <strong>at the top of your script, below your <code>import</code>s</strong>. The reason we put it near the top is because this code is not related to building the interface, so it is logical to place it before the page-build code.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Before we go any further, let&rsquo;s examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the <strong>end</strong> of the script, add this to the end:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.</p>
-<h2 id="plotly-express">Plotly Express</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"></code></pre></div><p>Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.</p>
+<p>We cover <a href="ZXXXX" rel="">widgets</a>
+ in the next section, but right now we want to quickly add a toggle for visibility of this dataframe. Go to your code block starting <code>with st.sidebar:</code>, and inside this block (ie, indented) add</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">df_view</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;View dataframe&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Here we are assigning the state of the checkbox to the variable called <code>df_view</code>. A checkbox is a boolean, so it can only be <code>True</code> or <code>False</code>. We will use this value to trigger if Streamlit shows us the dataframe, by putting our <code>st.dataframe(demo_df)</code> into a conditional block:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">df_view</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="plotly-express">Plotly Express</h2>
 <p>There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive. powerful.</p>
 <h3 id="creating-a-basic-scatter-plot">Creating a basic scatter plot</h3>
 <p>Plotly</p>
