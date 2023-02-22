@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T14:22:55+00:00" />
+<meta property="article:modified_time" content="2023-02-22T14:33:09+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Getting started with layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1413 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-22T14:22:55+00:00","publisher": {
+        },"genre": "posts","wordcount":  1358 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-02-22T14:33:09+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -198,161 +198,47 @@
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise: build your app&#39;s layout.<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>Through the rest of this course we will be making a demographics data app. This uses a publicly accessible dataset with statistics on countries of the world, and how they have changed in the past few decades.
-Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.
-Your goal in this exercise is to refer to the Streamlit API docs, and add some structure to the app. To keep things neat, we are going to put most interface items into the sidebar, so the main body has plenty of space for our visualisation (we&rsquo;ll start to make that in the next section).</p>
+            <div class="admonition-content"><p>Through the rest of this course we will be building a visualiser for World Demographics data app. Our first exercise is to prepare our data app for this! We will edit some of the things we have already made, and create some new items as well.</p>
 <ol>
-<li>Change the title of the page to &ldquo;World Demographics&rdquo;. Put it in the sidebar.</li>
-<li>Add an image to the sidebar, below the title, using <code>st.image()</code> - the name of the image is <code>globe.png</code>, we downloaded it earlier (or click it here if you need it again). The file <code>globe.png</code> needs to be in the same folder as your Python script.</li>
-<li>Add an information box, using <code>st.info()</code>, to the top of your sidebar. This will contain the text &ldquo;Welcome to the global demographic data explorer app!&rdquo;</li>
+<li>Change the <strong>title</strong> in the page to &ldquo;World Demographics&rdquo;. Put it in the sidebar.</li>
+<li>Change the <strong>tab title of the page</strong> to &ldquo;Demo App&rdquo; (modify the contents of <code>st.set_page_config()</code>).</li>
+<li>Create <strong>two</strong> columns in the main app space, with the left column being five times wider than the right one.</li>
+<li>Add an information box to the <strong>left hand column</strong>, saying &ldquo;Welcome to the global demographic data explorer app!&rdquo;</li>
+<li>Add an image to the <strong>right hand column</strong>, using <code>st.image()</code>. We will use the image <code>globe.png</code>, included with the <a href="XXXX" rel="">course resources download</a>
+ we got earlier</li>
 </ol>
 </div>
         </div>
     </div>
-<div class="details admonition question open">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution: layout exercise<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
+            <div class="admonition-content"><p>The whole script should look something similar to this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set the tab title and page width</span>
+</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;Demo App&#34;</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># build the sidebar</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># put a title in the sidebar</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create two columns, of ratio 5:1</span>
+</span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place info box in first column</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place image into second column</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
+</span></span></code></pre></div></div>
         </div>
     </div>
-<div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition abstract open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Abstract<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition success open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Success<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Question<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition failure open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-times-circle fa-fw" aria-hidden="true"></i>Failure<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition danger open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-skull-crossbones fa-fw" aria-hidden="true"></i>Danger<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition bug open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-bug fa-fw" aria-hidden="true"></i>Bug<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition example open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-list-ol fa-fw" aria-hidden="true"></i>Example<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition quote open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-quote-right fa-fw" aria-hidden="true"></i>Quote<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Check back in 2023!</li>
-</ul>
-</div>
-        </div>
-    </div>
-<p>blahblah</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
