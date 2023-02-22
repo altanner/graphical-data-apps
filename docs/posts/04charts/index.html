@@ -10,7 +10,7 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T16:29:26+00:00" />
+<meta property="article:modified_time" content="2023-02-22T17:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Getting started with charts"/>
@@ -28,8 +28,8 @@ Bringing our data into the script We will be using pandas to read our CSV file i
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  565 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T16:29:26+00:00","publisher": {
+        },"genre": "posts","wordcount":  803 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T17:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -116,9 +116,37 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save this, and give it a test in the browser window.</p>
 <h2 id="creating-a-chart">Creating a chart</h2>
-<p>There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are good-looking, customisable and interactive.</p>
+<p>Now that we have our data available, we can begin work on visualising it. As mentioned, we are using <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
+, for a number of reasons:</p>
+<ul>
+<li>it has an intermediate learning curve</li>
+<li>the <a href="https://plotly.com/python-api-reference/" target="_blank" rel="noopener noreffer">documentation</a>
+ is good</li>
+<li>the syntax is easy to use, without being over-simplified</li>
+<li>the graphs it creates are good-looking, customisable and interactive.</li>
+</ul>
+<p>There are two steps to getting our data from the dataframe to into a graphic:</p>
+<ol>
+<li>Creating a chart object</li>
+<li>Asking Streamlit to present this chart object</li>
+</ol>
 <h3 id="a-basic-scatter-plot">A basic scatter plot</h3>
-<p>Plotly works on dataframes, which we have ready for it. There are two steps to this process</p>
+<p>Plotly works on dataframes, which we have ready for it. We will build up to a more sophisticated visualisation later, but as an absolute minimum, a Plotly scatter chart needs three things:</p>
+<ol>
+<li>The datafame Plotly is working with</li>
+<li>The data to plot on the <code>x</code> axis (ie, one of the dataframe columns)</li>
+<li>The data to plot on the <code>y</code> axis (another dataframe column)</li>
+</ol>
+<p>For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let&rsquo;s choose the columns <code>Life expectancy</code> as our <code>x</code>, and <code>GDP per capita</code> as our <code>y</code>.
+We create our chart object like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="s2">&#34;Life expectancy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy!</p>
+<p>OK, so we have built the <code>chart</code> object - now we ask Streamlit to show it to us by handing it to <code>st.plotly_chart()</code>. Add this at the bottom of your script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save your file, and explore the visual! Investigate what the icons at the top right of your chart do.</p>
 <h3 id="section-title">Section title</h3>
 <ul>
 <li>bullet1</li>
