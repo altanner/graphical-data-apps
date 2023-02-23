@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-23T11:23:02+00:00" />
+<meta property="article:modified_time" content="2023-02-23T11:34:47+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets and charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  693 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T11:23:02+00:00","publisher": {
+        },"genre": "posts","wordcount":  822 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T11:34:47+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -107,13 +107,22 @@
  that can do this, but for us, a good solution is a <a href="https://docs.streamlit.io/library/api-reference/widgets/st.slider" target="_blank" rel="noopener noreffer">slider</a>
 .</p>
 <p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">value</span><span class="o">=</span><span class="mi">2008</span><span class="p">)</span>
 </span></span></code></pre></div><p>Notice that, unlike layout <code>st.</code> commands, we are assigning the widget to a variable, here called <code>year</code>. For now, we have four parameters to the slider: the label it will display, a lowest value, highest value, and an initial value. Save the file and check the changes on your app (remember we are putting this in the sidebar!)</p>
 <h3 id="connecting-the-widget-to-the-chart">Connecting the widget to the chart</h3>
+<p>So far, the widget exists, and it creates the variable <code>year_widget</code>, but we need to pipe that into the code for the chart. Currently, <code>px.scatter</code> has been told to plot the whole dataset, with the line <code>data_frame=demo_df</code>. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to <code>data_frame=demo_df.query(f&quot;Year=={year_widget}&quot;)</code> (and leave the rest of your parameters in place).</p>
+<p>Several things are happening here:</p>
+<ol>
+<li>Given <code>demo_df</code> is a dataframe, we can use the method <code>.query()</code> to filter it.</li>
+<li>Inside the <code>.query()</code> brackets we are searching for the equality <code>&quot;Year=={year_widget}&quot;</code></li>
+<li>To insert our variable <code>year_widget</code>, we are creating an <a href="https://realpython.com/python-f-strings/" target="_blank" rel="noopener noreffer">f-string</a>
+, with the variable name inside our curly brackets.</li>
+</ol>
+<p>Save your script, and have a play with the app.</p>
 <ol>
 <li>year slider</li>
 <li>radio buttons</li>
