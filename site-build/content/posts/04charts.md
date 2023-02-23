@@ -26,13 +26,13 @@ Yet more terminology, yet again words which mean very similar things!
 
 The words **plot**, **chart** and **graph** are used interchangeably, but I will stick with **chart** in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word "graph" would not make sense. Also, the word "plot" is kind of reserved for some things in Python, and is in use by many graphic libraries.
 
-**As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!**
+*As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!*
 {{< /admonition >}}
 
 At the end of the last section, our running Python file creates a page, we added some layout components. In this section, we will be bringing data into the app, and creating our first visualisation.
 
 ## Bringing our data into the script
-We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that `streamlit` is very much built with `pandas` in mind. Most of Streamlit data workflows and visualisations will expect to be working with dataframes, and this is the case now too.
+We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that Streamlit is very much built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
 
 ### Loading up `pandas`
 Firstly, we need to update our `import`s to include everything we need for the rest of this course. We will add both `pandas` and `plotly.express`, so we will have three `import`s in total, at the top of our script, with their conventional aliases, `st`, `pd` and `px` respectively:
