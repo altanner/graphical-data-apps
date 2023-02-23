@@ -30,26 +30,26 @@ In the previous section, we created our first chart. This has some basic interac
 You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
 
 ### First widget
-Let's add our first widget. It will communicate to the chart which year to plot. In this case, we need something a widget that allows selection of a limited number of integers. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
+Let's add our first widget. It will communicate to the chart which year to plot. In this case, we need a widget that selects an integer from a limited range of contiguous options. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
 
 As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting `with st.sidebar:`. To create our slider, we add:
 
 ```Python
 year_widget = st.slider(
     label="Year",
+    value=2008
     min_value=1998,
-    max_value=2018,
-    value=2008)
+    max_value=2018)
 ```
 
-Notice that, unlike layout `st.` commands, we are assigning the widget to a variable, here called `year`. For now, we have four parameters to the slider: the label it will display, a lowest value, highest value, and an initial value. Save the file and check the changes on your app (remember we are putting this in the sidebar!)
+Notice that, unlike layout `st.` commands, we are assigning the widget to a variable, here called `year_widget`. The slider has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Save the file and check the changes on your app (remember we are putting this in the sidebar!)
 
 ### Connecting the widget to the chart
-So far, the widget exists, and it creates the variable `year_widget`, but we need to pipe that into the code for the chart. Currently, `px.scatter` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
+So far, the widget exists, and it creates / updates the variable `year_widget`, but we need to pipe that into the code for the chart. Currently, `px.scatter` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
 
 Several things are happening here:
 1. Given `demo_df` is a dataframe, we can use the method `.query()` to filter it.
-2. Inside the `.query()` brackets we are searching for the equality `"Year=={year_widget}"`
+2. Inside the `.query()` brackets we are filtering on year with `"Year=={year_widget}"`
 3. To insert our variable `year_widget`, we are creating an [f-string](https://realpython.com/python-f-strings/), with the variable name inside our curly brackets.
 
 Save your script, and have a play with the app.
