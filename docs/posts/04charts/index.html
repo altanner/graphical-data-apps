@@ -10,7 +10,7 @@ Bringing our data into the script We will be using pandas to read our CSV file i
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T17:49:17+00:00" />
+<meta property="article:modified_time" content="2023-02-23T11:51:50+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Getting started with charts"/>
@@ -28,8 +28,8 @@ Bringing our data into the script We will be using pandas to read our CSV file i
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1212 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-22T17:49:17+00:00","publisher": {
+        },"genre": "posts","wordcount":  1241 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-23T11:51:50+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -90,7 +90,7 @@ Bringing our data into the script We will be using pandas to read our CSV file i
         <li><a href="#customising-our-chart">Customising our chart</a></li>
       </ul>
     </li>
-    <li><a href="#exercise-building-a-prettier-visualisation">Exercise: building a prettier visualisation</a></li>
+    <li><a href="#exercise-building-a-better-visualisation">Exercise: building a better visualisation</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>At the end of the last section, our running Python file creates a page, lays out a couple of components. In this section, we will be bringing data into the app, and creating our first visualisation.</p>
@@ -157,17 +157,17 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>(Note that the <code>color</code> argument is spelled in International English!) Save, and notice the changes.</p>
-<h2 id="exercise-building-a-prettier-visualisation">Exercise: building a prettier visualisation</h2>
+<h2 id="exercise-building-a-better-visualisation">Exercise: building a better visualisation</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 2: Prettier visuals<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 2: better visuals<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to <code>px.scatter()</code>, to include further data</p>
+            <div class="admonition-content"><p>So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to <code>px.scatter()</code>, to include further data. (Here, when we say &ldquo;assign&rdquo;, it means to use the equals sign to &ldquo;put something into&rdquo; a variable; for example <code>dog=&quot;fido&quot;</code> is assigning the string <code>&quot;fido&quot;</code> to a variable called <code>dog</code>.)</p>
 <ol>
-<li>We can control the size of points. Add a parameter called <code>size</code>, and assign the column <code>&quot;CO2 per capita&quot;</code> to it (note that any dataframe column name is a string).</li>
-<li>Our mouse-over is not very useful right now. Add a parameter called <code>hover_name</code>, and assign the column <code>&quot;Country&quot;</code> to it.</li>
-<li>The chart can use the vertical space a bit better. Add a parameter called <code>height</code>, and give an integer value to this in pixels (choose a height suitable for your screen; for me, <code>height=650</code> fits best, but for you it might be different.</li>
+<li>We can control the size of points. Add a parameter called <code>size</code>, and assign the column name <code>&quot;CO2 per capita&quot;</code> to it (note that any dataframe column name is a string).</li>
+<li>Our mouse-over is not very useful right now. Add a parameter called <code>hover_name</code>, and assign <code>&quot;Country&quot;</code> to it.</li>
+<li>The chart can use the vertical space a bit better. Add a parameter called <code>height</code>, and give an integer value to this in pixels (choose a height suitable for your screen; for me, <code>height=650</code> fits best, but for you it might be different).</li>
 <li>Finally, let&rsquo;s add trendlines for each continent. Add the parameter <code>trendline</code>, and assign <code>&quot;lowess&quot;</code> (Locally Weighted Scatterplot Smoothing) as the line-building method.</li>
 </ol>
 </div>
@@ -175,7 +175,7 @@ We create our chart object like this:</p>
     </div>
 <div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Solution to Exercise 2<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 2 solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>Your Streamlit script should look similar to this:</p>
