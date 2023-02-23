@@ -131,7 +131,7 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 {{< /admonition >}}
 
 ## Creating a meaningful layout
-{{< admonition type="question" title="Exercise: build your app's layout." open=true >}}
+{{< admonition type="question" title="Exercise 1: build your app's layout." open=true >}}
 Through the rest of this course we will be building a **visualiser for World Demographics Data**. Our first exercise is to prepare our layout for this. We will edit some of the things we have already made, and create some new items as well. Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps' tab in your browser.
 1. Remove the `st.write()` line that we added earlier.
 2. Change the **title** in the page to "World Demographics". Put it in the sidebar.
@@ -141,7 +141,7 @@ Through the rest of this course we will be building a **visualiser for World Dem
 6. Add an image to the **right hand column**, using `st.image()`. We will use the image `globe.png`, included with the [course resources download](https://github.com/alleetanner/graphical-data-apps/raw/main/data-apps.zip) we got earlier
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Solution: layout exercise" open=false >}}
+{{< admonition type="warning" title="Exercise 1 solution." open=false >}}
 The whole script should look something similar to this:
 ```Python
 import streamlit as st
