@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-23T10:47:18+00:00" />
+<meta property="article:modified_time" content="2023-02-23T11:23:02+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets and charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  570 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T10:47:18+00:00","publisher": {
+        },"genre": "posts","wordcount":  693 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T11:23:02+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,7 +78,9 @@
   <ul>
     <li><a href="#widgets">Widgets</a>
       <ul>
-        <li><a href="#fixing-our-chart-years">Fixing our chart years</a></li>
+        <li><a href="#improving-our-chart">Improving our chart</a></li>
+        <li><a href="#first-widget">First widget</a></li>
+        <li><a href="#connecting-the-widget-to-the-chart">Connecting the widget to the chart</a></li>
       </ul>
     </li>
   </ul>
@@ -98,11 +100,20 @@
 ) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in <a href="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" target="_blank" rel="noopener noreffer">section 3</a>
  is that <strong>widgets set the values of variables</strong>. We will see the Python syntax for this in a moment.</p>
 <p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;Life expectancy&rdquo; with the parameter <code>x=&quot;Life expectancy&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
-<h3 id="fixing-our-chart-years">Fixing our chart years</h3>
-<p>You might have noticed that our dataset contains temporal information (what year the data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but <strong>we can improve the chart using a widget to chose what year to display</strong>.</p>
-<p>Let&rsquo;s add our first widget. The aim is to select a year. So, we need something that can select an integer. There are <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">several types of widgets</a>
+<h3 id="improving-our-chart">Improving our chart</h3>
+<p>You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but <strong>we can improve the chart using a widget to chose what year to display</strong>.</p>
+<h3 id="first-widget">First widget</h3>
+<p>Let&rsquo;s add our first widget. It will communicate to the chart which year to plot. In this case, we need something a widget that allows selection of a limited number of integers. There are <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">several types of widgets</a>
  that can do this, but for us, a good solution is a <a href="https://docs.streamlit.io/library/api-reference/widgets/st.slider" target="_blank" rel="noopener noreffer">slider</a>
 .</p>
+<p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">value</span><span class="o">=</span><span class="mi">2008</span><span class="p">)</span>
+</span></span></code></pre></div><p>Notice that, unlike layout <code>st.</code> commands, we are assigning the widget to a variable, here called <code>year</code>. For now, we have four parameters to the slider: the label it will display, a lowest value, highest value, and an initial value. Save the file and check the changes on your app (remember we are putting this in the sidebar!)</p>
+<h3 id="connecting-the-widget-to-the-chart">Connecting the widget to the chart</h3>
 <ol>
 <li>year slider</li>
 <li>radio buttons</li>
