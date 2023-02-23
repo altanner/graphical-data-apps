@@ -46,9 +46,11 @@ Save the file, and have a look at the browser tab displaying your app. We can no
 
 We don't want to see this all the time, so we are going to add a checkbox to control this. (We cover [widgets](ZXXXX) in more depth in the next section, but right now we want to add a toggle.) Go to your code block starting `with st.sidebar:`, and inside this block (ie, indented) add
 ```Python
-df_view = st.checkbox(label="View dataframe")
+df_view = st.checkbox(
+    label="View dataframe",
+    value=False)
 ```
-Here we are assigning the state of the checkbox to a variable called `df_view`. In Streamlit, a checkbox is a boolean, so it can only be `True` or `False`. We will use this value to trigger if Streamlit shows us the dataframe, by putting our `st.dataframe(demo_df)` into a conditional block. Find your line `st.dataframe(demo_df)`, and pop it into a conditional block:
+Here we are assigning the state of the checkbox to a variable called `df_view`. In Streamlit, a checkbox is a boolean, so it can only be `True` or `False` (here we are giving `False` as the initial value). We will use this value to trigger if Streamlit shows us the dataframe, by putting our `st.dataframe(demo_df)` into a conditional block. Find your line `st.dataframe(demo_df)`, and pop it into a conditional block:
 ```Python
 if df_view == True:
     st.dataframe(demo_df)
@@ -132,7 +134,9 @@ with st.sidebar:
     # put a title in the sidebar
     st.title("World Demographics")
     # dataframe visibility toggle
-    df_view = st.checkbox(label="View dataframe")
+    df_view = st.checkbox(
+        label="View dataframe",
+        value=False)
 
 # create two columns, of ratio 5:1
 column1, column2 = st.columns([5,1])
