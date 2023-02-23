@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-23T12:02:45+00:00" />
+<meta property="article:modified_time" content="2023-02-23T12:31:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets and charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  866 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T12:02:45+00:00","publisher": {
+        },"genre": "posts","wordcount":  821 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T12:31:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -81,19 +81,9 @@
         <li><a href="#improving-our-chart">Improving our chart</a></li>
         <li><a href="#first-widget">First widget</a></li>
         <li><a href="#connecting-the-widget-to-the-chart">Connecting the widget to the chart</a></li>
-        <li><a href="#a-couple-more-widgets">A couple more widgets</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#section-title">Section title</a></li>
-        <li><a href="#another-section">Another section</a></li>
-        <li><a href="#exercise">Exercise</a></li>
-      </ul>
-    </li>
+    <li><a href="#exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
@@ -124,74 +114,67 @@
 , with the variable name inside our curly brackets.</li>
 </ol>
 <p>Save your script, and have a play with the app.</p>
-<h3 id="a-couple-more-widgets">A couple more widgets</h3>
-<p>You should now have a chart that only plots one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default.</p>
-<ol>
-<li>year slider</li>
-<li>radio buttons</li>
-<li></li>
-</ol>
-<p>st.set_page_config(
-page_title=&ldquo;A Demographics Data App&rdquo;,
-layout=&ldquo;wide&rdquo;)</p>
-<h1 id="use-pandas-to-read-csv-file-into-a-dataframe">use pandas to read csv file into a dataframe</h1>
-<p>demographics_df = pd.read_csv(&ldquo;demo_dataset.csv&rdquo;)</p>
-<h1 id="create-the-sidebar">create the sidebar</h1>
-<p>with st.sidebar:
-st.image(&ldquo;globe.png&rdquo;)
-st.header(&ldquo;Demographic Data&rdquo;)
-st.info(&ldquo;Welcome to the global demographic explorer data app.&rdquo;)</p>
-<h1 id="create-the-information-box-at-the-top-of-the-page">create the information box at the top of the page</h1>
-<p>with st.expander(label=&ldquo;World Demographics Data Explorer: click for instructions&rdquo;):
-st.info(&ldquo;&ldquo;&ldquo;World Demographics Data Explorer
-- This app explores information about social, economic and environmental development at local, national and global levels.
-- Please use the options in the sidebar to explore the dataset.
-- Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the &ldquo;autoscale&rdquo; button.&rdquo;&rdquo;&rdquo;)</p>
-<pre tabindex="0"><code>
-## Plotly Express
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. `plotly` comes with a simplified interface called `plotly.express`, which we will use.
-
-To bring `plotly` functionality into our script we need to import it. While we are writing some imports, we also need `pandas` ready for action, so let&#39;s bring that into our script too. So, we will now have three imports at the top of our script:
-```Python
-import streamlit as st
-import plotly.express as px
-import pandas as pd
-</code></pre><p><code>px</code> is the conventional alias for <code>plotly.express</code>, and <code>pd</code> is the shortened name of <code>pandas</code>.</p>
-<h3 id="section-title">Section title</h3>
-<ul>
-<li>bullet1</li>
-<li>bullt2</li>
-</ul>
-<p>Normal text body.</p>
-<p><div class="details admonition warning open">
+<h2 id="exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</h2>
+<p>You should now have a chart that only plots one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add more <a href="https://docs.streamlit.io/library/api-reference/widgets/st.checkbox" target="_blank" rel="noopener noreffer">checkboxes</a>
+, as we briefly saw in the previous section.</p>
+<div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3a: Axis scale controls<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
-</ul>
+            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add two more checkbox widgets</p>
+<ol>
+<li>One with the label <code>&quot;Logarithmic X-axis&quot;</code>, assigning its value to a variable called <code>x_log</code></li>
+<li>Another with the label <code>&quot;Logarithmic Y-axis&quot;</code>, assigning its value to a variable called <code>y_log</code>
+In your parameters for <code>px.scatter()</code>, add two more parameters:</li>
+<li><code>log_x</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic X-axis&quot;</code></li>
+<li><code>log_y</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic Y-axis&quot;</code>
+Don&rsquo;t forget to separate your parameters with commas!</li>
+</ol>
 </div>
         </div>
     </div>
-<div class="details admonition info open">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3a solutions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
-</div>
+            <div class="admonition-content"><p>Your sidebar block should now contain:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"></code></pre></div></div>
         </div>
-    </div></p>
-<h3 id="another-section">Another section</h3>
-<p>blahfdajkfhu aefuibahj rwefyugr</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
-<h3 id="exercise">Exercise</h3>
+    </div>
+<p>To do this, we will create two more widgets, this time <a href="https://docs.streamlit.io/library/api-reference/widgets/st.radio" target="_blank" rel="noopener noreffer">radio buttons</a>
+. These are single-option, mutually-exclusive selectors (I think these are called &ldquo;radio&rdquo; because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your year slider widget, add:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x_log</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;X-axis scale&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;Linear&#34;</span><span class="p">,</span> <span class="s2">&#34;Log&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">y_log</span> <span class="o">=</span> 
+</span></span><span class="line"><span class="cl"><span class="mf">1.</span> <span class="n">year</span> <span class="n">slider</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.</span> <span class="n">radio</span> <span class="n">buttons</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### Section title</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="n">bullet1</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="n">bullt2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Normal</span> <span class="n">text</span> <span class="n">body</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n"></span>
+</span></span><span class="line"><span class="cl"><span class="n"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### Another section</span>
+</span></span><span class="line"><span class="cl"><span class="n">blahfdajkfhu</span> <span class="n">aefuibahj</span> <span class="n">rwefyugr</span>
+</span></span></code></pre></div><p>code goes herer</p>
+<pre tabindex="0"><code>next setion blakfahuir wrafguighbarg
+
+### Exercise
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Questions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -205,7 +188,7 @@ import pandas as pd
 </div>
         </div>
     </div>
-</div><div class="post-footer" id="post-footer">
+</code></pre></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
