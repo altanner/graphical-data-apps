@@ -36,7 +36,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</guid>
-    <description><![CDATA[Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A [widget] (https://docs.streamlit.io/library/api-reference/widgets ) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in section 3 is that widgets set the values of variables. We will see the Python syntax for this in a moment.]]></description>
+    <description><![CDATA[Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A widget is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that widgets set the values of variables. We will see the Python syntax for this in a moment.]]></description>
 </item>
 <item>
     <title>4 • Getting started with charts</title>
