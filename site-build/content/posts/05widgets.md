@@ -62,7 +62,7 @@ In your sidebar code block, and below your year slider widget, add two more chec
 1. One with the label `"Logarithmic X-axis"`, assigning its value to a variable called `x_log`
 2. Another with the label `"Logarithmic Y-axis"`, assigning its value to a variable called `y_log`
 In your parameters for `px.scatter()`, add two more parameters:
-1. `log_x`, being equal to the value of your widget labelled `"Logarithmic X-axis"`
+1. `log_x`, being equal to the value of your widget labelled `"Logarithmic X-axis"` (ie, its variable)
 2. `log_y`, being equal to the value of your widget labelled `"Logarithmic Y-axis"`
 Don't forget to separate your parameters with commas!
 {{< /admonition >}}
@@ -70,7 +70,28 @@ Don't forget to separate your parameters with commas!
 {{< admonition type="warning" title="Exercise 3a solutions" open=false >}}
 Your sidebar block should now contain:
 ```Python
-
+log_x_widget = st.checkbox(
+    label="Logarithmic X-axis",
+    value=False)
+log_y_widget = st.checkbox(
+    label="Logarithmic Y-axis",
+    value=False)
+```
+_Note that `value=False` is the default, so we could omit it, but here we are being explict as we learn the library!_
+Your `px.scatter()` now needs to have parameters related to these widgets, so the full parameters would be:
+```Python
+chart = px.scatter(
+    data_frame=demo_df.query(f"Year=={year_widget}"),
+    x="Life expectancy",
+    y="GDP per capita",
+    log_x=log_x_widget,
+    log_y=log_y_widget,
+    color="Continent",
+    size="CO2 per capita",
+    hover_name="Country",
+    trendline="lowess",
+    height=650)
+```
 {{< /admonition >}}
 
 
