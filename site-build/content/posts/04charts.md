@@ -115,6 +115,8 @@ chart = px.scatter(
 ```
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
+Currently, there is an issue with our chart which is making it unclear. Because we are handing the entire dataframe to `px.scatter` XXXXXXX
+
 ## Exercise: building a better visualisation
 {{< admonition type="question" title="Exercise 2: better visuals" open=true >}}
 So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data. (Here, when we say "assign", it means to use the equals sign to "put something into" a variable; for example `dog="fido"` is assigning the string `"fido"` to a variable called `dog`.)
