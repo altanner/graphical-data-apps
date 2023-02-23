@@ -35,7 +35,7 @@ Let's add our first widget. It will communicate to the chart which year to plot.
 As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting `with st.sidebar:`. To create our slider, we add:
 
 ```Python
-year = st.slider(
+year_widget = st.slider(
     label="Year",
     min_value=1998,
     max_value=2018,
@@ -45,7 +45,14 @@ year = st.slider(
 Notice that, unlike layout `st.` commands, we are assigning the widget to a variable, here called `year`. For now, we have four parameters to the slider: the label it will display, a lowest value, highest value, and an initial value. Save the file and check the changes on your app (remember we are putting this in the sidebar!)
 
 ### Connecting the widget to the chart
+So far, the widget exists, and it creates the variable `year_widget`, but we need to pipe that into the code for the chart. Currently, `px.scatter` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
 
+Several things are happening here:
+1. Given `demo_df` is a dataframe, we can use the method `.query()` to filter it.
+2. Inside the `.query()` brackets we are searching for the equality `"Year=={year_widget}"`
+3. To insert our variable `year_widget`, we are creating an [f-string](https://realpython.com/python-f-strings/), with the variable name inside our curly brackets.
+
+Save your script, and have a play with the app.
 
 1. year slider
 2. radio buttons
