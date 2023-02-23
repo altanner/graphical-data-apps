@@ -54,46 +54,42 @@ Several things are happening here:
 
 Save your script, and have a play with the app.
 
-### A couple more widgets
-You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. 
+## Exercise 3a: A couple more widgets
+You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let's add a widget to control that. We are going to add more [checkboxes](https://docs.streamlit.io/library/api-reference/widgets/st.checkbox), as we briefly saw in the previous section.
+
+{{< admonition type="question" title="Exercise 3a: Axis scale controls" open=true >}}
+In your sidebar code block, and below your year slider widget, add two more checkbox widgets
+1. One with the label `"Logarithmic X-axis"`, assigning its value to a variable called `x_log`
+2. Another with the label `"Logarithmic Y-axis"`, assigning its value to a variable called `y_log`
+In your parameters for `px.scatter()`, add two more parameters:
+1. `log_x`, being equal to the value of your widget labelled `"Logarithmic X-axis"`
+2. `log_y`, being equal to the value of your widget labelled `"Logarithmic Y-axis"`
+Don't forget to separate your parameters with commas!
+{{< /admonition >}}
+
+{{< admonition type="warning" title="Exercise 3a solutions" open=false >}}
+Your sidebar block should now contain:
+```Python
+
+{{< /admonition >}}
+
+
+To do this, we will create two more widgets, this time [radio buttons](https://docs.streamlit.io/library/api-reference/widgets/st.radio). These are single-option, mutually-exclusive selectors (I think these are called "radio" because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your year slider widget, add:
+
+```Python
+x_log = st.radio(
+    label="X-axis scale",
+    options=["Linear", "Log"],
+    
+
+y_log = 
 1. year slider
 2. radio buttons
-3. 
-At the end of the last section, you should have your Python script looking a little like this:
-```Python
-import streamlit as st
 
-st.set_page_config(
-    page_title="A Demographics Data App",
-    layout="wide")
 
-# use pandas to read csv file into a dataframe
-demographics_df = pd.read_csv("demo_dataset.csv")
 
-# create the sidebar
-with st.sidebar:
-    st.image("globe.png")
-    st.header("Demographic Data")
-    st.info("Welcome to the global demographic explorer data app.")
 
-# create the information box at the top of the page
-with st.expander(label="World Demographics Data Explorer: click for instructions"):
-    st.info("""World Demographics Data Explorer
-    - This app explores information about social, economic and environmental development at local, national and global levels.
-    - Please use the options in the sidebar to explore the dataset.
-    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the "autoscale" button.""")
-```
 
-## Plotly Express
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. `plotly` comes with a simplified interface called `plotly.express`, which we will use.
-
-To bring `plotly` functionality into our script we need to import it. While we are writing some imports, we also need `pandas` ready for action, so let's bring that into our script too. So, we will now have three imports at the top of our script:
-```Python
-import streamlit as st
-import plotly.express as px
-import pandas as pd
-```
-`px` is the conventional alias for `plotly.express`, and `pd` is the shortened name of `pandas`.
 
 
 ### Section title
