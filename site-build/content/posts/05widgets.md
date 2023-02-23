@@ -1,6 +1,6 @@
 ---
 title: "5 • Widgets and charts"
-subtitle: "Linking up your interface with your charts."
+subtitle: "Creating an interface to control your visualisations."
 
 date: 2023-02-15T00:00:00+01:00
 
@@ -45,7 +45,7 @@ year_widget = st.slider(
 Notice that, unlike layout `st.` commands, we are assigning the widget to a variable, here called `year_widget`. The slider has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Save the file and check the changes on your app (remember we are putting this in the sidebar!)
 
 ### Connecting the widget to the chart
-So far, the widget exists, and it creates / updates the variable `year_widget`, but we need to pipe that into the code for the chart. Currently, `px.scatter` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
+So far, the widget exists, and it creates / updates the variable `year_widget`, but we need to pipe that into the code for the chart. Currently, `px.scatter()` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
 
 Several things are happening here:
 1. Given `demo_df` is a dataframe, we can use the method `.query()` to filter it.
@@ -54,6 +54,8 @@ Several things are happening here:
 
 Save your script, and have a play with the app.
 
+### A couple more widgets
+You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. 
 1. year slider
 2. radio buttons
 3. 
