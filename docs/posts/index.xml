@@ -44,8 +44,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <pubDate>Tue, 14 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</guid>
-    <description><![CDATA[At the end of the last section, our running Python file creates a page, lays out a couple of components. In this section, we will be bringing data into the app, and creating our first visualisation.
-Bringing our data into the script We will be using pandas to read our CSV file in. While we do not use pandas any further in this course, keep in mind that streamlit is very much built with pandas in mind.]]></description>
+    <description><![CDATA[Plots, graphs and charts  Yet more terminology, yet again words which mean very similar things!
+The words plot, chart and graph are used interchangeably, but I will stick with chart in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word &ldquo;graph&rdquo; would not make sense. Also, the word &ldquo;plot&rdquo; is kind of reserved for some things in Python, and is in use by many graphic libraries.]]></description>
 </item>
 <item>
     <title>3 • Getting started with layout</title>
