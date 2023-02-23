@@ -105,16 +105,16 @@ chart = px.scatter(
 ```
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
-## Exercise: building a prettier visualisation
-{{< admonition type="question" title="Exercise 2: Prettier visuals" open=true >}}
-So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data
-1. We can control the size of points. Add a parameter called `size`, and assign the column `"CO2 per capita"` to it (note that any dataframe column name is a string).
-2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign the column `"Country"` to it.
-3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different.
+## Exercise: building a better visualisation
+{{< admonition type="question" title="Exercise 2: better visuals" open=true >}}
+So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data. (Here, when we say "assign", it means to use the equals sign to "put something into" a variable; for example `dog="fido"` is assigning the string `"fido"` to a variable called `dog`.)
+1. We can control the size of points. Add a parameter called `size`, and assign the column name `"CO2 per capita"` to it (note that any dataframe column name is a string).
+2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
+3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
 4. Finally, let's add trendlines for each continent. Add the parameter `trendline`, and assign `"lowess"` (Locally Weighted Scatterplot Smoothing) as the line-building method.
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Solution to Exercise 2" open=false >}}
+{{< admonition type="warning" title="Exercise 2 solution" open=false >}}
 Your Streamlit script should look similar to this:
 ```Python
 import streamlit as st
