@@ -26,10 +26,25 @@ The power of data apps is in allowing users to interact with data and visuals. O
 
 In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "Life expectancy" with the parameter `x="Life expectancy"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
-### Fixing our chart years
-You might have noticed that our dataset contains temporal information (what year the data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
+### Improving our chart
+You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
 
-Let's add our first widget. The aim is to select a year. So, we need something that can select an integer. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
+### First widget
+Let's add our first widget. It will communicate to the chart which year to plot. In this case, we need something a widget that allows selection of a limited number of integers. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
+
+As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting `with st.sidebar:`. To create our slider, we add:
+
+```Python
+year = st.slider(
+    label="Year",
+    min_value=1998,
+    max_value=2018,
+    value=2008)
+```
+
+Notice that, unlike layout `st.` commands, we are assigning the widget to a variable, here called `year`. For now, we have four parameters to the slider: the label it will display, a lowest value, highest value, and an initial value. Save the file and check the changes on your app (remember we are putting this in the sidebar!)
+
+### Connecting the widget to the chart
 
 
 1. year slider
