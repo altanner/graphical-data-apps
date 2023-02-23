@@ -22,7 +22,7 @@ comment:
 ---
 
 ## Widgets
-The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget] (https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in [section 3](https://alleetanner.github.io/graphical-data-apps/posts/03layout/) is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
+The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
 In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "Life expectancy" with the parameter `x="Life expectancy"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
@@ -55,12 +55,12 @@ Several things are happening here:
 Save your script, and have a play with the app.
 
 ## Exercise 3a: A couple more widgets
-You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let's add a widget to control that. We are going to add more [checkboxes](https://docs.streamlit.io/library/api-reference/widgets/st.checkbox), as we briefly saw in the previous section.
+You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let's add a widget to control that. We are going to add [checkboxes](https://docs.streamlit.io/library/api-reference/widgets/st.checkbox), as we briefly saw in the previous section.
 
 {{< admonition type="question" title="Exercise 3a: Axis scale controls" open=true >}}
-In your sidebar code block, and below your year slider widget, add two more checkbox widgets
-1. One with the label `"Logarithmic X-axis"`, assigning its value to a variable called `x_log`
-2. Another with the label `"Logarithmic Y-axis"`, assigning its value to a variable called `y_log`
+In your sidebar code block, and below your year slider widget, add two checkbox widgets
+1. One with the label `"Logarithmic X-axis"`, assigning its value to a variable called `log_x_widget`
+2. Another with the label `"Logarithmic Y-axis"`, assigning its value to a variable called `log_y_widget`
 In your parameters for `px.scatter()`, add two more parameters:
 1. `log_x`, being equal to the value of your widget labelled `"Logarithmic X-axis"` (ie, its variable)
 2. `log_y`, being equal to the value of your widget labelled `"Logarithmic Y-axis"`
