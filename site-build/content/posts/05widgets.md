@@ -78,6 +78,7 @@ log_y_widget = st.checkbox(
     value=False)
 ```
 _Note that `value=False` is the default, so we could omit it, but here we are being explict as we learn the library!_
+
 Your `px.scatter()` now needs to have parameters related to these widgets, so the full parameters would be:
 ```Python
 chart = px.scatter(
