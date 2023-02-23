@@ -22,11 +22,15 @@ comment:
 ---
 
 ## Widgets
-The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget] (https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. **The import difference between widgets and layout components (that we learned in [section 3](https://alleetanner.github.io/graphical-data-apps/posts/03layout/) is that widgets set the values of variables**.
+The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget] (https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in [section 3](https://alleetanner.github.io/graphical-data-apps/posts/03layout/) is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
-In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "Life expectancy" with the parameter line `x="Life expectancy"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
+In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "Life expectancy" with the parameter `x="Life expectancy"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
 ### Fixing our chart years
+You might have noticed that our dataset contains temporal information (what year the data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
+
+Let's add our first widget. The aim is to select a year. So, we need something that can select an integer. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
+
 
 1. year slider
 2. radio buttons
