@@ -38,10 +38,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</guid>
-    <description><![CDATA[year slider radio buttons   st.set_page_config( page_title=&ldquo;A Demographics Data App&rdquo;, layout=&ldquo;wide&rdquo;)
-use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&ldquo;demo_dataset.csv&rdquo;)
-create the sidebar with st.sidebar: st.image(&ldquo;globe.png&rdquo;) st.header(&ldquo;Demographic Data&rdquo;) st.info(&ldquo;Welcome to the global demographic explorer data app.&rdquo;)
-create the information box at the top of the page with st.expander(label=&ldquo;World Demographics Data Explorer: click for instructions&rdquo;): st.info(&ldquo;&ldquo;&ldquo;World Demographics Data Explorer - This app explores information about social, economic and environmental development at local, national and global levels.]]></description>
+    <description><![CDATA[Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A [widget] (https://docs.streamlit.io/library/api-reference/widgets ) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in section 3 is that widgets set the values of variables.
+In the previous section, we created our first chart.]]></description>
 </item>
 <item>
     <title>4 • Getting started with charts</title>

@@ -5,21 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>5 • Widgets and charts - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="5 • Widgets and charts" />
-<meta property="og:description" content="year slider radio buttons   st.set_page_config( page_title=&ldquo;A Demographics Data App&rdquo;, layout=&ldquo;wide&rdquo;)
-use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&ldquo;demo_dataset.csv&rdquo;)
-create the sidebar with st.sidebar: st.image(&ldquo;globe.png&rdquo;) st.header(&ldquo;Demographic Data&rdquo;) st.info(&ldquo;Welcome to the global demographic explorer data app.&rdquo;)
-create the information box at the top of the page with st.expander(label=&ldquo;World Demographics Data Explorer: click for instructions&rdquo;): st.info(&ldquo;&ldquo;&ldquo;World Demographics Data Explorer - This app explores information about social, economic and environmental development at local, national and global levels." />
+<meta property="og:description" content="Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A [widget] (https://docs.streamlit.io/library/api-reference/widgets ) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in section 3 is that widgets set the values of variables.
+In the previous section, we created our first chart." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-22T17:57:15+00:00" />
+<meta property="article:modified_time" content="2023-02-23T10:36:38+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets and charts"/>
-<meta name="twitter:description" content="year slider radio buttons   st.set_page_config( page_title=&ldquo;A Demographics Data App&rdquo;, layout=&ldquo;wide&rdquo;)
-use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&ldquo;demo_dataset.csv&rdquo;)
-create the sidebar with st.sidebar: st.image(&ldquo;globe.png&rdquo;) st.header(&ldquo;Demographic Data&rdquo;) st.info(&ldquo;Welcome to the global demographic explorer data app.&rdquo;)
-create the information box at the top of the page with st.expander(label=&ldquo;World Demographics Data Explorer: click for instructions&rdquo;): st.info(&ldquo;&ldquo;&ldquo;World Demographics Data Explorer - This app explores information about social, economic and environmental development at local, national and global levels."/>
+<meta name="twitter:description" content="Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A [widget] (https://docs.streamlit.io/library/api-reference/widgets ) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The import difference between widgets and layout components (that we learned in section 3 is that widgets set the values of variables.
+In the previous section, we created our first chart."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,8 +28,8 @@ create the information box at the top of the page with st.expander(label=&ldquo;
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  277 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-22T17:57:15+00:00","publisher": {
+        },"genre": "posts","wordcount":  452 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T10:36:38+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -82,6 +78,14 @@ create the information box at the top of the page with st.expander(label=&ldquo;
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#widgets">Widgets</a>
+      <ul>
+        <li><a href="#fixing-our-chart-years">Fixing our chart years</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
     <li>
       <ul>
         <li><a href="#section-title">Section title</a></li>
@@ -91,7 +95,13 @@ create the information box at the top of the page with st.expander(label=&ldquo;
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><ol>
+            </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
+<p>The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A [widget] (<a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">https://docs.streamlit.io/library/api-reference/widgets</a>
+) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. <strong>The import difference between widgets and layout components (that we learned in <a href="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" target="_blank" rel="noopener noreffer">section 3</a>
+ is that widgets set the values of variables</strong>.</p>
+<p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;Life expectancy&rdquo; with the parameter line <code>x=&quot;Life expectancy&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
+<h3 id="fixing-our-chart-years">Fixing our chart years</h3>
+<ol>
 <li>year slider</li>
 <li>radio buttons</li>
 <li></li>
