@@ -130,8 +130,8 @@ While you can explore the docs more fully in your own time, and as you need for 
 By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. If you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
-## Creating a meaningful layout
-{{< admonition type="question" title="Exercise 1: build your app's layout." open=true >}}
+## Exercise 1: Creating a layout
+{{< admonition type="question" title="Exercise 1: build your app's layout" open=true >}}
 Through the rest of this course we will be building a **visualiser for World Demographics Data**. Our first exercise is to prepare our layout for this. We will edit some of the things we have already made, and create some new items as well. Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps' tab in your browser.
 1. Remove the `st.write()` line that we added earlier.
 2. Change the **title** in the page to "World Demographics". Put it in the sidebar.
@@ -139,9 +139,10 @@ Through the rest of this course we will be building a **visualiser for World Dem
 4. Create **two** columns in the main app space, with the left column being five times wider than the right one.
 5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!"
 6. Add an image to the **right hand column**, using `st.image()`. We will use the image `globe.png`, included with the [course resources download](https://github.com/alleetanner/graphical-data-apps/raw/main/data-apps.zip) we got earlier
+7. Initialise [**two tabs** using `st.tabs()`](https://docs.streamlit.io/library/api-reference/layout/st.tabs). Just like with columns, we will define two variables (call them `tab1` and `tab2`), and `st.tabs()` takes a **list** (ie, you will have square brackets and round brackets).
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Exercise 1 solution." open=false >}}
+{{< admonition type="warning" title="Exercise 1 solution" open=false >}}
 The whole script should look something similar to this:
 ```Python
 import streamlit as st
@@ -164,5 +165,8 @@ with column1:
 # place image into second column
 with column2:
     st.image("globe.png")
+
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
 ```
 {{< /admonition >}}
