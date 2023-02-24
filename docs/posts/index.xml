@@ -31,7 +31,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
 Preparing our interface To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not.]]></description>
 </item>
 <item>
-    <title>5 • Widgets and charts</title>
+    <title>5 • Widgets</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/05widgets/</link>
     <pubDate>Wed, 15 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
