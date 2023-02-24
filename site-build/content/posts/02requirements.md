@@ -36,7 +36,7 @@ The words **library**, **module** and **package** are often used interchangeably
 
 ## Your experience
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
-* experience of Python to an intermediate level; for example, you should understand **functions, conditionals, loops and modules**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you will be ready to approach this course.
+* experience of Python to an intermediate level; for example, you should have experience of **functions** and **conditionals**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you are ready to approach this course. If you have only done [Intermediate Python](https://milliams.com/courses/intermediate_python/) you should also be fine!
 * [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those).
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
@@ -64,17 +64,17 @@ In the Jupyter Lab **file navigator** in the sidebar to the left, create a new f
 
 For this session, the most useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and occasionally reporting what is happening, and any errors), so we don't need it to take up too much space. We are now ready to start!
 
-{{< admonition type="tip" title="Some reminders on editors, terminals and consoles."  open=False >}}
+{{< admonition type="tip" title="Some reminders on editors, terminals and consoles"  open=false >}}
 There are three panes in Jupyter Lab that we commonly use in our teaching:
 - **Text editor** : this is a basic word-processor designed for code, that is opened when you create a new Python or plain text file.
 - **Terminal** : this is a command-line (text based) version of your file manager (ie, Finder in MacOS, File Explorer in Windows). This is used to navigate the folders on your computer, and run commands.
 - **Console** : in the context of Jupyter lab, the console runs Python *interactively*. This means you enter Python code line by line, which are immediately run - but it is not creating a script file. This is useful for understanding how code works, and prototyping a script.
 {{< /admonition >}}
 
-### If you are using an alternative IDE
+{{< admonition type="warning" title="If you are using an alternative IDE"  open=false >}}
 Please skip this section if you are using Jupyter Lab / Anaconda.
 
-If you prefer to use another interface, please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
+You are welcome to use another IDE, but please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/sandpit/requirements.txt), which will install the required packages. (`environment.yml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
 
 Create a new environment here, called `venv`:
 ```Shell
@@ -90,3 +90,4 @@ Use `pip` to acquire and install our dependencies:
 ```Shell
 pip install -r requirements.txt
 ```
+{{< /admonition >}}
