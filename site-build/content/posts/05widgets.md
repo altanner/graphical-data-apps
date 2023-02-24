@@ -123,7 +123,7 @@ Save this... and you will get an error! The parameter `options` is expecting a l
 
 ## Exercise 3b: Options and radio buttons
 
-{{< admonition type="questions" title="Exercise 3b: Options and radio buttons" open=true >}}
+{{< admonition type="question" title="Exercise 3b: Options and radio buttons" open=true >}}
 We already have our widgets ready, but we cannot use them until we tell them what the options are. These will be the names of columns in our dataframe (but not all of them):
 1. Immediately above your `x_data_widget` lines (as above), define a list called `column_names`
 2. The contents of this list will be five strings, all of them names of columns in the dataframe.
@@ -134,6 +134,7 @@ x="HDI index",
 y="GDP per capita",
 ```
 Modify these so they respond to your widgets. Test your app is working.
+
 5. You might notice that on first loading, the chart plots the same data on each axis, producing just a `x=y` straight line. Fix this by adding the parameter `index=1` to the end of your `y_data_widget` parameters. It will select index 1 (the _2nd_!) item from the list `column_names` as what to use on first loading.
 {{< /admonition >}}
 
