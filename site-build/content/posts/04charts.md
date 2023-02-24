@@ -1,5 +1,5 @@
 ---
-title: "4 • Getting started with charts"
+title: "4 • Charts"
 subtitle: "How to control your graphing library."
 
 date: 2023-02-14T00:00:00+01:00
@@ -21,10 +21,16 @@ comment:
   enable: false
 ---
 
-At the end of the last section, our running Python file creates a page, lays out a couple of components. In this section, we will be bringing data into the app, and creating our first visualisation.
+{{< admonition type="tip" title="Plots, graphs or charts?" open=false >}}
+The words **plot**, **chart** and **graph** are used interchangeably, but I will stick with **chart** in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word "graph" would not make sense. Also, the word "plot" is kind of reserved for some things in Python, and is in use by many graphic libraries.
+
+*As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!*
+{{< /admonition >}}
+
+At the end of the last section, our running Python file creates a page, we added some layout components. In this section, we will be bringing data into the app, and creating our first visualisation.
 
 ## Bringing our data into the script
-We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that `streamlit` is very much built with `pandas` in mind. Most of Streamlit data workflows and visualisations will expect to be working with dataframes, and this is the case now too.
+We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that Streamlit is very much built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
 
 ### Loading up `pandas`
 Firstly, we need to update our `import`s to include everything we need for the rest of this course. We will add both `pandas` and `plotly.express`, so we will have three `import`s in total, at the top of our script, with their conventional aliases, `st`, `pd` and `px` respectively:
@@ -40,20 +46,10 @@ demo_df = pd.read_csv("demo_dataset.csv")
 ### Viewing our data
 Before we go any further, let's examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the **end** of the script, add this to the end:
 ```Python
-st.dataframe(demo_df)
-```
-Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.
-
-We don't want to see this all the time, so we are going to add a checkbox to control this. (We cover [widgets](ZXXXX) in more depth in the next section, but right now we want to add a toggle.) Go to your code block starting `with st.sidebar:`, and inside this block (ie, indented) add
-```Python
-df_view = st.checkbox(label="View dataframe")
-```
-Here we are assigning the state of the checkbox to a variable called `df_view`. In Streamlit, a checkbox is a boolean, so it can only be `True` or `False`. We will use this value to trigger if Streamlit shows us the dataframe, by putting our `st.dataframe(demo_df)` into a conditional block. Find your line `st.dataframe(demo_df)`, and pop it into a conditional block:
-```Python
-if df_view == True:
+with tab1:
     st.dataframe(demo_df)
 ```
-Save this, and give it a test in the browser window.
+Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave `tab1` ("Data") as a quick way of checking what the data looks like, and `tab2` ("Visualisation") will be for our chart.
 
 ## Creating a chart
 Now that we have our data available, we can begin work on visualising it. As mentioned, we are using [Plotly](https://plotly.com/python/), for a number of reasons:
@@ -72,25 +68,27 @@ Plotly works on dataframes, which we have ready for it. We will build up to a mo
 2. The data to plot on the `x` axis (ie, one of the dataframe columns)
 3. The data to plot on the `y` axis (another dataframe column)
 
-For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let's choose the columns `Life expectancy` as our `x`, and `GDP per capita` as our `y`.
+For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let's choose the columns `CO2 per capita` as our `x`, and `GDP per capita` as our `y`.
 We create our chart object like this:
 ```Python
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="CO2 per capita",
     y="GDP per capita")
 ```
 Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy!
 
-OK, so we have built the `chart` object - now we ask Streamlit to show it to us by handing it to `st.plotly_chart()`. Add this at the bottom of your script:
+OK, so we have built the `chart` object - now we ask Streamlit to show it to us by handing it to `st.plotly_chart()`. We will also put this into our second tab. Add this at the bottom of your script:
 ```Python
-st.plotly_chart(chart)
+with tab2:
+    st.plotly_chart(chart)
 ```
-Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost.
+Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost, or click the "rescale" button (it is visible when you mouse over the chart, in the top right).
 
 Before we move on, let's make better use of the space we have, by adding an argument to `st.plotly_chart(chart)`:
 ```Python
-st.plotly_chart(chart, use_container_width=True)
+with tab2:
+    st.plotly_chart(chart, use_container_width=True)
 ```
 This is a useful argument to use, especially if you have a more complex layout with columns and containers.
 
@@ -99,22 +97,23 @@ This is a good start, but Plotly can do much better than this! Given there is mo
 ```Python
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="CO2 per capita",
     y="GDP per capita",
     color="Continent")
 ```
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
-## Exercise: building a prettier visualisation
-{{< admonition type="question" title="Exercise 2: Prettier visuals" open=true >}}
-So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data
-1. We can control the size of points. Add a parameter called `size`, and assign the column `"CO2 per capita"` to it (note that any dataframe column name is a string).
-2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign the column `"Country"` to it.
-3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different.
-4. Finally, let's add trendlines for each continent. Add the parameter `trendline`, and assign `"lowess"` (Locally Weighted Scatterplot Smoothing) as the line-building method.
+Currently, there is an issue with our chart which is making it unclear. Because we are handing the entire dataframe to `px.scatter` XXXXXXX
+
+## Exercise: building a better visualisation
+{{< admonition type="question" title="Exercise 2: better visuals" open=true >}}
+So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data. (Here, when we say "assign", it means to use the equals sign to "put something into" a variable; for example `dog = "fido"` is assigning the string `"fido"` to a variable called `dog`.)
+1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
+2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
+3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Solution to Exercise 2" open=false >}}
+{{< admonition type="warning" title="Exercise 2 solution" open=false >}}
 Your Streamlit script should look similar to this:
 ```Python
 import streamlit as st
@@ -131,8 +130,6 @@ st.set_page_config(page_title="Demo App", layout="wide")
 with st.sidebar:
     # put a title in the sidebar
     st.title("World Demographics")
-    # dataframe visibility toggle
-    df_view = st.checkbox(label="View dataframe")
 
 # create two columns, of ratio 5:1
 column1, column2 = st.columns([5,1])
@@ -144,23 +141,26 @@ with column1:
 # place image into second column
 with column2:
     st.image("globe.png")
+    
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
 
-# show us the data if the sidebar toggle is switched
-if df_view == True:
+# display the dataframe in tab1
+with tab1:
     st.dataframe(demo_df)
 
 # build px chart object
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="HDI index",
     y="GDP per capita",
     color="Continent",
     size="CO2 per capita",
     hover_name="Country",
-    trendline="lowess",
     height=650)
 
-# display the chart in the main app area
-st.plotly_chart(chart, use_container_width=True)
+# display the chart in tab2
+with tab2:
+    st.plotly_chart(chart, use_container_width=True)
 ```
 {{< /admonition >}}

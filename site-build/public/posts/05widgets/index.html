@@ -4,18 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>5 • Widgets and charts - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="5 • Widgets and charts" />
-<meta property="og:description" content="At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st." />
+        <title>5 • Widgets - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="5 • Widgets" />
+<meta property="og:description" content="Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A widget is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that widgets set the values of variables. We will see the Python syntax for this in a moment." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-21T18:19:21+00:00" />
+<meta property="article:modified_time" content="2023-02-24T12:23:23+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="5 • Widgets and charts"/>
-<meta name="twitter:description" content="At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st."/>
+<meta name="twitter:title" content="5 • Widgets"/>
+<meta name="twitter:description" content="Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A widget is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that widgets set the values of variables. We will see the Python syntax for this in a moment."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,13 +21,13 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "5 • Widgets and charts",
+        "headline": "5 • Widgets",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  296 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-21T18:19:21+00:00","publisher": {
+        },"genre": "posts","wordcount":  1498 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-24T12:23:23+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -69,7 +67,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">5 • Widgets and charts</h1><h2 class="single-subtitle">Linking up your interface with your charts.</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">5 • Widgets</h1><h2 class="single-subtitle">Creating an interface to control your visualisations.</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -78,90 +76,232 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#plotly-express">Plotly Express</a>
+    <li><a href="#widgets">Widgets</a>
       <ul>
-        <li><a href="#section-title">Section title</a></li>
-        <li><a href="#another-section">Another section</a></li>
-        <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#improving-our-chart">Improving our chart</a></li>
+        <li><a href="#first-widget">First widget</a></li>
+        <li><a href="#connecting-the-widget-to-the-chart">Connecting the widget to the chart</a></li>
       </ul>
     </li>
+    <li><a href="#exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</a></li>
+    <li><a href="#completing-our-widgets">Completing our widgets</a></li>
+    <li><a href="#exercise-3b-options-and-radio-buttons">Exercise 3b: Options and radio buttons</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>At the end of the last section, you should have your Python script looking a little like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;A Demographics Data App&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read csv file into a dataframe</span>
-</span></span><span class="line"><span class="cl"><span class="n">demographics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># create the sidebar</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&#34;Demographic Data&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic explorer data app.&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># create the information box at the top of the page</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;World Demographics Data Explorer: click for instructions&#34;</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;&#34;&#34;World Demographics Data Explorer
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - This app explores information about social, economic and environmental development at local, national and global levels.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - Please use the options in the sidebar to explore the dataset.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the &#34;autoscale&#34; button.&#34;&#34;&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="plotly-express">Plotly Express</h2>
-<p>There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. <code>plotly</code> comes with a simplified interface called <code>plotly.express</code>, which we will use.</p>
-<p>To bring <code>plotly</code> functionality into our script we need to import it. While we are writing some imports, we also need <code>pandas</code> ready for action, so let&rsquo;s bring that into our script too. So, we will now have three imports at the top of our script:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span></span></code></pre></div><p><code>px</code> is the conventional alias for <code>plotly.express</code>, and <code>pd</code> is the shortened name of <code>pandas</code>.</p>
-<h3 id="section-title">Section title</h3>
-<ul>
-<li>bullet1</li>
-<li>bullt2</li>
-</ul>
-<p>Normal text body.</p>
-<p><div class="details admonition warning open">
+            </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
+<p>The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">widget</a>
+ is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that <strong>widgets set the values of variables</strong>. We will see the Python syntax for this in a moment.</p>
+<p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;HDI index&rdquo; with the parameter <code>x=&quot;HDI index&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
+<h3 id="improving-our-chart">Improving our chart</h3>
+<p>You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but <strong>we can improve the chart using a widget to chose what year to display</strong>.</p>
+<h3 id="first-widget">First widget</h3>
+<p>Let&rsquo;s add our first widget. It will communicate to the chart which year to plot. In this case, we need a widget that selects an integer from a limited range of contiguous options. There are <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">several types of widgets</a>
+ that can do this, but for us, a good solution is a <a href="https://docs.streamlit.io/library/api-reference/widgets/st.slider" target="_blank" rel="noopener noreffer">slider</a>
+.</p>
+<p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">value</span><span class="o">=</span><span class="mi">2008</span>
+</span></span><span class="line"><span class="cl">    <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">)</span>
+</span></span></code></pre></div><p>Notice that, unlike layout <code>st.</code> commands, we are assigning the widget to a variable, here called <code>year_widget</code>. The slider has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Save the file and check the changes on your app (remember we are putting this in the sidebar!)</p>
+<h3 id="connecting-the-widget-to-the-chart">Connecting the widget to the chart</h3>
+<p>So far, the widget exists, and it creates / updates the variable <code>year_widget</code>, but we need to pipe that into the code for the chart. Currently, <code>px.scatter()</code> has been told to plot the whole dataset, with the line <code>data_frame=demo_df</code>. We are going to change this so that it instead plots just the year selected by the widget. Change the parameter line to <code>data_frame=demo_df.query(f&quot;Year=={year_widget}&quot;)</code> (and leave the rest of your parameters in place).</p>
+<p>Several things are happening here:</p>
+<ol>
+<li>Given <code>demo_df</code> is a dataframe, we can use the method <code>.query()</code> to filter it.</li>
+<li>Inside the <code>.query()</code> brackets we are filtering on year with <code>&quot;Year=={year_widget}&quot;</code></li>
+<li>To insert our variable <code>year_widget</code>, we are creating an <a href="https://realpython.com/python-f-strings/" target="_blank" rel="noopener noreffer">f-string</a>
+, with the variable name inside our curly brackets.</li>
+</ol>
+<p>Save your script, and have a play with the app.</p>
+<h2 id="exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</h2>
+<p>You should now have a chart that only plots one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add <a href="https://docs.streamlit.io/library/api-reference/widgets/st.checkbox" target="_blank" rel="noopener noreffer">checkboxes</a>
+, as we briefly saw in the previous section.</p>
+<div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3a: Axis scale controls<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Warning1</li>
-<li>Warning2</li>
-</ul>
+            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add two <strong>checkbox widgets</strong></p>
+<ol>
+<li>One with the label <code>&quot;Logarithmic X-axis&quot;</code>, assigning its value to a variable called <code>log_x_widget</code></li>
+<li>Another with the label <code>&quot;Logarithmic Y-axis&quot;</code>, assigning its value to a variable called <code>log_y_widget</code>
+In your parameters for <code>px.scatter()</code>, add <strong>two more parameters</strong>:</li>
+<li><code>log_x</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic X-axis&quot;</code> (ie, its variable)</li>
+<li><code>log_y</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic Y-axis&quot;</code>
+Don&rsquo;t forget to separate your parameters with commas!</li>
+</ol>
 </div>
         </div>
     </div>
-<div class="details admonition info open">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3a solutions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
+            <div class="admonition-content"><p>Your sidebar block should now contain:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">log_x_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Logarithmic X-axis&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">log_y_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Logarithmic Y-axis&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Your <code>px.scatter()</code> now needs to have parameters related to these widgets, so the full parameters would be:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year==</span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_x</span><span class="o">=</span><span class="n">log_x_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_y</span><span class="o">=</span><span class="n">log_y_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
+</span></span></code></pre></div></div>
+        </div>
+    </div>
+<p>Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.</p>
+<h2 id="completing-our-widgets">Completing our widgets</h2>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Clarity is sacred!<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Apps should be easy to use. Visualisations should be easy to interpret. In this course, we are using an ideal dataset to assigning different types of data to different parts of our chart. In the real world, this is rare! You are likely to have data that doesn&rsquo;t make sense to plot, or is confusing, or over-whelms!</p>
+<p>Almost always, <em>less is more</em> when it comes to visualisations! So, while in this course we are being fairly maximal with our charting for teaching purposes, we recommend, in the real world, that you think carefully about what to present, and how to present it.</p>
 </div>
         </div>
-    </div></p>
-<h3 id="another-section">Another section</h3>
-<p>blahfdajkfhu aefuibahj rwefyugr</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
-<h3 id="exercise">Exercise</h3>
+    </div>
+<p>Click your &ldquo;View dataframe&rdquo; toggle, and notice the names of the columns. There are eight columns, and currently</p>
+<ul>
+<li><strong>Continent</strong> is represented by colour</li>
+<li><strong>Country</strong> is reported in mouse-over tooptip</li>
+<li><strong>CO2</strong> is represented by dot size</li>
+<li><strong>HDI index</strong> is on the x-axis</li>
+<li><strong>GDP per capita</strong> is on the y-axis
+That leaves three columns that would could integrate into the chart: &ldquo;Life expectancy&rdquo;, &ldquo;Services&rdquo;, and &ldquo;Year&rdquo;. We have already assigned the year to a slider (and in the next section we will make that even nicer!). As for the other two, for the sake of completeness, let&rsquo;s give the user the option of exploring these data too.</li>
+</ul>
+<p>To do this, we will create two more widgets, this time <a href="https://docs.streamlit.io/library/api-reference/widgets/st.radio" target="_blank" rel="noopener noreffer">radio buttons</a>
+. These are single-option, mutually-exclusive selectors (I think these are called &ldquo;radio&rdquo; because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your axis checkboxes, add:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save this&hellip; and you will get an error! The parameter <code>options</code> is expecting a list, but we gave it an undefined variable. Let&rsquo;s fix this, and connect it up, in this exercise</p>
+<h2 id="exercise-3b-options-and-radio-buttons">Exercise 3b: Options and radio buttons</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Questions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3b: Options and radio buttons<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>a question box</p>
-<ul>
-<li>q1</li>
-<li>q2</li>
-</ul>
+            <div class="admonition-content"><p>We already have our widgets ready, but we cannot use them until we tell them what the options are. These will be the names of columns in our dataframe (but not all of them):</p>
+<ol>
+<li>Immediately above your <code>x_data_widget</code> lines (as above), define a list called <code>column_names</code></li>
+<li>The contents of this list will be five strings, all of them names of columns in the dataframe.</li>
+<li>Three column names will <em>not</em> be in your list: what are they, and why?</li>
+<li>Link your widgets to the chart parameters. Currently, the <code>x</code> and <code>y</code> parameters are hard-coded:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x</span><span class="o">=</span><span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span></code></pre></div><p>Modify these so they respond to your widgets. Test your app is working.</p>
+<ol start="5">
+<li>You might notice that on first loading, the chart plots the same data on each axis, producing just a <code>x=y</code> straight line. Fix this by adding the parameter <code>index=1</code> to the end of your <code>y_data_widget</code> parameters. It will select index 1 (the <em>2nd</em>!) item from the list <code>column_names</code> as what to use on first loading.</li>
+</ol>
 </div>
+        </div>
+    </div>
+<div class="details admonition warning">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3b solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>At this point, your whole script should look similar to this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read CSV file into a dataframe</span>
+</span></span><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set the tab title and page width</span>
+</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;Demo App&#34;</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### build the sidebar</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># put a title in the sidebar</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">value</span><span class="o">=</span><span class="mi">2008</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">log_x_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Logarithmic X-axis&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">log_y_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Logarithmic Y-axis&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># a list of options for axis data selectors</span>
+</span></span><span class="line"><span class="cl">    <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Life expectancy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Services&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># x and y selector widgets</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="o">=</span><span class="n">column_names</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">### end of sidebar</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1">### draw main page area</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># create two columns, of ratio 5:1</span>
+</span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place info box in first column</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place image into second column</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create two tabs</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># display the dataframe in tab1</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># build px chart object</span>
+</span></span><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year==</span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="n">x_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="n">y_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_x</span><span class="o">=</span><span class="n">log_x_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_y</span><span class="o">=</span><span class="n">log_y_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### end of main page area</span>
+</span></span></code></pre></div></div>
         </div>
     </div>
 </div><div class="post-footer" id="post-footer">
@@ -185,8 +325,8 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
         </section>
     </div>
 
-    <div class="post-nav"><a href="/graphical-data-apps/posts/04charts/" class="prev" rel="prev" title="4 • Getting started with charts"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>4 • Getting started with charts</a>
-            <a href="/graphical-data-apps/posts/06animations/" class="next" rel="next" title="6 • Interactivity and animations">6 • Interactivity and animations<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/graphical-data-apps/posts/04charts/" class="prev" rel="prev" title="4 • Charts"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>4 • Charts</a>
+            <a href="/graphical-data-apps/posts/06animations/" class="next" rel="next" title="6 • Animations">6 • Animations<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
