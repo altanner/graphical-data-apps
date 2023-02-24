@@ -71,13 +71,10 @@ Don't forget to separate your parameters with commas!
 Your sidebar block should now contain:
 ```Python
 log_x_widget = st.checkbox(
-    label="Logarithmic X-axis",
-    value=False)
+    label="Logarithmic X-axis")
 log_y_widget = st.checkbox(
-    label="Logarithmic Y-axis",
-    value=False)
+    label="Logarithmic Y-axis")
 ```
-_Note that `value=False` is the default (so we could omit it) but here we are being explicit as we learn the library!_
 
 Your `px.scatter()` now needs to have parameters related to these widgets, so the full parameters would be:
 ```Python
@@ -168,12 +165,10 @@ with st.sidebar:
         max_value=2018)
     
     log_x_widget = st.checkbox(
-        label="Logarithmic X-axis",
-        value=False)
+        label="Logarithmic X-axis")
 
     log_y_widget = st.checkbox(
-        label="Logarithmic Y-axis",
-        value=False)
+        label="Logarithmic Y-axis")
     
     # a list of options for axis data selectors
     column_names = [
