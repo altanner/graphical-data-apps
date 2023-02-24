@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-24T12:23:07+00:00" />
+<meta property="article:modified_time" content="2023-02-24T14:40:45+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1246 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-24T12:23:07+00:00","publisher": {
+        },"genre": "posts","wordcount":  1361 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-24T14:40:45+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -112,12 +112,12 @@
 </span></span></code></pre></div><p>Now that we have <code>pandas</code> ready for use, we can read our dataset into a dataframe. We are using the dataset provided in the course materials, <code>demo_dataset.csv</code>, which will need to be in your working folder. Add this line <strong>at the top of your script, below your <code>import</code>s</strong>. The reason we put it near the top is because this code is not related to building the interface, so it is logical to place it before the page-build code.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="viewing-our-data">Viewing our data</h3>
-<p>Before we go any further, let&rsquo;s examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the <strong>end</strong> of the script, add this to the end:</p>
+<p>Before we go any further, let&rsquo;s examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script, add this to the end:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave <code>tab1</code> (&ldquo;Data&rdquo;) as a quick way of checking what the data looks like, and <code>tab2</code> (&ldquo;Visualisation&rdquo;) will be for our chart.</p>
+</span></span></code></pre></div><p>Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave <code>tab1</code> (&ldquo;Data&rdquo;) as a quick way of checking what the data looks like, and <code>tab2</code> (&ldquo;Visualisation&rdquo;) for our chart.</p>
 <h2 id="creating-a-chart">Creating a chart</h2>
-<p>Now that we have our data available, we can begin work on visualising it. As mentioned, we are using <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
+<p>Now that we have our data available, we can begin work on visualising it. We are using <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
 , for a number of reasons:</p>
 <ul>
 <li>it has an intermediate learning curve</li>
@@ -126,6 +126,31 @@
 <li>the syntax is easy to use, without being over-simplified</li>
 <li>the graphs it creates are good-looking, customisable and interactive.</li>
 </ul>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Options for plotting libraries<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Streamlit is designed to use <a href="https://docs.streamlit.io/library/api-reference/charts" target="_blank" rel="noopener noreffer">a range of popular Python plotting libraries</a>
+. These have their strengths and weaknesses. Here is a quick, incomplete summary; click the links for galleries of what each library can do:</p>
+<ul>
+<li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank" rel="noopener noreffer">matplotlib</a>
+ : a classic Python plotting library. Mature, widely-used, relatively easy, but not as sophisticated as others, and no interactive features.</li>
+<li><a href="https://altair-viz.github.io/gallery/index.html" target="_blank" rel="noopener noreffer">Altair</a>
+ and <a href="https://vega.github.io/vega-lite/examples/" target="_blank" rel="noopener noreffer">Vega Lite</a>
+ : these are both APIs for controlling the mighty <a href="https://d3js.org/" target="_blank" rel="noopener noreffer">D3.js</a>
+. Very powerful, but steep learning curve.</li>
+<li><a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
+ : another JavaScript library, but easier to use than the D3.js wrappers.</li>
+<li><a href="https://docs.bokeh.org/en/latest/docs/gallery.html" target="_blank" rel="noopener noreffer">Bokeh</a>
+ : yet another Python API to control JavaScript!</li>
+<li><a href="https://deck.gl/showcase" target="_blank" rel="noopener noreffer">PyDeck</a>
+ : this runs the Deck.GL graphics library, creating 3D models, from medical to geographical. It also integrates with <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreffer">MapBox</a>
+.</li>
+</ul>
+</div>
+        </div>
+    </div>
 <p>There are two steps to getting our data from the dataframe to into a graphic:</p>
 <ol>
 <li>Creating a chart object</li>
