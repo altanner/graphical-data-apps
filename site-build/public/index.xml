@@ -41,7 +41,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
     <description><![CDATA[Widgets The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A widget is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that widgets set the values of variables. We will see the Python syntax for this in a moment.]]></description>
 </item>
 <item>
-    <title>4 • Getting started with charts</title>
+    <title>4 • Charts</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/04charts/</link>
     <pubDate>Tue, 14 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
@@ -49,7 +49,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
     <description><![CDATA[Plots, graphs or charts?  The words plot, chart and graph are used interchangeably, but I will stick with chart in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word &ldquo;graph&rdquo; would not make sense. Also, the word &ldquo;plot&rdquo; is kind of reserved for some things in Python, and is in use by many graphic libraries.]]></description>
 </item>
 <item>
-    <title>3 • Getting started with layout</title>
+    <title>3 • Layout</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/03layout/</link>
     <pubDate>Mon, 13 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
