@@ -24,7 +24,7 @@ comment:
 ## Widgets
 The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
-In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "Life expectancy" with the parameter `x="Life expectancy"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
+In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "CO2 per capita" with the parameter `x="CO2 per capita"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
 ### Improving our chart
 You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
@@ -58,10 +58,10 @@ Save your script, and have a play with the app.
 You should now have a chart that only plots one year at a time. Let's get some more control over the chart, this time altering the type of axis. Currently, both `x` and `y` axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let's add a widget to control that. We are going to add [checkboxes](https://docs.streamlit.io/library/api-reference/widgets/st.checkbox), as we briefly saw in the previous section.
 
 {{< admonition type="question" title="Exercise 3a: Axis scale controls" open=true >}}
-In your sidebar code block, and below your year slider widget, add two checkbox widgets
+In your sidebar code block, and below your year slider widget, add two **checkbox widgets**
 1. One with the label `"Logarithmic X-axis"`, assigning its value to a variable called `log_x_widget`
 2. Another with the label `"Logarithmic Y-axis"`, assigning its value to a variable called `log_y_widget`
-In your parameters for `px.scatter()`, add two more parameters:
+In your parameters for `px.scatter()`, add **two more parameters**:
 1. `log_x`, being equal to the value of your widget labelled `"Logarithmic X-axis"` (ie, its variable)
 2. `log_y`, being equal to the value of your widget labelled `"Logarithmic Y-axis"`
 Don't forget to separate your parameters with commas!
@@ -83,17 +83,23 @@ Your `px.scatter()` now needs to have parameters related to these widgets, so th
 ```Python
 chart = px.scatter(
     data_frame=demo_df.query(f"Year=={year_widget}"),
-    x="Life expectancy",
+    x="CO2 per capita",
     y="GDP per capita",
     log_x=log_x_widget,
     log_y=log_y_widget,
     color="Continent",
     size="CO2 per capita",
     hover_name="Country",
-    trendline="lowess",
     height=650)
 ```
 {{< /admonition >}}
+
+Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.
+
+## 
+Click your "View dataframe" toggle, and notice the names of the columns. There are eight columns, and currently
+- Continent is being represented by colour
+- Country It would be nice to be able to see *any* of these data, rather than just having it locked to two columns. We will again do this through adding two new widgets, and making two changes to the chart parameters.
 
 
 To do this, we will create two more widgets, this time [radio buttons](https://docs.streamlit.io/library/api-reference/widgets/st.radio). These are single-option, mutually-exclusive selectors (I think these are called "radio" because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your year slider widget, add:
