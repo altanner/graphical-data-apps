@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>6 • Interactivity and animations - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="6 • Interactivity and animations" />
-<meta property="og:description" content="At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st." />
+        <title>6 • Introduction to animations - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="6 • Introduction to animations" />
+<meta property="og:description" content="In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with px.scatter().
+A widget controlling a widget! To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/06animations/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-16T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-21T18:17:11+00:00" />
+<meta property="article:modified_time" content="2023-02-24T11:55:58+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="6 • Interactivity and animations"/>
-<meta name="twitter:description" content="At the end of the last section, you should have your Python script looking a little like this:
-import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data App&#34;, layout=&#34;wide&#34;) # use pandas to read csv file into a dataframe demographics_df = pd.read_csv(&#34;demo_dataset.csv&#34;) # create the sidebar with st.sidebar: st.image(&#34;globe.png&#34;) st.header(&#34;Demographic Data&#34;) st.info(&#34;Welcome to the global demographic explorer data app.&#34;) # create the information box at the top of the page with st."/>
+<meta name="twitter:title" content="6 • Introduction to animations"/>
+<meta name="twitter:description" content="In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with px.scatter().
+A widget controlling a widget! To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,13 +23,13 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "6 • Interactivity and animations",
+        "headline": "6 • Introduction to animations",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/"
-        },"genre": "posts","wordcount":  296 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/","datePublished": "2023-02-16T00:00:00+01:00","dateModified": "2023-02-21T18:17:11+00:00","publisher": {
+        },"genre": "posts","wordcount":  560 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/","datePublished": "2023-02-16T00:00:00+01:00","dateModified": "2023-02-24T11:55:58+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -69,7 +69,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">6 • Interactivity and animations</h1><h2 class="single-subtitle">Animations add an extra dimension!</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">6 • Introduction to animations</h1><h2 class="single-subtitle">Animations add an extra dimension!</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -78,6 +78,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#a-widget-controlling-a-widget">A widget controlling a widget!</a></li>
     <li><a href="#plotly-express">Plotly Express</a>
       <ul>
         <li><a href="#section-title">Section title</a></li>
@@ -87,7 +88,21 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>At the end of the last section, you should have your Python script looking a little like this:</p>
+            </div><div class="content" id="content"><p>In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with <code>px.scatter()</code>.</p>
+<h2 id="a-widget-controlling-a-widget">A widget controlling a widget!</h2>
+<p>To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not. As your first widget (ie, in your sidebar, just below your title, but above your &ldquo;Year&rdquo; slider) add this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">animate_vis</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Animate&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Remember to keep your indentation correct for the sidebar block. Save the file and confirm the checkbox is in the right place. We will connect this to the chart in just a moment! Now, we are going to be animating on the &ldquo;Year&rdquo; column. As such, when &ldquo;Animate&rdquo; is selected, asking for the &ldquo;Year&rdquo; again with the slider doesn&rsquo;t make sense.</p>
+<p>We can solve this by making the &ldquo;Animate&rdquo; checkbox also control the &ldquo;Year&rdquo; slider. &ldquo;Animate&rdquo; is a checkbox, therefore it can take two values of <code>False</code> or <code>True</code>; this is also the value of <code>animate_vis</code>. We can pass that boolean variable to another widget, in this case the &ldquo;Year&rdquo; slider. We want &ldquo;Year&rdquo; to be disabled when &ldquo;Animate&rdquo; is enabled. We do this by adding <code>disabled=animate_vis</code> to the slider parameters:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">value</span><span class="o">=</span><span class="mi">2008</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">disabled</span><span class="o">=</span><span class="n">animate_vis</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save and check behaviour in our app. The checkbox and the year slider should now be mutually exclusive! Now to actually create the animation.</p>
+<p>At the end of the last section, you should have your Python script looking a little like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>
