@@ -80,12 +80,12 @@ Plotly works on dataframes, which we have ready for it. We will build up to a mo
 2. The data to plot on the `x` axis (ie, one of the dataframe columns)
 3. The data to plot on the `y` axis (another dataframe column)
 
-For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let's choose the columns `Life expectancy` as our `x`, and `GDP per capita` as our `y`.
+For points [2] and [3], we need to choose two columns to plot. Set your dataframe to be displayed (using the checkbox we made earlier). Let's choose the columns `CO2 per capita` as our `x`, and `GDP per capita` as our `y`.
 We create our chart object like this:
 ```Python
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="CO2 per capita",
     y="GDP per capita")
 ```
 Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy!
@@ -107,7 +107,7 @@ This is a good start, but Plotly can do much better than this! Given there is mo
 ```Python
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="CO2 per capita",
     y="GDP per capita",
     color="Continent")
 ```
@@ -117,8 +117,8 @@ Currently, there is an issue with our chart which is making it unclear. Because 
 
 ## Exercise: building a better visualisation
 {{< admonition type="question" title="Exercise 2: better visuals" open=true >}}
-So far, we have a chart which expresses three things: the life expectancy, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data. (Here, when we say "assign", it means to use the equals sign to "put something into" a variable; for example `dog="fido"` is assigning the string `"fido"` to a variable called `dog`.)
-1. We can control the size of points. Add a parameter called `size`, and assign the column name `"CO2 per capita"` to it (note that any dataframe column name is a string).
+So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data. (Here, when we say "assign", it means to use the equals sign to "put something into" a variable; for example `dog = "fido"` is assigning the string `"fido"` to a variable called `dog`.)
+1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
 2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
 3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
 {{< /admonition >}}
@@ -163,7 +163,7 @@ if df_view == True:
 # build px chart object
 chart = px.scatter(
     data_frame=demo_df,
-    x="Life expectancy",
+    x="HDI index",
     y="GDP per capita",
     color="Continent",
     size="CO2 per capita",
