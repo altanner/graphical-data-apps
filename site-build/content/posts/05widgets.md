@@ -24,7 +24,7 @@ comment:
 ## Widgets
 The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
-In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "CO2 per capita" with the parameter `x="CO2 per capita"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
+In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "HDI index" with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
 ### Improving our chart
 You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
@@ -77,13 +77,13 @@ log_y_widget = st.checkbox(
     label="Logarithmic Y-axis",
     value=False)
 ```
-_Note that `value=False` is the default, so we could omit it, but here we are being explict as we learn the library!_
+_Note that `value=False` is the default (so we could omit it) but here we are being explicit as we learn the library!_
 
 Your `px.scatter()` now needs to have parameters related to these widgets, so the full parameters would be:
 ```Python
 chart = px.scatter(
     data_frame=demo_df.query(f"Year=={year_widget}"),
-    x="CO2 per capita",
+    x="HDI index",
     y="GDP per capita",
     log_x=log_x_widget,
     log_y=log_y_widget,
@@ -96,56 +96,143 @@ chart = px.scatter(
 
 Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.
 
-## 
+## Completing our widgets
+{{< admonition type="tip" title="Clarity is sacred!" open=false >}}
+Apps should be easy to use. Visualisations should be easy to interpret. In this course, we are using an ideal dataset to assigning different types of data to different parts of our chart. In the real world, this is rare! You are likely to have data that doesn't make sense to plot, or is confusing, or over-whelms!
+
+Almost always, _less is more_ when it comes to visualisations! So, while in this course we are being fairly maximal with our charting for teaching purposes, we recommend, in the real world, that you think carefully about what to present, and how to present it.
+{{< /admonition >}}
+
 Click your "View dataframe" toggle, and notice the names of the columns. There are eight columns, and currently
-- Continent is being represented by colour
-- Country It would be nice to be able to see *any* of these data, rather than just having it locked to two columns. We will again do this through adding two new widgets, and making two changes to the chart parameters.
+- **Continent** is represented by colour
+- **Country** is reported in mouse-over tooptip
+- **CO2** is represented by dot size
+- **HDI index** is on the x-axis
+- **GDP per capita** is on the y-axis
+That leaves three columns that would could integrate into the chart: "Life expectancy", "Services", and "Year". We have already assigned the year to a slider (and in the next section we will make that even nicer!). As for the other two, for the sake of completeness, let's give the user the option of exploring these data too.
 
-
-To do this, we will create two more widgets, this time [radio buttons](https://docs.streamlit.io/library/api-reference/widgets/st.radio). These are single-option, mutually-exclusive selectors (I think these are called "radio" because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your year slider widget, add:
+To do this, we will create two more widgets, this time [radio buttons](https://docs.streamlit.io/library/api-reference/widgets/st.radio). These are single-option, mutually-exclusive selectors (I think these are called "radio" because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your axis checkboxes, add:
 
 ```Python
-x_log = st.radio(
-    label="X-axis scale",
-    options=["Linear", "Log"],
-    
+x_data_widget = st.radio(
+    label="X-axis data",
+    options=column_names)
+y_data_widget = st.radio(
+    label="Y-axis data",
+    options=column_names)
+```
+
+Save this... and you will get an error! The parameter `options` is expecting a list, but we gave it an undefined variable. Let's fix this, and connect it up, in this exercise
+
+## Exercise 3b: Options and radio buttons
+
+{{< admonition type="questions" title="Exercise 3b: Options and radio buttons" open=true >}}
+We already have our widgets ready, but we cannot use them until we tell them what the options are. These will be the names of columns in our dataframe (but not all of them):
+1. Immediately above your `x_data_widget` lines (as above), define a list called `column_names`
+2. The contents of this list will be five strings, all of them names of columns in the dataframe.
+3. Three column names will _not_ be in your list: what are they, and why?
+4. Link your widgets to the chart parameters. Currently, the `x` and `y` parameters are hard-coded:
+```Python
+x="HDI index",
+y="GDP per capita",
+```
+Modify these so they respond to your widgets. Test your app is working.
+5. You might notice that on first loading, the chart plots the same data on each axis, producing just a `x=y` straight line. Fix this by adding the parameter `index=1` to the end of your `y_data_widget` parameters. It will select index 1 (the _2nd_!) item from the list `column_names` as what to use on first loading.
 
 y_log = 
 1. year slider
 2. radio buttons
-
-
-
-
-
-
-
-### Section title
-* bullet1
-* bullt2
-
-Normal text body.
-
-{{< admonition type="warning" open=true >}}
-- Warning1
-- Warning2
-{{< /admonition >}}
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
 {{< /admonition >}}
 
-### Another section
-blahfdajkfhu aefuibahj rwefyugr
+{{< admonition type="warning" title="Exercise 3b solution" open=false >}}
+Your whole script should look similar to this:
+```Python
+import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-```
-code goes herer
-```
-next setion blakfahuir wrafguighbarg
 
-### Exercise
-{{< admonition type="question" title="Questions" open=true >}}
-a question box
-- q1
-- q2
+# use pandas to read CSV file into a dataframe
+demo_df = pd.read_csv("demo_dataset.csv")
+
+# set the tab title and page width
+st.set_page_config(page_title="Demo App", layout="wide")
+
+
+### build the sidebar
+with st.sidebar:
+    
+    # put a title in the sidebar
+    st.title("World Demographics")
+    
+    # dataframe visibility toggle
+    df_view = st.checkbox(
+        label="View dataframe",
+        value=False)
+    
+    year_widget = st.slider(
+        label="Year",
+        value=2008,
+        min_value=1998,
+        max_value=2018)
+    
+    log_x_widget = st.checkbox(
+        label="Logarithmic X-axis",
+        value=False)
+
+    log_y_widget = st.checkbox(
+        label="Logarithmic Y-axis",
+        value=False)
+    
+    # a list of options for axis data selectors
+    column_names = [
+        "HDI index",
+        "GDP per capita",
+        "Life expectancy",
+        "CO2 per capita",
+        "Services"]
+    # x and y selector widgets
+    x_data_widget = st.radio(
+        label="X-axis data",
+        options=column_names)
+    y_data_widget = st.radio(
+        label="Y-axis data",
+        options=column_names,
+        index=1)
+
+    ### end of sidebar
+    
+### draw main page area
+# create two columns, of ratio 5:1
+column1, column2 = st.columns([5,1])
+
+# place info box in first column
+with column1:
+    st.info("Welcome to the global demographic data explorer app!")
+
+# place image into second column
+with column2:
+    st.image("globe.png")
+
+# show us the data if the sidebar toggle is switched
+if df_view == True:
+    st.dataframe(demo_df)
+
+# build px chart object
+chart = px.scatter(
+    data_frame=demo_df.query(f"Year=={year_widget}"),
+    x=x_data_widget,
+    y=y_data_widget,
+    log_x=log_x_widget,
+    log_y=log_y_widget,
+    color="Continent",
+    size="CO2 per capita",
+    hover_name="Country",
+    height=650)
+
+# display the chart in the main app area
+st.plotly_chart(chart, use_container_width=True)
+
+### end of main page area
+```
 {{< /admonition >}}
