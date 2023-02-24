@@ -119,7 +119,7 @@ column1, column2 = st.columns([1, 4])
 This will create two columns, with the right hand one being four times wider than the left hand one.
 
 ### Tabs
-[Tabs](https://docs.streamlit.io/library/api-reference/layout/st.tabs) allow our app to have different "pages". (These are not true pages - see here for details on creating a true multi-page app.) Just like with columns, we first need to define our tabs, with a list of their names. Here we are making four new tabs, with names:
+[Tabs](https://docs.streamlit.io/library/api-reference/layout/st.tabs) allow our app to have different "pages". (These are not true pages - see [here for details](https://docs.streamlit.io/library/get-started/multipage-apps) on creating a true multi-page app.) Just like with columns, we first need to define our tabs, but with a list of their names. Here we are making four new tabs, with names:
 ```Python
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Analysis", "Output", "Kittens"])
 ```
@@ -128,6 +128,7 @@ And like with columns, to put things into a tab, we use a `with` block, for exam
 with tab4:
     st.image("kittens.png")
 ```
+Give that a try and check how it looks in the app (remember to save to see the changes).
 
 {{< admonition type="tip" title="More layout options and customisations." open=false >}}
 While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:
