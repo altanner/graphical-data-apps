@@ -1,6 +1,6 @@
 ---
-title: "6 • Introduction to animations"
-subtitle: "Animations add an extra dimension!"
+title: "6 • Animations"
+subtitle: "Motion adds an extra dimension!"
 
 date: 2023-02-16T00:00:00+01:00
 
