@@ -5,17 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>1 • Why build data apps? - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="1 • Why build data apps?" />
-<meta property="og:description" content="What are data apps? A data app is a type of app that allows exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data is is to:
- bridge technical aspects of working with data, making analysis more accessible, create visualisations, which can provide insights which might remain hidden in the data, promote exploration, prototyping, and hypothesis development, facilitate collaboration, and the sharing of visualisations and datasets, educate users on what methods are being applied." />
+<meta property="og:description" content="What are data apps? A data app allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data app is to:
+ bridge technical aspects of working with data, making analysis more accessible, create visualisations for natural interpretation of data, promote exploration, prototyping, and hypothesis development, facilitate collaboration and the sharing of visualisations and datasets, educate users on what methods are being applied." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01intro/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-21T18:11:36+00:00" />
+<meta property="article:modified_time" content="2023-02-24T13:40:20+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 • Why build data apps?"/>
-<meta name="twitter:description" content="What are data apps? A data app is a type of app that allows exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data is is to:
- bridge technical aspects of working with data, making analysis more accessible, create visualisations, which can provide insights which might remain hidden in the data, promote exploration, prototyping, and hypothesis development, facilitate collaboration, and the sharing of visualisations and datasets, educate users on what methods are being applied."/>
+<meta name="twitter:description" content="What are data apps? A data app allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data app is to:
+ bridge technical aspects of working with data, making analysis more accessible, create visualisations for natural interpretation of data, promote exploration, prototyping, and hypothesis development, facilitate collaboration and the sharing of visualisations and datasets, educate users on what methods are being applied."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01intro\/"
-        },"genre": "posts","wordcount":  307 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01intro\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-02-21T18:11:36+00:00","publisher": {
+        },"genre": "posts","wordcount":  296 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01intro\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-02-24T13:40:20+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -83,18 +83,18 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="what-are-data-apps">What are data apps?</h2>
-<p>A <strong>data app</strong> is a type of app that allows exploration of a dataset without requiring specific technical skills, and in generating visualisations. A data app can also be a <strong>web app</strong>, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data is is to:</p>
+<p>A <strong>data app</strong> allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can also be a <strong>web app</strong>, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data app is to:</p>
 <ul>
 <li><strong>bridge technical aspects</strong> of working with data, making analysis more accessible,</li>
-<li><strong>create visualisations</strong>, which can provide insights which might remain hidden in the data,</li>
+<li><strong>create visualisations</strong> for natural interpretation of data,</li>
 <li><strong>promote exploration</strong>, prototyping, and hypothesis development,</li>
-<li><strong>facilitate collaboration</strong>, and the sharing of visualisations and datasets,</li>
+<li><strong>facilitate collaboration</strong> and the sharing of visualisations and datasets,</li>
 <li><strong>educate users</strong> on what methods are being applied.</li>
 </ul>
-<p>A data app can be simple (perhaps just visualising the contents of a data set) or sophisticated (including user log-ins and profiles, connections to databases, methods to transform data, and interactive visualisations).</p>
-<p>Central to all this is the <strong>interface</strong>. We will be using Python to build a simple interface, but the skills you will learn in this course will put you on the path to exploring your creativity in making interfaces!</p>
+<p>A data app can range from being simple (perhaps just drawing a graph) to sophisticated (including user log-ins and profiles, connections to databases, methods to transform data, and interactive visualisations).</p>
+<p>Central to all this is the <strong>interface</strong>. In this course will be using Python to build an interface, but the skills you will learn in here will put you on the path to exploring your creativity in making interfaces!</p>
 <h2 id="data-apps-in-python">Data apps in Python</h2>
-<p>Until recently, building data apps has required good knowledge of the core web programming languages - <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>. These languages are uncommon in research or education, because they are not designed for computation or data-processing. As such, a gap has existed between those with general-purpose code skills (for example in Python, R, C++ etc) and those with web skills. To address this, libraries have been developed to bridge this gap between the &ldquo;back end&rdquo; (code that handles data management and computation) and the &ldquo;front end&rdquo; (the graphical interface (or the code that generates an interface)).</p>
+<p>Until recently, building data apps has required good knowledge of the core web programming languages - namely <strong>HTML</strong>, <strong>CSS</strong> and <strong>JavaScript</strong>. These languages are uncommon in research or education, because they are not designed for general computation or data-processing. As such, a gap has existed between those with general-purpose code skills (for example in <strong>Python</strong>, <strong>R</strong>, <strong>C++</strong> etc) and those with web skills. To address this, libraries have been developed to bridge this gap between the &ldquo;back end&rdquo; (code that handles data management and computation) and the &ldquo;front end&rdquo; (the graphical interface (or the code that generates an interface)).</p>
 <p>In this course we will build your skills and confidence, by bringing together Python tools for <strong>data science</strong>, <strong>data visualisation</strong> and <strong>data apps</strong>.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
