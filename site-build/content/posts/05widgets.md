@@ -1,5 +1,5 @@
 ---
-title: "5 • Widgets and charts"
+title: "5 • Widgets"
 subtitle: "Creating an interface to control your visualisations."
 
 date: 2023-02-15T00:00:00+01:00
