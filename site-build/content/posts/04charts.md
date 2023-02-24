@@ -44,19 +44,28 @@ Now that we have `pandas` ready for use, we can read our dataset into a datafram
 demo_df = pd.read_csv("demo_dataset.csv")
 ```
 ### Viewing our data
-Before we go any further, let's examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the **end** of the script, add this to the end:
+Before we go any further, let's examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script, add this to the end:
 ```Python
 with tab1:
     st.dataframe(demo_df)
 ```
-Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave `tab1` ("Data") as a quick way of checking what the data looks like, and `tab2` ("Visualisation") will be for our chart.
+Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave `tab1` ("Data") as a quick way of checking what the data looks like, and `tab2` ("Visualisation") for our chart.
 
 ## Creating a chart
-Now that we have our data available, we can begin work on visualising it. As mentioned, we are using [Plotly](https://plotly.com/python/), for a number of reasons:
+Now that we have our data available, we can begin work on visualising it. We are using [Plotly](https://plotly.com/python/), for a number of reasons:
 - it has an intermediate learning curve
 - the [documentation](https://plotly.com/python-api-reference/) is good
 - the syntax is easy to use, without being over-simplified
 - the graphs it creates are good-looking, customisable and interactive.
+
+{{< admonition type="tip" title="Options for plotting libraries" open=false >}}
+Streamlit is designed to use [a range of popular Python plotting libraries](https://docs.streamlit.io/library/api-reference/charts). These have their strengths and weaknesses. Here is a quick, incomplete summary; click the links for galleries of what each library can do:
+- [matplotlib](https://matplotlib.org/stable/gallery/index.html) : a classic Python plotting library. Mature, widely-used, relatively easy, but not as sophisticated as others, and no interactive features.
+- [Altair](https://altair-viz.github.io/gallery/index.html) and [Vega Lite](https://vega.github.io/vega-lite/examples/) : these are both APIs for controlling the mighty [D3.js](https://d3js.org/). Very powerful, but steep learning curve.
+- [Plotly](https://plotly.com/python/) : another JavaScript library, but easier to use than the D3.js wrappers.
+- [Bokeh](https://docs.bokeh.org/en/latest/docs/gallery.html) : yet another Python API to control JavaScript!
+- [PyDeck](https://deck.gl/showcase) : this runs the Deck.GL graphics library, creating 3D models, from medical to geographical. It also integrates with [MapBox](https://www.mapbox.com/).
+{{< /admonition >}}
 
 There are two steps to getting our data from the dataframe to into a graphic:
 1. Creating a chart object
