@@ -18,3 +18,6 @@ with column1:
 # place image into second column
 with column2:
     st.image("globe.png")
+
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
