@@ -23,7 +23,7 @@ comment:
 
 In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with `px.scatter()`.
 
-## A widget controlling a widget!
+## Preparing our interface
 To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not. As your first widget (ie, in your sidebar, just below your title, but above your "Year" slider) add this:
 ```Python
 animate_vis = st.checkbox(
@@ -31,6 +31,7 @@ animate_vis = st.checkbox(
 ```
 Remember to keep your indentation correct for the sidebar block. Save the file and confirm the checkbox is in the right place. We will connect this to the chart in just a moment! Now, we are going to be animating on the "Year" column. As such, when "Animate" is selected, asking for the "Year" again with the slider doesn't make sense.
 
+### A widget controlling a widget!
 We can solve this by making the "Animate" checkbox also control the "Year" slider. "Animate" is a checkbox, therefore it can take two values of `False` or `True`; this is also the value of `animate_vis`. We can pass that boolean variable to another widget, in this case the "Year" slider. We want "Year" to be disabled when "Animate" is enabled. We do this by adding `disabled=animate_vis` to the slider parameters:
 ```Python
 year_widget = st.slider(
@@ -40,74 +41,56 @@ year_widget = st.slider(
     max_value=2018,
     disabled=animate_vis)
 ```
-Save and check behaviour in our app. The checkbox and the year slider should now be mutually exclusive! Now to actually create the animation.
+Save and check behaviour in our app. The checkbox and the year slider should now be mutually exclusive! Now that we have working widgets, we can actually create the animation.
 
+## Conditional charting
+We can tell the app if we want an animation, and it needs to respond to that. To do this, we will use a good old conditional. In this case, we are checking if "Animate" is selected or not. If this is `False` we just present a static chart (the one we have made already). If it is `True`, we build an animated chart.
 
-
-
-At the end of the last section, you should have your Python script looking a little like this:
+So, the first block of our conditional is just what we have written already:
 ```Python
-import streamlit as st
+if animate_vis == False:
+    chart = px.scatter(
+        data_frame=demo_df.query(f"Year=={year_widget}"),
+        x=x_data_widget,
+        y=y_data_widget,
+        log_x=log_x_widget,
+        log_y=log_y_widget,
+        color="Continent",
+        size="CO2 per capita",
+        hover_name="Country",
+        height=650)
+```
+For the subsequent `else` block we need an alternate `px.scatter()`, which is very similar to what we are using already:
+```Python
+if animate_vis == True:
+    chart = px.scatter(
+        data_frame=demo_df,
+        x=x_data_widget,
+        y=y_data_widget,
+        log_x=log_x_widget,
+        log_y=log_y_widget,
+        color="Continent",
+        size="CO2 per capita",
+        hover_name="Country",
+        height=650,
+        animation_frame="Year",
+        animation_group="Country",)
+```
+There are **three** differences here. 
 
-st.set_page_config(
-    page_title="A Demographics Data App",
-    layout="wide")
+1. we no longer need to fiter the dataframe by year (notice the first parameter)
+2. we need a parameter of `animation_frame`
+3. we need a parameter of `animation_group`
 
-# use pandas to read csv file into a dataframe
-demographics_df = pd.read_csv("demo_dataset.csv")
-
-# create the sidebar
-with st.sidebar:
-    st.image("globe.png")
-    st.header("Demographic Data")
-    st.info("Welcome to the global demographic explorer data app.")
-
-# create the information box at the top of the page
-with st.expander(label="World Demographics Data Explorer: click for instructions"):
-    st.info("""World Demographics Data Explorer
-    - This app explores information about social, economic and environmental development at local, national and global levels.
-    - Please use the options in the sidebar to explore the dataset.
-    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the "autoscale" button.""")
+The lines to draw the chart remains the same:
+```Python
+with tab2:
+    st.plotly_chart(chart, use_container_width=True)
 ```
 
-## Plotly Express
-There are a few popular graphing libraries in Python - for example `matplotlib`, `seaborn`, `ggplot`. We are going to use `plotly`, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. `plotly` comes with a simplified interface called `plotly.express`, which we will use.
-
-To bring `plotly` functionality into our script we need to import it. While we are writing some imports, we also need `pandas` ready for action, so let's bring that into our script too. So, we will now have three imports at the top of our script:
-```Python
-import streamlit as st
-import plotly.express as px
-import pandas as pd
-```
-`px` is the conventional alias for `plotly.express`, and `pd` is the shortened name of `pandas`.
-
-
-### Section title
-* bullet1
-* bullt2
-
-Normal text body.
+So, with both results of both conditionals in place, we are ready to test it - save the file, and check how things look in the app!
 
 {{< admonition type="warning" open=true >}}
 - Warning1
 - Warning2
-{{< /admonition >}}
-{{< admonition type="info" open=true >}}
-- Info1
-- Info2
-{{< /admonition >}}
-
-### Another section
-blahfdajkfhu aefuibahj rwefyugr
-
-```
-code goes herer
-```
-next setion blakfahuir wrafguighbarg
-
-### Exercise
-{{< admonition type="question" title="Questions" open=true >}}
-a question box
-- q1
-- q2
 {{< /admonition >}}
