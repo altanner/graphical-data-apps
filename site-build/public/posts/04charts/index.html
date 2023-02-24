@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-24T08:11:48+00:00" />
+<meta property="article:modified_time" content="2023-02-24T11:19:36+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Getting started with charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1345 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-24T08:11:48+00:00","publisher": {
+        },"genre": "posts","wordcount":  1246 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-02-24T11:19:36+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -113,17 +113,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="viewing-our-data">Viewing our data</h3>
 <p>Before we go any further, let&rsquo;s examine what is inside our dataframe. We can do this natively in Streamlit. Building on your script at the <strong>end</strong> of the script, add this to the end:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save the file, and have a look at the browser tab displaying your app. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today.</p>
-<p>We don&rsquo;t want to see this all the time, so we are going to add a checkbox to control this. (We cover <a href="ZXXXX" rel="">widgets</a>
- in more depth in the next section, but right now we want to add a toggle.) Go to your code block starting <code>with st.sidebar:</code>, and inside this block (ie, indented) add</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">df_view</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;View dataframe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></span></code></pre></div><p>Here we are assigning the state of the checkbox to a variable called <code>df_view</code>. In Streamlit, a checkbox is a boolean, so it can only be <code>True</code> or <code>False</code> (here we are giving <code>False</code> as the initial value). We will use this value to trigger if Streamlit shows us the dataframe, by putting our <code>st.dataframe(demo_df)</code> into a conditional block. Find your line <code>st.dataframe(demo_df)</code>, and pop it into a conditional block:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">df_view</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save this, and give it a test in the browser window.</p>
+</span></span></code></pre></div><p>Save the file, and check what your app is showing. We can now see what we are working with - note that this dataframe is interactive, so it can be ordered and selected, but we will not be covering interactive dataframes today. For this course, we will leave <code>tab1</code> (&ldquo;Data&rdquo;) as a quick way of checking what the data looks like, and <code>tab2</code> (&ldquo;Visualisation&rdquo;) will be for our chart.</p>
 <h2 id="creating-a-chart">Creating a chart</h2>
 <p>Now that we have our data available, we can begin work on visualising it. As mentioned, we are using <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
 , for a number of reasons:</p>
@@ -153,11 +145,13 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy!</p>
-<p>OK, so we have built the <code>chart</code> object - now we ask Streamlit to show it to us by handing it to <code>st.plotly_chart()</code>. Add this at the bottom of your script:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost.</p>
+<p>OK, so we have built the <code>chart</code> object - now we ask Streamlit to show it to us by handing it to <code>st.plotly_chart()</code>. We will also put this into our second tab. Add this at the bottom of your script:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost, or click the &ldquo;rescale&rdquo; button (it is visible when you mouse over the chart, in the top right).</p>
 <p>Before we move on, let&rsquo;s make better use of the space we have, by adding an argument to <code>st.plotly_chart(chart)</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span></code></pre></div><p>This is a useful argument to use, especially if you have a more complex layout with columns and containers.</p>
 <h3 id="customising-our-chart">Customising our chart</h3>
 <p>This is a good start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let&rsquo;s colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:</p>
@@ -203,10 +197,6 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># put a title in the sidebar</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># dataframe visibility toggle</span>
-</span></span><span class="line"><span class="cl">    <span class="n">df_view</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;View dataframe&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># create two columns, of ratio 5:1</span>
 </span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
@@ -218,9 +208,12 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl"><span class="c1"># place image into second column</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># create two tabs</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># show us the data if the sidebar toggle is switched</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">df_view</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># display the dataframe in tab1</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># build px chart object</span>
@@ -233,8 +226,9 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># display the chart in the main app area</span>
-</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
