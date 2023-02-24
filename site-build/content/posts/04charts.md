@@ -21,9 +21,7 @@ comment:
   enable: false
 ---
 
-{{< admonition type="tip" title="Plots, graphs and charts" open=false >}}
-Yet more terminology, yet again words which mean very similar things!
-
+{{< admonition type="tip" title="Plots, graphs or charts?" open=false >}}
 The words **plot**, **chart** and **graph** are used interchangeably, but I will stick with **chart** in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word "graph" would not make sense. Also, the word "plot" is kind of reserved for some things in Python, and is in use by many graphic libraries.
 
 *As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!*
