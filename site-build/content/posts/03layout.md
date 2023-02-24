@@ -85,11 +85,7 @@ st.set_page_config(page_title="My data app", layout="wide")
 Save, and we are ready for layout.
 
 ## Page layout
-We want to [control where and how things appear on the page](https://docs.streamlit.io/library/api-reference/layout). We will use four layout components in our app:
-
-1. sidebars
-2. columns
-3. tabs
+We want to [control where and how things appear on the page](https://docs.streamlit.io/library/api-reference/layout). We will use three layout components in our app: sidebars, columns and tabs.
 
 ### Sidebars
 [Sidebars](https://docs.streamlit.io/library/api-reference/layout/st.sidebar) are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to the bottom of your script:
