@@ -6,16 +6,16 @@
         <meta name="robots" content="noodp" />
         <title>6 • Introduction to animations - Graphical Data Apps</title><meta name="Description" content=""><meta property="og:title" content="6 • Introduction to animations" />
 <meta property="og:description" content="In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with px.scatter().
-A widget controlling a widget! To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not." />
+Preparing our interface To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/06animations/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-16T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-24T11:55:58+00:00" />
+<meta property="article:modified_time" content="2023-02-24T12:16:57+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="6 • Introduction to animations"/>
 <meta name="twitter:description" content="In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with px.scatter().
-A widget controlling a widget! To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not."/>
+Preparing our interface To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not."/>
 <meta name="application-name" content="Graphical Data Apps">
 <meta name="apple-mobile-web-app-title" content="Graphical Data Apps"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,8 @@ A widget controlling a widget! To start we are going to add a simple toggle chec
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/"
-        },"genre": "posts","wordcount":  560 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/","datePublished": "2023-02-16T00:00:00+01:00","dateModified": "2023-02-24T11:55:58+00:00","publisher": {
+        },"genre": "posts","wordcount":  485 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/06animations\/","datePublished": "2023-02-16T00:00:00+01:00","dateModified": "2023-02-24T12:16:57+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,22 +78,21 @@ A widget controlling a widget! To start we are going to add a simple toggle chec
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#a-widget-controlling-a-widget">A widget controlling a widget!</a></li>
-    <li><a href="#plotly-express">Plotly Express</a>
+    <li><a href="#preparing-our-interface">Preparing our interface</a>
       <ul>
-        <li><a href="#section-title">Section title</a></li>
-        <li><a href="#another-section">Another section</a></li>
-        <li><a href="#exercise">Exercise</a></li>
+        <li><a href="#a-widget-controlling-a-widget">A widget controlling a widget!</a></li>
       </ul>
     </li>
+    <li><a href="#conditional-charting">Conditional charting</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with <code>px.scatter()</code>.</p>
-<h2 id="a-widget-controlling-a-widget">A widget controlling a widget!</h2>
+<h2 id="preparing-our-interface">Preparing our interface</h2>
 <p>To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not. As your first widget (ie, in your sidebar, just below your title, but above your &ldquo;Year&rdquo; slider) add this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">animate_vis</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Animate&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Remember to keep your indentation correct for the sidebar block. Save the file and confirm the checkbox is in the right place. We will connect this to the chart in just a moment! Now, we are going to be animating on the &ldquo;Year&rdquo; column. As such, when &ldquo;Animate&rdquo; is selected, asking for the &ldquo;Year&rdquo; again with the slider doesn&rsquo;t make sense.</p>
+<h3 id="a-widget-controlling-a-widget">A widget controlling a widget!</h3>
 <p>We can solve this by making the &ldquo;Animate&rdquo; checkbox also control the &ldquo;Year&rdquo; slider. &ldquo;Animate&rdquo; is a checkbox, therefore it can take two values of <code>False</code> or <code>True</code>; this is also the value of <code>animate_vis</code>. We can pass that boolean variable to another widget, in this case the &ldquo;Year&rdquo; slider. We want &ldquo;Year&rdquo; to be disabled when &ldquo;Animate&rdquo; is enabled. We do this by adding <code>disabled=animate_vis</code> to the slider parameters:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
@@ -101,43 +100,46 @@ A widget controlling a widget! To start we are going to add a simple toggle chec
 </span></span><span class="line"><span class="cl">    <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">disabled</span><span class="o">=</span><span class="n">animate_vis</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save and check behaviour in our app. The checkbox and the year slider should now be mutually exclusive! Now to actually create the animation.</p>
-<p>At the end of the last section, you should have your Python script looking a little like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;A Demographics Data App&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read csv file into a dataframe</span>
-</span></span><span class="line"><span class="cl"><span class="n">demographics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># create the sidebar</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&#34;Demographic Data&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic explorer data app.&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># create the information box at the top of the page</span>
-</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">expander</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;World Demographics Data Explorer: click for instructions&#34;</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;&#34;&#34;World Demographics Data Explorer
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - This app explores information about social, economic and environmental development at local, national and global levels.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - Please use the options in the sidebar to explore the dataset.
-</span></span></span><span class="line"><span class="cl"><span class="s2">    - Draw a box to zoom on the chart. Return to normal zoom with a double-click, or click the &#34;autoscale&#34; button.&#34;&#34;&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="plotly-express">Plotly Express</h2>
-<p>There are a few popular graphing libraries in Python - for example <code>matplotlib</code>, <code>seaborn</code>, <code>ggplot</code>. We are going to use <code>plotly</code>, because it has an intermediate learning curve - the syntax is relatively accessible, the documentation is good, and the graphs it creates are very powerful. <code>plotly</code> comes with a simplified interface called <code>plotly.express</code>, which we will use.</p>
-<p>To bring <code>plotly</code> functionality into our script we need to import it. While we are writing some imports, we also need <code>pandas</code> ready for action, so let&rsquo;s bring that into our script too. So, we will now have three imports at the top of our script:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span></span></code></pre></div><p><code>px</code> is the conventional alias for <code>plotly.express</code>, and <code>pd</code> is the shortened name of <code>pandas</code>.</p>
-<h3 id="section-title">Section title</h3>
-<ul>
-<li>bullet1</li>
-<li>bullt2</li>
-</ul>
-<p>Normal text body.</p>
-<p><div class="details admonition warning open">
+</span></span></code></pre></div><p>Save and check behaviour in our app. The checkbox and the year slider should now be mutually exclusive! Now that we have working widgets, we can actually create the animation.</p>
+<h2 id="conditional-charting">Conditional charting</h2>
+<p>We can tell the app if we want an animation, and it needs to respond to that. To do this, we will use a good old conditional. In this case, we are checking if &ldquo;Animate&rdquo; is selected or not. If this is <code>False</code> we just present a static chart (the one we have made already). If it is <code>True</code>, we build an animated chart.</p>
+<p>So, the first block of our conditional is just what we have written already:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">animate_vis</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year==</span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="o">=</span><span class="n">x_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span><span class="o">=</span><span class="n">y_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log_x</span><span class="o">=</span><span class="n">log_x_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log_y</span><span class="o">=</span><span class="n">log_y_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
+</span></span></code></pre></div><p>For the subsequent <code>else</code> block we need an alternate <code>px.scatter()</code>, which is very similar to what we are using already:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">animate_vis</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="o">=</span><span class="n">x_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span><span class="o">=</span><span class="n">y_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log_x</span><span class="o">=</span><span class="n">log_x_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">log_y</span><span class="o">=</span><span class="n">log_y_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">animation_group</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,)</span>
+</span></span></code></pre></div><p>There are <strong>three</strong> differences here.</p>
+<ol>
+<li>we no longer need to fiter the dataframe by year (notice the first parameter)</li>
+<li>we need a parameter of <code>animation_frame</code></li>
+<li>we need a parameter of <code>animation_group</code></li>
+</ol>
+<p>The lines to draw the chart remains the same:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></div><p>So, with both results of both conditionals in place, we are ready to test it - save the file, and check how things look in the app!</p>
+<div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
@@ -145,36 +147,6 @@ A widget controlling a widget! To start we are going to add a simple toggle chec
             <div class="admonition-content"><ul>
 <li>Warning1</li>
 <li>Warning2</li>
-</ul>
-</div>
-        </div>
-    </div>
-<div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Info<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>Info1</li>
-<li>Info2</li>
-</ul>
-</div>
-        </div>
-    </div></p>
-<h3 id="another-section">Another section</h3>
-<p>blahfdajkfhu aefuibahj rwefyugr</p>
-<pre tabindex="0"><code>code goes herer
-</code></pre><p>next setion blakfahuir wrafguighbarg</p>
-<h3 id="exercise">Exercise</h3>
-<div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Questions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>a question box</p>
-<ul>
-<li>q1</li>
-<li>q2</li>
 </ul>
 </div>
         </div>

@@ -30,7 +30,7 @@ import streamlit as st st.set_page_config( page_title=&#34;A Demographics Data A
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/06animations/</guid>
     <description><![CDATA[In this final section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run properly, but Plotly makes it relatively easy, especially with px.scatter().
-A widget controlling a widget! To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not.]]></description>
+Preparing our interface To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not.]]></description>
 </item>
 <item>
     <title>5 • Widgets and charts</title>
