@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-23T12:45:44+00:00" />
+<meta property="article:modified_time" content="2023-02-24T07:55:27+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets and charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  883 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-23T12:45:44+00:00","publisher": {
+        },"genre": "posts","wordcount":  979 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-24T07:55:27+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -84,12 +84,13 @@
       </ul>
     </li>
     <li><a href="#exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</a></li>
+    <li><a href="#heading"></a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
 <p>The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">widget</a>
  is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that <strong>widgets set the values of variables</strong>. We will see the Python syntax for this in a moment.</p>
-<p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;Life expectancy&rdquo; with the parameter <code>x=&quot;Life expectancy&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
+<p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;CO2 per capita&rdquo; with the parameter <code>x=&quot;CO2 per capita&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
 <h3 id="improving-our-chart">Improving our chart</h3>
 <p>You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but <strong>we can improve the chart using a widget to chose what year to display</strong>.</p>
 <h3 id="first-widget">First widget</h3>
@@ -121,11 +122,11 @@
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3a: Axis scale controls<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add two checkbox widgets</p>
+            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add two <strong>checkbox widgets</strong></p>
 <ol>
 <li>One with the label <code>&quot;Logarithmic X-axis&quot;</code>, assigning its value to a variable called <code>log_x_widget</code></li>
 <li>Another with the label <code>&quot;Logarithmic Y-axis&quot;</code>, assigning its value to a variable called <code>log_y_widget</code>
-In your parameters for <code>px.scatter()</code>, add two more parameters:</li>
+In your parameters for <code>px.scatter()</code>, add <strong>two more parameters</strong>:</li>
 <li><code>log_x</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic X-axis&quot;</code> (ie, its variable)</li>
 <li><code>log_y</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic Y-axis&quot;</code>
 Don&rsquo;t forget to separate your parameters with commas!</li>
@@ -149,18 +150,24 @@ Don&rsquo;t forget to separate your parameters with commas!</li>
 <p>Your <code>px.scatter()</code> now needs to have parameters related to these widgets, so the full parameters would be:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">data_frame</span><span class="o">=</span><span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year==</span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="s2">&#34;Life expectancy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">=</span><span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">log_x</span><span class="o">=</span><span class="n">log_x_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">log_y</span><span class="o">=</span><span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="o">=</span><span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span><span class="o">=</span><span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">trendline</span><span class="o">=</span><span class="s2">&#34;lowess&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">height</span><span class="o">=</span><span class="mi">650</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
+<p>Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.</p>
+<h2 id="heading"></h2>
+<p>Click your &ldquo;View dataframe&rdquo; toggle, and notice the names of the columns. There are eight columns, and currently</p>
+<ul>
+<li>Continent is being represented by colour</li>
+<li>Country It would be nice to be able to see <em>any</em> of these data, rather than just having it locked to two columns. We will again do this through adding two new widgets, and making two changes to the chart parameters.</li>
+</ul>
 <p>To do this, we will create two more widgets, this time <a href="https://docs.streamlit.io/library/api-reference/widgets/st.radio" target="_blank" rel="noopener noreffer">radio buttons</a>
 . These are single-option, mutually-exclusive selectors (I think these are called &ldquo;radio&rdquo; because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your year slider widget, add:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x_log</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
