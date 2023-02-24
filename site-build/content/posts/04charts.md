@@ -1,5 +1,5 @@
 ---
-title: "4 • Getting started with charts"
+title: "4 • Charts"
 subtitle: "How to control your graphing library."
 
 date: 2023-02-14T00:00:00+01:00
