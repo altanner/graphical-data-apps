@@ -138,14 +138,10 @@ y="GDP per capita",
 ```
 Modify these so they respond to your widgets. Test your app is working.
 5. You might notice that on first loading, the chart plots the same data on each axis, producing just a `x=y` straight line. Fix this by adding the parameter `index=1` to the end of your `y_data_widget` parameters. It will select index 1 (the _2nd_!) item from the list `column_names` as what to use on first loading.
-
-y_log = 
-1. year slider
-2. radio buttons
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 3b solution" open=false >}}
-Your whole script should look similar to this:
+At this point, your whole script should look similar to this:
 ```Python
 import streamlit as st
 import pandas as pd
@@ -164,11 +160,6 @@ with st.sidebar:
     
     # put a title in the sidebar
     st.title("World Demographics")
-    
-    # dataframe visibility toggle
-    df_view = st.checkbox(
-        label="View dataframe",
-        value=False)
     
     year_widget = st.slider(
         label="Year",
@@ -214,8 +205,11 @@ with column1:
 with column2:
     st.image("globe.png")
 
-# show us the data if the sidebar toggle is switched
-if df_view == True:
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
+
+# display the dataframe in tab1
+with tab1:
     st.dataframe(demo_df)
 
 # build px chart object
@@ -230,8 +224,9 @@ chart = px.scatter(
     hover_name="Country",
     height=650)
 
-# display the chart in the main app area
-st.plotly_chart(chart, use_container_width=True)
+# display the chart in tab2
+with tab2:
+    st.plotly_chart(chart, use_container_width=True)
 
 ### end of main page area
 ```
