@@ -70,8 +70,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
     <pubDate>Sat, 11 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/01intro/</guid>
-    <description><![CDATA[What are data apps? A data app allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser. In any case, the general goals of any data app is to:
- bridge technical aspects of working with data, making analysis more accessible, create visualisations for natural interpretation of data, promote exploration, prototyping, and hypothesis development, facilitate collaboration and the sharing of visualisations and datasets, educate users on what methods are being applied.]]></description>
+    <description><![CDATA[What are data apps? A data app allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can range from being simple (perhaps just drawing a graph) to sophisticated (including user log-ins and profiles, connections to databases, methods to transform data, and interactive visualisations). A data app can also be a web app, if it is deployed to the internet so that others can use it through a web browser.]]></description>
 </item>
 </channel>
 </rss>
