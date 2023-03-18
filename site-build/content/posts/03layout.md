@@ -1,6 +1,6 @@
 ---
 title: "3 • Layout"
-subtitle: "Writing and running our first script."
+subtitle: "Writing and running our first script, and understanding app layout"
 
 date: 2023-02-13T00:00:00+01:00
 
@@ -51,24 +51,28 @@ streamlit run data_app.py
 
 The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal serving your data app by using `ctrl-c`.
 
-## Exercise 1: Preparing our app layout
+## Exercise 1: First edits
 {{< admonition type="question" title="Exercise 1: making your first page edits" open=true >}}
-Our minimal-viable-app is running, but let's make our first edits. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.
-1. Change your title to something else.
-2. We can add a subtitle with `st.subtitle()`; add this to your app, and include a sentence which 
-3. Move your subtitle to be above your title and notice the changes to your app.
+Our minimal-viable-app is up and running, and this gives us something to build on. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.
+
+When you save your first change to your Python file, the app will say **Source file changed**, and asks **Rerun** or **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - every time we save the file, Streamlit will automatically rebuild the page for us.
+
+Try the following edits, saving after each step.
+1. Change your app's title to something you like.
+2. We can add a subtitle with `st.subtitle()`; add this to your Python script, and include a sentence or two.
+3. Move your subtitle line to be above your title line in the script, and notice the changes to your app.
+4. Move the subtitle back down again.
+5. 
 {{< /admonition >}}
 
 ### Text elements
-In the last exercise, you used a two different types of *text elements*. We are going to explore a few more of these, by looking at the documentation for Streamlit. Open the [text elements section of the API](https://docs.streamlit.io/library/api-reference/text) and have a look around. Try adding this **below your `st.title()` line**
+In the exercise, we used `st.title` and `st.subtitle`, both are *text elements*. We are going to explore a few more text elements. Open the [text elements section of the Streamlit API documentation](https://docs.streamlit.io/library/api-reference/text) and have a look around. Try adding this **below your `st.title()` line**
 
 ```Python
 st.write("Here is some text which is placed below the title for our app!")
 ```
 
 The documentation has other text element examples - we will return to these in the Exercise in a moment.
-
-Save the file, and notice that the Streamlit tab will say **Source file changed** and offers you **Rerun** and **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - now, every time we save the file, Streamlit will automatically rebuild the page for us.
 
 Before moving on to layout, we want to set how the app is presented (Streamlit will deal with layout for both desktop and mobile browsers, behind the scenes). Here we can add a title which will go in the browser tab. (We could also give it a favicon, but will skip that for now.)
 
