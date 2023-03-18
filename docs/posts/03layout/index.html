@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-18T13:49:29+00:00" />
+<meta property="article:modified_time" content="2023-03-18T14:31:45+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1462 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-18T13:49:29+00:00","publisher": {
+        },"genre": "posts","wordcount":  1419 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-18T14:31:45+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -87,7 +87,7 @@
         <li><a href="#tabs">Tabs</a></li>
       </ul>
     </li>
-    <li><a href="#exercise-2-preparing-our-app-layout">Exercise 2: Preparing our app layout</a></li>
+    <li><a href="#exercise-2-preparing-your-app-layout">Exercise 2: Preparing your app layout</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition tip">
@@ -185,21 +185,19 @@
 </div>
         </div>
     </div>
-<h2 id="exercise-2-preparing-our-app-layout">Exercise 2: Preparing our app layout</h2>
+<h2 id="exercise-2-preparing-your-app-layout">Exercise 2: Preparing your app layout</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 2: build your app&#39;s layout<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>Through the rest of this course we will be building a <strong>visualiser for World Demographics Data</strong>. Our first exercise is to prepare our layout for this.</p>
-<p>In this exercise we will edit some of the things we have already made, and create some new items as well. Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps&rsquo; tab in your browser.</p>
+<p>Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps&rsquo; tab in your browser.</p>
 <ol>
 <li>Remove the <code>st.write()</code> and <code>st.subtitle()</code> lines that we added earlier.</li>
 <li>Change the <strong>title</strong> in the page to say &ldquo;World Demographics&rdquo;. Put it in the sidebar.</li>
-<li>Create <strong>two</strong> columns in the main app space, with the left column being five times wider than the right one.</li>
+<li>Create <strong>two</strong> columns, with the left column being five times wider than the right one.</li>
 <li>Add an information box to the <strong>left hand column</strong>, saying &ldquo;Welcome to the global demographic data explorer app!&rdquo; (use <code>st.info()</code>).</li>
-<li>Add an image to the <strong>right hand column</strong>, using <code>st.image()</code>. We will use the image <code>globe.png</code>, included with the <a href="https://github.com/alleetanner/graphical-data-apps/raw/main/data-apps.zip" target="_blank" rel="noopener noreffer">course resources download</a>
- we got earlier</li>
 <li>Change the names of your <strong>two tabs</strong> using <code>st.tabs()</code>, named &ldquo;Data&rdquo; and &ldquo;Visualisation&rdquo;. Remember that <code>st.tabs()</code> takes a <strong>list</strong> (ie, you will have square and round brackets).</li>
 </ol>
 </div>
@@ -224,10 +222,10 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># place info box in first column</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># place image into second column</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># place info box in second column</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s2">&#34;globe.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># create two tabs</span>
 </span></span><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
