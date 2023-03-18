@@ -45,7 +45,7 @@ st.title("A graphical data app")
 
 Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren't already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:
 
-```Shell
+```Terminal
 streamlit run data_app.py
 ```
 
