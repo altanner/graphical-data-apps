@@ -30,7 +30,7 @@ The words **plot**, **chart** and **graph** are used interchangeably, but I will
 At the end of the last section, our running Python file creates a page, we added some layout components. In this section, we will be bringing data into the app, and creating our first visualisation.
 
 ## Bringing our data into the script
-We will be using `pandas` to read our CSV file in. While we do not use `pandas` any further in this course, keep in mind that Streamlit is very much built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
+We will be using `pandas` to read our CSV file in. Streamlit is very much built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
 
 ### Loading up `pandas`
 Firstly, we need to update our script to import `pandas`. Add this at the top of your script (keep the `streamlit` import as it is):
