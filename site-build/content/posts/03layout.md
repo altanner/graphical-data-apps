@@ -40,7 +40,7 @@ Here, we are `import`ing the Streamlit library, and giving it the name `st` - th
 Below this, let's enter our first Streamlit command:
 
 ```Python
-st.title("A graphical data app")
+st.title("Hello world!")
 ```
 
 Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren't already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:
@@ -49,23 +49,18 @@ Save the file (remember that Jupyter Lab will show a circle next to files that h
 streamlit run data_app.py
 ```
 
-The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal using `ctrl-c`.
+The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal serving your data app by using `ctrl-c`.
 
-{{< admonition type="tip" title="Python scripts for Streamlit are unusual" open=false >}}
-In the script we just created, notice that common features of Python are absent. There are currently no variables or functions, no familiar `print` or `return` values - so how is it doing anything?
-
-In the terminal, we ran `streamlit run data_app.py`, not `python data_app.py`. So, we are asking `streamlit` itself to interpret the Python file, when typically we ask the Python interpreter (a program) to interpret our Python script (a file). As such, `streamlit` will read our file, understand that `st` lines are directly calling the Streamlit API, and create / update the interface (the Streamlit browser tab) accordingly.
-{{< /admonition >}}
-
-## The Streamlit API
-Before building more of the page, let's find out where to get information on [how to use Streamlit](https://docs.streamlit.io/library/api-reference). Streamlit has [clear documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. Let's have a look through some of the main sections.
-
-{{< admonition type="tip" title="What is an API?"  open=false >}}
-An API is an **Application Programming Interface**. It can be a confusing term, not least because all three words in it have vague definitions. The essential word is "interface": think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to act, using syntax that is consistent with Python.
+## Exercise 1: Preparing our app layout
+{{< admonition type="question" title="Exercise 1: making your first page edits" open=true >}}
+Our minimal-viable-app is running, but let's make our first edits. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.
+1. Change your title to something else.
+2. We can add a subtitle with `st.subtitle()`; add this to your app, and include a sentence which 
+3. Move your subtitle to be above your title and notice the changes to your app.
 {{< /admonition >}}
 
 ### Text elements
-You now have a browser tab with your Streamlit app running. Let's add a couple of extra things, so you can see how the output of your script affects the app tab. We can add text using the [text elements section of the API](https://docs.streamlit.io/library/api-reference/text). Try adding this **below your `st.title()` line**
+In the last exercise, you used a two different types of *text elements*. We are going to explore a few more of these, by looking at the documentation for Streamlit. Open the [text elements section of the API](https://docs.streamlit.io/library/api-reference/text) and have a look around. Try adding this **below your `st.title()` line**
 
 ```Python
 st.write("Here is some text which is placed below the title for our app!")
@@ -178,4 +173,10 @@ with column2:
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
 ```
+{{< /admonition >}}
+
+{{< admonition type="tip" title="The Streamlit API"  open=false >}}
+Streamlit has [clear API documentation](https://docs.streamlit.io/library/api-reference), complete with embedded examples. It is a good place to build your skills in using documentation, since documentation for different libraries can vary in the clarity / density of the information provided.
+
+An API is an **Application Programming Interface**. It can be a confusing term, but the essential word is "interface": think of the API as the "control panel" to make it run (as opposed to the wires and code behind the control panel). Every time we write some Python with `st.<something>()`, we are asking the Streamlit API to act, using syntax that is consistent with Python.
 {{< /admonition >}}
