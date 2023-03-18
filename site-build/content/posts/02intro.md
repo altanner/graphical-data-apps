@@ -1,8 +1,8 @@
 ---
-title: "1 • Why build data apps?"
+title: "2 • Why build data apps?"
 subtitle: "Visualise, organise, share and collaborate."
 
-date: 2023-02-11T00:00:00+01:00
+date: 2023-02-12T00:00:00+01:00
 
 fontawesome: true
 linkToMarkdown: true
