@@ -40,6 +40,20 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those).
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
+### Anaconda Navigator
+Start Anaconda Navigator (you should see the welcome screen, similar to the image here). For this workshop we will need to add some functionality to Python, by installing some libraries. To do this, we will create a new environment (see the glossary for a definition!)
+
+With your default plain text editor (for example your IDE, Notepad, nano, micro etc), create a new file in a place you can find it, and have the following inside it
+```yaml
+THIS FILE HAS A MILLION LINES AND I THINK JUST THE HIGH-LEVEL DEPENDENCIES DON'T WORK IN CONDA
+```
+
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `data-apps.yml` file that you downloaded. Start the process by clicking "Import", and Anaconda will now install the dependencies we need. 
+
+**This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
+
+<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once Anaconda has finished getting and installing our libraries, you will see in the the Environments menu that a new environment called `data-apps` (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session.
+
 ## Getting set up
 We provide [some files](https://github.com/alleetanner/graphical-data-apps/raw/main/data-apps.zip) we need for this course. Download and unzip this. We also need an empty folder to work in. So, create an appropriate new folder, and copy the files into it.
 
@@ -47,17 +61,8 @@ We will be working in **Jupyter Lab**, a browser-based Python IDE provided by **
 
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe
 - `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/)
-- `plotly-express` - plotly on [easy mode](https://plotly.com/python/plotly-express/)
+- `plotly-express` - plotly on [easier mode](https://plotly.com/python/plotly-express/)
 - `streamlit` - the [data app interface builder](https://streamlit.io/) we are using
-
-### Anaconda Navigator
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Start Anaconda Navigator (you should see the welcome screen, similar to the image here). Let's use Anaconda to build a new Environment. 
-
-In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `data-apps.yml` file that you downloaded. Start the process by clicking "Import", and Anaconda will now install the dependencies we need. 
-
-**This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
-
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once Anaconda has finished getting and installing our libraries, you will see in the the Environments menu that a new environment called `data-apps` (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session.
 
 ### Arranging the Jupyter Lab tab
 In the Jupyter Lab **file navigator** in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**. Name the Python file `data_app.py` (you might need to right-click on the file and select "*Rename*").
