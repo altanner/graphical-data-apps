@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-18T12:43:50+00:00" />
+<meta property="article:modified_time" content="2023-03-18T13:00:24+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1518 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-18T12:43:50+00:00","publisher": {
+        },"genre": "posts","wordcount":  1538 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-18T13:00:24+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -69,7 +69,7 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">3 • Layout</h1><h2 class="single-subtitle">Writing and running our first script.</h2><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">3 • Layout</h1><h2 class="single-subtitle">Writing and running our first script, and understanding app layout</h2><div class="post-meta">
             <div class="post-meta-line"></div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -79,7 +79,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#creating-your-first-page">Creating your first page</a></li>
-    <li><a href="#exercise-1-preparing-our-app-layout">Exercise 1: Preparing our app layout</a>
+    <li><a href="#exercise-1-first-edits">Exercise 1: First edits</a>
       <ul>
         <li><a href="#text-elements">Text elements</a></li>
       </ul>
@@ -91,7 +91,7 @@
         <li><a href="#tabs">Tabs</a></li>
       </ul>
     </li>
-    <li><a href="#exercise-1-preparing-our-app-layout-1">Exercise 1: Preparing our app layout</a></li>
+    <li><a href="#exercise-1-preparing-our-app-layout">Exercise 1: Preparing our app layout</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition tip">
@@ -117,27 +117,30 @@
 </span></span></code></pre></div><p>Save the file (remember that Jupyter Lab will show a circle next to files that have unsaved modifications, in their tab), and then move to your Terminal tab. If you aren&rsquo;t already, move into the folder where your Python file is saved (using the Terminal command line), and run the script:</p>
 <pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">streamlit run data_app.py
 </code></pre><p>The terminal should report something along the lines of <em>&ldquo;You can now view your Streamlit app in your browser&rdquo;</em> - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a <code>print()</code> call. You can stop the Terminal serving your data app by using <code>ctrl-c</code>.</p>
-<h2 id="exercise-1-preparing-our-app-layout">Exercise 1: Preparing our app layout</h2>
+<h2 id="exercise-1-first-edits">Exercise 1: First edits</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 1: making your first page edits<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>Our minimal-viable-app is running, but let&rsquo;s make our first edits. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.</p>
+            <div class="admonition-content"><p>Our minimal-viable-app is up and running, and this gives us something to build on. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.</p>
+<p>When you save your first change to your Python file, the app will say <strong>Source file changed</strong>, and asks <strong>Rerun</strong> or <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - every time we save the file, Streamlit will automatically rebuild the page for us.</p>
+<p>Try the following edits, saving after each step.</p>
 <ol>
-<li>Change your title to something else.</li>
-<li>We can add a subtitle with <code>st.subtitle()</code>; add this to your app, and include a sentence which</li>
-<li>Move your subtitle to be above your title and notice the changes to your app.</li>
+<li>Change your app&rsquo;s title to something you like.</li>
+<li>We can add a subtitle with <code>st.subtitle()</code>; add this to your Python script, and include a sentence or two.</li>
+<li>Move your subtitle line to be above your title line in the script, and notice the changes to your app.</li>
+<li>Move the subtitle back down again.</li>
+<li></li>
 </ol>
 </div>
         </div>
     </div>
 <h3 id="text-elements">Text elements</h3>
-<p>In the last exercise, you used a two different types of <em>text elements</em>. We are going to explore a few more of these, by looking at the documentation for Streamlit. Open the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements section of the API</a>
+<p>In the exercise, we used <code>st.title</code> and <code>st.subtitle</code>, both are <em>text elements</em>. We are going to explore a few more text elements. Open the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements section of the Streamlit API documentation</a>
  and have a look around. Try adding this <strong>below your <code>st.title()</code> line</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some text which is placed below the title for our app!&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>The documentation has other text element examples - we will return to these in the Exercise in a moment.</p>
-<p>Save the file, and notice that the Streamlit tab will say <strong>Source file changed</strong> and offers you <strong>Rerun</strong> and <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - now, every time we save the file, Streamlit will automatically rebuild the page for us.</p>
 <p>Before moving on to layout, we want to set how the app is presented (Streamlit will deal with layout for both desktop and mobile browsers, behind the scenes). Here we can add a title which will go in the browser tab. (We could also give it a favicon, but will skip that for now.)</p>
 <p>Below your <code>import</code> command, but above everything else, add this line:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;My data app&#34;</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
@@ -192,7 +195,7 @@
 </div>
         </div>
     </div>
-<h2 id="exercise-1-preparing-our-app-layout-1">Exercise 1: Preparing our app layout</h2>
+<h2 id="exercise-1-preparing-our-app-layout">Exercise 1: Preparing our app layout</h2>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 1: build your app&#39;s layout<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
