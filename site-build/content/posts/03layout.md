@@ -131,8 +131,8 @@ Through the rest of this course we will be building a **visualiser for World Dem
 Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps' tab in your browser.
 1. Remove the `st.write()` and `st.subtitle()` lines that we added earlier.
 2. Change the **title** in the page to say "World Demographics". Put it in the sidebar.
-3. Create **two** columns, with the left column being five times wider than the right one.
-4. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`).
+3. Create **two** columns, with the left column being four times wider than the right one.
+4. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`). Leave the right hand column empty - we will use this space later.
 5. Change the names of your **two tabs** using `st.tabs()`, named "Data" and "Visualisation". Remember that `st.tabs()` takes a **list** (ie, you will have square and round brackets).
 {{< /admonition >}}
 
@@ -146,15 +146,11 @@ with st.sidebar:
     # put a title in the sidebar
     st.title("World Demographics")
 
-# create two columns, of ratio 5:1
-column1, column2 = st.columns([5,1])
+# create two columns, of ratio 4:1
+column1, column2 = st.columns([4,1])
 
 # place info box in first column
 with column1:
-    st.info("Welcome to the global demographic data explorer app!")
-    
-# place info box in second column
-with column2:
     st.info("Welcome to the global demographic data explorer app!")
 
 # create two tabs
