@@ -102,15 +102,6 @@ We are using [Plotly](https://plotly.com/python/), for a number of reasons:
 - the syntax is relatively easy to use, without being over-simplified
 - the graphs it creates are good-looking, customisable and interactive.
 
-{{< admonition type="tip" title="Options for plotting libraries" open=false >}}
-Streamlit is designed to use [a range of popular Python plotting libraries](https://docs.streamlit.io/library/api-reference/charts). These have their strengths and weaknesses. Here is a quick, incomplete summary; click the links for galleries of what each library can do:
-- [matplotlib](https://matplotlib.org/stable/gallery/index.html) : a classic Python plotting library. Mature, widely-used, relatively easy, but not as sophisticated as others, and no interactive features.
-- [Altair](https://altair-viz.github.io/gallery/index.html) and [Vega Lite](https://vega.github.io/vega-lite/examples/) : these are both APIs for controlling the mighty [D3.js](https://d3js.org/). Very powerful, but steep learning curve.
-- [Plotly](https://plotly.com/python/) : another JavaScript library, but easier to use than the D3.js wrappers.
-- [Bokeh](https://docs.bokeh.org/en/latest/docs/gallery.html) : yet another Python API to control JavaScript!
-- [PyDeck](https://deck.gl/showcase) : this runs the Deck.GL graphics library, creating 3D models, from medical to geographical. It also integrates with [MapBox](https://www.mapbox.com/).
-{{< /admonition >}}
-
 There are two steps to getting our data from the dataframe to into a graphic:
 1. Creating a chart object
 2. Asking Streamlit to present this chart object
@@ -199,4 +190,13 @@ chart = px.scatter(
 with tab2:
     st.plotly_chart(chart)
 ```
+{{< /admonition >}}
+
+{{< admonition type="tip" title="Options for plotting libraries" open=false >}}
+Streamlit is designed to use [a range of popular Python plotting libraries](https://docs.streamlit.io/library/api-reference/charts). These have their strengths and weaknesses. Here is a quick, incomplete summary; click the links for galleries of what each library can do:
+- [matplotlib](https://matplotlib.org/stable/gallery/index.html) : a classic Python plotting library. Mature, widely-used, relatively easy, but not as sophisticated as others, and no interactive features.
+- [Altair](https://altair-viz.github.io/gallery/index.html) and [Vega Lite](https://vega.github.io/vega-lite/examples/) : these are both APIs for controlling the mighty [D3.js](https://d3js.org/). Very powerful, but steep learning curve.
+- [Plotly](https://plotly.com/python/) : another JavaScript library, but easier to use than the D3.js wrappers.
+- [Bokeh](https://docs.bokeh.org/en/latest/docs/gallery.html) : yet another Python API to control JavaScript!
+- [PyDeck](https://deck.gl/showcase) : this runs the Deck.GL graphics library, creating 3D models, from medical to geographical. It also integrates with [MapBox](https://www.mapbox.com/).
 {{< /admonition >}}
