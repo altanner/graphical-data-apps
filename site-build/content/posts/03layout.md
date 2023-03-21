@@ -72,7 +72,7 @@ To learn more about text, look at the [text elements section of the Streamlit AP
 So far we know how to present some text, but we want to [control where and how things appear on the page](https://docs.streamlit.io/library/api-reference/layout). We will use three layout components in our app: sidebars, columns and tabs.
 
 ### Sidebars
-[Sidebars](https://docs.streamlit.io/library/api-reference/layout/st.sidebar) are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to your script:
+[Sidebars](https://docs.streamlit.io/library/api-reference/layout) are a typical component of a data app, providing a tidy place to store controls, that can also be minimised to make best use of the browser window. We'll create a sidebar, by adding this to your script:
 
 ```Python
 with st.sidebar:
@@ -82,12 +82,14 @@ with st.sidebar:
 Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example, `tabs` and `columns` and `expander`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
 
 ### Columns
-[Columns](https://docs.streamlit.io/library/api-reference/layout/st.columns) allow us to vertically partition the app. Columns must always be **created before they can be used**. This includes setting _how many_ columns you want, then placing code inside `with` blocks as appropriate, just as in the sidebar example. Here we are creating two columns:
+[Columns](https://docs.streamlit.io/library/api-reference/layout) allow us to vertically partition the app. Columns must always be **created before they can be used**. This includes setting _how many_ columns you want, then placing code inside `with` blocks as appropriate, just as in the sidebar example. Here we are creating two columns:
 
 ```Python
 column1, column2 = st.columns(2)
 ```
+
 and then we can place items into those columns, for example"
+
 ```Python
 with column1:
     st.write("Here is column 1")
@@ -95,23 +97,29 @@ with column1:
 with column2:
     st.write("This is column 2")
 ```
-We can create any number of columns we like, for example `column1, column2, column3 = st.columns(3)` would create three columns. We can also control the widths by passing a list of the *ratios* of the columns:
+
+We can create any number of columns we like, for example `column1, column2, column3 = st.columns(3)` would create three columns of equal width. We can control the widths by passing a **list of the ratios** of the columns:
 
 ```Python
 column1, column2 = st.columns([1, 4])
 ```
+
 This will create two columns, with the right hand one being four times wider than the left hand one.
 
 ### Tabs
-[Tabs](https://docs.streamlit.io/library/api-reference/layout/st.tabs) allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - see [here for details](https://docs.streamlit.io/library/get-started/multipage-apps) on creating a true multi-page app.) Just like with columns, **we first need to define our tabs**, but with a list of their names. Here we are making two tabs, with names:
+[Tabs](https://docs.streamlit.io/library/api-reference/layout) allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - but [multi-page apps](https://docs.streamlit.io/library/get-started/multipage-apps) can be made.) Just like with columns, **we first need to define our tabs**, but with a list (ie, don't forget the `[`square brackets`]`!) of their names:
+
 ```Python
-tab1, tab2 = st.tabs(["Tabs are", "really useful"])
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
 ```
-And like with columns, to put things into a tab, we use a `with` block, for example:
+
+Just like with columns, to put things into a tab, we use a `with` block, for example:
+
 ```Python
-with tab2:
-    st.write("This text is in the second tab, which we will use later!")
+with tab1:
+    st.write("Here is a tab.")
 ```
+
 Give that a try and check how it looks in the app (remember to save to see the changes).
 
 {{< admonition type="tip" title="More layout options and customisations." open=false >}}
@@ -130,10 +138,11 @@ Through the rest of this course we will be building a **visualiser for World Dem
 
 Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps' tab in your browser.
 1. Remove the `st.write()` and `st.subtitle()` lines that we added earlier.
-2. Change the **title** in the page to say "World Demographics". Put it in the sidebar.
-3. Create **two** columns, with the left column being four times wider than the right one.
-4. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`). Leave the right hand column empty - we will use this space later.
-5. Change the names of your **two tabs** using `st.tabs()`, named "Data" and "Visualisation". Remember that `st.tabs()` takes a **list** (ie, you will have square and round brackets).
+2. Change the **title** in the page to say "World Demographics".
+3. Put your title in the sidebar.
+4. Create **two** columns, with the left column being four times wider than the right one.
+5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`). Leave the right hand column empty - we will use this space later.
+6. Add text to each of your tabs. Test that everything looks as you expect it to look.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 1 solution" open=false >}}
@@ -143,7 +152,6 @@ import streamlit as st
 
 # build the sidebar
 with st.sidebar:
-    # put a title in the sidebar
     st.title("World Demographics")
 
 # create two columns, of ratio 4:1
@@ -155,6 +163,13 @@ with column1:
 
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
+
+# put some text in the tabs to check they are working
+with tab1:
+    st.write("Here is tab one.")
+
+with tab2:
+    st.write("And this is tab two!")
 ```
 {{< /admonition >}}
 
