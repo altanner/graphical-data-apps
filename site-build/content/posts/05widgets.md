@@ -22,7 +22,7 @@ comment:
 ---
 
 ## Widgets
-The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
+The power of data apps is in allowing users to interact with data and visuals. We do this by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. An important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
 ### First widget
 Let's add our first widget. It will greet the user! We will need two things to do this - firstly, we want the user to be able to enter their name. Then, we send the name back to the interface - we will use the empty `column2` that we created earlier.
@@ -35,7 +35,7 @@ with sidebar:
     user_name = st.text_input("Welcome - please enter your name.")
 ```
 
-Note that we are assigning the widget to a variable name, here called `user_name`. Like any variable, we can pass this around. Here, we will pass it to an [`f`string](https://realpython.com/python-f-strings/), up in the top right column. We will use `st.info()` again, since it makes it clear where our column is. A a sensible place to put this line is below your code for `column1`:
+Note that we are assigning the widget to a variable name, here called `user_name`. Like any variable, we can pass this around. Here, we will pass it to an [`f`string](https://realpython.com/python-f-strings/), in the code block for `column2`. We will use `st.info()` again, since it makes it clear where our column is. A a sensible place to put this line is below your code for `column1`:
 
 ```Python
 with column1:
@@ -44,10 +44,10 @@ with column2:
     st.info(f"Hi {user_name}!")
 ```
 
-Well done on making your first interactive widget-display pair! Learning how to use widgets to hold variables, and layout elements to display them, is a core skill in data app development.
+Save your script and check your app is working. Your first interactive widget-display pair! Learning how to use widgets to set variables, and layout elements to display them, is a core skill in data app development.
 
 ## Widgets and visuals
-In the previous section we created a chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDFs of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we manually assigned values ("hard-coded") to the chart parameters, for example we assigned the x-axis data to the "HDI index" column of the dataframe, with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
+In the previous page we created a chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDFs of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we manually assigned values ("hard-coded") to the chart parameters, for example we assigned the x-axis data to the "HDI index" column of the dataframe, with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
 You might have noticed that our dataset contains year information. We asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. We are going to fix this, by setting a widget to control which year the chart will display.
 
