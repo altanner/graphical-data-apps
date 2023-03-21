@@ -63,24 +63,19 @@ So far, our script should look like this:
 import streamlit as st
 import pandas as pd
 
-# read our CSV file into a dataframe called "demo_df"
+# use pandas to read our CSV file into a dataframe called "demo_df"
 demo_df = pd.read_csv("demo_dataset.csv")
 
-# build the sidebar
+# put a title in the sidebar
 with st.sidebar:
-    # put a title in the sidebar
     st.title("World Demographics")
 
-# create two columns, of ratio 5:1
-column1, column2 = st.columns([5,1])
+# create two columns, of ratio 4:1
+column1, column2 = st.columns([4, 1])
 
 # place info box in first column
 with column1:
     st.info("Welcome to the global demographic data explorer app!")
-    
-# place info box in second column
-with column2:
-    st.info("XXXXX")
 
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
@@ -155,7 +150,7 @@ chart = px.scatter(
 {{< admonition type="question" title="Exercise 4: better visuals" open=true >}}
 So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data.
 1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
-2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
+2. Our mouse-hover tooltip is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
 3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
 {{< /admonition >}}
 
@@ -166,24 +161,19 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# use pandas to read CSV file into a dataframe
+# use pandas to read our CSV file into a dataframe called "demo_df"
 demo_df = pd.read_csv("demo_dataset.csv")
 
-# build the sidebar
+# put a title in the sidebar
 with st.sidebar:
-    # put a title in the sidebar
     st.title("World Demographics")
 
-# create two columns, of ratio 5:1
-column1, column2 = st.columns([5,1])
+# create two columns, of ratio 4:1
+column1, column2 = st.columns([4, 1])
 
 # place info box in first column
 with column1:
     st.info("Welcome to the global demographic data explorer app!")
-
-# place image into second column
-with column2:
-    st.info("XXXXX")
     
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
