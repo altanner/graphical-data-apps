@@ -48,14 +48,48 @@ demo_df = pd.read_csv("demo_dataset.csv")
 ```
 
 ### Viewing our data
-Before we go any further, let's get a feel for what the data is. We can do this natively in Streamlit. Building on your script, add this to the end:
+Before we go any further, let's get a feel for what the data is. Streamlit is very dataframe-centric, so much so that we can view frames in the app itself (and we can even edit dataframes natively in app! but we won't cover this today). Building on your script, add this to the end:
 
+{{< admonition type="question" title="Exercise 4: Populate a tab with a dataframe" open=true >}}
+In this exercise, the goal is to use `tab1` to display our dataframe. Remember to save your Python file to see the changes in your Streamlit browser tab.
+
+1. Use `with` notation to start a code block that is placing items into `tab1`.
+2. Use the Streamlit command `st.dataframe()` to place our data into the tab.
+{{< /admonition >}}
+
+{{< admonition type="warning" title="Exercise 4 solution" open=false >}}
+So far, our script should look like this:
 ```Python
+import streamlit as st
+import pandas as pd
+
+# read our CSV file into a dataframe called "demo_df"
+demo_df = pd.read_csv("demo_dataset.csv")
+
+# build the sidebar
+with st.sidebar:
+    # put a title in the sidebar
+    st.title("World Demographics")
+
+# create two columns, of ratio 5:1
+column1, column2 = st.columns([5,1])
+
+# place info box in first column
+with column1:
+    st.info("Welcome to the global demographic data explorer app!")
+    
+# place info box in second column
+with column2:
+    st.info("XXXXX")
+
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
+
+# display the dateframe in tab1
 with tab1:
     st.dataframe(demo_df)
 ```
-
-Save the file, and check what your app is showing. For this course, we will leave `tab1` ("Data") as a quick way of checking what the data looks like, and `tab2` ("Visualisation") for our chart.
+{{< /admonition >}}
 
 ## Your first chart
 Now that we have our data available, we can begin work on visualising it, which will require one more `import`. Add this to your imports at the top of the script:
@@ -118,14 +152,14 @@ chart = px.scatter(
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
 ## Exercise: building a better visualisation
-{{< admonition type="question" title="Exercise 3: better visuals" open=true >}}
+{{< admonition type="question" title="Exercise 4: better visuals" open=true >}}
 So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data.
 1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
 2. Our mouse-over is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
 3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Exercise 2 solution" open=false >}}
+{{< admonition type="warning" title="Exercise 4 solution" open=false >}}
 Your Streamlit script should look similar to this:
 ```Python
 import streamlit as st
@@ -149,7 +183,7 @@ with column1:
 
 # place image into second column
 with column2:
-    st.image("globe.png")
+    st.info("XXXXX")
     
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
