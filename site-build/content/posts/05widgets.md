@@ -44,15 +44,15 @@ with column2:
 
 Well done on making your first interactive widget-display pair! Learning how to use widgets to hold variables, and layout elements to display them, is a core skill in data app development.
 
-## Widgets and charts
-In the previous section we created a chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "HDI index" with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
+## Widgets and visuals
+In the previous section we created a chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDFs of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we manually assigned values ("hard-coded") to the chart parameters, for example we assigned the x-axis data to the "HDI index" column of the dataframe, with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
-You might have noticed that our dataset contains year information. We asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. We are going to fix this, by setting a widget to control which year the chart will display. **we can improve the chart using a widget to chose what year to display**.
+You might have noticed that our dataset contains year information. We asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. We are going to fix this, by setting a widget to control which year the chart will display.
 
 ### A widget to control the chart
-As in the example above, we need to create a variable using a widget, and control the interface with that variable. Years are integers, and we want to be able to select any integer between 1998 and 2018. A perfect widget for this is a [slider](https://docs.streamlit.io/library/api-reference/widgets).
+Years are integers, and our data spans 1998 to 2018. So, we need a widget to be able to select any of those integers. A perfect widget for this is a [slider](https://docs.streamlit.io/library/api-reference/widgets).
 
-As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put widget-assignment code inside the block starting `with st.sidebar:`. To create our slider, we add:
+As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put widget-assignment code *inside* the block starting `with st.sidebar:`. To create our slider, we add:
 
 ```Python
     year_widget = st.slider(
@@ -62,14 +62,25 @@ As with all of our widgets for this data app, we are going to put it in the side
         max_value=2018)
 ```
 
-Compared to the text input widget we used above, this one has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Save the file and check the changes on your app.
+Compared to the text input widget we used above, this one has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.
 
 ### Connecting the widget to the chart
-So far, the widget exists, and it creates the variable `year_widget`, but we need to send that into the code for the chart. Currently, `px.scatter()` has been told to plot the whole dataset, with the line `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. XXXXX can this be simpler? Change the parameter line to `data_frame=demo_df.query(f"Year=={year_widget}")` (and leave the rest of your parameters in place).
+So far, the widget exists, and it creates the variable `year_widget`, but we need to send that into the code for the chart. Currently, `px.scatter()` has been told to plot the whole dataset, with the parameter `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. XXXXX can this be simpler? Change the parameter line chart to say `data_frame = demo_df.query(f"Year == {year_widget}")`, so the full parameter set for the chart will be:
+
+```Python
+chart = px.scatter(
+    data_frame = demo_df.query(f"Year == {year_widget}")`,
+    x = "HDI index",
+    y = "GDP per capita",
+    color = "Continent",
+    size = "CO2 per capita",
+    hover_name = "Country",
+    height = 650)
+```
 
 Several things are happening here:
 1. Given `demo_df` is a dataframe, we can use the method `.query()` to filter it.
-2. Inside the `.query()` brackets we are filtering on year with `"Year=={year_widget}"`
+2. Inside the `.query()` brackets we are filtering on year with `"Year == {year_widget}"`
 3. To insert our variable `year_widget`, we are creating an [f-string](https://realpython.com/python-f-strings/), with the variable name inside our curly brackets.
 
 Save your script, and have a play with the app.
@@ -91,23 +102,23 @@ Don't forget to separate your parameters with commas!
 Your sidebar block should now contain:
 ```Python
 log_x_widget = st.checkbox(
-    label="Logarithmic X-axis")
+    label = "Logarithmic X-axis")
 log_y_widget = st.checkbox(
-    label="Logarithmic Y-axis")
+    label = "Logarithmic Y-axis")
 ```
 
 Your `px.scatter()` now needs to have parameters related to these widgets, so the full parameters would be:
 ```Python
 chart = px.scatter(
-    data_frame=demo_df.query(f"Year=={year_widget}"),
-    x="HDI index",
-    y="GDP per capita",
-    log_x=log_x_widget,
-    log_y=log_y_widget,
-    color="Continent",
-    size="CO2 per capita",
-    hover_name="Country",
-    height=650)
+    data_frame = demo_df.query(f"Year == {year_widget}"),
+    x = "HDI index",
+    y = "GDP per capita",
+    log_x = log_x_widget,
+    log_y = log_y_widget,
+    color = "Continent",
+    size = "CO2 per capita",
+    hover_name = "Country",
+    height = 650)
 ```
 {{< /admonition >}}
 
@@ -132,11 +143,11 @@ To do this, we will create two more widgets, this time [radio buttons](https://d
 
 ```Python
 x_data_widget = st.radio(
-    label="X-axis data",
-    options=column_names)
+    label = "X-axis data",
+    options = column_names)
 y_data_widget = st.radio(
-    label="Y-axis data",
-    options=column_names)
+    label = "Y-axis data",
+    options = column_names)
 ```
 
 Save this... and you will get an error! The parameter `options` is expecting a list, but we gave it an undefined variable. Let's fix this, and connect it up, in this exercise
@@ -150,8 +161,8 @@ We already have our widgets ready, but we cannot use them until we tell them wha
 3. Three column names will _not_ be in your list: what are they, and why?
 4. Link your widgets to the chart parameters. Currently, the `x` and `y` parameters are hard-coded:
 ```Python
-x="HDI index",
-y="GDP per capita",
+x = "HDI index",
+y = "GDP per capita",
 ```
 Modify these so they respond to your widgets. Test your app is working.
 
@@ -180,16 +191,16 @@ with st.sidebar:
     st.title("World Demographics")
     
     year_widget = st.slider(
-        label="Year",
-        value=2008,
-        min_value=1998,
-        max_value=2018)
+        label = "Year",
+        value = 2008,
+        min_value = 1998,
+        max_value = 2018)
     
     log_x_widget = st.checkbox(
-        label="Logarithmic X-axis")
+        label = "Logarithmic X-axis")
 
     log_y_widget = st.checkbox(
-        label="Logarithmic Y-axis")
+        label = "Logarithmic Y-axis")
     
     # a list of options for axis data selectors
     column_names = [
@@ -200,12 +211,12 @@ with st.sidebar:
         "Services"]
     # x and y selector widgets
     x_data_widget = st.radio(
-        label="X-axis data",
-        options=column_names)
+        label = "X-axis data",
+        options = column_names)
     y_data_widget = st.radio(
-        label="Y-axis data",
-        options=column_names,
-        index=1)
+        label = "Y-axis data",
+        options = column_names,
+        index = 1)
 
     ### end of sidebar
     
@@ -213,13 +224,13 @@ with st.sidebar:
 # create two columns, of ratio 5:1
 column1, column2 = st.columns([5,1])
 
-# place info box in first column
+# place info box in column1
 with column1:
     st.info("Welcome to the global demographic data explorer app!")
 
-# place image into second column
+# place welcome message into column2
 with column2:
-    st.image("globe.png")
+    st.info(f"Hi {user_name}!")
 
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
@@ -230,15 +241,15 @@ with tab1:
 
 # build px chart object
 chart = px.scatter(
-    data_frame=demo_df.query(f"Year=={year_widget}"),
-    x=x_data_widget,
-    y=y_data_widget,
-    log_x=log_x_widget,
-    log_y=log_y_widget,
-    color="Continent",
-    size="CO2 per capita",
-    hover_name="Country",
-    height=650)
+    data_frame = demo_df.query(f"Year == {year_widget}"),
+    x = x_data_widget,
+    y = y_data_widget,
+    log_x = log_x_widget,
+    log_y = log_y_widget,
+    color = "Continent",
+    size = "CO2 per capita",
+    hover_name = "Country",
+    height = 650)
 
 # display the chart in tab2
 with tab2:
