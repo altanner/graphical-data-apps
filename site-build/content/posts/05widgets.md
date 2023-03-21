@@ -38,6 +38,8 @@ with sidebar:
 Note that we are assigning the widget to a variable name, here called `user_name`. Like any variable, we can pass this around. Here, we will pass it to an [`f`string](https://realpython.com/python-f-strings/), up in the top right column. We will use `st.info()` again, since it makes it clear where our column is. A a sensible place to put this line is below your code for `column1`:
 
 ```Python
+with column1:
+    st.info("Welcome to the global demographic data explorer app!")
 with column2:
     st.info(f"Hi {user_name}!")
 ```
