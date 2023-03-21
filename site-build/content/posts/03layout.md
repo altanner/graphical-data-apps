@@ -59,14 +59,28 @@ Our minimal-viable-app is up and running, and this gives us something to build o
 
 When you save your first change to your Python file, the app will say **Source file changed**, and asks **Rerun** or **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - every time we save the file, Streamlit will automatically rebuild the page for us.
 
-Try the following edits, saving after each step.
+Try the following edits, saving after each step to see the changes in the app's tab in your browser.
 1. Change your app's title to something you like.
-2. We can add a subtitle with `st.subtitle()`; add this to your Python script, and include a sentence or two.
+2. Below this, add a subtitle with `st.subtitle()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
 3. Move your subtitle line to be above your title line in the script, and notice the changes to your app.
 4. Move the subtitle back down again.
+5. Use `st.write()` to add a sentence below your subtitle.
 {{< /admonition >}}
 
-To learn more about text, look at the [text elements section of the Streamlit API documentation](https://docs.streamlit.io/library/api-reference/text). The [status elements](https://docs.streamlit.io/library/api-reference/status) are also useful for laying out your app.
+{{< admonition type="warning" title="Exercise 1 solution" open=false >}}
+Your script should look something like this:
+```Python
+import streamlit as st
+
+st.title("Here, this is a title.")
+
+st.subtitle("Subtitles are a little bit smaller than titles.")
+
+st.write("Here is some normally formatted text. Very vanilla text.")
+```
+{{< /admonition >}}
+
+These are all text elements. To learn more see the [text elements section of the Streamlit API documentation](https://docs.streamlit.io/library/api-reference/text). The [status elements](https://docs.streamlit.io/library/api-reference/status) are similar and useful for laying out your app: we will use these in a moment.
 
 ## Page layout
 So far we know how to present some text, but we want to [control where and how things appear on the page](https://docs.streamlit.io/library/api-reference/layout). We will use three layout components in our app: sidebars, columns and tabs.
@@ -79,16 +93,16 @@ with st.sidebar:
     st.write("This text is in our sidebar.")
 ```
 
-Here we are using `with` notation. This programming syntax is commonly used to make code cleaner and easier to read. It also automates some processes in the background, for example opening and closing resources. Writing Python for Streamlit, we will see that we use `with` blocks for many layout instructions, for example, `tabs` and `columns` and `expander`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
+Here we are using `with` notation. This programming syntax makes the logical flow of your code easy to follow. It also automates some processes in the background, for example opening and closing resources. We will use `with` blocks for many layout instructions, for example, `tabs` and `columns` and `expander`. See [the API docs](https://docs.streamlit.io/library/api-reference/layout) for more details.
 
 ### Columns
-[Columns](https://docs.streamlit.io/library/api-reference/layout) allow us to vertically partition the app. Columns must always be **created before they can be used**. This includes setting _how many_ columns you want, then placing code inside `with` blocks as appropriate, just as in the sidebar example. Here we are creating two columns:
+[Columns](https://docs.streamlit.io/library/api-reference/layout) allow us to vertically partition the layout. Unlike sidebars, **columns must always be created before they can be used**. We set _how many_ columns we want, then place code inside `with` blocks as appropriate, just as in the sidebar example. Here we are creating two columns:
 
 ```Python
 column1, column2 = st.columns(2)
 ```
 
-and then we can place items into those columns, for example"
+and then we can place items into those columns, for example:
 
 ```Python
 with column1:
@@ -98,7 +112,7 @@ with column2:
     st.write("This is column 2")
 ```
 
-We can create any number of columns we like, for example `column1, column2, column3 = st.columns(3)` would create three columns of equal width. We can control the widths by passing a **list of the ratios** of the columns:
+We can create any number of columns we like, for example `column1, column2, column3 = st.columns(3)` would create three columns of equal width. We can control the widths by passing a **list of the ratios** of the column widths (note the `[`square`]` brackets (a list) inside the `(`round`)` brackets (the parameters of `st.columns()`):
 
 ```Python
 column1, column2 = st.columns([1, 4])
@@ -107,7 +121,7 @@ column1, column2 = st.columns([1, 4])
 This will create two columns, with the right hand one being four times wider than the left hand one.
 
 ### Tabs
-[Tabs](https://docs.streamlit.io/library/api-reference/layout) allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - but [multi-page apps](https://docs.streamlit.io/library/get-started/multipage-apps) can be made.) Just like with columns, **we first need to define our tabs**, but with a list (ie, don't forget the `[`square brackets`]`!) of their names:
+[Tabs](https://docs.streamlit.io/library/api-reference/layout) allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - but [multi-page apps](https://docs.streamlit.io/library/get-started/multipage-apps) can be made.) Just like with columns, **we first need to define our tabs**, with a list of their names:
 
 ```Python
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
@@ -141,11 +155,12 @@ Preview each of your changes by saving your file, and you will immediately be ab
 2. Change the **title** in the page to say "World Demographics".
 3. Put your title in the sidebar.
 4. Create **two** columns, with the left column being four times wider than the right one.
-5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`). Leave the right hand column empty - we will use this space later.
-6. Add text to each of your tabs. Test that everything looks as you expect it to look.
+5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`).
+6. Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.
+7. Add text to each of your tabs. Test that everything looks as you expect it to look.
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Exercise 1 solution" open=false >}}
+{{< admonition type="warning" title="Exercise 2 solution" open=false >}}
 The whole script should look something similar to this:
 ```Python
 import streamlit as st
