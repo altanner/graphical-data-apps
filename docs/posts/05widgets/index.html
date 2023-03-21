@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-02-24T12:23:23+00:00" />
+<meta property="article:modified_time" content="2023-03-21T17:12:25+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  1498 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-02-24T12:23:23+00:00","publisher": {
+        },"genre": "posts","wordcount":  1731 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-21T17:12:25+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -78,8 +78,9 @@
   <ul>
     <li><a href="#widgets">Widgets</a>
       <ul>
-        <li><a href="#improving-our-chart">Improving our chart</a></li>
         <li><a href="#first-widget">First widget</a></li>
+        <li><a href="#improving-our-chart">Improving our chart</a></li>
+        <li><a href="#a-widget-to-control-the-chart">A widget to control the chart</a></li>
         <li><a href="#connecting-the-widget-to-the-chart">Connecting the widget to the chart</a></li>
       </ul>
     </li>
@@ -91,11 +92,24 @@
             </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
 <p>The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating &ldquo;widgets&rdquo;. A <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">widget</a>
  is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that <strong>widgets set the values of variables</strong>. We will see the Python syntax for this in a moment.</p>
+<h3 id="first-widget">First widget</h3>
+<p>Let&rsquo;s add our first widget. It will greet the user! We will need two things to do this - firstly, we want the user to be able to enter their name. Then, we need to take that name and send it back to the interface - we will use the empty <code>column2</code> that we created earlier.</p>
+<p>Firstly, we are going to use <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer"><code>st.text_input()</code></a>
+ widget, and place it below the title in the sidebar</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">sidebar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_name</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&#34;Welcome - please enter your name.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Note that we are assigning the widget to a variable name, here called <code>user_name</code>. Like any variable, we can pass this around. Here, we will pass it to an <code>f</code>string, up in the top right column. We will use <code>st.info()</code> again, since it keeps things neat, and a sensible place to put this line is below your code for <code>column1</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hi </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s2">!&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Learning how to use widgets to hold variables, and layout elements to display them is a core skill in data app development - well done on making your first interactive widget-display pair!</p>
 <p>In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values (&ldquo;hard-coded&rdquo;) the chart parameters, for example we assigned the x-axis data to &ldquo;HDI index&rdquo; with the parameter <code>x=&quot;HDI index&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
 <h3 id="improving-our-chart">Improving our chart</h3>
 <p>You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but <strong>we can improve the chart using a widget to chose what year to display</strong>.</p>
-<h3 id="first-widget">First widget</h3>
-<p>Let&rsquo;s add our first widget. It will communicate to the chart which year to plot. In this case, we need a widget that selects an integer from a limited range of contiguous options. There are <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">several types of widgets</a>
+<p>Before we move on, you might have noticed there is something weird about our chart. It is trying to display every year, all at the same time, which makes for a very confused chart. Let&rsquo;s add a variable so that we can just display one year at a time. That variable will then go into our <code>chart</code> object.</p>
+<p>Firstly,</p>
+<h3 id="a-widget-to-control-the-chart">A widget to control the chart</h3>
+<p>There is somethingIn this case, we need a widget that selects an integer from a limited range of contiguous options. There are <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">several types of widgets</a>
  that can do this, but for us, a good solution is a <a href="https://docs.streamlit.io/library/api-reference/widgets/st.slider" target="_blank" rel="noopener noreffer">slider</a>
 .</p>
 <p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
