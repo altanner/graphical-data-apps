@@ -125,11 +125,11 @@ For points [2] and [3], we need to choose two dataframe columns to plot. Set you
 We create our chart object like this:
 ```Python
 chart = px.scatter(
-    data_frame=demo_df,
-    x="CO2 per capita",
-    y="GDP per capita")
+    data_frame = demo_df,
+    x = "CO2 per capita",
+    y = "GDP per capita")
 ```
-Note that my indentation here is just to avoid a long, confusing line of code; anything inside brackets and separated by commas can be laid out in this way, and you will see later that our chart object can have lots of arguments, so it is good practice to keep this tidy! As you can see, I have one argument per line, a common and logical layout for objects that require several inputs.
+Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely cosmetic.
 
 OK, so we have built the `chart` object - now we ask Streamlit to show it to us by handing it to `st.plotly_chart()`. We will also put this into our second tab. Add this at the bottom of your script:
 ```Python
@@ -142,10 +142,10 @@ Save your file, and explore the visual! Investigate what the icons at the top ri
 This is a good start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let's colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:
 ```Python
 chart = px.scatter(
-    data_frame=demo_df,
-    x="CO2 per capita",
-    y="GDP per capita",
-    color="Continent")
+    data_frame = demo_df,
+    x = "CO2 per capita",
+    y = "GDP per capita",
+    color = "Continent")
 ```
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
@@ -154,7 +154,7 @@ chart = px.scatter(
 So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data.
 1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
 2. Our mouse-hover tooltip is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
-3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height=650` fits best, but for you it might be different).
+3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height = 650` fits best, but for you it might be different).
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 4 solution" open=false >}}
@@ -187,13 +187,13 @@ with tab1:
 
 # build px chart object
 chart = px.scatter(
-    data_frame=demo_df,
-    x="HDI index",
-    y="GDP per capita",
-    color="Continent",
-    size="CO2 per capita",
-    hover_name="Country",
-    height=650)
+    data_frame = demo_df,
+    x = "HDI index",
+    y = "GDP per capita",
+    color = "Continent",
+    size = "CO2 per capita",
+    hover_name = "Country",
+    height = 650)
 
 # display the chart in tab2
 with tab2:
