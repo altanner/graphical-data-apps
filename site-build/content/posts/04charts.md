@@ -1,6 +1,6 @@
 ---
 title: "4 • Charts"
-subtitle: "How to control your graphing library."
+subtitle: "Turning numbers into pictures."
 
 date: 2023-02-14T00:00:00+01:00
 
@@ -27,51 +27,51 @@ The words **plot**, **chart** and **graph** are used interchangeably, but I will
 *As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!*
 {{< /admonition >}}
 
-At the end of the last section, our running Python file creates a page, we added some layout components. In this section, we will be bringing data into the app, and creating our first visualisation.
+At the end of the last section we had a data app with a layout ready for more components. In this section, we will be bringing data into the app, and creating our first visualisation.
 
 ## Bringing our data into the script
-We will be using `pandas` to read our CSV file in. Streamlit is very much built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
+We can't get much further in creating a data app without some data! Our input dataset is a CSV of global demographics - information about the economies and populations of countries. We will be using `pandas` to read our data in: Streamlit is built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
+
+[Click this link to get `demo_dataset.csv`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv): download it and put the file into the folder with your `data_app.py` script.
 
 ### Loading up `pandas`
-Firstly, we need to update our script to import `pandas`. Add this at the top of your script (keep the `streamlit` import as it is):
+First, we need to update our script to import `pandas`. Add this at the top of your script add:
 
 ```Python
 import pandas as pd
 ```
 
-We can read our dataset into a dataframe using `pandas`, but first we need data. We are using this comma-separated-values file, [`demo_dataset.csv`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv): download it and put the file into the folder with your `data_app.py` script.
-
-Add this line **at the top of your script, below your `import`s**, but above the rest of your code. The reason we put it near the top is because this code is not related to building the interface, so it is logical to place it before the page-build code.
+Now we can read our dataset into a dataframe using `pandas`. Add this line **below your `import`s**, but above the rest of your code. We put this near the top is because this code is not related to building the interface: it is logical to place it before the page-build code.
 
 ```Python
 demo_df = pd.read_csv("demo_dataset.csv")
 ```
 
 ### Viewing our data
-Before we go any further, let's get a feel for what the data is. Streamlit is very dataframe-centric, so much so that we can view frames in the app itself (and we can even edit dataframes natively in app! but we won't cover this today). Building on your script, add this to the end:
+Before we go any further, let's get a feel for what the data is. We can view dataframes in the app itself (and we can even edit dataframes natively in app! but we won't cover this today).
 
 {{< admonition type="question" title="Exercise 4: Populate a tab with a dataframe" open=true >}}
 In this exercise, the goal is to use `tab1` to display our dataframe. Remember to save your Python file to see the changes in your Streamlit browser tab.
 
-1. Use `with` notation to start a code block that is placing items into `tab1`.
-2. Use the Streamlit command `st.dataframe()` to place our data into the tab.
+1. Remove our `st.write()` command from tab 1.
+2. Use the command `st.dataframe()` to display our data in tab 1.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 4 solution" open=false >}}
 So far, our script should look like this:
-```Python
+```Python 
 import streamlit as st
 import pandas as pd
 
 # use pandas to read our CSV file into a dataframe called "demo_df"
 demo_df = pd.read_csv("demo_dataset.csv")
 
-# put a title in the sidebar
+# build the sidebar
 with st.sidebar:
     st.title("World Demographics")
 
 # create two columns, of ratio 4:1
-column1, column2 = st.columns([4, 1])
+column1, column2 = st.columns([4,1])
 
 # place info box in first column
 with column1:
@@ -80,9 +80,12 @@ with column1:
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
 
-# display the dateframe in tab1
+# put some text in the tabs to check they are working
 with tab1:
     st.dataframe(demo_df)
+
+with tab2:
+    st.write("And this is tab two!")
 ```
 {{< /admonition >}}
 
