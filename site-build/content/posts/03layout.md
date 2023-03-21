@@ -29,9 +29,9 @@ We provide `code` blocks through this course, which you can copy and paste to bu
 {{< /admonition >}}
 
 ## Creating your first page
-We have a text editor open, to begin let's rename this to make it clear what it is. Do this by saving the file, or going "Save as", and naming it `data_app.py` (you might need to right-click on the file and select "*Rename*").
+We have a text editor open, but to begin let's rename this to make it clear what it is. Do this by saving the file, or going "Save as", and naming it `data_app.py` (you might need to right-click on the file and select "*Rename*").
 
-We will start the script by asking Python to make the `streamlit` library available to our script:
+We will by telling Python to make the `streamlit` library available to our script:
 
 ```Python
 import streamlit as st
