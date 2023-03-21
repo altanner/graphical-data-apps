@@ -24,13 +24,39 @@ comment:
 ## Widgets
 The power of data apps is in allowing users to interact with data and visuals. One way that we can do this is by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. The important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
+### First widget
+Let's add our first widget. It will greet the user! We will need two things to do this - firstly, we want the user to be able to enter their name. Then, we need to take that name and send it back to the interface - we will use the empty `column2` that we created earlier.
+
+Firstly, we are going to use [`st.text_input()`](https://docs.streamlit.io/library/api-reference/widgets) widget, and place it below the title in the sidebar 
+
+```Python
+with sidebar:
+    st.title("World Demographics")
+    user_name = st.text_input("Welcome - please enter your name.")
+```
+
+Note that we are assigning the widget to a variable name, here called `user_name`. Like any variable, we can pass this around. Here, we will pass it to an `f`string, up in the top right column. We will use `st.info()` again, since it keeps things neat, and a sensible place to put this line is below your code for `column1`:
+
+```Python
+with column2:
+    st.info(f"Hi {user_name}!")
+```
+
+Learning how to use widgets to hold variables, and layout elements to display them is a core skill in data app development - well done on making your first interactive widget-display pair!
+
 In the previous section, we created our first chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDF versions of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we have assigned static values ("hard-coded") the chart parameters, for example we assigned the x-axis data to "HDI index" with the parameter `x="HDI index"`. We can instead assign a variable to this parameter - ie, **we can set the value of a widget to be the parameter of a chart**.
 
 ### Improving our chart
 You might have noticed that our dataset contains temporal information (what year each row of data refer to). Given we asked Plotly to use the entire dataframe as the data to plot, this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. This is not ideal, but **we can improve the chart using a widget to chose what year to display**.
 
-### First widget
-Let's add our first widget. It will communicate to the chart which year to plot. In this case, we need a widget that selects an integer from a limited range of contiguous options. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
+
+
+Before we move on, you might have noticed there is something weird about our chart. It is trying to display every year, all at the same time, which makes for a very confused chart. Let's add a variable so that we can just display one year at a time. That variable will then go into our `chart` object.
+
+Firstly, 
+
+### A widget to control the chart
+There is somethingIn this case, we need a widget that selects an integer from a limited range of contiguous options. There are [several types of widgets](https://docs.streamlit.io/library/api-reference/widgets) that can do this, but for us, a good solution is a [slider](https://docs.streamlit.io/library/api-reference/widgets/st.slider).
 
 As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put code inside the code block starting `with st.sidebar:`. To create our slider, we add:
 
