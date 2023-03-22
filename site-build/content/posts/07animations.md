@@ -57,8 +57,7 @@ if animate_vis == False:
         log_y = log_y_widget,
         color = "Continent",
         size = "CO2 per capita",
-        hover_name = "Country",
-        height = 650)
+        hover_name = "Country")
 ```
 For the subsequent `else` block we need an alternate `px.scatter()`, which is very similar to what we are using already:
 ```Python
@@ -72,7 +71,6 @@ if animate_vis == True:
         color = "Continent",
         size = "CO2 per capita",
         hover_name = "Country",
-        height = 650,
         animation_frame = "Year",
         animation_group = "Country",)
 ```
@@ -152,8 +150,7 @@ if animate_widget == False:
         log_y = log_y_widget,
         color = "Continent",
         size = "CO2 per capita",
-        hover_name = "Country",
-        height = 650)
+        hover_name = "Country")
 if animate_widget == True:
     chart = px.scatter(
         data_frame = demo_df,
@@ -163,7 +160,6 @@ if animate_widget == True:
         color = "Continent",
         size = "CO2 per capita",
         hover_name = "Country",
-        height = 650,
         animation_frame = "Year",
         animation_group = "Country",)
 
