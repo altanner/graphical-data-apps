@@ -136,16 +136,6 @@ with tab1:
 
 Give that a try and check how it looks in the app (remember to save to see the changes).
 
-{{< admonition type="tip" title="More layout options and customisations." open=false >}}
-While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:
-
-- [images and other media elements](https://docs.streamlit.io/library/api-reference/media) (including video and audio)
-- [info and progress boxes](https://docs.streamlit.io/library/api-reference/status) (useful for highlighting instructions, results and outputs)
-- [interactive tables](https://docs.streamlit.io/library/api-reference/data)
-
-By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. If you would like to learn more, search the documentation or for tutorials.
-{{< /admonition >}}
-
 ## Exercise 2: Preparing your app layout
 {{< admonition type="question" title="Exercise 2: build your app's layout" open=true >}}
 Through the rest of this course we will be building a **visualiser for World Demographics Data**. Our first exercise is to prepare our layout for this.
@@ -186,6 +176,16 @@ with tab1:
 with tab2:
     st.write("And this is tab two!")
 ```
+{{< /admonition >}}
+
+{{< admonition type="tip" title="More layout elements and options" open=false >}}
+While you can explore the docs more fully in your own time, and as you need for your own projects, we will just point out a few useful items, to give you a feel for what is possible:
+
+- [images and other media elements](https://docs.streamlit.io/library/api-reference/media) (including video and audio)
+- [info and progress boxes](https://docs.streamlit.io/library/api-reference/status) (useful for highlighting instructions, results and outputs)
+- [interactive tables](https://docs.streamlit.io/library/api-reference/data)
+
+By default, Streamlit provides either a dark or light themed interface (user-system dependent), with their peach-red brand colour for highlighting, buttons, outlines etc. These can all be customised, through building your own theme, or using extra scripts to make specific changes. If you would like to learn more, search the documentation or for tutorials.
 {{< /admonition >}}
 
 {{< admonition type="tip" title="The Streamlit API"  open=false >}}
