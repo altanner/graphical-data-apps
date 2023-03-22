@@ -10,7 +10,7 @@ First widget Let&rsquo;s add our first widget." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T11:03:13+00:00" />
+<meta property="article:modified_time" content="2023-03-22T11:47:21+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets"/>
@@ -28,8 +28,8 @@ First widget Let&rsquo;s add our first widget."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  1825 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T11:03:13+00:00","publisher": {
+        },"genre": "posts","wordcount":  1668 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T11:47:21+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -89,9 +89,7 @@ First widget Let&rsquo;s add our first widget."/>
         <li><a href="#connecting-the-widget-to-the-chart">Connecting the widget to the chart</a></li>
       </ul>
     </li>
-    <li><a href="#exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</a></li>
-    <li><a href="#completing-our-widgets">Completing our widgets</a></li>
-    <li><a href="#exercise-3b-options-and-radio-buttons">Exercise 3b: Options and radio buttons</a></li>
+    <li><a href="#exercise-5-a-couple-more-widgets">Exercise 5: A couple more widgets</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="widgets">Widgets</h2>
@@ -110,12 +108,12 @@ First widget Let&rsquo;s add our first widget."/>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hi </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s2">!&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save your script and check your app is working. Your first interactive widget-display pair! Learning how to use widgets to set variables, and layout elements to display them, is a core skill in data app development.</p>
+</span></span></code></pre></div><p>Save your script and check your app is working. Your first interactive widget-display-pair! Learning how to use widgets to set variables, and layout elements to display them, is a core skill in data app development.</p>
 <h2 id="widgets-and-visuals">Widgets and visuals</h2>
 <p>In the previous page we created a chart. This has some basic interactivity built-in, for example it can be zoomed and scaled, and it offers buttons to download PDFs of the chart we have created. We also saw how the chart itself is built through a series of parameters. So far, we manually assigned values (&ldquo;hard-coded&rdquo;) to the chart parameters, for example we assigned the x-axis data to the &ldquo;HDI index&rdquo; column of the dataframe, with the parameter <code>x=&quot;HDI index&quot;</code>. We can instead assign a variable to this parameter - ie, <strong>we can set the value of a widget to be the parameter of a chart</strong>.</p>
 <p>You might have noticed that our dataset contains year information. We asked Plotly to use the entire dataframe as the data to plot, and this resulted in a strange chart where each country has multiple datapoints plotted, one for each year. We are going to fix this, by setting a widget to control which year the chart will display.</p>
 <h3 id="a-widget-to-control-the-chart">A widget to control the chart</h3>
-<p>Years are integers, and our data spans 1998 to 2018. So, we need a widget to be able to select any of those integers. A perfect widget for this is a <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">slider</a>
+<p>Years are integers, and our data spans 1998 to 2018. So, we need a widget to select any of those integers. A perfect widget for this is a <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">slider</a>
 .</p>
 <p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put widget-assignment code <em>inside</em> the block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl">    <span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
@@ -144,168 +142,58 @@ First widget Let&rsquo;s add our first widget."/>
 </span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save your script, and have a play with the app.</p>
-<h2 id="exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</h2>
-<p>You should now have a chart that only plots one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add <a href="https://docs.streamlit.io/library/api-reference/widgets/st.checkbox" target="_blank" rel="noopener noreffer">checkboxes</a>
-, as we briefly saw in the previous section.</p>
+<h2 id="exercise-5-a-couple-more-widgets">Exercise 5: A couple more widgets</h2>
+<p>You now have a chart that displays one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add a <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">checkbox</a>
+. Checkboxes are booleans: the value they contain can either be <code>True</code> or <code>False</code>, which we will use as a toggle here.</p>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3a: Axis scale controls<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 5: Axis scale controls<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add two <strong>checkbox widgets</strong></p>
-<ol>
-<li>One with the label <code>&quot;Logarithmic X-axis&quot;</code>, assigning its value to a variable called <code>log_x_widget</code></li>
-<li>Another with the label <code>&quot;Logarithmic Y-axis&quot;</code>, assigning its value to a variable called <code>log_y_widget</code>
-In your parameters for <code>px.scatter()</code>, add <strong>two more parameters</strong>:</li>
-<li><code>log_x</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic X-axis&quot;</code> (ie, its variable)</li>
-<li><code>log_y</code>, being equal to the value of your widget labelled <code>&quot;Logarithmic Y-axis&quot;</code>
-Don&rsquo;t forget to separate your parameters with commas!</li>
-</ol>
-</div>
-        </div>
-    </div>
-<div class="details admonition warning">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3a solutions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>Your sidebar block should now contain:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">log_x_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Logarithmic X-axis&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">log_y_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Logarithmic Y-axis&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Your <code>px.scatter()</code> now needs to have parameters related to these widgets, so the full parameters would be:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year == </span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">log_x</span> <span class="o">=</span> <span class="n">log_x_widget</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
-</span></span></code></pre></div></div>
-        </div>
-    </div>
-<p>Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.</p>
-<h2 id="completing-our-widgets">Completing our widgets</h2>
-<div class="details admonition tip">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Clarity is sacred!<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>Apps should be easy to use. Visualisations should be easy to interpret. In this course, we are using an ideal dataset to assigning different types of data to different parts of our chart. In the real world, this is rare! You are likely to have data that doesn&rsquo;t make sense to plot, or is confusing, or over-whelms!</p>
-<p>Almost always, <em>less is more</em> when it comes to visualisations! So, while in this course we are being fairly maximal with our charting for teaching purposes, we recommend, in the real world, that you think carefully about what to present, and how to present it.</p>
-</div>
-        </div>
-    </div>
-<p>Click your &ldquo;View dataframe&rdquo; toggle, and notice the names of the columns. There are eight columns, and currently</p>
+            <div class="admonition-content"><p>In your sidebar code block, and below your year slider widget, add a <code>st.checkbox()</code>:</p>
 <ul>
-<li><strong>Continent</strong> is represented by colour</li>
-<li><strong>Country</strong> is reported in mouse-over tooptip</li>
-<li><strong>CO2</strong> is represented by dot size</li>
-<li><strong>HDI index</strong> is on the x-axis</li>
-<li><strong>GDP per capita</strong> is on the y-axis
-That leaves three columns that would could integrate into the chart: &ldquo;Life expectancy&rdquo;, &ldquo;Services&rdquo;, and &ldquo;Year&rdquo;. We have already assigned the year to a slider (and in the next section we will make that even nicer!). As for the other two, for the sake of completeness, let&rsquo;s give the user the option of exploring these data too.</li>
+<li>Make the label read &ldquo;Logarithmic Y-axis&rdquo;</li>
+<li>Assigning the value of your checkbox to a variable called <code>log_y_widget</code>
+In your parameters for <code>px.scatter()</code>, add a new parameter:</li>
+<li><code>log_y</code>, being equal to the value of your widget labelled &ldquo;Logarithmic Y-axis&rdquo; (ie, the variable <code>log_y_widget</code>)
+Don&rsquo;t forget to separate your parameters with commas!</li>
 </ul>
-<p>To do this, we will create two more widgets, this time <a href="https://docs.streamlit.io/library/api-reference/widgets/st.radio" target="_blank" rel="noopener noreffer">radio buttons</a>
-. These are single-option, mutually-exclusive selectors (I think these are called &ldquo;radio&rdquo; because old radio buttons you would press, and it would deactivate the previous selection). In your sidebar code, and below your axis checkboxes, add:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
-</span></span></code></pre></div><p>Save this&hellip; and you will get an error! The parameter <code>options</code> is expecting a list, but we gave it an undefined variable. Let&rsquo;s fix this, and connect it up, in this exercise</p>
-<h2 id="exercise-3b-options-and-radio-buttons">Exercise 3b: Options and radio buttons</h2>
-<div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3b: Options and radio buttons<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><p>We already have our widgets ready, but we cannot use them until we tell them what the options are. These will be the names of columns in our dataframe (but not all of them):</p>
-<ol>
-<li>Immediately above your <code>x_data_widget</code> lines (as above), define a list called <code>column_names</code></li>
-<li>The contents of this list will be five strings, all of them names of columns in the dataframe.</li>
-<li>Three column names will <em>not</em> be in your list: what are they, and why?</li>
-<li>Link your widgets to the chart parameters. Currently, the <code>x</code> and <code>y</code> parameters are hard-coded:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
-</span></span></code></pre></div><p>Modify these so they respond to your widgets. Test your app is working.</p>
-<ol start="5">
-<li>You might notice that on first loading, the chart plots the same data on each axis, producing just a <code>x=y</code> straight line. Fix this by adding the parameter <code>index=1</code> to the end of your <code>y_data_widget</code> parameters. It will select index 1 (the <em>2nd</em>!) item from the list <code>column_names</code> as what to use on first loading.</li>
-</ol>
 </div>
         </div>
     </div>
 <div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3b solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 5 solutions<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>At this point, your whole script should look similar to this:</p>
+            <div class="admonition-content"><p>Your script should look similar to this</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read CSV file into a dataframe</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read our CSV file into a dataframe called &#34;demo_df&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># set the tab title and page width</span>
-</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span><span class="n">page_title</span><span class="o">=</span><span class="s2">&#34;Demo App&#34;</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s2">&#34;wide&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">### build the sidebar</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># put a title in the sidebar</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1"># put a title in the sidebar</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">user_name</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&#34;Welcome - please enter your name.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Year&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">value</span> <span class="o">=</span> <span class="mi">2008</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">min_value</span> <span class="o">=</span> <span class="mi">1998</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">max_value</span> <span class="o">=</span> <span class="mi">2018</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">log_x_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Logarithmic X-axis&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year to chart&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">log_y_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Logarithmic Y-axis&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="c1"># a list of options for axis data selectors</span>
-</span></span><span class="line"><span class="cl">    <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Life expectancy&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Services&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># x and y selector widgets</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">index</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">### end of sidebar</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl"><span class="c1">### draw main page area</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># create two columns, of ratio 3:1</span>
-</span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># place info box in column1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># place info box in first column</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># place welcome message into column2</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hi </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s2">!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="c1"># create two tabs</span>
 </span></span><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl">
@@ -315,10 +203,9 @@ That leaves three columns that would could integrate into the chart: &ldquo;Life
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># build px chart object</span>
 </span></span><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year == </span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x_data_widget</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_data_widget</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">log_x</span> <span class="o">=</span> <span class="n">log_x_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">[</span><span class="n">demo_df</span><span class="p">[</span><span class="s2">&#34;Year&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_widget</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
@@ -327,10 +214,121 @@ That leaves three columns that would could integrate into the chart: &ldquo;Life
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.</p>
+<h2 id="completing-our-widgets">Completing our widgets</h2>
+<p>Let&rsquo;s look at the raw data again, in tab1, and notice the names of the columns. There are eight columns, and currently six are integrated with our chart</p>
+<ul>
+<li><strong>Continent</strong> is represented by colour</li>
+<li><strong>Country</strong> is reported in mouse-over tooptip</li>
+<li><strong>Year</strong> is controlled with our slider</li>
+<li><strong>CO2</strong> is represented by dot size</li>
+<li><strong>HDI index</strong> is on the x-axis</li>
+<li><strong>GDP per capita</strong> is on the y-axis
+but</li>
+<li><strong>Life expectancy</strong> and</li>
+<li><strong>Services</strong> are not used yet.</li>
+</ul>
+<p>To do this, we will create two more widgets, this time <a href="https://docs.streamlit.io/library/api-reference/widgets/st.radio" target="_blank" rel="noopener noreffer">radio buttons</a>
+. These are single-option, mutually-exclusive selectors (I think these are called &ldquo;radio&rdquo; because old radio buttons you would press to select a station, and it would deactivate the previous selection). In your sidebar code, and below your axis checkboxes, add:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save this&hellip; and you will get an error! The parameter <code>options</code> is expecting a list, but we gave it an undefined variable. Let&rsquo;s fix this, and connect it up, in this exercise.</p>
+<h2 id="exercise-6-options-and-radio-buttons">Exercise 6: Options and radio buttons</h2>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 6: Options and radio buttons<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>The argument <code>options</code> is expecting a list. These will be the names of columns in our dataframe (but not all of them):</p>
+<ol>
+<li>Above your sidebar block, define a list called <code>column_names</code></li>
+<li>Set the contents of this list to be <strong>five</strong> strings: <code>&quot;HDI index&quot;, &quot;GDP per capita&quot;, &quot;Life expectancy&quot;, &quot;CO2 per capita&quot;, &quot;Services&quot;</code></li>
+<li>Save your file, and check that the error in the app has been resolved.</li>
+<li>Link your radio widgets to the chart parameters. Currently, the <code>x</code> and <code>y</code> parameters are hard-coded:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span></code></pre></div><p>Modify <code>x</code> and <code>y</code> parameters so they respond to your widgets. Test your app is working.</p>
+</div>
+        </div>
+    </div>
+<div class="details admonition warning">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 6 solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>At this point, your whole script should look similar to this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">### end of main page area</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># use pandas to read our CSV file into a dataframe called &#34;demo_df&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># make a list of column names, to be passed to radio widgets</span>
+</span></span><span class="line"><span class="cl"><span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Life expectancy&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Services&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># put a title in the sidebar</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;World Demographics&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_name</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&#34;Welcome - please enter your name.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Year to chart&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">min_value</span> <span class="o">=</span> <span class="mi">1998</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_value</span> <span class="o">=</span> <span class="mi">2018</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_y_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">checkbox</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Logarithmic Y-axis&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;X-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y_data_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="s2">&#34;Y-axis data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">options</span> <span class="o">=</span> <span class="n">column_names</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># create two columns, of ratio 3:1</span>
+</span></span><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># place info box in first column</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Welcome to the global demographic data explorer app.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">column2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Hi </span><span class="si">{</span><span class="n">user_name</span><span class="si">}</span><span class="s2">!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="c1"># create two tabs</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># display the dataframe in tab1</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">demo_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># build px chart object</span>
+</span></span><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">[</span><span class="n">demo_df</span><span class="p">[</span><span class="s2">&#34;Year&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_widget</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">y_data_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
 </span></span></code></pre></div></div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 </div><div class="post-footer" id="post-footer">
