@@ -57,10 +57,10 @@ Years are integers, and our data spans 1998 to 2018. So, we need a widget to sel
 As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put widget-assignment code *inside* the block starting `with st.sidebar:`. To create our slider, we add:
 
 ```Python
-    year_widget = st.slider(
-        label="Year to chart",
-        min_value=1998,
-        max_value=2018)
+year_widget = st.slider(
+    label="Year to chart",
+    min_value=1998,
+    max_value=2018)
 ```
 
 Compared to the text input widget we used above, this one has three parameters: the descriptive label it will display, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.
@@ -121,9 +121,9 @@ with st.sidebar:
     st.title("World Demographics")
     user_name = st.text_input("Welcome - please enter your name.")
     year_widget = st.slider(
-        label="Year to chart",
-        min_value=1998,
-        max_value=2018)
+        label = "Year to chart",
+        min_value = 1998,
+        max_value = 2018)
     log_y_widget = st.checkbox(
         label = "Logarithmic Y-axis")
     
@@ -195,8 +195,8 @@ The argument `options` is expecting a list. These will be the names of columns i
 3. Save your file, and check that the error in the app has been resolved.
 4. Link your radio widgets to the chart parameters. Currently, the `x` and `y` parameters are hard-coded:
 ```Python
-    x = "HDI index",
-    y = "GDP per capita",
+x = "HDI index",
+y = "GDP per capita",
 ```
 Modify `x` and `y` parameters so they respond to your widgets. Test your app is working.
 {{< /admonition >}}
