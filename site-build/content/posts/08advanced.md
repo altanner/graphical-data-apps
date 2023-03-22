@@ -1,5 +1,5 @@
 ---
-title: "8 • Advanced aspects of data apps"
+title: "8 • Advanced topics II"
 subtitle: "Powerful things that are worth pointing out."
 
 date: 2023-02-18T00:00:00+01:00
