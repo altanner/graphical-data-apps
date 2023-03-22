@@ -32,7 +32,7 @@ At the end of the last section we had a data app with a layout ready for more co
 ## Bringing our data into the script
 We can't get much further in creating a data app without some data! Our input dataset is a CSV of global demographics - information about the economies and populations of countries. We will be using `pandas` to read our data in: Streamlit is built with `pandas` in mind: data workflows and visualisations will usually expect to be working with dataframes.
 
-[Click this link to get `demo_dataset.csv`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv): download it and put the file into the folder with your `data_app.py` script.
+[Download this `demo_dataset.csv`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv) (right-click and *Save link as...*). Put the file into the folder with your `data_app.py` script.
 
 ### Loading up `pandas`
 First, we need to update our script to import `pandas`. Add this at the top of your script add:
@@ -50,14 +50,14 @@ demo_df = pd.read_csv("demo_dataset.csv")
 ### Viewing our data
 Before we go any further, let's get a feel for what the data is. We can view dataframes in the app itself (and we can even edit dataframes natively in app! but we won't cover this today).
 
-{{< admonition type="question" title="Exercise 4: Populate a tab with a dataframe" open=true >}}
+{{< admonition type="question" title="Exercise 3: Populate a tab with a dataframe" open=true >}}
 In this exercise, the goal is to use `tab1` to display our dataframe. Remember to save your Python file to see the changes in your Streamlit browser tab.
 
 1. Remove our `st.write()` command from tab 1.
 2. Use the command `st.dataframe()` to display our data in tab 1.
 {{< /admonition >}}
 
-{{< admonition type="warning" title="Exercise 4 solution" open=false >}}
+{{< admonition type="warning" title="Exercise 3 solution" open=false >}}
 So far, our script should look like this:
 ```Python 
 import streamlit as st
@@ -106,7 +106,7 @@ There are two steps to getting our data from the dataframe to into a graphic:
 1. Creating a chart object
 2. Asking Streamlit to present this chart object
 
-### A basic scatter plot
+### Creating a chart
 Plotly (and almost all graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things: 
 1. The datafame Plotly to work with
 2. The data to plot on the `x` axis (ie, one of the dataframe columns)
@@ -122,7 +122,8 @@ chart = px.scatter(
 ```
 Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely cosmetic.
 
-OK, so we have built the `chart` object - now we ask Streamlit to show it to us by handing it to `st.plotly_chart()`. We will also put this into our second tab. Add this at the bottom of your script:
+### Displaying the chart
+OK, so we have built the `chart` object - now can now displat it handing it to a [chart element](https://docs.streamlit.io/library/api-reference/charts), in this case `st.plotly_chart()`. We will put this into our second tab. Add this at the bottom of your script:
 ```Python
 with tab2:
     st.plotly_chart(chart)
@@ -130,7 +131,7 @@ with tab2:
 Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost, or click the "rescale" button (it is visible when you mouse over the chart, in the top right).
 
 ### Customising our chart
-This is a good start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let's colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:
+This is a good start, but let's explore more of the parameters that `px.scatter()` can take. Let's colour our dots, using the Continent column of the dataframe as our colouring key. This is done by adding to the arguments building our chart object:
 ```Python
 chart = px.scatter(
     data_frame = demo_df,
