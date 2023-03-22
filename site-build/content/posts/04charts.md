@@ -70,8 +70,8 @@ demo_df = pd.read_csv("demo_dataset.csv")
 with st.sidebar:
     st.title("World Demographics")
 
-# create two columns, of ratio 4:1
-column1, column2 = st.columns([4,1])
+# create two columns, of ratio 3:1
+column1, column2 = st.columns([3, 1])
 
 # place info box in first column
 with column1:
