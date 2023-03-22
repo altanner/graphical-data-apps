@@ -1,5 +1,5 @@
 ---
-title: "7 • Advanced topics 1 :Animations"
+title: "7 • Advanced topics I : Animations"
 subtitle: "Motion adds an extra dimension!"
 
 date: 2023-02-17T00:00:00+01:00
