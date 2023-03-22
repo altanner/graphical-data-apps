@@ -58,20 +58,20 @@ As with all of our widgets for this data app, we are going to put it in the side
 
 ```Python
     year_widget = st.slider(
-        label="Year",
-        value=2008
+        label="Year to chart",
         min_value=1998,
         max_value=2018)
 ```
 
-Compared to the text input widget we used above, this one has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.
+Compared to the text input widget we used above, this one has three parameters: the descriptive label it will display, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.
 
 ### Connecting the widget to the chart
-So far, the widget exists, and it creates the variable `year_widget`, but we need to send that into the code for the chart. Currently, `px.scatter()` has been told to plot the whole dataset, with the parameter `data_frame=demo_df`. We are going to change this so that it instead plots just the year selected by the widget. XXXXX can this be simpler? Change the parameter line chart to say `data_frame = demo_df.query(f"Year == {year_widget}")`, so the full parameter set for the chart will be:
+So far, the widget exists, and it stores a number in the variable `year_widget`, but it doesn't do anything. Currently, `px.scatter()` has been told to plot the whole dataset, with the parameter `data_frame = demo_df`. `demo_df` is a dataframe, so we can isolate the data we want by column value: `<the dataframe column> is equal to <a number>`, in this case with with `demo_df["Year"] == 2008`
 
+We'll start by hard-coding this. Change your first parameter line in the chart, so it looks like:
 ```Python
 chart = px.scatter(
-    data_frame = demo_df.query(f"Year == {year_widget}")`,
+    data_frame = demo_df[demo_df["Year"] == 2008],
     x = "HDI index",
     y = "GDP per capita",
     color = "Continent",
@@ -80,11 +80,18 @@ chart = px.scatter(
     height = 650)
 ```
 
-Several things are happening here:
-1. Given `demo_df` is a dataframe, we can use the method `.query()` to filter it.
-2. Inside the `.query()` brackets we are filtering on year with `"Year == {year_widget}"`
-3. To insert our variable `year_widget`, we are creating an [f-string](https://realpython.com/python-f-strings/), with the variable name inside our curly brackets.
+Save, and see what the chart has done in your app. Try changing `2008` to another number, between 1998 and 2018, save and notice the changes. Now, to make this interactive, we need to link the widget value to the chart parameters. We do this by replacing our hard-coded number with the appropriate variable, in this case `year_widget`:
 
+```Python
+chart = px.scatter(
+    data_frame = demo_df[demo_df["Year"] == year_widget],
+    x = "HDI index",
+    y = "GDP per capita",
+    color = "Continent",
+    size = "CO2 per capita",
+    hover_name = "Country",
+    height = 650)
+```
 Save your script, and have a play with the app.
 
 ## Exercise 3a: A couple more widgets
