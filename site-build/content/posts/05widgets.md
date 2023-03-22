@@ -76,8 +76,7 @@ chart = px.scatter(
     y = "GDP per capita",
     color = "Continent",
     size = "CO2 per capita",
-    hover_name = "Country",
-    height = 650)
+    hover_name = "Country")
 ```
 
 Save, and see what the chart has done in your app. Try changing `2008` to another number, between 1998 and 2018, save and notice the changes. Now, to make this interactive, we need to link the widget value to the chart parameters. We do this by replacing our hard-coded number with the appropriate variable, in this case `year_widget`:
@@ -89,8 +88,7 @@ chart = px.scatter(
     y = "GDP per capita",
     color = "Continent",
     size = "CO2 per capita",
-    hover_name = "Country",
-    height = 650)
+    hover_name = "Country")
 ```
 Save your script, and have a play with the app.
 
@@ -151,8 +149,7 @@ chart = px.scatter(
     log_y = log_y_widget,
     color = "Continent",
     size = "CO2 per capita",
-    hover_name = "Country",
-    height = 650)
+    hover_name = "Country")
 
 # display the chart in tab2
 with tab2:
@@ -260,8 +257,7 @@ chart = px.scatter(
     log_y = log_y_widget,
     color = "Continent",
     size = "CO2 per capita",
-    hover_name = "Country",
-    height = 650)
+    hover_name = "Country")
 
 # display the chart in tab2
 with tab2:
