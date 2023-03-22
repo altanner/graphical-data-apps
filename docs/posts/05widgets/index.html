@@ -10,7 +10,7 @@ First widget Let&rsquo;s add our first widget." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T12:49:41+00:00" />
+<meta property="article:modified_time" content="2023-03-22T13:43:13+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets"/>
@@ -28,8 +28,8 @@ First widget Let&rsquo;s add our first widget."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  1674 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T12:49:41+00:00","publisher": {
+        },"genre": "posts","wordcount":  1662 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T13:43:13+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -130,8 +130,7 @@ First widget Let&rsquo;s add our first widget."/>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save, and see what the chart has done in your app. Try changing <code>2008</code> to another number, between 1998 and 2018, save and notice the changes. Now, to make this interactive, we need to link the widget value to the chart parameters. We do this by replacing our hard-coded number with the appropriate variable, in this case <code>year_widget</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">[</span><span class="n">demo_df</span><span class="p">[</span><span class="s2">&#34;Year&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_widget</span><span class="p">],</span>
@@ -139,8 +138,7 @@ First widget Let&rsquo;s add our first widget."/>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save your script, and have a play with the app.</p>
 <h2 id="exercise-5-a-couple-more-widgets">Exercise 5: A couple more widgets</h2>
 <p>You now have a chart that displays one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add a <a href="https://docs.streamlit.io/library/api-reference/widgets" target="_blank" rel="noopener noreffer">checkbox</a>
@@ -209,8 +207,7 @@ Don&rsquo;t forget to separate your parameters with commas!</li>
 </span></span><span class="line"><span class="cl">    <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
@@ -319,8 +316,7 @@ but</li>
 </span></span><span class="line"><span class="cl">    <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># display the chart in tab2</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
