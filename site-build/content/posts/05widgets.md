@@ -114,7 +114,7 @@ import plotly.express as px
 # use pandas to read our CSV file into a dataframe called "demo_df"
 demo_df = pd.read_csv("demo_dataset.csv")
 
-# put a title in the sidebar
+# build the sidebar
 with st.sidebar:
     st.title("World Demographics")
     user_name = st.text_input("Welcome - please enter your name.")
@@ -219,7 +219,7 @@ column_names = [
     "CO2 per capita",
     "Services"]
 
-# put a title in the sidebar
+# build the sidebar
 with st.sidebar:
     st.title("World Demographics")
     user_name = st.text_input("Welcome - please enter your name.")
