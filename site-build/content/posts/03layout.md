@@ -59,12 +59,13 @@ Our minimal-viable-app is up and running, and this gives us something to build o
 
 When you save your first change to your Python file, the app will say **Source file changed**, and asks **Rerun** or **Always rerun**. (If you can't see these, click the ***i*** symbol in the top right.) Select **Always rerun** - every time we save the file, Streamlit will automatically rebuild the page for us.
 
-Try the following edits, saving after each step to see the changes in the app's tab in your browser.
+Try the following edits, **saving after each step** to see the changes in the app's tab in your browser.
 1. Change your app's title to something you like.
 2. Below this, add a header with `st.header()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
 3. Move your header line to be above your title line in the script, and notice the changes to your app.
 4. Move the header back down again.
 5. Use `st.write()` to add a sentence below your header.
+6. Create and information box, with a message in, using `st.info()`.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 1 solution" open=false >}}
@@ -77,10 +78,12 @@ st.title("Here, this is a title.")
 st.header("Headers are a little bit smaller than titles.")
 
 st.write("Here is some normally formatted text. Very vanilla text.")
+
+st.info("Information boxes are useful for making page layout clear.")
 ```
 {{< /admonition >}}
 
-These are all text elements. To learn more see the [text elements section of the Streamlit API documentation](https://docs.streamlit.io/library/api-reference/text). The [status elements](https://docs.streamlit.io/library/api-reference/status) are similar and useful for laying out your app: we will use these in a moment.
+To learn more see the [text elements section of the Streamlit API documentation](https://docs.streamlit.io/library/api-reference/text). The [status elements](https://docs.streamlit.io/library/api-reference/status) are similar and useful for laying out your app: we used one above with the information box.
 
 ## Page layout
 So far we know how to present some text, but we want to [control where and how things appear on the page](https://docs.streamlit.io/library/api-reference/layout). We will use three layout components in our app: sidebars, columns and tabs.
@@ -147,7 +150,8 @@ Preview each of your changes by saving your file, and you will immediately be ab
 4. Create **two** columns, with the left column being three times wider than the right one.
 5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app." (use `st.info()`).
 6. Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.
-7. Add text to each of your tabs. Test that everything looks as you expect it to look.
+7. Tab two doesn't have anything in it - add a sentence of text to it with `st.write()`.
+8. Test that everything looks as you expect it to look.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 2 solution" open=false >}}
@@ -174,7 +178,7 @@ with tab1:
     st.write("Here is tab one.")
 
 with tab2:
-    st.write("And this is tab two!")
+    st.write("This tab will contain stuff later.")
 ```
 {{< /admonition >}}
 
