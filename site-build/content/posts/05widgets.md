@@ -105,7 +105,7 @@ Don't forget to separate your parameters with commas!
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 5 solutions" open=false >}}
-Your script should look similar to this
+Your script should look similar to this:
 ```Python
 import streamlit as st
 import pandas as pd
@@ -167,7 +167,9 @@ Let's look at the raw data again, in tab1, and notice the names of the columns. 
 - **CO2** is represented by dot size
 - **HDI index** is on the x-axis
 - **GDP per capita** is on the y-axis
+
 but
+
 - **Life expectancy** and
 - **Services** are not used yet.
 
