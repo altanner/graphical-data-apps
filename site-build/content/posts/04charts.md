@@ -146,7 +146,6 @@ chart = px.scatter(
 So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data.
 1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
 2. Our mouse-hover tooltip is not very useful right now. Add a parameter called `hover_name`, and assign `"Country"` to it.
-3. The chart can use the vertical space a bit better. Add a parameter called `height`, and give an integer value to this in pixels (choose a height suitable for your screen; for me, `height = 650` fits best, but for you it might be different).
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 4 solution" open=false >}}
@@ -184,8 +183,7 @@ chart = px.scatter(
     y = "GDP per capita",
     color = "Continent",
     size = "CO2 per capita",
-    hover_name = "Country",
-    height = 650)
+    hover_name = "Country")
 
 # display the chart in tab2
 with tab2:
