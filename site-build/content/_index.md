@@ -10,7 +10,6 @@ In this course we use a pure [Python](https://www.python.org/) approach to creat
 Through this workshop, you will
 - Get an overview of data app use-cases
 - Gain practical experience with layout, components and charts
-- Create interactive data visualisations, both static and animated
 - Gain confidence in referring to [`API documentation`](https://docs.streamlit.io/library/api-reference), 
 - Have an introduction to the powerful plotting library [`Plotly`](https://plotly.com/python/)
 - Know the channels for deploying your app to the internet
