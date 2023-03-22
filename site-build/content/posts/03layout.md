@@ -155,7 +155,7 @@ Preview each of your changes by saving your file, and you will immediately be ab
 2. Change the **title** in the page to say "World Demographics".
 3. Put your title in the sidebar.
 4. Create **two** columns, with the left column being three times wider than the right one.
-5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app!" (use `st.info()`).
+5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app." (use `st.info()`).
 6. Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.
 7. Add text to each of your tabs. Test that everything looks as you expect it to look.
 {{< /admonition >}}
@@ -174,7 +174,7 @@ column1, column2 = st.columns([3, 1])
 
 # place info box in first column
 with column1:
-    st.info("Welcome to the global demographic data explorer app!")
+    st.info("Welcome to the global demographic data explorer app.")
 
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
