@@ -25,12 +25,12 @@ comment:
 The power of data apps is in allowing users to interact with data and visuals. We do this by creating "widgets". A [widget](https://docs.streamlit.io/library/api-reference/widgets) is any interactable part of the page, for example buttons, sliders, checkboxes and uploaders. An important difference between widgets and layout components is that **widgets set the values of variables**. We will see the Python syntax for this in a moment.
 
 ### First widget
-Let's add our first widget. It will greet the user! We will need two things to do this - firstly, we want the user to be able to enter their name. Then, we send the name back to the interface - we will use the empty `column2` that we created earlier.
+Let's add our first widget. It will greet the user! We will need two things to do this - firstly, we want the user to be able to enter their name. Secondly, we will send that to the interface - we will use the empty element `column2` that we created earlier.
 
 Firstly, we are going to use [`st.text_input()`](https://docs.streamlit.io/library/api-reference/widgets) widget, and place it below the title in the sidebar 
 
 ```Python
-with sidebar:
+with st.sidebar:
     st.title("World Demographics")
     user_name = st.text_input("Welcome - please enter your name.")
 ```
@@ -223,8 +223,8 @@ with st.sidebar:
     ### end of sidebar
     
 ### draw main page area
-# create two columns, of ratio 5:1
-column1, column2 = st.columns([5,1])
+# create two columns, of ratio 3:1
+column1, column2 = st.columns([3,1])
 
 # place info box in column1
 with column1:
