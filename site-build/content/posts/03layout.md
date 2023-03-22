@@ -1,6 +1,6 @@
 ---
 title: "3 • Layout"
-subtitle: "Writing and running our first script, and understanding app layout"
+subtitle: "Control space using display elements."
 
 date: 2023-02-13T00:00:00+01:00
 
@@ -39,7 +39,7 @@ import streamlit as st
 
 Here, we are `import`ing the Streamlit library, and giving it the name `st` - this is the conventional alias for Streamlit, a little like we shorten `numpy` to `np` and `pandas` to `pd` (an alias doesn't do anything other than save us typing the whole word every time!)
 
-Below this, let's enter our first Streamlit command:
+Below this, let's enter our first Streamlit command, creating a title element:
 
 ```Python
 st.title("Hello world!")
@@ -53,7 +53,7 @@ streamlit run data_app.py
 
 The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal serving your data app by using `ctrl-c`.
 
-## Exercise 1: First edits
+## Exercise 1: First edits and elements
 {{< admonition type="question" title="Exercise 1: making your first page edits" open=true >}}
 Our minimal-viable-app is up and running, and this gives us something to build on. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.
 
@@ -61,11 +61,11 @@ When you save your first change to your Python file, the app will say **Source f
 
 Try the following edits, **saving after each step** to see the changes in the app's tab in your browser.
 1. Change your app's title to something you like.
-2. Below this, add a header with `st.header()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
-3. Move your header line to be above your title line in the script, and notice the changes to your app.
+2. Below this, add a header element with `st.header()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
+3. Move your header element to be above your title in the script, and notice the changes to your app.
 4. Move the header back down again.
 5. Use `st.write()` to add a sentence below your header.
-6. Create and information box, with a message in, using `st.info()`.
+6. Create an information box element, using `st.info()`, containing the string "Here is an information box".
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 1 solution" open=false >}}
@@ -79,7 +79,7 @@ st.header("Headers are a little bit smaller than titles.")
 
 st.write("Here is some normally formatted text. Very vanilla text.")
 
-st.info("Information boxes are useful for making page layout clear.")
+st.info("Here is an information box.")
 ```
 {{< /admonition >}}
 
