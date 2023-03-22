@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T15:52:10+00:00" />
+<meta property="article:modified_time" content="2023-03-22T16:15:56+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1494 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-22T15:52:10+00:00","publisher": {
+        },"genre": "posts","wordcount":  1520 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-22T16:15:56+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -122,13 +122,14 @@
         <div class="details-content">
             <div class="admonition-content"><p>Our minimal-viable-app is up and running, and this gives us something to build on. The goal of this exercise is to start to get familiar with the workflow of editing your Python file, saving, and viewing the changes in your browser.</p>
 <p>When you save your first change to your Python file, the app will say <strong>Source file changed</strong>, and asks <strong>Rerun</strong> or <strong>Always rerun</strong>. (If you can&rsquo;t see these, click the <em><strong>i</strong></em> symbol in the top right.) Select <strong>Always rerun</strong> - every time we save the file, Streamlit will automatically rebuild the page for us.</p>
-<p>Try the following edits, saving after each step to see the changes in the app&rsquo;s tab in your browser.</p>
+<p>Try the following edits, <strong>saving after each step</strong> to see the changes in the app&rsquo;s tab in your browser.</p>
 <ol>
 <li>Change your app&rsquo;s title to something you like.</li>
 <li>Below this, add a header with <code>st.header()</code>; remember that what you put inside the brackets is a string, so you will need <code>&quot;</code>quotes<code>&quot;</code> around it!</li>
 <li>Move your header line to be above your title line in the script, and notice the changes to your app.</li>
 <li>Move the header back down again.</li>
 <li>Use <code>st.write()</code> to add a sentence below your header.</li>
+<li>Create and information box, with a message in, using <code>st.info()</code>.</li>
 </ol>
 </div>
         </div>
@@ -146,12 +147,14 @@
 </span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&#34;Headers are a little bit smaller than titles.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is some normally formatted text. Very vanilla text.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">st</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Information boxes are useful for making page layout clear.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
-<p>These are all text elements. To learn more see the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements section of the Streamlit API documentation</a>
+<p>To learn more see the <a href="https://docs.streamlit.io/library/api-reference/text" target="_blank" rel="noopener noreffer">text elements section of the Streamlit API documentation</a>
 . The <a href="https://docs.streamlit.io/library/api-reference/status" target="_blank" rel="noopener noreffer">status elements</a>
- are similar and useful for laying out your app: we will use these in a moment.</p>
+ are similar and useful for laying out your app: we used one above with the information box.</p>
 <h2 id="page-layout">Page layout</h2>
 <p>So far we know how to present some text, but we want to <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">control where and how things appear on the page</a>
 . We will use three layout components in our app: sidebars, columns and tabs.</p>
@@ -199,7 +202,8 @@
 <li>Create <strong>two</strong> columns, with the left column being three times wider than the right one.</li>
 <li>Add an information box to the <strong>left hand column</strong>, saying &ldquo;Welcome to the global demographic data explorer app.&rdquo; (use <code>st.info()</code>).</li>
 <li>Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.</li>
-<li>Add text to each of your tabs. Test that everything looks as you expect it to look.</li>
+<li>Tab two doesn&rsquo;t have anything in it - add a sentence of text to it with <code>st.write()</code>.</li>
+<li>Test that everything looks as you expect it to look.</li>
 </ol>
 </div>
         </div>
@@ -231,7 +235,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is tab one.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;And this is tab two!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This tab will contain stuff later.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div></div>
         </div>
     </div>
