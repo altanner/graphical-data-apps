@@ -1,6 +1,6 @@
 # ∙ Alastair Tanner
 
-{{< admonition type="info" title="Useful links" open=false >}}
+{{< admonition type="tip" title="Useful links" open=false >}}
 - [Bristol Research Software Engineering](https://www.bristol.ac.uk/acrc/research-software-engineering/)
 - [Training courses by Matt Williams](https://milliams.com/courses/#courses)
 - [Training courses by Christopher Woods](https://chryswoods.com/main/courses.html)
