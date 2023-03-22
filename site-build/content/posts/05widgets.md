@@ -155,6 +155,7 @@ chart = px.scatter(
 with tab2:
     st.plotly_chart(chart)
 ```
+{{< /admonition >}}
 
 Save your script and make sure everything is working in the app. The last widgets we will add allow us to control what data is represented on each axis.
 
@@ -186,8 +187,8 @@ Save this... and you will get an error! The parameter `options` is expecting a l
 ## Exercise 6: Options and radio buttons
 
 {{< admonition type="question" title="Exercise 6: Options and radio buttons" open=true >}}
-The argument `options` is expecting a list. These will be the names of columns in our dataframe (but not all of them):
-1. Above your sidebar block, define a list called `column_names`
+The argument `options` is expecting a list. This will be the names of columns in our dataframe (but not all of them):
+1. Above your sidebar block, define a list called `column_names`.
 2. Set the contents of this list to be **five** strings: `"HDI index", "GDP per capita", "Life expectancy", "CO2 per capita", "Services"` 
 3. Save your file, and check that the error in the app has been resolved.
 4. Link your radio widgets to the chart parameters. Currently, the `x` and `y` parameters are hard-coded:
@@ -264,3 +265,12 @@ with tab2:
     st.plotly_chart(chart)
 ```
 {{< /admonition >}}
+
+## Next steps
+If you have got to this point, congratulations, you have the basics of building a data app! The three topics we have covered (**layout**, **charts** and **widgets**) will get you a long way, so we encourage you to apply what you have learned to other elements available in the [Streamlit API](https://docs.streamlit.io/library/api-reference).
+
+We provide some further content on the next pages. Firstly we give some pointers on how to deploy your app - but you will need to be registered with [GitHub](https://github.com/) to do this.
+
+After that, we introduce further topics through making an animated chart. This includes some more advanced concepts, for example widgets controlling widgets, and conditional charting - but don't be daunted by this, if you have got this far you have the skills to approach these!
+
+Finally, while we do not cover these in this course, we provide resources for further topics - for example building user logins, saving your data app's session state, and working with interactive dataframes.
