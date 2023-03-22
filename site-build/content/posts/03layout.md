@@ -61,10 +61,10 @@ When you save your first change to your Python file, the app will say **Source f
 
 Try the following edits, saving after each step to see the changes in the app's tab in your browser.
 1. Change your app's title to something you like.
-2. Below this, add a subtitle with `st.subtitle()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
-3. Move your subtitle line to be above your title line in the script, and notice the changes to your app.
-4. Move the subtitle back down again.
-5. Use `st.write()` to add a sentence below your subtitle.
+2. Below this, add a header with `st.header()`; remember that what you put inside the brackets is a string, so you will need `"`quotes`"` around it!
+3. Move your header line to be above your title line in the script, and notice the changes to your app.
+4. Move the header back down again.
+5. Use `st.write()` to add a sentence below your header.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 1 solution" open=false >}}
@@ -74,7 +74,7 @@ import streamlit as st
 
 st.title("Here, this is a title.")
 
-st.subtitle("Subtitles are a little bit smaller than titles.")
+st.header("Headers are a little bit smaller than titles.")
 
 st.write("Here is some normally formatted text. Very vanilla text.")
 ```
@@ -151,7 +151,7 @@ By default, Streamlit provides either a dark or light themed interface (user-sys
 Through the rest of this course we will be building a **visualiser for World Demographics Data**. Our first exercise is to prepare our layout for this.
 
 Preview each of your changes by saving your file, and you will immediately be able to see how things are looking in the apps' tab in your browser.
-1. Remove the `st.write()` and `st.subtitle()` lines that we added earlier.
+1. Remove the `st.write()` and `st.header()` lines that we added earlier.
 2. Change the **title** in the page to say "World Demographics".
 3. Put your title in the sidebar.
 4. Create **two** columns, with the left column being four times wider than the right one.
