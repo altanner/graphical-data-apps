@@ -47,7 +47,7 @@ Now we can read our dataset into a dataframe using `pandas`. Add this line **bel
 demo_df = pd.read_csv("demo_dataset.csv")
 ```
 
-### Viewing our data
+## Exercise 3: Viewing our data
 Before we go any further, let's get a feel for what the data is. We can view dataframes in the app itself (and we can even edit dataframes natively in app! but we won't cover this today).
 
 {{< admonition type="question" title="Exercise 3: Populate a tab with a dataframe" open=true >}}
@@ -141,7 +141,7 @@ chart = px.scatter(
 ```
 (Note that the `color` argument is spelled in International English!) Save, and notice the changes.
 
-## Exercise: building a better visualisation
+## Exercise 4: building a better visualisation
 {{< admonition type="question" title="Exercise 4: better visuals" open=true >}}
 So far, we have a chart which expresses three things: the CO2, GDP and continent of the countries in our dataset. In this exercise, we are adding arguments to `px.scatter()`, to include further data.
 1. We can control the size of points. Add a parameter called `size`, and assign the column name `"Services"` to it (note that any dataframe column name is a string).
