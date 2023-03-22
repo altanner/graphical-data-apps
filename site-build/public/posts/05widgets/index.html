@@ -10,7 +10,7 @@ First widget Let&rsquo;s add our first widget." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/05widgets/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-15T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T10:35:20+00:00" />
+<meta property="article:modified_time" content="2023-03-22T11:03:13+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="5 • Widgets"/>
@@ -28,8 +28,8 @@ First widget Let&rsquo;s add our first widget."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/"
-        },"genre": "posts","wordcount":  1789 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T10:35:20+00:00","publisher": {
+        },"genre": "posts","wordcount":  1825 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/05widgets\/","datePublished": "2023-02-15T00:00:00+01:00","dateModified": "2023-03-22T11:03:13+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -119,29 +119,31 @@ First widget Let&rsquo;s add our first widget."/>
 .</p>
 <p>As with all of our widgets for this data app, we are going to put it in the sidebar - so be sure to put widget-assignment code <em>inside</em> the block starting <code>with st.sidebar:</code>. To create our slider, we add:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl">    <span class="n">year_widget</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">value</span><span class="o">=</span><span class="mi">2008</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Year to chart&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">min_value</span><span class="o">=</span><span class="mi">1998</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">max_value</span><span class="o">=</span><span class="mi">2018</span><span class="p">)</span>
-</span></span></code></pre></div><p>Compared to the text input widget we used above, this one has four parameters: the label it will display, the initial value to use, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.</p>
+</span></span></code></pre></div><p>Compared to the text input widget we used above, this one has three parameters: the descriptive label it will display, and the lowest and highest values. Like with the chart parameters, clarity is aided by putting each parameter on a new line. Save the file and check the changes on your app.</p>
 <h3 id="connecting-the-widget-to-the-chart">Connecting the widget to the chart</h3>
-<p>So far, the widget exists, and it creates the variable <code>year_widget</code>, but we need to send that into the code for the chart. Currently, <code>px.scatter()</code> has been told to plot the whole dataset, with the parameter <code>data_frame=demo_df</code>. We are going to change this so that it instead plots just the year selected by the widget. XXXXX can this be simpler? Change the parameter line chart to say <code>data_frame = demo_df.query(f&quot;Year == {year_widget}&quot;)</code>, so the full parameter set for the chart will be:</p>
+<p>So far, the widget exists, and it stores a number in the variable <code>year_widget</code>, but it doesn&rsquo;t do anything. Currently, <code>px.scatter()</code> has been told to plot the whole dataset, with the parameter <code>data_frame = demo_df</code>. <code>demo_df</code> is a dataframe, so we can isolate the data we want by column value: <code>&lt;the dataframe column&gt; is equal to &lt;a number&gt;</code>, in this case with with <code>demo_df[&quot;Year&quot;] == 2008</code></p>
+<p>We&rsquo;ll start by hard-coding this. Change your first parameter line in the chart, so it looks like:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Year == </span><span class="si">{</span><span class="n">year_widget</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span><span class="err">`</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">[</span><span class="n">demo_df</span><span class="p">[</span><span class="s2">&#34;Year&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2008</span><span class="p">],</span>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
-</span></span></code></pre></div><p>Several things are happening here:</p>
-<ol>
-<li>Given <code>demo_df</code> is a dataframe, we can use the method <code>.query()</code> to filter it.</li>
-<li>Inside the <code>.query()</code> brackets we are filtering on year with <code>&quot;Year == {year_widget}&quot;</code></li>
-<li>To insert our variable <code>year_widget</code>, we are creating an <a href="https://realpython.com/python-f-strings/" target="_blank" rel="noopener noreffer">f-string</a>
-, with the variable name inside our curly brackets.</li>
-</ol>
-<p>Save your script, and have a play with the app.</p>
+</span></span></code></pre></div><p>Save, and see what the chart has done in your app. Try changing <code>2008</code> to another number, between 1998 and 2018, save and notice the changes. Now, to make this interactive, we need to link the widget value to the chart parameters. We do this by replacing our hard-coded number with the appropriate variable, in this case <code>year_widget</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">[</span><span class="n">demo_df</span><span class="p">[</span><span class="s2">&#34;Year&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year_widget</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;HDI index&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span></code></pre></div><p>Save your script, and have a play with the app.</p>
 <h2 id="exercise-3a-a-couple-more-widgets">Exercise 3a: A couple more widgets</h2>
 <p>You should now have a chart that only plots one year at a time. Let&rsquo;s get some more control over the chart, this time altering the type of axis. Currently, both <code>x</code> and <code>y</code> axes are linear, the default. For some of this data, a logarithmic scale might be appropriate, so let&rsquo;s add a widget to control that. We are going to add <a href="https://docs.streamlit.io/library/api-reference/widgets/st.checkbox" target="_blank" rel="noopener noreffer">checkboxes</a>
 , as we briefly saw in the previous section.</p>
