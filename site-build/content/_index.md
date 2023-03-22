@@ -14,3 +14,11 @@ Through this workshop, you will
 - Have an introduction to the powerful plotting library [`Plotly`](https://plotly.com/python/)
 - Know the channels for deploying your app to the internet
 {{< /admonition >}}
+
+{{< admonition type="tip" title="Session resources" open=false >}}
+As of 2023, Streamlit is still a rapidly developing platform - as such, resources often update, so if any links do not work for you, try a search for the most up-to-date documentation and guides.
+- [Streamlit Cheatsheet](https://docs.streamlit.io/library/cheatsheet)
+- [Streamlit API](https://docs.streamlit.io/library/api-reference)
+- [Pandas Cheatsheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
+- [Streamlit Cloud deploy guide](https://docs.streamlit.io/streamlit-community-cloud/get-started/deploy-an-app)
+{{< /admonition >}}
