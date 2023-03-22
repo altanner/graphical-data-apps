@@ -10,7 +10,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/07animations/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-17T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T12:07:11+00:00" />
+<meta property="article:modified_time" content="2023-03-22T13:44:29+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="7 • Advanced topics I : Animations"/>
@@ -28,8 +28,8 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/07animations\/"
-        },"genre": "posts","wordcount":  800 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/07animations\/","datePublished": "2023-02-17T00:00:00+01:00","dateModified": "2023-03-22T12:07:11+00:00","publisher": {
+        },"genre": "posts","wordcount":  788 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/07animations\/","datePublished": "2023-02-17T00:00:00+01:00","dateModified": "2023-03-22T13:44:29+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -113,8 +113,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
 </span></span><span class="line"><span class="cl">        <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>For the subsequent <code>else</code> block we need an alternate <code>px.scatter()</code>, which is very similar to what we are using already:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">animate_vis</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
@@ -126,7 +125,6 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
 </span></span><span class="line"><span class="cl">        <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">animation_frame</span> <span class="o">=</span> <span class="s2">&#34;Year&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">animation_group</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,)</span>
 </span></span></code></pre></div><p>There are <strong>three</strong> differences here.</p>
@@ -200,8 +198,7 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
 </span></span><span class="line"><span class="cl">        <span class="n">log_y</span> <span class="o">=</span> <span class="n">log_y_widget</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">animate_widget</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">        <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">,</span>
@@ -211,7 +208,6 @@ Preparing our interface To start we are going to add a simple toggle checkbox, a
 </span></span><span class="line"><span class="cl">        <span class="n">color</span> <span class="o">=</span> <span class="s2">&#34;Continent&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">size</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">hover_name</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="n">height</span> <span class="o">=</span> <span class="mi">650</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">animation_frame</span> <span class="o">=</span> <span class="s2">&#34;Year&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">        <span class="n">animation_group</span> <span class="o">=</span> <span class="s2">&#34;Country&#34;</span><span class="p">,)</span>
 </span></span><span class="line"><span class="cl">
