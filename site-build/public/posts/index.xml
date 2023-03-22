@@ -14,10 +14,10 @@ Info   Info1 Info2     ]]></description>
 </item>
 <item>
     <title>7 • Advanced topics 1 :Animations</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/06animations/</link>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/07animations/</link>
     <pubDate>Fri, 17 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/06animations/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/07animations/</guid>
     <description><![CDATA[In this extra section, we will introduce animations. Many of the graphics libraries include the ability to animate visuals, but always think carefully about whether this actually adds anything to your app. Some animations can also get quite technical to run nicely, but Plotly makes it relatively easy, especially with px.scatter().
 Preparing our interface To start we are going to add a simple toggle checkbox, as we did earlier, controlling if animation is enabled or not.]]></description>
 </item>
