@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-21T20:09:43+00:00" />
+<meta property="article:modified_time" content="2023-03-22T10:29:47+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1369 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-03-21T20:09:43+00:00","publisher": {
+        },"genre": "posts","wordcount":  1363 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-03-22T10:29:47+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -84,7 +84,8 @@
     </li>
     <li><a href="#your-first-chart">Your first chart</a>
       <ul>
-        <li><a href="#a-basic-scatter-plot">A basic scatter plot</a></li>
+        <li><a href="#creating-a-chart">Creating a chart</a></li>
+        <li><a href="#displaying-the-chart">Displaying the chart</a></li>
         <li><a href="#customising-our-chart">Customising our chart</a></li>
       </ul>
     </li>
@@ -104,8 +105,8 @@
 <p>At the end of the last section we had a data app with a layout ready for more components. In this section, we will be bringing data into the app, and creating our first visualisation.</p>
 <h2 id="bringing-our-data-into-the-script">Bringing our data into the script</h2>
 <p>We can&rsquo;t get much further in creating a data app without some data! Our input dataset is a CSV of global demographics - information about the economies and populations of countries. We will be using <code>pandas</code> to read our data in: Streamlit is built with <code>pandas</code> in mind: data workflows and visualisations will usually expect to be working with dataframes.</p>
-<p><a href="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv" target="_blank" rel="noopener noreffer">Click this link to get <code>demo_dataset.csv</code></a>
-: download it and put the file into the folder with your <code>data_app.py</code> script.</p>
+<p><a href="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/demo_dataset.csv" target="_blank" rel="noopener noreffer">Download this <code>demo_dataset.csv</code></a>
+ (right-click and <em>Save link as&hellip;</em>). Put the file into the folder with your <code>data_app.py</code> script.</p>
 <h3 id="loading-up-pandas">Loading up <code>pandas</code></h3>
 <p>First, we need to update our script to import <code>pandas</code>. Add this at the top of your script add:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -115,7 +116,7 @@
 <p>Before we go any further, let&rsquo;s get a feel for what the data is. We can view dataframes in the app itself (and we can even edit dataframes natively in app! but we won&rsquo;t cover this today).</p>
 <div class="details admonition question open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 4: Populate a tab with a dataframe<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>Exercise 3: Populate a tab with a dataframe<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>In this exercise, the goal is to use <code>tab1</code> to display our dataframe. Remember to save your Python file to see the changes in your Streamlit browser tab.</p>
@@ -128,7 +129,7 @@
     </div>
 <div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 4 solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>Exercise 3 solution<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>So far, our script should look like this:</p>
@@ -178,7 +179,7 @@
 <li>Creating a chart object</li>
 <li>Asking Streamlit to present this chart object</li>
 </ol>
-<h3 id="a-basic-scatter-plot">A basic scatter plot</h3>
+<h3 id="creating-a-chart">Creating a chart</h3>
 <p>Plotly (and almost all graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things:</p>
 <ol>
 <li>The datafame Plotly to work with</li>
@@ -192,12 +193,14 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely cosmetic.</p>
-<p>OK, so we have built the <code>chart</code> object - now we ask Streamlit to show it to us by handing it to <code>st.plotly_chart()</code>. We will also put this into our second tab. Add this at the bottom of your script:</p>
+<h3 id="displaying-the-chart">Displaying the chart</h3>
+<p>OK, so we have built the <code>chart</code> object - now can now displat it handing it to a <a href="https://docs.streamlit.io/library/api-reference/charts" target="_blank" rel="noopener noreffer">chart element</a>
+, in this case <code>st.plotly_chart()</code>. We will put this into our second tab. Add this at the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
 </span></span></code></pre></div><p>Save your file, and explore the visual! Investigate what the icons at the top right of your chart do. Double-clicking the chart resets, if you get lost, or click the &ldquo;rescale&rdquo; button (it is visible when you mouse over the chart, in the top right).</p>
 <h3 id="customising-our-chart">Customising our chart</h3>
-<p>This is a good start, but Plotly can do much better than this! Given there is more information in our dataframe, we use this to convey more. Let&rsquo;s colour our dots, using the Continent as our colouring key. This is done by adding to the arguments building our chart object:</p>
+<p>This is a good start, but let&rsquo;s explore more of the parameters that <code>px.scatter()</code> can take. Let&rsquo;s colour our dots, using the Continent column of the dataframe as our colouring key. This is done by adding to the arguments building our chart object:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">chart</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
