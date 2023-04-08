@@ -124,17 +124,19 @@ column1, column2 = st.columns([1, 4])
 This will create two columns, with the right hand one being four times wider than the left hand one.
 
 ### Tabs
-[Tabs](https://docs.streamlit.io/library/api-reference/layout) allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - but [multi-page apps](https://docs.streamlit.io/library/get-started/multipage-apps) can be made.) Just like with columns, **we first need to define our tabs**, with a list of their names:
+We can arrange our data app using [tabs,](https://docs.streamlit.io/library/api-reference/layout) for example to hold different graphs, input items or interpretations of results. (Tabs are similar to having a multi-page app - but true [multi-page apps](https://docs.streamlit.io/library/get-started/multipage-apps) are also supported by Streamlit.)
+
+Like with columns, **we first need to define our tabs**, with a list of their names:
 
 ```Python
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
 ```
 
-Just like with columns, to put things into a tab, we use a `with` block, for example:
+Then, we can use each tab by placing code inside a `with` block, for example:
 
 ```Python
 with tab1:
-    st.write("Here is a tab.")
+    st.write("This text is placed inside the first tab.")
 ```
 
 Give that a try and check how it looks in the app (remember to save to see the changes).
@@ -151,7 +153,7 @@ Preview each of your changes by saving your file, and you will immediately be ab
 5. Add an information box to the **left hand column**, saying "Welcome to the global demographic data explorer app." (use `st.info()`).
 6. Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.
 7. Tab two doesn't have anything in it - add a sentence of text to it with `st.write()`.
-8. Test that everything looks as you expect it to look.
+8. Test that everything looks as you expect it in the rendered app (in your Streamlit browser tab).
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 2 solution" open=false >}}
@@ -175,7 +177,7 @@ tab1, tab2 = st.tabs(["Data", "Visualisation"])
 
 # put some text in the tabs to check they are working
 with tab1:
-    st.write("Here is tab one.")
+    st.write("This text is placed inside the first tab.")
 
 with tab2:
     st.write("This tab will contain stuff later.")
