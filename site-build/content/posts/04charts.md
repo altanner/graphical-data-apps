@@ -22,9 +22,9 @@ comment:
 ---
 
 {{< admonition type="tip" title="Plots, graphs or charts?" open=false >}}
-The words **plot**, **chart** and **graph** are used interchangeably, but I will stick with **chart** in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word "graph" would not make sense. Also, the word "plot" is kind of reserved for some things in Python, and is in use by many graphic libraries.
+The words **plot**, **chart** and **graph** are used interchangeably, but I will stick with **chart** in this course. The reason I prefer this term is because it feels more general: for example we could be making a map, and the word "graph" would not make sense. Also, the word "plot" is kind of reserved for some things in Python, and is in use by some graphics libraries.
 
-*As always, beware what you name your files! For example, if you name a file something reasonable like `plotly.py`, it will conflict with instructions such as `import plotly`!*
+*As always, beware what you name your files! For example, if you name a file something like `plotly.py`, it will conflict with instructions such as `import plotly`!*
 {{< /admonition >}}
 
 At the end of the last section we had a data app with a layout ready for more components. In this section, we will be bringing data into the app, and creating our first visualisation.
@@ -41,7 +41,7 @@ First, we need to update our script to import `pandas`. Add this at the top of y
 import pandas as pd
 ```
 
-Now we can read our dataset into a dataframe using `pandas`. Add this line **below your `import`s**, but above the rest of your code. We put this near the top is because this code is not related to building the interface: it is logical to place it before the page-build code.
+Now we can read our dataset into a dataframe using `pandas`. Add this line **below your `import`s**, but above the rest of your code. We put this near the top is because this code is not related to building the interface: Python will run the script from top to bottom, so it will need to know what your data is before it can do anything with it.
 
 ```Python
 demo_df = pd.read_csv("demo_dataset.csv")
@@ -54,7 +54,7 @@ Before we go any further, let's get a feel for what the data is. We can view dat
 In this exercise, the goal is to use `tab1` to display our dataframe. Remember to save your Python file to see the changes in your Streamlit browser tab.
 
 1. Remove our `st.write()` command from tab 1.
-2. Use the command `st.dataframe()` to display our data in tab 1.
+2. Use the command `st.dataframe()` to display our data in tab 1. This command will be expecting the variable containing a dataframe as an argument.
 {{< /admonition >}}
 
 {{< admonition type="warning" title="Exercise 3 solution" open=false >}}
@@ -80,7 +80,7 @@ with column1:
 # create two tabs
 tab1, tab2 = st.tabs(["Data", "Visualisation"])
 
-# put some text in the tabs to check they are working
+# put some stuff in the tabs to check they are working
 with tab1:
     st.dataframe(demo_df)
 
