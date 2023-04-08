@@ -1,2 +1,3 @@
 intro-to-command-site/.hugo_build.lock
+/sandpit/venv
 *ipynb_checkpoints*
