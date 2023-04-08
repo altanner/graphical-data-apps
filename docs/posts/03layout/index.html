@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/03layout/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-13T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-03-22T23:36:33+00:00" />
+<meta property="article:modified_time" content="2023-04-08T13:38:19+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="3 • Layout"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/"
-        },"genre": "posts","wordcount":  1527 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-03-22T23:36:33+00:00","publisher": {
+        },"genre": "posts","wordcount":  1543 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/03layout\/","datePublished": "2023-02-13T00:00:00+01:00","dateModified": "2023-04-08T13:38:19+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -179,13 +179,14 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">column1</span><span class="p">,</span> <span class="n">column2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </span></span></code></pre></div><p>This will create two columns, with the right hand one being four times wider than the left hand one.</p>
 <h3 id="tabs">Tabs</h3>
-<p><a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">Tabs</a>
- allow our app to have separate tabs, for example to hold different graphs, input items or explanation. (These act like but are not true separate pages - but <a href="https://docs.streamlit.io/library/get-started/multipage-apps" target="_blank" rel="noopener noreffer">multi-page apps</a>
- can be made.) Just like with columns, <strong>we first need to define our tabs</strong>, with a list of their names:</p>
+<p>We can arrange our data app using <a href="https://docs.streamlit.io/library/api-reference/layout" target="_blank" rel="noopener noreffer">tabs,</a>
+ for example to hold different graphs, input items or interpretations of results. (Tabs are similar to having a multi-page app - but true <a href="https://docs.streamlit.io/library/get-started/multipage-apps" target="_blank" rel="noopener noreffer">multi-page apps</a>
+ are also supported by Streamlit.)</p>
+<p>Like with columns, <strong>we first need to define our tabs</strong>, with a list of their names:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">tabs</span><span class="p">([</span><span class="s2">&#34;Data&#34;</span><span class="p">,</span> <span class="s2">&#34;Visualisation&#34;</span><span class="p">])</span>
-</span></span></code></pre></div><p>Just like with columns, to put things into a tab, we use a <code>with</code> block, for example:</p>
+</span></span></code></pre></div><p>Then, we can use each tab by placing code inside a <code>with</code> block, for example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is a tab.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is placed inside the first tab.&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><p>Give that a try and check how it looks in the app (remember to save to see the changes).</p>
 <h2 id="exercise-2-preparing-your-app-layout">Exercise 2: Preparing your app layout</h2>
 <div class="details admonition question open">
@@ -203,7 +204,7 @@
 <li>Add an information box to the <strong>left hand column</strong>, saying &ldquo;Welcome to the global demographic data explorer app.&rdquo; (use <code>st.info()</code>).</li>
 <li>Leave the right hand column empty - but note how it allows us to control space on the page. We will use this space later.</li>
 <li>Tab two doesn&rsquo;t have anything in it - add a sentence of text to it with <code>st.write()</code>.</li>
-<li>Test that everything looks as you expect it to look.</li>
+<li>Test that everything looks as you expect it in the rendered app (in your Streamlit browser tab).</li>
 </ol>
 </div>
         </div>
@@ -232,7 +233,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># put some text in the tabs to check they are working</span>
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Here is tab one.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This text is placed inside the first tab.&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;This tab will contain stuff later.&#34;</span><span class="p">)</span>
