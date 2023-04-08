@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-04-08T14:07:50+01:00" />
+<meta property="article:modified_time" content="2023-04-08T14:41:43+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1347 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-04-08T14:07:50+01:00","publisher": {
+        },"genre": "posts","wordcount":  1349 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-04-08T14:41:43+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -192,9 +192,9 @@ We create our chart object like this:</p>
 </span></span><span class="line"><span class="cl">    <span class="n">data_frame</span> <span class="o">=</span> <span class="n">demo_df</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="s2">&#34;CO2 per capita&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="s2">&#34;GDP per capita&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><p>Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely cosmetic.</p>
+</span></span></code></pre></div><p>Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely for clarity.</p>
 <h3 id="displaying-the-chart">Displaying the chart</h3>
-<p>OK, so we have built the <code>chart</code> object - now can now displat it handing it to a <a href="https://docs.streamlit.io/library/api-reference/charts" target="_blank" rel="noopener noreffer">chart element</a>
+<p>OK, so we have built the <code>chart</code> object - now can now display it by handing it to a <a href="https://docs.streamlit.io/library/api-reference/charts" target="_blank" rel="noopener noreffer">chart element</a>
 , in this case <code>st.plotly_chart()</code>. We will put this into our second tab. Add this at the bottom of your script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="k">with</span> <span class="n">tab2</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">st</span><span class="o">.</span><span class="n">plotly_chart</span><span class="p">(</span><span class="n">chart</span><span class="p">)</span>
