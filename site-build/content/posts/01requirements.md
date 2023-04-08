@@ -43,7 +43,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 ### Anaconda Navigator
 Start Anaconda Navigator (you should see the welcome screen, similar to the image here). For this workshop we will need to add some functionality to Python, by installing some libraries. To do this, we will create a new Python environment: a fresh, clean version of Python with all the things we currently need.
 
-Start by downloading [this file, `data_apps.yaml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/data_apps.yaml) by going right-click "*Save as...*". 
+Start by downloading [this file, `data_apps.yaml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/data_apps.yaml) by going right-click "*Save as...*". 
 
 <img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `data-apps.yml` file that you downloaded (it will probably be in your default download folder, or you might want to move it to the folder you are working in). Start the process by clicking "Import", and Anaconda will now build our new environment. 
 
@@ -66,7 +66,7 @@ There are three panes in Jupyter Lab that we commonly use in our teaching:
 {{< admonition type="warning" title="If you are using an alternative IDE"  open=false >}}
 Please skip this section if you are using Jupyter Lab / Anaconda.
 
-You are welcome to use another IDE, but please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/requirements.txt), which will install the required packages. (`environment.yaml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
+You are welcome to use another IDE, but please be confident with installing new packages into your Python environment. You will need to be running both an editor and a terminal, as in the previous section. If you use the package manager `pip`, we have provided a [`requirements.txt` file here](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/requirements.txt), which will install the required packages. (`environment.yaml` and `requirements.txt` are essentially identical, for `conda` and `pip` respectively.) Create a suitable new folder to work in, and move the `requirements.txt` file into that folder. A typical series of commands would be:
 
 Create a new environment here, called `venv`:
 ```Terminal
