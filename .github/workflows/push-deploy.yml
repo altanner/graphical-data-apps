@@ -32,6 +32,7 @@ jobs:
         rm -rf docs/*
         cp -r site-build/public/* docs
         cp data_apps.yaml docs
+        cp requirements.txt docs
         cp demo_dataset.csv docs
         git add --all
         git commit -m "deploy site" || echo "No changes to commit"
