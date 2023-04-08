@@ -16,6 +16,9 @@ with st.sidebar:
     # put a title in the sidebar
     st.title("World Demographics")
     
+    # widget for asking user name
+    user_name = st.text_input("Welcome - please enter your name.")
+
     # visualisation type checkbox
     animate_vis = st.checkbox(
         label="Animate")
@@ -26,9 +29,6 @@ with st.sidebar:
         min_value=1998,
         max_value=2018,
         disabled=animate_vis)
-    
-    log_x_widget = st.checkbox(
-        label="Logarithmic X-axis")
 
     log_y_widget = st.checkbox(
         label="Logarithmic Y-axis")
@@ -56,27 +56,20 @@ with st.sidebar:
 column1, column2 = st.columns([5,1])
 
 # place info box in first column
+# place info box in first column
 with column1:
-    st.info("Welcome to the global demographic data explorer app!")
+    st.info("Welcome to the global demographic data explorer app.")
 
-# place image into second column
 with column2:
-    st.image("globe.png")
+    st.info(f"Hi {user_name}!")
 
-# create two tabs
-tab1, tab2 = st.tabs(["Data", "Visualisation"])
-
-# display the dataframe in tab1
-with tab1:
-    st.dataframe(demo_df)
-
+# build chart, depending if we want animated or not
 if animate_vis == False:
     # build static px chart object
     chart = px.scatter(
         data_frame=demo_df.query(f"Year=={year_widget}"),
         x=x_data_widget,
         y=y_data_widget,
-        log_x=log_x_widget,
         log_y=log_y_widget,
         color="Continent",
         size="CO2 per capita",
@@ -88,7 +81,6 @@ if animate_vis == True:
         data_frame=demo_df,
         x=x_data_widget,
         y=y_data_widget,
-        log_x=log_x_widget,
         log_y=log_y_widget,
         color="Continent",
         size="CO2 per capita",
@@ -97,6 +89,13 @@ if animate_vis == True:
         animation_frame="Year",
         animation_group="Country",)
 
+# create two tabs
+tab1, tab2 = st.tabs(["Data", "Visualisation"])
+
+# display the dataframe in tab1
+with tab1:
+    st.dataframe(demo_df)
+    
 # display the chart in tab2
 with tab2:
     st.plotly_chart(chart, use_container_width=True)

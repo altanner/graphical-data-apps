@@ -17,10 +17,10 @@ with column1:
 
 # place image into second column
 with column2:
-    st.image("globe.png")
+    st.write("globe.png")
 
 # create two tabs
 #tab1, tab2 = st.tabs(["Data", "Visualisation"])
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Analysis", "Output", "Kitten photo"])
 with tab4:
-    st.image("kittens.png")
+    st.title("kittens.png")

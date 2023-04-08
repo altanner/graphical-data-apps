@@ -1,0 +1,9 @@
+name: data-apps
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab_widgets=3.0.5
+  - pandas=1.5.3
+  - plotly_express=0.4.1
+  - streamlit=1.20.0
