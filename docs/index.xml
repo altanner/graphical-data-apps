@@ -6,12 +6,12 @@
         <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 18 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>8 • Advanced topics II</title>
+    <title>8 • Deploying, plus further notes</title>
     <link>https://alleetanner.github.io/graphical-data-apps/posts/08advanced/</link>
     <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/08advanced/</guid>
-    <description><![CDATA[Warning   In production!     Main section  Interactive dataframes User login Database connections Session state Caching  Normal text body.
+    <description><![CDATA[ Deploying Session state User logins Interactive dataframes  Warning   In production!     Main section  Interactive dataframes User login Database connections Session state Caching  Normal text body.
 Info   Info1 Info2     ]]></description>
 </item>
 <item>
