@@ -1,5 +1,5 @@
 ---
-title: "8 • Advanced topics II"
+title: "8 • Deploying, plus further notes"
 subtitle: "Powerful things that are worth pointing out."
 
 date: 2023-02-18T00:00:00+01:00
@@ -20,6 +20,12 @@ share:
 comment:
   enable: false
 ---
+
+- Deploying
+- Session state
+- User logins
+- Interactive dataframes
+
 
 {{< admonition type="warning" open=true >}}
 - In production!
