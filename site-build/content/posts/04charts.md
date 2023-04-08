@@ -120,10 +120,10 @@ chart = px.scatter(
     x = "CO2 per capita",
     y = "GDP per capita")
 ```
-Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely cosmetic.
+Note that indentation here is for clarity, with each parameter on a new line. If a function is taking lots of parameters, it is good to make things clear with new lines: Python will allow new lines after commas, and convention is to indent to make it clear these are inside brackets. But be aware that this indentation has no functional purpose - it is purely for clarity.
 
 ### Displaying the chart
-OK, so we have built the `chart` object - now can now displat it handing it to a [chart element](https://docs.streamlit.io/library/api-reference/charts), in this case `st.plotly_chart()`. We will put this into our second tab. Add this at the bottom of your script:
+OK, so we have built the `chart` object - now can now display it by handing it to a [chart element](https://docs.streamlit.io/library/api-reference/charts), in this case `st.plotly_chart()`. We will put this into our second tab. Add this at the bottom of your script:
 ```Python
 with tab2:
     st.plotly_chart(chart)
