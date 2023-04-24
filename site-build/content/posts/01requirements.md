@@ -37,20 +37,52 @@ The words **library**, **module** and **package** are often used interchangeably
 ## Your experience
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should have experience of **functions** and **conditionals**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you are ready to approach this course. If you have only done [Intermediate Python](https://milliams.com/courses/intermediate_python/) you should also be fine!
-* [**Anaconda Navigator**](https://www.anaconda.com/products/distribution) installed. Alternatively, if you feel comfortable working in another IDE (for example [**VS Code**](https://code.visualstudio.com/Download) or [**PyCharm**](https://www.jetbrains.com/pycharm/), you are welcome to use those).
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
-### Anaconda Navigator
-Start Anaconda Navigator (you should see the welcome screen, similar to the image here). For this workshop we will need to add some functionality to Python, by installing some libraries. To do this, we will create a new Python environment: a fresh, clean version of Python with all the things we currently need.
+### Windows
+First, we create a new folder to work in
+```Command
+mkdir graphical-data-apps
+```
+then we move into that folder
+```Command
+cd graphical-data-apps
+```
+We then create a new Python virtual environment, with the command
+```Command
+python -m venv venv
+```
+which means, "run python, using the module called `venv`, and create a new environment here called `venv`". We then tell the terminal to use this environment as the Python install it is using:
+```Command
+venv\Scripts\activate
+```
+Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
+```Command
+pip install jupyterlab streamlit plotly_express
+```
 
-Start by downloading [this file, `data_apps.yaml`](https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/data_apps.yaml) by going right-click "*Save as...*". 
+### MacOS & Linux
+First, we create a new folder to work in
+```Terminal
+mkdir graphical-data-apps
+```
+then we move into that folder
+```Terminal
+cd graphical-data-apps
+```
+We then create a new Python virtual environment, with the command
+```Terminal
+python -m venv ./venv
+```
+which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/venv`". We then tell the terminal to use this environment as the Python install it is using.
+```Terminal
+source ./venv/bin/activate
+```
+Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
+```Terminal
+pip install jupyterlab streamlit plotly_express
+```
 
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/anaconda_screenshot.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> In Anaconda Navigator’s start screen, select “Environments” from the menu on the left. Now, at the bottom of the window, click “Import”, and select the `data-apps.yml` file that you downloaded (it will probably be in your default download folder, or you might want to move it to the folder you are working in). Start the process by clicking "Import", and Anaconda will now build our new environment. 
-
-**This can take a few minutes, and you might be asked to click to confirm a couple of things, so please be patient!**
-
-<img align="right" src="https://raw.githubusercontent.com/alleetanner/graphical-data-apps/main/assets/jupyterlab_launch.png" width="275" style="border-radius: 2%; margin-right: 15px; margin-left: 15px;" /> Once Anaconda has finished getting and installing our libraries, you will see in the the Environments menu that a new environment called `data-apps` (probably below `base (root)`). Select `data-apps`, and return to the “Home” tab. From there, click the **Jupyter Lab** icon and a new tab will open in your browser containing a Jupyter Lab session.
- 
 ## Jupyter Lab
 In the Jupyter Lab **file navigator** in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**.
 
