@@ -41,44 +41,62 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 
 ### Windows
 First, we create a new folder to work in
-```Command
+
+```cmd
 mkdir graphical-data-apps
 ```
+
 then we move into that folder
-```Command
+
+```cmd
 cd graphical-data-apps
 ```
+
 We then create a new Python virtual environment, with the command
-```Command
+
+```cmd
 python -m venv venv
 ```
+
 which means, "run python, using the module called `venv`, and create a new environment here called `venv`". We then tell the terminal to use this environment as the Python install it is using:
-```Command
+
+```cmd
 venv\Scripts\activate
 ```
+
 Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
-```Command
+
+```cmd
 pip install jupyterlab streamlit plotly_express
 ```
 
 ### MacOS & Linux
 First, we create a new folder to work in
+
 ```Terminal
 mkdir graphical-data-apps
 ```
+
 then we move into that folder
+
 ```Terminal
 cd graphical-data-apps
 ```
+
 We then create a new Python virtual environment, with the command
+
 ```Terminal
 python -m venv ./venv
 ```
+
 which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/venv`". We then tell the terminal to use this environment as the Python install it is using.
+
 ```Terminal
 source ./venv/bin/activate
 ```
+
 Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
+
 ```Terminal
 pip install jupyterlab streamlit plotly_express
 ```
