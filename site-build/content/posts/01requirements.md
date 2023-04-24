@@ -34,71 +34,63 @@ The words **library**, **module** and **package** are often used interchangeably
 - **Dependency** : anything that is required to get software to run. For example, here we need some libraries to be installed, so we are *dependent* on those being in place and working. In other contexts, "dependencies" might be single files, settings, or whole software packages.
 {{< /admonition >}}
 
-## Your experience
+## Required experience
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should have experience of **functions** and **conditionals**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you are ready to approach this course. If you have only done [Intermediate Python](https://milliams.com/courses/intermediate_python/) you should also be fine!
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
-### Windows
-First, we create a new folder to work in
+## Setting up using a command line interface
+To begin, we need to use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
-```cmd
+{{< admonition type="success" title="Windows" open=true >}}
+In the Windows application start button to the bottom right, click "Run", and type `cmd` - this will open a command line for you. First, we create a new folder by typing, in the command line window
+```
 mkdir graphical-data-apps
 ```
-
 then we move into that folder
-
-```cmd
+```
 cd graphical-data-apps
 ```
-
 We then create a new Python virtual environment, with the command
-
 ```cmd
-python -m venv venv
+python -m venv data_apps_env
 ```
-
-which means, "run python, using the module called `venv`, and create a new environment here called `venv`". We then tell the terminal to use this environment as the Python install it is using:
-
-```cmd
-venv\Scripts\activate
+which means, "run python, using the module called `venv`, and create a new environment here called `data_apps_env`". We then tell the terminal to use this environment:
 ```
-
-Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
-
-```cmd
+data_apps_env\Scripts\activate
+```
+Finally, we download and install the required Python packages for this workshop:
+```
 pip install jupyterlab streamlit plotly_express
 ```
+{{< /admonition >}}
 
-### MacOS & Linux
-First, we create a new folder to work in
-
-```Terminal
+{{< admonition type="success" title="MacOS & Linux" open=true >}}
+We can get a command line interface by opening Spotlight (`command + space`) and typing `Terminal`. In this command line window, first, we create a new folder to work in
+```
 mkdir graphical-data-apps
 ```
-
 then we move into that folder
-
-```Terminal
+```
 cd graphical-data-apps
 ```
-
 We then create a new Python virtual environment, with the command
-
 ```Terminal
-python -m venv ./venv
+python -m venv ./data_apps_env
 ```
-
-which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/venv`". We then tell the terminal to use this environment as the Python install it is using.
-
-```Terminal
-source ./venv/bin/activate
+which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/data_apps_env`". We then tell the terminal to use this environment as the Python install it is using.
 ```
-
-Finally, we download and install the required Python packages for this workshop: `jupyterlab`, `streamlit` and `plotly_express`.
-
-```Terminal
+source ./data_apps_env/bin/activate
+```
+Finally, we download and install the required Python packages for this workshop:
+```
 pip install jupyterlab streamlit plotly_express
+```
+{{< /admonition >}}
+
+Whichever operating system you are using, you are now ready to start, so finally run this command to open a Jupyter Lab session in your browser:
+```
+jupyter lab
 ```
 
 ## Jupyter Lab
