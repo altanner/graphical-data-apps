@@ -52,7 +52,7 @@ then we move into that folder
 cd graphical-data-apps
 ```
 We then create a new Python virtual environment, with the command
-```cmd
+```
 python -m venv data_apps_env
 ```
 which means, "run python, using the module called `venv`, and create a new environment here called `data_apps_env`". We then tell the terminal to use this environment:
