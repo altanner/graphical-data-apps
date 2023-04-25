@@ -39,15 +39,15 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * experience of Python to an intermediate level; for example, you should have experience of **functions** and **conditionals**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you are ready to approach this course. If you have only done [Intermediate Python](https://milliams.com/courses/intermediate_python/) you should also be fine!
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
-## Setting up using a command line interface
+## Setting up
 To begin, we need to use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
-{{< admonition type="success" title="Windows" open=true >}}
-In the Windows application start button to the bottom right, click "Run", and type `cmd` - this will open a command line for you. First, we create a new folder by typing, in the command line window
+{{< admonition type="abstract" title="Windows" open=true >}}
+In the Windows application button to the bottom left, click "Run", and type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
 ```
 mkdir graphical-data-apps
 ```
-then we move into that folder
+then we move into that folder using the command
 ```
 cd graphical-data-apps
 ```
@@ -55,17 +55,19 @@ We then create a new Python virtual environment, with the command
 ```
 python -m venv data_apps_env
 ```
-which means, "run python, using the module called `venv`, and create a new environment here called `data_apps_env`". We then tell the terminal to use this environment:
+which means, "run python, using the module called `venv`, and create a new environment called `data_apps_env`".
+
+We then tell the terminal to use this environment:
 ```
 data_apps_env\Scripts\activate
 ```
-Finally, we download and install the required Python packages for this workshop:
+Finally, we install the required Python packages for this workshop:
 ```
 pip install jupyterlab streamlit plotly_express
 ```
 {{< /admonition >}}
 
-{{< admonition type="success" title="MacOS & Linux" open=true >}}
+{{< admonition type="abstract" title="MacOS & Linux" open=true >}}
 We can get a command line interface by opening Spotlight (`command + space`) and typing `Terminal`. In this command line window, first, we create a new folder to work in
 ```
 mkdir graphical-data-apps
@@ -78,11 +80,13 @@ We then create a new Python virtual environment, with the command
 ```Terminal
 python -m venv ./data_apps_env
 ```
-which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/data_apps_env`". We then tell the terminal to use this environment as the Python install it is using.
+which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/data_apps_env`".
+
+We then tell the terminal to use this environment as the Python install it is using.
 ```
 source ./data_apps_env/bin/activate
 ```
-Finally, we download and install the required Python packages for this workshop:
+Finally, we install the required Python packages for this workshop:
 ```
 pip install jupyterlab streamlit plotly_express
 ```
@@ -94,7 +98,9 @@ jupyter lab
 ```
 
 ## Jupyter Lab
-In the Jupyter Lab **file navigator** in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**.
+In the Jupyter Lab **file navigator** in the sidebar to the left, find and move into the folder we made called `graphical-data-app` (this should be in your home folder, or another default location).
+
+We are going to have two panes open: one **Python file** (a text editor), and one **Terminal**. You can open these either from the launch screen (with icons), or from the menu bar (*in* the Jupyter Lab tab menu, not the browser menu!), going **File** → **New** → **Python File** and **File** → **New** → **Terminal**.
 
 For this session, a useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and occasionally reporting what is happening, and any errors), so we don't need it to take up too much space. In any case, layout as suits your screen best, and we are now ready to start!
 
