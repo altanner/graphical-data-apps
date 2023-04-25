@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01requirements/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-04-24T22:16:38+01:00" />
+<meta property="article:modified_time" content="2023-04-25T13:56:26+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 ∙ Requirements and set up"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/"
-        },"genre": "posts","wordcount":  1190 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-04-24T22:16:38+01:00","publisher": {
+        },"genre": "posts","wordcount":  1195 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-04-25T13:56:26+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -79,7 +79,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#required-experience">Required experience</a></li>
-    <li><a href="#setting-up-using-a-command-line-interface">Setting up using a command line interface</a></li>
+    <li><a href="#setting-up">Setting up</a></li>
     <li><a href="#jupyter-lab">Jupyter Lab</a></li>
   </ul>
 </nav></div>
@@ -121,29 +121,30 @@
 <li>a little experience of using the <a href="https://alleetanner.github.io/intro-to-command-line/" target="_blank" rel="noopener noreffer">command line</a>
  is useful, but not essential.</li>
 </ul>
-<h2 id="setting-up-using-a-command-line-interface">Setting up using a command line interface</h2>
+<h2 id="setting-up">Setting up</h2>
 <p>To begin, we need to use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:</p>
-<div class="details admonition success open">
+<div class="details admonition abstract open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Windows<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Windows<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><p>In the Windows application start button to the bottom right, click &ldquo;Run&rdquo;, and type <code>cmd</code> - this will open a command line for you. First, we create a new folder by typing, in the command line window</p>
+            <div class="admonition-content"><p>In the Windows application button to the bottom left, click &ldquo;Run&rdquo;, and type <code>cmd</code> - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window</p>
 <pre tabindex="0"><code>mkdir graphical-data-apps
-</code></pre><p>then we move into that folder</p>
+</code></pre><p>then we move into that folder using the command</p>
 <pre tabindex="0"><code>cd graphical-data-apps
 </code></pre><p>We then create a new Python virtual environment, with the command</p>
 <pre tabindex="0"><code>python -m venv data_apps_env
-</code></pre><p>which means, &ldquo;run python, using the module called <code>venv</code>, and create a new environment here called <code>data_apps_env</code>&rdquo;. We then tell the terminal to use this environment:</p>
+</code></pre><p>which means, &ldquo;run python, using the module called <code>venv</code>, and create a new environment called <code>data_apps_env</code>&rdquo;.</p>
+<p>We then tell the terminal to use this environment:</p>
 <pre tabindex="0"><code>data_apps_env\Scripts\activate
-</code></pre><p>Finally, we download and install the required Python packages for this workshop:</p>
+</code></pre><p>Finally, we install the required Python packages for this workshop:</p>
 <pre tabindex="0"><code>pip install jupyterlab streamlit plotly_express
 </code></pre></div>
         </div>
     </div>
-<div class="details admonition success open">
+<div class="details admonition abstract open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>MacOS &amp; Linux<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>MacOS &amp; Linux<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>We can get a command line interface by opening Spotlight (<code>command + space</code>) and typing <code>Terminal</code>. In this command line window, first, we create a new folder to work in</p>
@@ -152,9 +153,10 @@
 <pre tabindex="0"><code>cd graphical-data-apps
 </code></pre><p>We then create a new Python virtual environment, with the command</p>
 <pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">python -m venv ./data_apps_env
-</code></pre><p>which means, &ldquo;run python, using the module called <code>venv</code>, and create a new environment here (<code>.</code>) called <code>/data_apps_env</code>&rdquo;. We then tell the terminal to use this environment as the Python install it is using.</p>
+</code></pre><p>which means, &ldquo;run python, using the module called <code>venv</code>, and create a new environment here (<code>.</code>) called <code>/data_apps_env</code>&rdquo;.</p>
+<p>We then tell the terminal to use this environment as the Python install it is using.</p>
 <pre tabindex="0"><code>source ./data_apps_env/bin/activate
-</code></pre><p>Finally, we download and install the required Python packages for this workshop:</p>
+</code></pre><p>Finally, we install the required Python packages for this workshop:</p>
 <pre tabindex="0"><code>pip install jupyterlab streamlit plotly_express
 </code></pre></div>
         </div>
@@ -162,7 +164,8 @@
 <p>Whichever operating system you are using, you are now ready to start, so finally run this command to open a Jupyter Lab session in your browser:</p>
 <pre tabindex="0"><code>jupyter lab
 </code></pre><h2 id="jupyter-lab">Jupyter Lab</h2>
-<p>In the Jupyter Lab <strong>file navigator</strong> in the sidebar to the left, create a new folder to work in, and move into it. We are going to have two panes open: one <strong>Python file</strong> (a text editor), and one <strong>Terminal</strong>. You can open these either from the launch screen (with icons), or from the menu bar (<em>in</em> the Jupyter Lab tab menu, not the browser menu!), going <strong>File</strong> → <strong>New</strong> → <strong>Python File</strong> and <strong>File</strong> → <strong>New</strong> → <strong>Terminal</strong>.</p>
+<p>In the Jupyter Lab <strong>file navigator</strong> in the sidebar to the left, find and move into the folder we made called <code>graphical-data-app</code> (this should be in your home folder, or another default location).</p>
+<p>We are going to have two panes open: one <strong>Python file</strong> (a text editor), and one <strong>Terminal</strong>. You can open these either from the launch screen (with icons), or from the menu bar (<em>in</em> the Jupyter Lab tab menu, not the browser menu!), going <strong>File</strong> → <strong>New</strong> → <strong>Python File</strong> and <strong>File</strong> → <strong>New</strong> → <strong>Terminal</strong>.</p>
 <p>For this session, a useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and occasionally reporting what is happening, and any errors), so we don&rsquo;t need it to take up too much space. In any case, layout as suits your screen best, and we are now ready to start!</p>
 <div class="details admonition tip">
         <div class="details-summary admonition-title">
