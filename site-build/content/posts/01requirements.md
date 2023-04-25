@@ -42,7 +42,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 ## Setting up
 To begin, we need to use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
-{{< admonition type="abstract" title="Windows" open=true >}}
+{{< admonition type="abstract" title="Windows" open=false >}}
 In the Windows application button to the bottom left, click "Run", and type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
 ```
 mkdir graphical-data-apps
@@ -67,7 +67,7 @@ pip install jupyterlab==3.6.3 streamlit==1.21.0 plotly_express==0.4.1
 ```
 {{< /admonition >}}
 
-{{< admonition type="abstract" title="MacOS & Linux" open=true >}}
+{{< admonition type="abstract" title="MacOS & Linux" open=false >}}
 We can get a command line interface by opening Spotlight (`command + space`) and typing `Terminal`. In this command line window, first, we create a new folder to work in
 ```
 mkdir graphical-data-apps
@@ -80,7 +80,7 @@ We then create a new Python virtual environment, with the command
 ```Terminal
 python -m venv ./data_apps_env
 ```
-which means, "run python, using the module called `venv`, and create a new environment here (`.`) called `/data_apps_env`".
+which means, "run python, using the module called `venv`, and create a new environment here `.` called `/data_apps_env`".
 
 We then tell the terminal to use this environment as the Python install it is using.
 ```
