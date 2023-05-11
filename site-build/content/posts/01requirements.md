@@ -63,7 +63,7 @@ data_apps_env\Scripts\activate
 ```
 Finally, we install the required Python packages for this workshop:
 ```Terminal
-pip install jupyterlab==3.6.3 streamlit==1.21.0 plotly_express==0.4.1
+pip install jupyterlab streamlit==1.21 plotly_express
 ```
 {{< /admonition >}}
 
@@ -88,7 +88,7 @@ source ./data_apps_env/bin/activate
 ```
 Finally, we install the required Python packages for this workshop (this might take a couple of minutes:
 ```Terminal
-pip install jupyterlab==3.6.3 streamlit==1.21.0 plotly_express==0.4.1
+pip install jupyterlab streamlit==1.21 plotly_express
 ```
 {{< /admonition >}}
 
