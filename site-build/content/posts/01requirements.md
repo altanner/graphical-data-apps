@@ -40,60 +40,60 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ## Setting up
-To begin, we need to use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
+To begin, we will use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
 {{< admonition type="abstract" title="Windows" open=false >}}
-In the Windows application button to the bottom left, click "Run", and type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
-```
+In the Windows start button type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
+```Terminal
 mkdir graphical-data-apps
 ```
 then we move into that folder using the command
-```
+```Terminal
 cd graphical-data-apps
 ```
-We then create a new Python virtual environment, with the command
-```
-python -m venv data_apps_env
+We then create a new Python virtual environment (see the glossary box above for an explanation of what this is), with the command
+```Terminal
+python3 -m venv data_apps_env
 ```
 which means, "run python, using the module called `venv`, and create a new environment called `data_apps_env`".
 
 We then tell the terminal to use this environment:
-```
+```Terminal
 data_apps_env\Scripts\activate
 ```
 Finally, we install the required Python packages for this workshop:
-```
+```Terminal
 pip install jupyterlab==3.6.3 streamlit==1.21.0 plotly_express==0.4.1
 ```
 {{< /admonition >}}
 
 {{< admonition type="abstract" title="MacOS & Linux" open=false >}}
 We can get a command line interface by opening Spotlight (`command + space`) and typing `Terminal`. In this command line window, first, we create a new folder to work in
-```
+```Terminal
 mkdir graphical-data-apps
 ```
 then we move into that folder
-```
+```Terminal
 cd graphical-data-apps
 ```
-We then create a new Python virtual environment, with the command
+We then create a new Python virtual environment (see the glossary box above for an explanation of what this is), with the command
 ```Terminal
-python -m venv ./data_apps_env
+python3 -m venv ./data_apps_env
 ```
 which means, "run python, using the module called `venv`, and create a new environment here `.` called `/data_apps_env`".
 
 We then tell the terminal to use this environment as the Python install it is using.
-```
+```Terminal
 source ./data_apps_env/bin/activate
 ```
-Finally, we install the required Python packages for this workshop:
-```
+Finally, we install the required Python packages for this workshop (this might take a couple of minutes:
+```Terminal
 pip install jupyterlab==3.6.3 streamlit==1.21.0 plotly_express==0.4.1
 ```
 {{< /admonition >}}
 
 Whichever operating system you are using, you are now ready to start, so finally run this command to open a Jupyter Lab session in your browser:
-```
+```Terminal
 jupyter lab
 ```
 
