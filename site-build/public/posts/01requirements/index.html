@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01requirements/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-05-11T11:11:30+01:00" />
+<meta property="article:modified_time" content="2023-05-11T11:33:03+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 ∙ Requirements and set up"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/"
-        },"genre": "posts","wordcount":  1218 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-05-11T11:11:30+01:00","publisher": {
+        },"genre": "posts","wordcount":  1256 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-05-11T11:33:03+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -99,11 +99,11 @@
 </li>
 <li><strong>Package</strong> : a library that is available for delivery to a <strong>package manager</strong>, such as <code>pip</code> or <code>conda</code>. <a href="https://pypi.org/" target="_blank" rel="noopener noreffer">PyPI</a>
  (&ldquo;Python Package Index&rdquo;) is the main package repository for Python.</li>
-<li><strong>Module</strong> : anything that is imported to a running script. Libraries and packages are made of modules.</li>
+<li><strong>Module</strong> : anything that is imported to a running script. Libraries and packages are made of modules. If you write your own Python file, and <code>import</code> it, that is also a module.</li>
 <li><strong>Environment</strong> : this has two meanings.
 <ul>
-<li>A &ldquo;Python Environment&rdquo; is a specific installation of Python, available on your computer. Typically, users have a default install, called <code>base</code>, but we can have more. Think of each environment as a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (It is good software engineering practice to create a new environment for every project. This lessens chances of conflicts, and prevents your <code>base</code> install of Python becoming overly-burdened with libraries that you don’t need.)</li>
-<li>The other meaning for &ldquo;environment&rdquo; is <em>the interface that you are using to develop code</em> - for example <strong>VS Code</strong>, <strong>PyCharm</strong>, <strong>Jupyter Lab</strong>, even the command line itself are interfaces, also known as environments. Confusing, I know!</li>
+<li>A &ldquo;Python Environment&rdquo; is a specific, isolated installation of Python, available on your computer. Typically, users have a default install, called <code>base</code>, which we can create duplicates of. Think of each environment as a minimal, clear version of Python, where we can install functionality just for the project we are working on. This avoids conflicts, and prevents your <code>base</code> install of Python becoming burdened with libraries that you don’t need all the time. It is good software engineering practice to create a new environment for every project.</li>
+<li>The other meaning for &ldquo;environment&rdquo; is <em>the interface that you are using to develop code</em> - for example IDEs like <strong>VS Code</strong>, <strong>PyCharm</strong>, <strong>Jupyter Lab</strong>, even the command line itself are interfaces, also known as environments. Confusing, I know!</li>
 </ul>
 </li>
 <li><strong>Dependency</strong> : anything that is required to get software to run. For example, here we need some libraries to be installed, so we are <em>dependent</em> on those being in place and working. In other contexts, &ldquo;dependencies&rdquo; might be single files, settings, or whole software packages.</li>
@@ -122,7 +122,7 @@
  is useful, but not essential.</li>
 </ul>
 <h2 id="setting-up">Setting up</h2>
-<p>To begin, we will use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:</p>
+<p>To begin, we will use a command line, but this is the only part of the course that needs this. It will be running a clean version of Python, in Jupyter Lab, which uses your browser as the interface. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:</p>
 <div class="details admonition abstract">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Windows<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
