@@ -27,10 +27,10 @@ The words **library**, **module** and **package** are often used interchangeably
   - A library can be [standard](https://docs.python.org/3/library/index.html) (it comes built into python), for example `time` or `math`, or
   - 3rd party, so, written by people outside of the core Python developers, and as such will need to be installed using a package manager. `numpy` and `pandas` are 3rd party libraries with millions of users.
 - **Package** : a library that is available for delivery to a **package manager**, such as `pip` or `conda`. [PyPI](https://pypi.org/) ("Python Package Index") is the main package repository for Python.
-- **Module** : anything that is imported to a running script. Libraries and packages are made of modules.
+- **Module** : anything that is imported to a running script. Libraries and packages are made of modules. If you write your own Python file, and `import` it, that is also a module.
 - **Environment** : this has two meanings. 
-  - A "Python Environment" is a specific installation of Python, available on your computer. Typically, users have a default install, called `base`, but we can have more. Think of each environment as a new, blank version of Python, where we will install additional functionality specific for the project we are working on. (It is good software engineering practice to create a new environment for every project. This lessens chances of conflicts, and prevents your `base` install of Python becoming overly-burdened with libraries that you don’t need.) 
-  - The other meaning for "environment" is *the interface that you are using to develop code* - for example **VS Code**, **PyCharm**, **Jupyter Lab**, even the command line itself are interfaces, also known as environments. Confusing, I know!
+  - A "Python Environment" is a specific, isolated installation of Python, available on your computer. Typically, users have a default install, called `base`, which we can create duplicates of. Think of each environment as a minimal, clear version of Python, where we can install functionality just for the project we are working on. This avoids conflicts, and prevents your `base` install of Python becoming burdened with libraries that you don’t need all the time. It is good software engineering practice to create a new environment for every project. 
+  - The other meaning for "environment" is *the interface that you are using to develop code* - for example IDEs like **VS Code**, **PyCharm**, **Jupyter Lab**, even the command line itself are interfaces, also known as environments. Confusing, I know!
 - **Dependency** : anything that is required to get software to run. For example, here we need some libraries to be installed, so we are *dependent* on those being in place and working. In other contexts, "dependencies" might be single files, settings, or whole software packages.
 {{< /admonition >}}
 
@@ -40,7 +40,7 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 * a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
 
 ## Setting up
-To begin, we will use a command line, but this is the only part of the course that needs this. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
+To begin, we will use a command line, but this is the only part of the course that needs this. It will be running a clean version of Python, in Jupyter Lab, which uses your browser as the interface. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
 {{< admonition type="abstract" title="Windows" open=false >}}
 In the Windows start button type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
