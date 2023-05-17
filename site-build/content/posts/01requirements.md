@@ -43,27 +43,27 @@ We try to be as inclusive as possible regarding your coding level, but to get th
 To begin, we will use a command line, but this is the only part of the course that needs this. It will be running a clean version of Python, in Jupyter Lab, which uses your browser as the interface. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
 {{< admonition type="abstract" title="Windows" open=false >}}
-In the Windows start button type `cmd` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the command line window
-```Terminal
+In the Windows start button type `Anaconda Prompt` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the Anaconda Prompt window
+```
 mkdir graphical-data-apps
 ```
 then we move into that folder using the command
-```Terminal
+```
 cd graphical-data-apps
 ```
 We then create a new Python virtual environment (see the glossary box above for an explanation of what this is), with the command
-```Terminal
+```
 python3 -m venv data_apps_env
 ```
 which means, "run python, using the module called `venv`, and create a new environment called `data_apps_env`".
 
 We then tell the terminal to use this environment:
-```Terminal
+```
 data_apps_env\Scripts\activate
 ```
 Finally, we install the required Python packages for this workshop:
-```Terminal
-pip install jupyterlab streamlit==1.21 plotly_express
+```
+pip install jupyterlab streamlit==1.21 plotly
 ```
 {{< /admonition >}}
 
@@ -88,7 +88,7 @@ source ./data_apps_env/bin/activate
 ```
 Finally, we install the required Python packages for this workshop (this might take a couple of minutes:
 ```Terminal
-pip install jupyterlab streamlit==1.21 plotly_express
+pip install jupyterlab streamlit==1.21 plotly
 ```
 {{< /admonition >}}
 
