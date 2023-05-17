@@ -34,16 +34,16 @@ The words **library**, **module** and **package** are often used interchangeably
 - **Dependency** : anything that is required to get software to run. For example, here we need some libraries to be installed, so we are *dependent* on those being in place and working. In other contexts, "dependencies" might be single files, settings, or whole software packages.
 {{< /admonition >}}
 
-## Required experience
+## Required experience and software
 We try to be as inclusive as possible regarding your coding level, but to get the most out of this course, you should have:
 * experience of Python to an intermediate level; for example, you should have experience of **functions** and **conditionals**. If you have attended any of our [courses](https://milliams.com/courses/data_analysis_python/) on [data analysis](https://milliams.com/courses/applied_data_analysis/), you are ready to approach this course. If you have only done [Intermediate Python](https://milliams.com/courses/intermediate_python/) you should also be fine!
-* a little experience of using the [command line](https://alleetanner.github.io/intro-to-command-line/) is useful, but not essential.
+* [Anaconda Navigator](https://www.anaconda.com/) installed on your computer.
 
 ## Setting up
-To begin, we will use a command line, but this is the only part of the course that needs this. It will be running a clean version of Python, in Jupyter Lab, which uses your browser as the interface. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
+To begin, we will need create a clean version of Python with just our requirements for this session. This will run Jupyter Lab, so we have an interface in your browser. We provide instructions here for both Windows or MacOS (+ Linux), so follow the instructions relevant to you:
 
 {{< admonition type="abstract" title="Windows" open=false >}}
-In the Windows start button type `Anaconda Prompt` - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the Anaconda Prompt window
+In the Windows start button type `Anaconda Prompt` (if you don't see this, ensure [Anaconda Navigator](https://www.anaconda.com/) is installed) - this will open a command line for you. First, we make a new folder (a new directory) by typing, in the Anaconda Prompt window
 ```
 mkdir graphical-data-apps
 ```
