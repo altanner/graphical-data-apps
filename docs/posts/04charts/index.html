@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/04charts/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-14T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-04-08T14:41:43+01:00" />
+<meta property="article:modified_time" content="2023-05-18T14:27:15+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 • Charts"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/"
-        },"genre": "posts","wordcount":  1349 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-04-08T14:41:43+01:00","publisher": {
+        },"genre": "posts","wordcount":  1346 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/04charts\/","datePublished": "2023-02-14T00:00:00+01:00","dateModified": "2023-05-18T14:27:15+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -110,7 +110,7 @@
 <h3 id="loading-up-pandas">Loading up <code>pandas</code></h3>
 <p>First, we need to update our script to import <code>pandas</code>. Add this at the top of your script add:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-</span></span></code></pre></div><p>Now we can read our dataset into a dataframe using <code>pandas</code>. Add this line <strong>below your <code>import</code>s</strong>, but above the rest of your code. We put this near the top is because this code is not related to building the interface: Python will run the script from top to bottom, so it will need to know what your data is before it can do anything with it.</p>
+</span></span></code></pre></div><p>Now we can read our dataset into a dataframe using <code>pandas</code>. Add this line below your <code>import</code>s, but above the rest of your code. We put this near the top is because this code is not related to building the interface: Python will run the script from top to bottom, so it will need to know what your data is before it can do anything with it.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="n">demo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;demo_dataset.csv&#34;</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="exercise-3-viewing-our-data">Exercise 3: Viewing our data</h2>
 <p>Before we go any further, let&rsquo;s get a feel for what the data is. We can view dataframes in the app itself (and we can even edit dataframes natively in app! but we won&rsquo;t cover this today).</p>
@@ -166,7 +166,7 @@
 <p>Now that we have our data available, we can begin work on visualising it, which will require one more <code>import</code>. Add this to your imports at the top of the script:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
 </span></span></code></pre></div><p>We are using <a href="https://plotly.com/python/" target="_blank" rel="noopener noreffer">Plotly</a>
-, for a number of reasons:</p>
+ for a number of reasons:</p>
 <ul>
 <li>it has an intermediate learning curve</li>
 <li>the <a href="https://plotly.com/python-api-reference/" target="_blank" rel="noopener noreffer">documentation</a>
@@ -180,9 +180,9 @@
 <li>Asking Streamlit to present this chart object</li>
 </ol>
 <h3 id="creating-a-chart">Creating a chart</h3>
-<p>Plotly (and almost all graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things:</p>
+<p>Plotly (and most graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things:</p>
 <ol>
-<li>The datafame Plotly to work with</li>
+<li>The datafame to work with</li>
 <li>The data to plot on the <code>x</code> axis (ie, one of the dataframe columns)</li>
 <li>The data to plot on the <code>y</code> axis (another dataframe column)</li>
 </ol>
