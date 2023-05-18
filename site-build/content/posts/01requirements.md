@@ -53,7 +53,7 @@ cd graphical-data-apps
 ```
 We then create a new Python virtual environment (see the glossary box above for an explanation of what this is), with the command
 ```
-python3 -m venv data_apps_env
+python -m venv data_apps_env
 ```
 which means, "run python, using the module called `venv`, and create a new environment called `data_apps_env`".
 
