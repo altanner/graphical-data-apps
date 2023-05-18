@@ -134,7 +134,6 @@ pip install -r requirements.txt
 If you are interested, or if you need to do things manually, the libraries this installs are:
 
 - `pandas` - allows us to [organise data into powerful formats](https://pandas.pydata.org/), most notably the dataframe
-- `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/)
-- `plotly-express` - plotly on [easier mode](https://plotly.com/python/plotly-express/)
+- `plotly` - an open-source graphing, charting and [data vis library](https://plotly.com/python/plotly-express/)
 - `streamlit` - the [data app interface builder](https://streamlit.io/)
 {{< /admonition >}}
