@@ -22,7 +22,7 @@ comment:
 ---
 
 ## What are data apps?
-A **data app** allows visual exploration of a dataset, without requiring the use to have specific technical skills. A data app can range from being simple (perhaps just drawing a graph) to sophisticated (including user log-ins and profiles, connections to databases, methods to transform data, and interactive visualisations). A data app can also be a **web app**, if it is deployed to the internet so that others can use it through a web browser.
+A **data app** allows visual exploration of a dataset. A data app can range from being simple (perhaps just drawing a graph) to sophisticated (including interactive plots, user log-ins and profiles, connections to databases, and methods to transform data). A data app is often also a **web app**, if it is deployed to the internet so that others can use it through a web browser.
 
 In any case, data apps aims can include:
 - **bridge technical aspects** of working with data, making analysis more accessible,
