@@ -41,7 +41,7 @@ First, we need to update our script to import `pandas`. Add this at the top of y
 import pandas as pd
 ```
 
-Now we can read our dataset into a dataframe using `pandas`. Add this line **below your `import`s**, but above the rest of your code. We put this near the top is because this code is not related to building the interface: Python will run the script from top to bottom, so it will need to know what your data is before it can do anything with it.
+Now we can read our dataset into a dataframe using `pandas`. Add this line below your `import`s, but above the rest of your code. We put this near the top is because this code is not related to building the interface: Python will run the script from top to bottom, so it will need to know what your data is before it can do anything with it.
 
 ```Python
 demo_df = pd.read_csv("demo_dataset.csv")
@@ -96,7 +96,7 @@ Now that we have our data available, we can begin work on visualising it, which 
 import plotly.express as px
 ```
 
-We are using [Plotly](https://plotly.com/python/), for a number of reasons:
+We are using [Plotly](https://plotly.com/python/) for a number of reasons:
 - it has an intermediate learning curve
 - the [documentation](https://plotly.com/python-api-reference/) is good
 - the syntax is relatively easy to use, without being over-simplified
@@ -107,8 +107,8 @@ There are two steps to getting our data from the dataframe to into a graphic:
 2. Asking Streamlit to present this chart object
 
 ### Creating a chart
-Plotly (and almost all graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things: 
-1. The datafame Plotly to work with
+Plotly (and most graphics libraries) work best with dataframes, which we have ready for it. As a minimum, a Plotly scatter chart needs three things: 
+1. The datafame to work with
 2. The data to plot on the `x` axis (ie, one of the dataframe columns)
 3. The data to plot on the `y` axis (another dataframe column)
 
