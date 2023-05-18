@@ -31,7 +31,7 @@ We provide `code` blocks through this course, which you can copy and paste to bu
 ## Creating your first page
 We have a text editor open, but to begin let's rename this to make it clear what it is. Do this by saving the file, or going "Save as", and naming it `data_app.py` (you might need to right-click on the file and select "*Rename*").
 
-We will by telling Python to make the `streamlit` library available to our script:
+We will start by telling Python to make the `streamlit` library available to our script:
 
 ```Python
 import streamlit as st
@@ -51,7 +51,7 @@ Save the file (remember that Jupyter Lab will show a circle next to files that h
 streamlit run data_app.py
 ```
 
-The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal serving your data app by using `ctrl-c`.
+The terminal should report something along the lines of *"You can now view your Streamlit app in your browser"* - so, have a look, where it will have opened a new tab for you. A browser-ready page made with two lines of code! Note that the Terminal is now engaged with running Streamlit, so you will not be able to interact with it (it will still respond to non-Streamlit output, for example a `print()` call. You can stop the Terminal running the app by using `ctrl-c`.
 
 ## Exercise 1: First edits and elements
 {{< admonition type="question" title="Exercise 1: making your first page edits" open=true >}}
