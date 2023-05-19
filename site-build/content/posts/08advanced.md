@@ -36,4 +36,13 @@ For small apps, hosting of your app is free. If data usage or visit counts are h
 If the person you are sharing with can run Python, you can just share your repository (or a folder of the script files). They can then install Streamlit, and run the app locally. This is a good option if you have data which needs to remain private.
 
 ### Streamlit Desktop App
-As of 2023, this is fairly new in development, but it may be possible to create an executable desktop app of Streamlit. Again, look up current articles and threads on the best way to do this.
+This is fairly new in development, but it may be possible to create an [executable desktop app of Streamlit](https://discuss.streamlit.io/t/streamlit-wasm-electron-desktop-app/31655). Again, look up current articles and threads on the best way to do this.
+
+## Some final things to highlight!
+As of 2023, Streamlit is still rapidly acquiring new functionality. Here are some things that are very powerful for creating a more sophisticated app:
+### Session state
+The session state allows you to store variables across runs, and is generally useful for organising data across your app. Learn how to use it [here.](https://docs.streamlit.io/library/api-reference/session-state).
+### Interactive dataframes
+Being able to edit or add data in the native app is a useful feature. Check [here](https://blog.streamlit.io/editable-dataframes-are-here/) for current news on how this is done in Streamlit (keep in mind this link might change one day - if it doesn't work, do a search instead!)
+### Data linkage
+Streamlit is built to work with the APIs of major [data infrastructure and software](https://docs.streamlit.io/knowledge-base/tutorials/databases), including SQLite, AWS and MongoDB.
