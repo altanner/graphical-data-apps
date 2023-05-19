@@ -1,5 +1,5 @@
 ---
-title: "7 • Deploying, plus further notes"
+title: "7 • Advanced topics II : sharing and deploying"
 subtitle: "Powerful things that are worth pointing out."
 
 date: 2023-02-17T00:00:00+01:00
