@@ -9,8 +9,8 @@
     <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
     <guid>https://alleetanner.github.io/graphical-data-apps/posts/08advanced/</guid>
-    <description><![CDATA[ Deploying Session state User logins Interactive dataframes  Warning   In production!     Main section  Interactive dataframes User login Database connections Session state Caching  Normal text body.
-Info   Info1 Info2     ]]></description>
+    <description><![CDATA[Options for sharing your data app There are a few ways to share your app with people, and it will be worth doing a search for current options, as these will change with the times.
+Streamlit Cloud The easiest way to deploy is through Streamlit Cloud . The only requirement is that you have a GitHub account - the GitHub repo then acts as the source for the app being run by Streamlit Cloud.]]></description>
 </item>
 <item>
     <title>7 • Advanced topics I : Animations</title>
