@@ -3,14 +3,14 @@
         <title>Graphical Data Apps</title>
         <link>https://alleetanner.github.io/graphical-data-apps/</link>
         <description>Graphical Data Apps</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 18 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 17 Feb 2023 00:00:00 &#43;0100</lastBuildDate>
             <atom:link href="https://alleetanner.github.io/graphical-data-apps/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>8 • Deploying, plus further notes</title>
-    <link>https://alleetanner.github.io/graphical-data-apps/posts/08advanced/</link>
-    <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0100</pubDate>
+    <title>7 • Deploying, plus further notes</title>
+    <link>https://alleetanner.github.io/graphical-data-apps/posts/07advanced/</link>
+    <pubDate>Fri, 17 Feb 2023 00:00:00 &#43;0100</pubDate>
     <author>Alastair Tanner</author>
-    <guid>https://alleetanner.github.io/graphical-data-apps/posts/08advanced/</guid>
+    <guid>https://alleetanner.github.io/graphical-data-apps/posts/07advanced/</guid>
     <description><![CDATA[Options for sharing your data app There are a few ways to share your app with people, and it will be worth doing a search for current options, as these will change with the times.
 Streamlit Cloud The easiest way to deploy is through Streamlit Cloud . The only requirement is that you have a GitHub account - the GitHub repo then acts as the source for the app being run by Streamlit Cloud.]]></description>
 </item>
