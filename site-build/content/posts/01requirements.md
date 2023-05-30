@@ -63,7 +63,7 @@ data_apps_env\Scripts\activate
 ```
 Finally, we install the required Python packages for this workshop:
 ```
-pip install jupyterlab streamlit==1.21 plotly
+pip install jupyterlab streamlit plotly
 ```
 {{< /admonition >}}
 
@@ -88,7 +88,7 @@ source ./data_apps_env/bin/activate
 ```
 Finally, we install the required Python packages for this workshop (this might take a couple of minutes:
 ```Terminal
-pip install jupyterlab streamlit==1.21 plotly
+pip install jupyterlab streamlit plotly
 ```
 {{< /admonition >}}
 
@@ -96,6 +96,22 @@ Whichever operating system you are using, you are now ready to start, so finally
 ```Terminal
 jupyter lab
 ```
+
+{{< admonition type="abstract" title="Running your app in future" open=false >}}
+The above steps set things up for the first time, but in future you will not need to go through all the steps.
+For Windows, the steps are:
+- Start `Anaconda Prompt`
+- Move into the folder you are working in, for example `cd graphical-data-apps`
+- Activate the Python environment in that folder, with `<environment name>\Scripts\activate`
+- Run `jupyter lab`, which will open a new tab in your browser with Jupyter Lab.
+- Open a Terminal in your Jupyter Lab tab, and enter the command `streamlit run <name of python file>`
+On Linux / MacOS, the steps are:
+- Start `Terminal`
+- Move into the folder you are working in, for example `cd graphical-data-apps`
+- Activate the Python environment in that folder, with `source ./<environment name>/bin/activate`
+- Enter the command `jupyter lab` in Terminal to start a browser tab with Jupyter Lab
+- Open a Terminal in your Jupyter Lab tab, and enter the command `streamlit run <name of python file>`
+{{< /admonition >}}
 
 ## Jupyter Lab
 In the Jupyter Lab **file navigator** in the sidebar to the left, find and move into the folder we made called `graphical-data-app` (this should be in your home folder, or another default location).
