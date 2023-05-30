@@ -10,7 +10,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alleetanner.github.io/graphical-data-apps/posts/01requirements/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-11T00:00:00+01:00" />
-<meta property="article:modified_time" content="2023-05-18T10:59:44+01:00" />
+<meta property="article:modified_time" content="2023-05-30T15:38:39+01:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="1 ∙ Requirements and set up"/>
@@ -28,8 +28,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/"
-        },"genre": "posts","wordcount":  1248 ,
-        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-05-18T10:59:44+01:00","publisher": {
+        },"genre": "posts","wordcount":  1404 ,
+        "url": "https:\/\/alleetanner.github.io\/graphical-data-apps\/posts\/01requirements\/","datePublished": "2023-02-11T00:00:00+01:00","dateModified": "2023-05-30T15:38:39+01:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -139,7 +139,7 @@
 <p>We then tell the terminal to use this environment:</p>
 <pre tabindex="0"><code>data_apps_env\Scripts\activate
 </code></pre><p>Finally, we install the required Python packages for this workshop:</p>
-<pre tabindex="0"><code>pip install jupyterlab streamlit==1.21 plotly
+<pre tabindex="0"><code>pip install jupyterlab streamlit plotly
 </code></pre></div>
         </div>
     </div>
@@ -158,13 +158,36 @@
 <p>We then tell the terminal to use this environment as the Python install it is using.</p>
 <pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">source ./data_apps_env/bin/activate
 </code></pre><p>Finally, we install the required Python packages for this workshop (this might take a couple of minutes:</p>
-<pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">pip install jupyterlab streamlit==1.21 plotly
+<pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">pip install jupyterlab streamlit plotly
 </code></pre></div>
         </div>
     </div>
 <p>Whichever operating system you are using, you are now ready to start, so finally run this command to open a Jupyter Lab session in your browser:</p>
 <pre tabindex="0"><code class="language-Terminal" data-lang="Terminal">jupyter lab
-</code></pre><h2 id="jupyter-lab">Jupyter Lab</h2>
+</code></pre><div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw" aria-hidden="true"></i>Running your app in future<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>The above steps set things up for the first time, but in future you will not need to go through all the steps.
+For Windows, the steps are:</p>
+<ul>
+<li>Start <code>Anaconda Prompt</code></li>
+<li>Move into the folder you are working in, for example <code>cd graphical-data-apps</code></li>
+<li>Activate the Python environment in that folder, with <code>&lt;environment name&gt;\Scripts\activate</code></li>
+<li>Run <code>jupyter lab</code>, which will open a new tab in your browser with Jupyter Lab.</li>
+<li>Open a Terminal in your Jupyter Lab tab, and enter the command <code>streamlit run &lt;name of python file&gt;</code>
+On Linux / MacOS, the steps are:</li>
+<li>Start <code>Terminal</code></li>
+<li>Move into the folder you are working in, for example <code>cd graphical-data-apps</code></li>
+<li>Activate the Python environment in that folder, with <code>source ./&lt;environment name&gt;/bin/activate</code></li>
+<li>Enter the command <code>jupyter lab</code> in Terminal to start a browser tab with Jupyter Lab</li>
+<li>Open a Terminal in your Jupyter Lab tab, and enter the command <code>streamlit run &lt;name of python file&gt;</code></li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="jupyter-lab">Jupyter Lab</h2>
 <p>In the Jupyter Lab <strong>file navigator</strong> in the sidebar to the left, find and move into the folder we made called <code>graphical-data-app</code> (this should be in your home folder, or another default location).</p>
 <p>We are going to have two panes open: one <strong>Python file</strong> (a text editor), and one <strong>Terminal</strong>. You can open these either from the launch screen (with icons), or from the menu bar (<em>in</em> the Jupyter Lab tab menu, not the browser menu!), going <strong>File</strong> → <strong>New</strong> → <strong>Python File</strong> and <strong>File</strong> → <strong>New</strong> → <strong>Terminal</strong>.</p>
 <p>For this session, a useful layout is with the Python file editor at the top, and Terminal below. This allows us to have a wide pane for the editor, and the terminal will only be running Streamlit (and occasionally reporting what is happening, and any errors), so we don&rsquo;t need it to take up too much space. In any case, layout as suits your screen best, and we are now ready to start!</p>
